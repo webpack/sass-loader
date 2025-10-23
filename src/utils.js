@@ -691,13 +691,13 @@ function getModernWebpackImporter(loaderContext, implementation, loadPaths) {
           // TODO simplify in the next major release and pass URL
           const canonicalPath = url.fileURLToPath(canonicalUrl);
 
-          loaderContext.fs.readFile(canonicalPath, "utf8", (err, content) => {
+          loaderContext.fs.readFile(canonicalPath, (err, content) => {
             if (err) {
               reject(err);
               return;
             }
 
-            resolve(content);
+            resolve(content.toString("utf8"));
           });
         });
 
