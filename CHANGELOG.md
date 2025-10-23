@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [16.0.6](https://github.com/webpack/sass-loader/compare/v16.0.5...v16.0.6) (2025-10-23)
+
+### Bug Fixes
+
+* cache fs calls for modern API
+
 ### [16.0.5](https://github.com/webpack-contrib/sass-loader/compare/v16.0.4...v16.0.5) (2025-02-14)
 
 
