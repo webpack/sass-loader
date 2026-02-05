@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [16.0.7](https://github.com/webpack/sass-loader/compare/v16.0.6...v16.0.7) (2026-02-05)
+
+
+### Bug Fixes
+
+* update peer dependency for @rspack/core v2 ([#1291](https://github.com/webpack/sass-loader/issues/1291)) ([24d12ec](https://github.com/webpack/sass-loader/commit/24d12ecb9868a10967a0d283e776b70e4ac522bf))
+
 ### [16.0.6](https://github.com/webpack/sass-loader/compare/v16.0.5...v16.0.6) (2025-10-23)
 
 ### Bug Fixes
