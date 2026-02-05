@@ -1,3 +1,4 @@
+/* eslint "import/no-unresolved": ["error", { ignore: ['node-sass'] }] */
 /**
  * @param {"node-sass" | "dart-sass" | "sass" | "sass-embedded"} implementationName implementation name
  * @returns {SassImplementation} a sass implementation
