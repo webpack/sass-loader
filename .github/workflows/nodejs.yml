@@ -44,6 +44,9 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
+        env:
+          SKIP_SASS_BINARY_DOWNLOAD_FOR_NODE_SASS: true
+          SKIP_NODE_SASS_TESTS: true
 
       - name: Lint
         run: npm run lint
