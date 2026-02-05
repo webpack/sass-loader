@@ -1,3 +1,4 @@
+/* eslint "import/no-unresolved": ["error", { ignore: ["node-sass"] }] */
 import {
   compile,
   getCompiler,
