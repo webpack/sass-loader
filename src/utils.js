@@ -386,7 +386,7 @@ function getPossibleRequests(
     return fromImport ? [] : [url];
   }
 
-  const dirname = path.dirname(request);
+  const dirname = path.dirname(request).replaceAll("\\", "/");
   const normalizedDirname = dirname === "." ? "" : `${dirname}/`;
   const basename = path.basename(request);
   const basenameWithoutExtension = path.basename(request, extension);
@@ -652,42 +652,6 @@ function getModernWebpackImporter(loaderContext, implementation, loadPaths) {
   return {
     async canonicalize(originalUrl, context) {
       const { fromImport } = context;
-
-      // Sass resolves relative URLs against the containing file's URL itself
-      // and hands us an absolute `file:` URL with `containingUrl === null`.
-      // Treat that URL as already canonical: just verify the file exists and
-      // return it. Routing it through the webpack resolver builds variant
-      // requests by string-concatenating `${dirname}/${name}`, which on
-      // Windows produces mixed-separator paths that can fail to resolve
-      // (see https://github.com/webpack/sass-loader/issues/1308). If the
-      // file isn't found, return null so Sass retries with the relative
-      // URL form and a populated `containingUrl`.
-      if (!context.containingUrl && /^file:/i.test(originalUrl)) {
-        let filePath;
-
-        try {
-          filePath = url.fileURLToPath(originalUrl);
-        } catch {
-          // Malformed file: URL — fall through to the webpack resolver
-        }
-
-        if (filePath) {
-          const exists = await new Promise((resolve) => {
-            loaderContext.fs.stat(filePath, (err, stats) => {
-              resolve(Boolean(!err && stats && stats.isFile()));
-            });
-          });
-
-          if (exists) {
-            loaderContext.addDependency(path.normalize(filePath));
-
-            return url.pathToFileURL(filePath);
-          }
-
-          return null;
-        }
-      }
-
       const prev = context.containingUrl
         ? url.fileURLToPath(context.containingUrl.toString())
         : loaderContext.resourcePath;
