@@ -325,6 +325,25 @@ describe("loader", () => {
         await close(compiler);
       });
 
+      it(`should work with relative "@import" at-rules inside an npm package ('${implementationName}', '${api}' API, '${syntax}' syntax)`, async () => {
+        const testId = getTestId("import-pkg-internal-relative", syntax);
+        const options = {
+          implementation,
+          api,
+        };
+        const compiler = getCompiler(testId, { loader: { options } });
+        const stats = await compile(compiler);
+        const codeFromBundle = getCodeFromBundle(stats, compiler);
+        const codeFromSass = await getCodeFromSass(testId, options);
+
+        expect(codeFromBundle.css).toBe(codeFromSass.css);
+        expect(codeFromBundle.css).toMatchSnapshot("css");
+        expect(getWarnings(stats)).toMatchSnapshot("warnings");
+        expect(getErrors(stats)).toMatchSnapshot("errors");
+
+        await close(compiler);
+      });
+
       it(`should work when "@import" at-rules with extensions ('${implementationName}', '${api}' API, '${syntax}' syntax)`, async () => {
         const testId = getTestId("import-with-extension", syntax);
         const options = {
@@ -1534,6 +1553,25 @@ describe("loader", () => {
 
         it(`should work when "@use" at-rules from scoped npm packages ('${implementationName}', '${api}' API, '${syntax}' syntax)`, async () => {
           const testId = getTestId("use-from-npm-org-pkg", syntax);
+          const options = {
+            implementation,
+            api,
+          };
+          const compiler = getCompiler(testId, { loader: { options } });
+          const stats = await compile(compiler);
+          const codeFromBundle = getCodeFromBundle(stats, compiler);
+          const codeFromSass = await getCodeFromSass(testId, options);
+
+          expect(codeFromBundle.css).toBe(codeFromSass.css);
+          expect(codeFromBundle.css).toMatchSnapshot("css");
+          expect(getWarnings(stats)).toMatchSnapshot("warnings");
+          expect(getErrors(stats)).toMatchSnapshot("errors");
+
+          await close(compiler);
+        });
+
+        it(`should work with relative "@use" at-rules inside an npm package ('${implementationName}', '${api}' API, '${syntax}' syntax)`, async () => {
+          const testId = getTestId("use-pkg-internal-relative", syntax);
           const options = {
             implementation,
             api,

@@ -386,7 +386,7 @@ function getPossibleRequests(
     return fromImport ? [] : [url];
   }
 
-  const dirname = path.dirname(request);
+  const dirname = path.dirname(request).replaceAll("\\", "/");
   const normalizedDirname = dirname === "." ? "" : `${dirname}/`;
   const basename = path.basename(request);
   const basenameWithoutExtension = path.basename(request, extension);
