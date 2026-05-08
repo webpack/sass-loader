@@ -12,10 +12,12 @@ import {
   normalizeSourceMap,
 } from "./utils";
 
-// eslint-disable-next-line jsdoc/no-restricted-syntax
+// eslint-disable-next-line jsdoc/reject-any-type
+/** @typedef {any} EXPECTED_ANY */
+
 /**
  * The sass-loader makes node-sass and dart-sass available to webpack modules.
- * @this {LoaderContext<{ string: any }>}
+ * @this {LoaderContext<{ string: EXPECTED_ANY }>}
  * @param {string} content content
  */
 async function loader(content) {

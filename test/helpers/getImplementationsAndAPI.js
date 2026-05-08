@@ -7,9 +7,10 @@ import * as SassEmbedded from "sass-embedded";
 
 import isNodeSassSupported from "./is-node-sass-supported";
 
-// eslint-disable-next-line jsdoc/no-restricted-syntax
+/** @typedef {import("../../src/index.js").EXPECTED_ANY} EXPECTED_ANY */
+
 /**
- * @returns {{ name: string, implementation: any, api: "legacy" | "modern" | "modern-compile" }} implementations
+ * @returns {{ name: string, implementation: EXPECTED_ANY, api: "legacy" | "modern" | "modern-compile" }} implementations
  */
 export default function getImplementationsAndAPI() {
   const implementations = [

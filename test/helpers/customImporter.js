@@ -1,11 +1,12 @@
 /* global expect */
 
-// eslint-disable-next-line jsdoc/no-restricted-syntax
+/** @typedef {import("../../src/index.js").EXPECTED_ANY} EXPECTED_ANY */
+
 /**
  * @param {string} url URL
  * @param {string} prev prev URL
- * @param {undefined | ((value: any) => void)} done done callback
- * @returns {any} result
+ * @param {undefined | ((value: EXPECTED_ANY) => void)} done done callback
+ * @returns {EXPECTED_ANY} result
  */
 function customImporter(url, prev, done) {
   expect(url).toBe("import-with-custom-logic");
