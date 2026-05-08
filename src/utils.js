@@ -6,10 +6,10 @@ import url from "node:url";
 /** @typedef {import("sass-embedded")} SassEmbedded */
 /** @typedef {import("sass-embedded").StringOptionsWithImporter} SassEmbeddedOptions */
 
+/** @typedef {import("./index.js").EXPECTED_ANY} EXPECTED_ANY */
 /** @typedef {Sass | SassEmbedded} SassImplementation */
 /** @typedef {SassSassOptions | SassEmbeddedOptions} SassOptions */
-// eslint-disable-next-line jsdoc/no-restricted-syntax
-/** @typedef {Record<string, any>} LoaderOptions */
+/** @typedef {Record<string, EXPECTED_ANY>} LoaderOptions */
 
 /**
  * @returns {Sass | SassEmbedded} sass implementation
@@ -473,7 +473,6 @@ const IS_NATIVE_WIN32_PATH = /^[a-z]:[/\\]|^\\\\/i;
  * @param {Sass} implementation the imported Sass implementation, both `sass` (Dart Sass) and `node-sass` are supported.
  * @param {string[]=} includePaths the list of include paths passed to Sass.
  * @returns {Resolver} webpack resolver
- * @throws If a compatible Sass implementation cannot be found.
  */
 function getWebpackResolver(
   resolverFactory,

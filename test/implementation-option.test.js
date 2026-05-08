@@ -94,60 +94,60 @@ describe("implementation option", () => {
 
       if (implementationName === "node-sass") {
         expect(nodeSassSpy).toHaveBeenCalledTimes(1);
-        expect(dartSassSpy).toHaveBeenCalledTimes(0);
-        expect(dartSassSpyModernAPI).toHaveBeenCalledTimes(0);
-        expect(sassEmbeddedSpy).toHaveBeenCalledTimes(0);
-        expect(sassEmbeddedSpyModernAPI).toHaveBeenCalledTimes(0);
+        expect(dartSassSpy).not.toHaveBeenCalled();
+        expect(dartSassSpyModernAPI).not.toHaveBeenCalled();
+        expect(sassEmbeddedSpy).not.toHaveBeenCalled();
+        expect(sassEmbeddedSpyModernAPI).not.toHaveBeenCalled();
       } else if (
         implementationName === "dart-sass" ||
         implementationName === "dart-sass_string"
       ) {
         if (api === "modern") {
-          expect(nodeSassSpy).toHaveBeenCalledTimes(0);
-          expect(dartSassSpy).toHaveBeenCalledTimes(0);
+          expect(nodeSassSpy).not.toHaveBeenCalled();
+          expect(dartSassSpy).not.toHaveBeenCalled();
           expect(dartSassSpyModernAPI).toHaveBeenCalledTimes(1);
-          expect(sassEmbeddedSpy).toHaveBeenCalledTimes(0);
-          expect(sassEmbeddedSpyModernAPI).toHaveBeenCalledTimes(0);
+          expect(sassEmbeddedSpy).not.toHaveBeenCalled();
+          expect(sassEmbeddedSpyModernAPI).not.toHaveBeenCalled();
         } else if (api === "modern-compiler") {
-          expect(nodeSassSpy).toHaveBeenCalledTimes(0);
-          expect(dartSassSpy).toHaveBeenCalledTimes(0);
-          expect(dartSassSpyModernAPI).toHaveBeenCalledTimes(0);
+          expect(nodeSassSpy).not.toHaveBeenCalled();
+          expect(dartSassSpy).not.toHaveBeenCalled();
+          expect(dartSassSpyModernAPI).not.toHaveBeenCalled();
           expect(dartSassCompilerSpies.compileStringSpy).toHaveBeenCalledTimes(
             1,
           );
-          expect(sassEmbeddedSpy).toHaveBeenCalledTimes(0);
-          expect(sassEmbeddedSpyModernAPI).toHaveBeenCalledTimes(0);
+          expect(sassEmbeddedSpy).not.toHaveBeenCalled();
+          expect(sassEmbeddedSpyModernAPI).not.toHaveBeenCalled();
         } else if (api === "legacy") {
           if (isNodeSassSupported()) {
-            expect(nodeSassSpy).toHaveBeenCalledTimes(0);
+            expect(nodeSassSpy).not.toHaveBeenCalled();
           }
           expect(dartSassSpy).toHaveBeenCalledTimes(1);
-          expect(dartSassSpyModernAPI).toHaveBeenCalledTimes(0);
-          expect(sassEmbeddedSpy).toHaveBeenCalledTimes(0);
-          expect(sassEmbeddedSpyModernAPI).toHaveBeenCalledTimes(0);
+          expect(dartSassSpyModernAPI).not.toHaveBeenCalled();
+          expect(sassEmbeddedSpy).not.toHaveBeenCalled();
+          expect(sassEmbeddedSpyModernAPI).not.toHaveBeenCalled();
         }
       } else if (implementationName === "sass-embedded") {
         if (api === "modern") {
-          expect(nodeSassSpy).toHaveBeenCalledTimes(0);
-          expect(dartSassSpy).toHaveBeenCalledTimes(0);
-          expect(dartSassSpyModernAPI).toHaveBeenCalledTimes(0);
-          expect(sassEmbeddedSpy).toHaveBeenCalledTimes(0);
+          expect(nodeSassSpy).not.toHaveBeenCalled();
+          expect(dartSassSpy).not.toHaveBeenCalled();
+          expect(dartSassSpyModernAPI).not.toHaveBeenCalled();
+          expect(sassEmbeddedSpy).not.toHaveBeenCalled();
           expect(sassEmbeddedSpyModernAPI).toHaveBeenCalledTimes(1);
         } else if (api === "modern-compiler") {
-          expect(nodeSassSpy).toHaveBeenCalledTimes(0);
-          expect(dartSassSpy).toHaveBeenCalledTimes(0);
-          expect(dartSassSpyModernAPI).toHaveBeenCalledTimes(0);
-          expect(sassEmbeddedSpy).toHaveBeenCalledTimes(0);
-          expect(sassEmbeddedSpyModernAPI).toHaveBeenCalledTimes(0);
+          expect(nodeSassSpy).not.toHaveBeenCalled();
+          expect(dartSassSpy).not.toHaveBeenCalled();
+          expect(dartSassSpyModernAPI).not.toHaveBeenCalled();
+          expect(sassEmbeddedSpy).not.toHaveBeenCalled();
+          expect(sassEmbeddedSpyModernAPI).not.toHaveBeenCalled();
           expect(
             sassEmbeddedCompilerSpies.compileStringSpy,
           ).toHaveBeenCalledTimes(1);
         } else if (api === "legacy") {
-          expect(nodeSassSpy).toHaveBeenCalledTimes(0);
-          expect(dartSassSpy).toHaveBeenCalledTimes(0);
-          expect(dartSassSpyModernAPI).toHaveBeenCalledTimes(0);
+          expect(nodeSassSpy).not.toHaveBeenCalled();
+          expect(dartSassSpy).not.toHaveBeenCalled();
+          expect(dartSassSpyModernAPI).not.toHaveBeenCalled();
           expect(sassEmbeddedSpy).toHaveBeenCalledTimes(1);
-          expect(sassEmbeddedSpyModernAPI).toHaveBeenCalledTimes(0);
+          expect(sassEmbeddedSpyModernAPI).not.toHaveBeenCalled();
         }
       }
 
@@ -190,11 +190,11 @@ describe("implementation option", () => {
     expect(getWarnings(stats)).toMatchSnapshot("warnings");
     expect(getErrors(stats)).toMatchSnapshot("errors");
 
-    expect(sassEmbeddedSpy).toHaveBeenCalledTimes(0);
+    expect(sassEmbeddedSpy).not.toHaveBeenCalled();
     expect(sassEmbeddedSpyModernAPI).toHaveBeenCalledTimes(1);
-    expect(nodeSassSpy).toHaveBeenCalledTimes(0);
-    expect(dartSassSpy).toHaveBeenCalledTimes(0);
-    expect(dartSassSpyModernAPI).toHaveBeenCalledTimes(0);
+    expect(nodeSassSpy).not.toHaveBeenCalled();
+    expect(dartSassSpy).not.toHaveBeenCalled();
+    expect(dartSassSpyModernAPI).not.toHaveBeenCalled();
 
     sassEmbeddedSpy.mockClear();
     sassEmbeddedSpyModernAPI.mockClear();
@@ -220,10 +220,10 @@ describe("implementation option", () => {
     expect(getWarnings(stats)).toMatchSnapshot("warnings");
     expect(getErrors(stats)).toMatchSnapshot("errors");
 
-    expect(sassEmbeddedSpy).toHaveBeenCalledTimes(0);
-    expect(sassEmbeddedSpyModernAPI).toHaveBeenCalledTimes(0);
+    expect(sassEmbeddedSpy).not.toHaveBeenCalled();
+    expect(sassEmbeddedSpyModernAPI).not.toHaveBeenCalled();
     expect(nodeSassSpy).toHaveBeenCalledTimes(isNodeSassSupported() ? 1 : 0);
-    expect(dartSassSpy).toHaveBeenCalledTimes(0);
+    expect(dartSassSpy).not.toHaveBeenCalled();
     expect(dartSassSpyModernAPI).toHaveBeenCalledTimes(
       isNodeSassSupported() ? 0 : 1,
     );
@@ -253,8 +253,8 @@ describe("implementation option", () => {
     expect(getErrors(stats)).toMatchSnapshot("errors");
 
     expect(sassEmbeddedSpy).toHaveBeenCalledTimes(1);
-    expect(nodeSassSpy).toHaveBeenCalledTimes(0);
-    expect(dartSassSpy).toHaveBeenCalledTimes(0);
+    expect(nodeSassSpy).not.toHaveBeenCalled();
+    expect(dartSassSpy).not.toHaveBeenCalled();
 
     sassEmbeddedSpy.mockClear();
     sassEmbeddedSpyModernAPI.mockClear();
@@ -281,8 +281,8 @@ describe("implementation option", () => {
     expect(getErrors(stats)).toMatchSnapshot("errors");
 
     expect(sassEmbeddedSpyModernAPI).toHaveBeenCalledTimes(1);
-    expect(nodeSassSpy).toHaveBeenCalledTimes(0);
-    expect(dartSassSpyModernAPI).toHaveBeenCalledTimes(0);
+    expect(nodeSassSpy).not.toHaveBeenCalled();
+    expect(dartSassSpyModernAPI).not.toHaveBeenCalled();
 
     sassEmbeddedSpy.mockClear();
     sassEmbeddedSpyModernAPI.mockClear();
@@ -309,10 +309,10 @@ describe("implementation option", () => {
     expect(getErrors(stats)).toMatchSnapshot("errors");
 
     expect(sassEmbeddedCompilerSpies.compileStringSpy).toHaveBeenCalledTimes(1);
-    expect(sassEmbeddedSpyModernAPI).toHaveBeenCalledTimes(0);
-    expect(nodeSassSpy).toHaveBeenCalledTimes(0);
-    expect(dartSassSpyModernAPI).toHaveBeenCalledTimes(0);
-    expect(dartSassCompilerSpies.compileStringSpy).toHaveBeenCalledTimes(0);
+    expect(sassEmbeddedSpyModernAPI).not.toHaveBeenCalled();
+    expect(nodeSassSpy).not.toHaveBeenCalled();
+    expect(dartSassSpyModernAPI).not.toHaveBeenCalled();
+    expect(dartSassCompilerSpies.compileStringSpy).not.toHaveBeenCalled();
 
     sassEmbeddedSpy.mockClear();
     sassEmbeddedSpyModernAPI.mockClear();
