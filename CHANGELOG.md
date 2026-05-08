@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [16.0.8](https://github.com/webpack/sass-loader/compare/v16.0.7...v16.0.8) (2026-05-08)
+
+
+### Bug Fixes
+
+* normalize separators in getPossibleRequests for Windows ([#1308](https://github.com/webpack/sass-loader/issues/1308)) ([#1309](https://github.com/webpack/sass-loader/issues/1309)) ([90e349d](https://github.com/webpack/sass-loader/commit/90e349d7529ea17b380b6597f2d28cd5a6c00c23))
+
 ### [16.0.7](https://github.com/webpack/sass-loader/compare/v16.0.6...v16.0.7) (2026-02-05)
 
 

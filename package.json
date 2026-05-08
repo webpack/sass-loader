@@ -1,6 +1,6 @@
 {
   "name": "sass-loader",
-  "version": "16.0.7",
+  "version": "16.0.8",
   "description": "Sass loader for webpack",
   "keywords": [
     "sass",
