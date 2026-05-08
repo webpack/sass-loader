@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`additionalData option should use same EOL on all os ('dart-sass', 'legacy' API, 'sass' syntax): css 1`] = `
 "a {

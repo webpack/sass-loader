@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`sourceMap option should generate source maps when value has "false" value, but the "sassOptions.sourceMap" has the "true" value ('dart-sass', 'legacy' API, 'sass' syntax): css 1`] = `
 "@charset "UTF-8";
