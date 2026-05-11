@@ -21,16 +21,7 @@ function getDefaultSassImplementation() {
     require.resolve("sass-embedded");
     sassImplPkg = "sass-embedded";
   } catch {
-    try {
-      require.resolve("sass");
-    } catch {
-      try {
-        require.resolve("node-sass");
-        sassImplPkg = "node-sass";
-      } catch {
-        sassImplPkg = "sass";
-      }
-    }
+    sassImplPkg = "sass";
   }
 
   return require(sassImplPkg);
@@ -68,8 +59,6 @@ function getSassImplementation(loaderContext, implementation) {
   const [implementationName] = infoParts;
 
   if (implementationName === "dart-sass") {
-    return resolvedImplementation;
-  } else if (implementationName === "node-sass") {
     return resolvedImplementation;
   } else if (implementationName === "sass-embedded") {
     return resolvedImplementation;
@@ -248,7 +237,7 @@ async function getSassOptions(
 
     if (useSourceMap) {
       // Deliberately overriding the sourceMap option here.
-      // node-sass won't produce source maps if the data option is used and options.sourceMap is not a string.
+      // `sass` won't produce source maps if the data option is used and options.sourceMap is not a string.
       // In case it is a string, options.sourceMap should be a path where the source map is written.
       // But since we're using the data option, the source map will not actually be written, but
       // all paths in sourceMap.sources will be relative to that path.
@@ -276,7 +265,7 @@ async function getSassOptions(
       sassOptions.indentedSyntax = Boolean(sassOptions.indentedSyntax);
     }
 
-    // Allow passing custom importers to `sass`/`node-sass`. Accepts `Function` or an array of `Function`s.
+    // Allow passing custom importers to `sass`. Accepts `Function` or an array of `Function`s.
     sassOptions.importer = sassOptions.importer
       ? proxyCustomImporters(
           Array.isArray(sassOptions.importer)
@@ -331,7 +320,7 @@ const IS_MODULE_IMPORT =
 const IS_PKG_SCHEME = /^pkg:/i;
 
 /**
- * When `sass`/`node-sass` tries to resolve an import, it uses a special algorithm.
+ * When `sass` tries to resolve an import, it uses a special algorithm.
  * Since the `sass-loader` uses webpack to resolve the modules, we need to simulate that algorithm.
  * This function returns an array of import paths to try.
  * The last entry in the array is always the original url to enable straight-forward webpack.config aliases.
@@ -380,8 +369,7 @@ function getPossibleRequests(
   //  - imports where the URL is written as a url().
   //  - imports that have media queries.
   //
-  // The `node-sass` package sends `@import` ending on `.css` to importer, it is bug, so we skip resolve
-  // Also sass outputs as is `@import "style.css"`, but `@use "style.css"` should include CSS content
+  // sass outputs as is `@import "style.css"`, but `@use "style.css"` should include CSS content
   if (extension === ".css") {
     return fromImport ? [] : [url];
   }
@@ -470,7 +458,7 @@ const IS_NATIVE_WIN32_PATH = /^[a-z]:[/\\]|^\\\\/i;
  * [`enhanced-resolve`]{@link https://github.com/webpack/enhanced-resolve} to
  * pass as the `resolverFactory` argument.
  * @param {ResolveFactory} resolverFactory a factory function for creating a Webpack resolver.
- * @param {Sass} implementation the imported Sass implementation, both `sass` (Dart Sass) and `node-sass` are supported.
+ * @param {Sass} implementation the imported Sass implementation (`sass` or `sass-embedded`).
  * @param {string[]=} includePaths the list of include paths passed to Sass.
  * @returns {Resolver} webpack resolver
  */
@@ -479,8 +467,6 @@ function getWebpackResolver(
   implementation,
   includePaths = [],
 ) {
-  const isModernSass =
-    implementation && typeof implementation.compileStringAsync !== "undefined";
   // We only have one difference with the built-in sass resolution logic and out resolution logic:
   // First, we look at the files starting with `_`, then without `_` (i.e. `_name.sass`, `_name.scss`, `_name.css`, `name.sass`, `name.scss`, `name.css`),
   // although `sass` look together by extensions (i.e. `_name.sass`/`name.sass`/`_name.scss`/`name.scss`/`_name.css`/`name.css`).
@@ -543,13 +529,6 @@ function getWebpackResolver(
   );
 
   return (context, request, fromImport) => {
-    // See https://github.com/webpack/webpack/issues/12340
-    // Because `node-sass` calls our importer before `1. Filesystem imports relative to the base file.`
-    // custom importer may not return `{ file: '/path/to/name.ext' }` and therefore our `context` will be relative
-    if (!isModernSass && !path.isAbsolute(context)) {
-      return Promise.reject();
-    }
-
     const originalRequest = request;
     const isFileScheme = originalRequest.slice(0, 5).toLowerCase() === "file:";
 
@@ -591,18 +570,6 @@ function getWebpackResolver(
         false,
         fromImport,
       );
-
-      // `node-sass` calls our importer before `1. Filesystem imports relative to the base file.`, so we need emulate this too
-      if (!isModernSass) {
-        resolutionMap = [
-          ...resolutionMap,
-          {
-            resolve: fromImport ? sassImportResolve : sassModuleResolve,
-            context: path.dirname(context),
-            possibleRequests: sassPossibleRequests,
-          },
-        ];
-      }
 
       resolutionMap = [
         ...resolutionMap,
@@ -724,19 +691,14 @@ function getWebpackImporter(loaderContext, implementation, includePaths) {
   return function importer(originalUrl, prev, done) {
     const { fromImport } = this;
 
-    resolve(
-      prev,
-      originalUrl,
-      // For `node-sass`
-      typeof fromImport === "undefined" ? true : fromImport,
-    )
+    resolve(prev, originalUrl, fromImport)
       .then((result) => {
         // Add the result as dependency.
         // Although we're also using stats.includedFiles, this might come in handy when an error occurs.
-        // In this case, we don't get stats.includedFiles from node-sass/sass.
+        // In this case, we don't get stats.includedFiles from sass.
         loaderContext.addDependency(path.normalize(result));
 
-        // By removing the CSS file extension, we trigger node-sass to include the CSS file instead of just linking it.
+        // By removing the CSS file extension, we trigger sass to include the CSS file instead of just linking it.
         done({ file: result.replace(MATCH_CSS, "") });
       })
       // Catch all resolving errors, return the original file and pass responsibility back to other custom importers
@@ -746,7 +708,6 @@ function getWebpackImporter(loaderContext, implementation, includePaths) {
   };
 }
 
-let nodeSassJobQueue = null;
 const sassModernCompilers = new WeakMap();
 
 /**
@@ -757,97 +718,59 @@ const sassModernCompilers = new WeakMap();
  * @returns {SassCompileFunction} compile function
  */
 function getCompileFn(loaderContext, implementation, apiType) {
-  if (typeof implementation.compileStringAsync !== "undefined") {
-    if (apiType === "modern") {
-      return (sassOptions) => {
-        const { data, ...rest } = sassOptions;
+  if (apiType === "modern") {
+    return (sassOptions) => {
+      const { data, ...rest } = sassOptions;
 
-        return implementation.compileStringAsync(data, rest);
-      };
-    }
+      return implementation.compileStringAsync(data, rest);
+    };
+  }
 
-    if (apiType === "modern-compiler") {
-      return async (sassOptions) => {
-        const webpackCompiler = loaderContext._compiler;
-        const { data, ...rest } = sassOptions;
+  if (apiType === "modern-compiler") {
+    return async (sassOptions) => {
+      const webpackCompiler = loaderContext._compiler;
+      const { data, ...rest } = sassOptions;
 
-        // Some people can run the loader in a multi-threading way;
-        // there is no webpack compiler object in such case.
-        if (webpackCompiler) {
+      // Some people can run the loader in a multi-threading way;
+      // there is no webpack compiler object in such case.
+      if (webpackCompiler) {
+        if (!sassModernCompilers.has(webpackCompiler)) {
+          // Create a long-running compiler process that can be reused
+          // for compiling individual files.
+          const compiler = await implementation.initAsyncCompiler();
+
+          // Check again because awaiting the initialization function
+          // introduces a race condition.
           if (!sassModernCompilers.has(webpackCompiler)) {
-            // Create a long-running compiler process that can be reused
-            // for compiling individual files.
-            const compiler = await implementation.initAsyncCompiler();
-
-            // Check again because awaiting the initialization function
-            // introduces a race condition.
-            if (!sassModernCompilers.has(webpackCompiler)) {
-              sassModernCompilers.set(webpackCompiler, compiler);
-              webpackCompiler.hooks.shutdown.tap("sass-loader", () => {
-                compiler.dispose();
-              });
-            } else {
+            sassModernCompilers.set(webpackCompiler, compiler);
+            webpackCompiler.hooks.shutdown.tap("sass-loader", () => {
               compiler.dispose();
-            }
+            });
+          } else {
+            compiler.dispose();
           }
-
-          return sassModernCompilers
-            .get(webpackCompiler)
-            .compileStringAsync(data, rest);
         }
 
-        return implementation.compileStringAsync(data, rest);
-      };
-    }
+        return sassModernCompilers
+          .get(webpackCompiler)
+          .compileStringAsync(data, rest);
+      }
 
-    return (sassOptions) =>
-      new Promise((resolve, reject) => {
-        implementation.render(sassOptions, (error, result) => {
-          if (error) {
-            reject(error);
-
-            return;
-          }
-
-          resolve(result);
-        });
-      });
-  }
-
-  if (apiType === "modern" || apiType === "modern-compiler") {
-    throw new Error("Modern API is not supported for 'node-sass'");
-  }
-
-  // There is an issue with node-sass when async custom importers are used
-  // See https://github.com/sass/node-sass/issues/857#issuecomment-93594360
-  // We need to use a job queue to make sure that one thread is always available to the UV lib
-  if (nodeSassJobQueue === null) {
-    const threadPoolSize = Number(process.env.UV_THREADPOOL_SIZE || 4);
-
-    // Only used for `node-sass`, so let's load it lazily
-
-    const async = require("neo-async");
-
-    nodeSassJobQueue = async.queue(
-      implementation.render.bind(implementation),
-      threadPoolSize - 1,
-    );
+      return implementation.compileStringAsync(data, rest);
+    };
   }
 
   return (sassOptions) =>
     new Promise((resolve, reject) => {
-      nodeSassJobQueue.push.bind(nodeSassJobQueue)(
-        sassOptions,
-        (error, result) => {
-          if (error) {
-            reject(error);
+      implementation.render(sassOptions, (error, result) => {
+        if (error) {
+          reject(error);
 
-            return;
-          }
+          return;
+        }
 
-          resolve(result);
-        },
-      );
+        resolve(result);
+      });
     });
 }
 
@@ -890,7 +813,7 @@ function normalizeSourceMap(map, rootContext) {
 
   newMap.sourceRoot = "";
 
-  // node-sass returns POSIX paths, that's why we need to transform them back to native paths.
+  // sass returns POSIX paths, that's why we need to transform them back to native paths.
   // This fixes an error on windows where the source-map module cannot resolve the source maps.
   // @see https://github.com/webpack/sass-loader/issues/366#issuecomment-279460722
 

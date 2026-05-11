@@ -20,7 +20,7 @@
       "enum": ["legacy", "modern", "modern-compiler"]
     },
     "sassOptions": {
-      "description": "Options for `node-sass` or `sass` (`Dart Sass`) implementation.",
+      "description": "Options for `sass` (`Dart Sass`) or `sass-embedded` implementation.",
       "link": "https://github.com/webpack/sass-loader#sassoptions",
       "anyOf": [
         {

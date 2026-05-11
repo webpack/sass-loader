@@ -11,4 +11,3 @@ export { default as getImplementationByName } from "./getImplementationByName";
 export { default as getTestId } from "./getTestId";
 export { default as getWarnings } from "./getWarnings";
 export { default as readAsset } from "./readAsset";
-export { default as isNodeSassSupported } from "./is-node-sass-supported";

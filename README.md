@@ -43,17 +43,13 @@ pnpm add -D sass-loader sass webpack
 >
 > To enable CSS processing in your project, you need to install [style-loader](https://webpack.js.org/loaders/style-loader/) and [css-loader](https://webpack.js.org/loaders/css-loader/) via `npm i style-loader css-loader`.
 
-`sass-loader` requires you to install either [Dart Sass](https://github.com/sass/dart-sass), [Node Sass](https://github.com/sass/node-sass) on your own (more documentation can be found below) or [Sass Embedded](https://github.com/sass/embedded-host-node).
+`sass-loader` requires you to install either [Dart Sass](https://github.com/sass/dart-sass) or [Sass Embedded](https://github.com/sass/embedded-host-node) on your own (more documentation can be found below).
 
 This allows you to control the versions of all your dependencies and to choose which Sass implementation to use.
 
 > [!NOTE]
 >
 > We highly recommend using [Sass Embedded](https://github.com/sass/embedded-host-node) or [Dart Sass](https://github.com/sass/dart-sass).
-
-> [!WARNING]
->
-> [Node Sass](https://github.com/sass/node-sass) does not work with [Yarn PnP](https://classic.yarnpkg.com/en/docs/pnp/) and doesn't support [@use rule](https://sass-lang.com/documentation/at-rules/use).
 
 Chain the `sass-loader` with the [css-loader](https://github.com/webpack/css-loader) and the [style-loader](https://github.com/webpack/style-loader) to immediately apply all styles to the DOM, or with the [mini-css-extract-plugin](https://github.com/webpack/mini-css-extract-plugin) to extract it into a separate file.
 
@@ -167,7 +163,7 @@ Default: `sass`
 The special `implementation` option determines which implementation of Sass to use.
 
 By default, the loader resolves the implementation based on your dependencies.
-Just add the desired implementation to your `package.json` (`sass`, `sass-embedded`, or `node-sass` package) and install dependencies.
+Just add the desired implementation to your `package.json` (`sass` or `sass-embedded` package) and install dependencies.
 
 Example where the `sass-loader` uses the `sass` (`dart-sass`) implementation:
 
@@ -178,19 +174,6 @@ Example where the `sass-loader` uses the `sass` (`dart-sass`) implementation:
   "devDependencies": {
     "sass-loader": "^7.2.0",
     "sass": "^1.22.10"
-  }
-}
-```
-
-Example where the `sass-loader` uses the `node-sass` implementation:
-
-**package.json**
-
-```json
-{
-  "devDependencies": {
-    "sass-loader": "^7.2.0",
-    "node-sass": "^5.0.0"
   }
 }
 ```
@@ -219,7 +202,6 @@ Be aware of the order that `sass-loader` will resolve the implementation:
 
 1. `sass-embedded`
 2. `sass`
-3. `node-sass`
 
 You can specify a specific implementation by using the `implementation` option, which accepts one of the above values.
 
@@ -293,7 +275,7 @@ type sassOptions =
 
 Default: defaults values for Sass implementation
 
-Options for [Dart Sass](http://sass-lang.com/dart-sass) or [Node Sass](https://github.com/sass/node-sass) implementation.
+Options for [Dart Sass](http://sass-lang.com/dart-sass) or [Sass Embedded](https://github.com/sass/embedded-host-node) implementation.
 
 > [!NOTE]
 >
@@ -313,13 +295,10 @@ Options for [Dart Sass](http://sass-lang.com/dart-sass) or [Node Sass](https://g
 >
 > Access to the [loader context](https://webpack.js.org/api/loaders/#the-loader-context) inside the custom importer can be done using the `this.webpackLoaderContext` property.
 
-There is a slight difference between the options for `sass` (`dart-sass`) and `node-sass`.
-
 Please consult their respective documentation before using them:
 
 - [Dart Sass documentation](https://sass-lang.com/documentation/js-api/interfaces/Options) for all available `sass` options.
-- [Sass Embedded documentation](https://github.com/sass/embedded-host-node) for all available `sass` options.
-- [Node Sass documentation](https://github.com/sass/node-sass/#options) for all available `node-sass` options.
+- [Sass Embedded documentation](https://github.com/sass/embedded-host-node) for all available `sass-embedded` options.
 
 #### `object`
 
@@ -437,10 +416,6 @@ module.exports = {
   },
 };
 ```
-
-> ℹ In some rare cases `node-sass` can output invalid source maps (this is a `node-sass` bug).
->
-> In order to avoid this, you can try to update `node-sass` to the latest version, or you can try to set within `sassOptions` the `outputStyle` option to `compressed`.
 
 **webpack.config.js**
 
@@ -593,7 +568,7 @@ Default: `true`
 Enables/disables the default webpack importer.
 
 This can improve performance in some cases, though use it with caution because aliases and `@import` at-rules starting with `~` will not work.
-You can pass your own `importer` to solve this (see [`importer` docs](https://github.com/sass/node-sass#importer--v200---experimental)).
+You can pass your own `importer` to solve this (see [Sass importer documentation](https://sass-lang.com/documentation/js-api/interfaces/LegacyImporter)).
 
 **webpack.config.js**
 
@@ -689,7 +664,7 @@ Type:
 type api = "legacy" | "modern" | "modern-compiler";
 ```
 
-Default: `"modern"` for `sass` (`dart-sass`) and `sass-embedded`, or `"legacy"` for `node-sass`
+Default: `"modern"` for `sass` (`dart-sass`) and `sass-embedded`
 
 Allows you to switch between the `legacy` and `modern` APIs. You can find more information [here](https://sass-lang.com/documentation/js-api). The `modern-compiler` option enables the modern API with support for [Shared Resources](https://github.com/sass/sass/blob/main/accepted/shared-resources.d.ts.md).
 

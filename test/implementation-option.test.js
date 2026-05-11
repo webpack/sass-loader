@@ -1,5 +1,3 @@
-/* eslint "import/no-unresolved": ["error", { ignore: ["node-sass"] }] */
-import nodeSass from "node-sass";
 import dartSass from "sass";
 
 import * as sassEmbedded from "sass-embedded";
@@ -14,7 +12,6 @@ import {
   getImplementationsAndAPI,
   getTestId,
   getWarnings,
-  isNodeSassSupported,
 } from "./helpers";
 
 jest.setTimeout(30000);
@@ -55,7 +52,6 @@ const spyOnCompiler = (implementation) => {
 };
 
 describe("implementation option", () => {
-  const nodeSassSpy = jest.spyOn(nodeSass, "render");
   const dartSassSpy = jest.spyOn(dartSass, "render");
   const dartSassSpyModernAPI = jest.spyOn(dartSass, "compileStringAsync");
   const dartSassCompilerSpies = spyOnCompiler(dartSass);
@@ -92,24 +88,16 @@ describe("implementation option", () => {
       expect(getWarnings(stats)).toMatchSnapshot("warnings");
       expect(getErrors(stats)).toMatchSnapshot("errors");
 
-      if (implementationName === "node-sass") {
-        expect(nodeSassSpy).toHaveBeenCalledTimes(1);
-        expect(dartSassSpy).not.toHaveBeenCalled();
-        expect(dartSassSpyModernAPI).not.toHaveBeenCalled();
-        expect(sassEmbeddedSpy).not.toHaveBeenCalled();
-        expect(sassEmbeddedSpyModernAPI).not.toHaveBeenCalled();
-      } else if (
+      if (
         implementationName === "dart-sass" ||
         implementationName === "dart-sass_string"
       ) {
         if (api === "modern") {
-          expect(nodeSassSpy).not.toHaveBeenCalled();
           expect(dartSassSpy).not.toHaveBeenCalled();
           expect(dartSassSpyModernAPI).toHaveBeenCalledTimes(1);
           expect(sassEmbeddedSpy).not.toHaveBeenCalled();
           expect(sassEmbeddedSpyModernAPI).not.toHaveBeenCalled();
         } else if (api === "modern-compiler") {
-          expect(nodeSassSpy).not.toHaveBeenCalled();
           expect(dartSassSpy).not.toHaveBeenCalled();
           expect(dartSassSpyModernAPI).not.toHaveBeenCalled();
           expect(dartSassCompilerSpies.compileStringSpy).toHaveBeenCalledTimes(
@@ -118,9 +106,6 @@ describe("implementation option", () => {
           expect(sassEmbeddedSpy).not.toHaveBeenCalled();
           expect(sassEmbeddedSpyModernAPI).not.toHaveBeenCalled();
         } else if (api === "legacy") {
-          if (isNodeSassSupported()) {
-            expect(nodeSassSpy).not.toHaveBeenCalled();
-          }
           expect(dartSassSpy).toHaveBeenCalledTimes(1);
           expect(dartSassSpyModernAPI).not.toHaveBeenCalled();
           expect(sassEmbeddedSpy).not.toHaveBeenCalled();
@@ -128,13 +113,11 @@ describe("implementation option", () => {
         }
       } else if (implementationName === "sass-embedded") {
         if (api === "modern") {
-          expect(nodeSassSpy).not.toHaveBeenCalled();
           expect(dartSassSpy).not.toHaveBeenCalled();
           expect(dartSassSpyModernAPI).not.toHaveBeenCalled();
           expect(sassEmbeddedSpy).not.toHaveBeenCalled();
           expect(sassEmbeddedSpyModernAPI).toHaveBeenCalledTimes(1);
         } else if (api === "modern-compiler") {
-          expect(nodeSassSpy).not.toHaveBeenCalled();
           expect(dartSassSpy).not.toHaveBeenCalled();
           expect(dartSassSpyModernAPI).not.toHaveBeenCalled();
           expect(sassEmbeddedSpy).not.toHaveBeenCalled();
@@ -143,7 +126,6 @@ describe("implementation option", () => {
             sassEmbeddedCompilerSpies.compileStringSpy,
           ).toHaveBeenCalledTimes(1);
         } else if (api === "legacy") {
-          expect(nodeSassSpy).not.toHaveBeenCalled();
           expect(dartSassSpy).not.toHaveBeenCalled();
           expect(dartSassSpyModernAPI).not.toHaveBeenCalled();
           expect(sassEmbeddedSpy).toHaveBeenCalledTimes(1);
@@ -151,7 +133,6 @@ describe("implementation option", () => {
         }
       }
 
-      nodeSassSpy.mockClear();
       dartSassSpy.mockClear();
       dartSassSpyModernAPI.mockClear();
       dartSassCompilerSpies.mockClear();
@@ -192,45 +173,11 @@ describe("implementation option", () => {
 
     expect(sassEmbeddedSpy).not.toHaveBeenCalled();
     expect(sassEmbeddedSpyModernAPI).toHaveBeenCalledTimes(1);
-    expect(nodeSassSpy).not.toHaveBeenCalled();
     expect(dartSassSpy).not.toHaveBeenCalled();
     expect(dartSassSpyModernAPI).not.toHaveBeenCalled();
 
     sassEmbeddedSpy.mockClear();
     sassEmbeddedSpyModernAPI.mockClear();
-    nodeSassSpy.mockClear();
-    dartSassSpy.mockClear();
-    dartSassSpyModernAPI.mockClear();
-
-    await close(compiler);
-  });
-
-  it("not specify with node-sass", async () => {
-    const testId = getTestId("language", "scss");
-    const options = {
-      implementation: nodeSass,
-    };
-    const compiler = getCompiler(testId, { loader: { options } });
-    const stats = await compile(compiler);
-    const { css, sourceMap } = getCodeFromBundle(stats, compiler);
-
-    expect(css).toBeDefined();
-    expect(sourceMap).toBeUndefined();
-
-    expect(getWarnings(stats)).toMatchSnapshot("warnings");
-    expect(getErrors(stats)).toMatchSnapshot("errors");
-
-    expect(sassEmbeddedSpy).not.toHaveBeenCalled();
-    expect(sassEmbeddedSpyModernAPI).not.toHaveBeenCalled();
-    expect(nodeSassSpy).toHaveBeenCalledTimes(isNodeSassSupported() ? 1 : 0);
-    expect(dartSassSpy).not.toHaveBeenCalled();
-    expect(dartSassSpyModernAPI).toHaveBeenCalledTimes(
-      isNodeSassSupported() ? 0 : 1,
-    );
-
-    sassEmbeddedSpy.mockClear();
-    sassEmbeddedSpyModernAPI.mockClear();
-    nodeSassSpy.mockClear();
     dartSassSpy.mockClear();
     dartSassSpyModernAPI.mockClear();
 
@@ -253,12 +200,10 @@ describe("implementation option", () => {
     expect(getErrors(stats)).toMatchSnapshot("errors");
 
     expect(sassEmbeddedSpy).toHaveBeenCalledTimes(1);
-    expect(nodeSassSpy).not.toHaveBeenCalled();
     expect(dartSassSpy).not.toHaveBeenCalled();
 
     sassEmbeddedSpy.mockClear();
     sassEmbeddedSpyModernAPI.mockClear();
-    nodeSassSpy.mockClear();
     dartSassSpy.mockClear();
     dartSassSpyModernAPI.mockClear();
 
@@ -281,12 +226,10 @@ describe("implementation option", () => {
     expect(getErrors(stats)).toMatchSnapshot("errors");
 
     expect(sassEmbeddedSpyModernAPI).toHaveBeenCalledTimes(1);
-    expect(nodeSassSpy).not.toHaveBeenCalled();
     expect(dartSassSpyModernAPI).not.toHaveBeenCalled();
 
     sassEmbeddedSpy.mockClear();
     sassEmbeddedSpyModernAPI.mockClear();
-    nodeSassSpy.mockClear();
     dartSassSpy.mockClear();
     dartSassSpyModernAPI.mockClear();
 
@@ -310,13 +253,11 @@ describe("implementation option", () => {
 
     expect(sassEmbeddedCompilerSpies.compileStringSpy).toHaveBeenCalledTimes(1);
     expect(sassEmbeddedSpyModernAPI).not.toHaveBeenCalled();
-    expect(nodeSassSpy).not.toHaveBeenCalled();
     expect(dartSassSpyModernAPI).not.toHaveBeenCalled();
     expect(dartSassCompilerSpies.compileStringSpy).not.toHaveBeenCalled();
 
     sassEmbeddedSpy.mockClear();
     sassEmbeddedSpyModernAPI.mockClear();
-    nodeSassSpy.mockClear();
     dartSassSpy.mockClear();
     dartSassSpyModernAPI.mockClear();
 
@@ -473,15 +414,6 @@ describe("implementation option", () => {
       throw error;
     });
 
-    jest.doMock("node-sass", () => {
-      const error = new Error("Some error node-sass");
-
-      error.code = "MODULE_NOT_FOUND";
-      error.stack = null;
-
-      throw error;
-    });
-
     jest.doMock("sass-embedded", () => {
       const error = new Error("Some error sass-embedded");
 
@@ -504,15 +436,6 @@ describe("implementation option", () => {
   });
 
   it("should not swallow an error when trying to load a sass implementation", async () => {
-    jest.doMock("node-sass", () => {
-      const error = new Error("Some error");
-
-      error.code = "MODULE_NOT_FOUND";
-      error.stack = null;
-
-      throw error;
-    });
-
     jest.doMock("sass", () => {
       const error = new Error("Some error");
 
