@@ -8,7 +8,12 @@ import {
 describe("validate options", () => {
   const tests = {
     implementation: {
-      success: [require("sass-embedded"), require("sass"), "sass-embedded", "sass"],
+      success: [
+        require("sass-embedded"),
+        require("sass"),
+        "sass-embedded",
+        "sass",
+      ],
       failure: [true, () => {}],
     },
     sassOptions: {
