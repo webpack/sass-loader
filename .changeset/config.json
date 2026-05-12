@@ -1,9 +1,6 @@
 {
   "$schema": "https://unpkg.com/@changesets/config@3.1.2/schema.json",
-  "changelog": [
-    "./changelog-generator.mjs",
-    { "repo": "webpack/sass-loader" }
-  ],
+  "changelog": ["./changelog-generator.mjs", { "repo": "webpack/sass-loader" }],
   "fixed": [],
   "linked": [],
   "access": "public",
