@@ -14,24 +14,24 @@ exports[`validate options should throw an error on the "additionalData" option w
 exports[`validate options should throw an error on the "api" option with "legacy" value 1`] = `
 "Invalid options object. Sass Loader has been initialized using an options object that does not match the API schema.
  - options.api should be one of these:
-   "modern" | "modern-compiler"
-   -> Switch between \`modern\` and \`modern-compiler\` API for \`sass\` (\`Dart Sass\`) and \`Sass Embedded\` implementations.
+   "auto" | "modern" | "modern-compiler"
+   -> Switch between \`auto\`, \`modern\` and \`modern-compiler\` API for \`sass\` (\`Dart Sass\`) and \`Sass Embedded\` implementations.
    -> Read more at https://github.com/webpack/sass-loader#sassoptions"
 `;
 
 exports[`validate options should throw an error on the "api" option with "string" value 1`] = `
 "Invalid options object. Sass Loader has been initialized using an options object that does not match the API schema.
  - options.api should be one of these:
-   "modern" | "modern-compiler"
-   -> Switch between \`modern\` and \`modern-compiler\` API for \`sass\` (\`Dart Sass\`) and \`Sass Embedded\` implementations.
+   "auto" | "modern" | "modern-compiler"
+   -> Switch between \`auto\`, \`modern\` and \`modern-compiler\` API for \`sass\` (\`Dart Sass\`) and \`Sass Embedded\` implementations.
    -> Read more at https://github.com/webpack/sass-loader#sassoptions"
 `;
 
 exports[`validate options should throw an error on the "api" option with "true" value 1`] = `
 "Invalid options object. Sass Loader has been initialized using an options object that does not match the API schema.
  - options.api should be one of these:
-   "modern" | "modern-compiler"
-   -> Switch between \`modern\` and \`modern-compiler\` API for \`sass\` (\`Dart Sass\`) and \`Sass Embedded\` implementations.
+   "auto" | "modern" | "modern-compiler"
+   -> Switch between \`auto\`, \`modern\` and \`modern-compiler\` API for \`sass\` (\`Dart Sass\`) and \`Sass Embedded\` implementations.
    -> Read more at https://github.com/webpack/sass-loader#sassoptions"
 `;
 

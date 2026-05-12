@@ -585,11 +585,15 @@ const sassModernCompilers = new WeakMap();
  * Verifies that the implementation and version of Sass is supported by this loader.
  * @param {LoaderContext} loaderContext loader context
  * @param {SassImplementation} implementation sass implementation
- * @param {"modern" | "modern-compiler"} apiType api type
+ * @param {"auto" | "modern" | "modern-compiler" | undefined} apiType api type
  * @returns {SassCompileFunction} compile function
  */
-function getCompileFn(loaderContext, implementation, apiType) {
-  if (apiType === "modern-compiler") {
+function getCompileFn(loaderContext, implementation, apiType = "auto") {
+  if (
+    apiType === "modern-compiler" ||
+    (apiType === "auto" &&
+      typeof implementation.initAsyncCompiler === "function")
+  ) {
     return async (sassOptions) => {
       const webpackCompiler = loaderContext._compiler;
       const { data, ...rest } = sassOptions;
