@@ -55,7 +55,7 @@ exports[`validate options should throw an error on the "sassOptions" option with
 "Invalid options object. Sass Loader has been initialized using an options object that does not match the API schema.
  - options.sassOptions should be one of these:
    object { … } | function
-   -> Options for \`node-sass\` or \`sass\` (\`Dart Sass\`) implementation.
+   -> Options for \`sass\` (\`Dart Sass\`) or \`sass-embedded\` implementation.
    -> Read more at https://github.com/webpack/sass-loader#sassoptions
    Details:
     * options.sassOptions should be an object:
@@ -67,7 +67,7 @@ exports[`validate options should throw an error on the "sassOptions" option with
 "Invalid options object. Sass Loader has been initialized using an options object that does not match the API schema.
  - options.sassOptions should be one of these:
    object { … } | function
-   -> Options for \`node-sass\` or \`sass\` (\`Dart Sass\`) implementation.
+   -> Options for \`sass\` (\`Dart Sass\`) or \`sass-embedded\` implementation.
    -> Read more at https://github.com/webpack/sass-loader#sassoptions
    Details:
     * options.sassOptions should be an object:

@@ -12,10 +12,6 @@ exports[`implementation option 'dart-sass', 'modern-compiler' API: errors 1`] = 
 
 exports[`implementation option 'dart-sass', 'modern-compiler' API: warnings 1`] = `[]`;
 
-exports[`implementation option 'node-sass', 'legacy' API: errors 1`] = `[]`;
-
-exports[`implementation option 'node-sass', 'legacy' API: warnings 1`] = `[]`;
-
 exports[`implementation option 'sass_string', 'legacy' API: errors 1`] = `[]`;
 
 exports[`implementation option 'sass_string', 'legacy' API: warnings 1`] = `[]`;
@@ -43,10 +39,6 @@ exports[`implementation option not specify with modern API: warnings 1`] = `[]`;
 exports[`implementation option not specify with modern-compiler API: errors 1`] = `[]`;
 
 exports[`implementation option not specify with modern-compiler API: warnings 1`] = `[]`;
-
-exports[`implementation option not specify with node-sass: errors 1`] = `[]`;
-
-exports[`implementation option not specify with node-sass: warnings 1`] = `[]`;
 
 exports[`implementation option not specify: errors 1`] = `[]`;
 
