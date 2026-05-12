@@ -1,8 +1,7 @@
-import { createRequire } from "node:module";
-import path from "node:path";
-import url from "node:url";
+"use strict";
 
-const require = createRequire(import.meta.url);
+const path = require("node:path");
+const url = require("node:url");
 
 /** @typedef {import("sass")} Sass */
 /** @typedef {import("sass").StringOptionsWithImporter} SassSassOptions */
@@ -853,7 +852,7 @@ function errorFactory(error) {
   return obj;
 }
 
-export {
+module.exports = {
   errorFactory,
   getCompileFn,
   getModernWebpackImporter,

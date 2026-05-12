@@ -1220,7 +1220,7 @@ exports[`sassOptions option > should work with the \"fatalDeprecations\" option 
 
 exports[`sassOptions option > should work with the \"fatalDeprecations\" option ('dart-sass', 'modern' API, 'sass' syntax) 2`] = `
 [
-  "ModuleBuildError: Module build failed (from ../src/index.js):\\nUsing / for division outside of calc() is deprecated and will be removed in Dart Sass 2.0.0."
+  "ModuleBuildError: Module build failed (from ../src/cjs.js):\\nUsing / for division outside of calc() is deprecated and will be removed in Dart Sass 2.0.0."
 ]
 `;
 
@@ -1230,7 +1230,7 @@ exports[`sassOptions option > should work with the \"fatalDeprecations\" option 
 
 exports[`sassOptions option > should work with the \"fatalDeprecations\" option ('dart-sass', 'modern' API, 'scss' syntax) 2`] = `
 [
-  "ModuleBuildError: Module build failed (from ../src/index.js):\\nUsing / for division outside of calc() is deprecated and will be removed in Dart Sass 2.0.0."
+  "ModuleBuildError: Module build failed (from ../src/cjs.js):\\nUsing / for division outside of calc() is deprecated and will be removed in Dart Sass 2.0.0."
 ]
 `;
 
@@ -1240,7 +1240,7 @@ exports[`sassOptions option > should work with the \"fatalDeprecations\" option 
 
 exports[`sassOptions option > should work with the \"fatalDeprecations\" option ('dart-sass', 'modern-compiler' API, 'sass' syntax) 2`] = `
 [
-  "ModuleBuildError: Module build failed (from ../src/index.js):\\nUsing / for division outside of calc() is deprecated and will be removed in Dart Sass 2.0.0."
+  "ModuleBuildError: Module build failed (from ../src/cjs.js):\\nUsing / for division outside of calc() is deprecated and will be removed in Dart Sass 2.0.0."
 ]
 `;
 
@@ -1250,7 +1250,7 @@ exports[`sassOptions option > should work with the \"fatalDeprecations\" option 
 
 exports[`sassOptions option > should work with the \"fatalDeprecations\" option ('dart-sass', 'modern-compiler' API, 'scss' syntax) 2`] = `
 [
-  "ModuleBuildError: Module build failed (from ../src/index.js):\\nUsing / for division outside of calc() is deprecated and will be removed in Dart Sass 2.0.0."
+  "ModuleBuildError: Module build failed (from ../src/cjs.js):\\nUsing / for division outside of calc() is deprecated and will be removed in Dart Sass 2.0.0."
 ]
 `;
 
@@ -1260,7 +1260,7 @@ exports[`sassOptions option > should work with the \"fatalDeprecations\" option 
 
 exports[`sassOptions option > should work with the \"fatalDeprecations\" option ('sass-embedded', 'modern' API, 'sass' syntax) 2`] = `
 [
-  "ModuleBuildError: Module build failed (from ../src/index.js):\\nUsing / for division outside of calc() is deprecated and will be removed in Dart Sass 2.0.0."
+  "ModuleBuildError: Module build failed (from ../src/cjs.js):\\nUsing / for division outside of calc() is deprecated and will be removed in Dart Sass 2.0.0."
 ]
 `;
 
@@ -1270,7 +1270,7 @@ exports[`sassOptions option > should work with the \"fatalDeprecations\" option 
 
 exports[`sassOptions option > should work with the \"fatalDeprecations\" option ('sass-embedded', 'modern' API, 'scss' syntax) 2`] = `
 [
-  "ModuleBuildError: Module build failed (from ../src/index.js):\\nUsing / for division outside of calc() is deprecated and will be removed in Dart Sass 2.0.0."
+  "ModuleBuildError: Module build failed (from ../src/cjs.js):\\nUsing / for division outside of calc() is deprecated and will be removed in Dart Sass 2.0.0."
 ]
 `;
 
@@ -1280,7 +1280,7 @@ exports[`sassOptions option > should work with the \"fatalDeprecations\" option 
 
 exports[`sassOptions option > should work with the \"fatalDeprecations\" option ('sass-embedded', 'modern-compiler' API, 'sass' syntax) 2`] = `
 [
-  "ModuleBuildError: Module build failed (from ../src/index.js):\\nUsing / for division outside of calc() is deprecated and will be removed in Dart Sass 2.0.0."
+  "ModuleBuildError: Module build failed (from ../src/cjs.js):\\nUsing / for division outside of calc() is deprecated and will be removed in Dart Sass 2.0.0."
 ]
 `;
 
@@ -1290,7 +1290,7 @@ exports[`sassOptions option > should work with the \"fatalDeprecations\" option 
 
 exports[`sassOptions option > should work with the \"fatalDeprecations\" option ('sass-embedded', 'modern-compiler' API, 'scss' syntax) 2`] = `
 [
-  "ModuleBuildError: Module build failed (from ../src/index.js):\\nUsing / for division outside of calc() is deprecated and will be removed in Dart Sass 2.0.0."
+  "ModuleBuildError: Module build failed (from ../src/cjs.js):\\nUsing / for division outside of calc() is deprecated and will be removed in Dart Sass 2.0.0."
 ]
 `;
 

@@ -17,15 +17,14 @@
   },
   "license": "MIT",
   "author": "J. Tangelder",
-  "main": "dist/cjs.cjs",
+  "main": "dist/cjs.js",
   "files": [
     "dist"
   ],
   "scripts": {
-    "start": "npm run build -- -w",
     "clean": "del-cli dist",
     "prebuild": "npm run clean",
-    "build": "babel src -d dist --copy-files --extensions \".js\" && node -e \"require('node:fs').rmSync('dist/package.json', { force: true })\"",
+    "build": "node -e \"require('node:fs').cpSync('src', 'dist', { recursive: true })\"",
     "commitlint": "commitlint --from=main",
     "security": "npm audit --production",
     "lint:prettier": "prettier --cache --list-different .",
@@ -46,9 +45,6 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "@babel/cli": "^7.28.6",
-    "@babel/core": "^7.28.6",
-    "@babel/preset-env": "^7.28.6",
     "@commitlint/cli": "^19.8.1",
     "@commitlint/config-conventional": "^19.8.1",
     "bootstrap-sass": "^3.4.1",

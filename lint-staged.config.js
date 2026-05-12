@@ -1,3 +1,5 @@
+"use strict";
+
 module.exports = {
   "*": [
     "prettier --cache --write --ignore-unknown",

@@ -21,7 +21,7 @@ module.exports = {
             },
           },
           {
-            loader: require.resolve("../../dist/cjs.cjs"),
+            loader: require.resolve("../../dist/cjs.js"),
             options: {
               api: process.env.SASS_API || "modern-compiler",
               implementation: process.env.SASS_IMPLEMENTATION

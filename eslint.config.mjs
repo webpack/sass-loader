@@ -3,7 +3,15 @@ import configs from "eslint-config-webpack/configs.js";
 
 export default defineConfig([
   {
-    extends: [configs["recommended-dirty"]],
+    extends: [configs["recommended-commonjs"]],
+  },
+  {
+    // The `test/` tree is published with `"type": "module"` so .js files
+    // there are loaded as ESM.
+    files: ["test/**/*.js"],
+    languageOptions: {
+      sourceType: "module",
+    },
   },
   {
     // Tests intentionally rely on experimental `node:test` features (snapshot
@@ -19,6 +27,11 @@ export default defineConfig([
       "test/**/*.cts",
     ],
     rules: {
+      "import/extensions": [
+        "error",
+        "always",
+        { ignorePackages: true, checkTypeImports: true },
+      ],
       "import/no-extraneous-dependencies": "off",
       "n/no-extraneous-import": "off",
       "n/no-extraneous-require": "off",
