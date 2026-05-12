@@ -1,7 +1,5 @@
 import path from "node:path";
 
-import globImporter from "node-sass-glob-importer";
-
 import {
   close,
   compile,
@@ -317,32 +315,6 @@ describe("sassOptions option", () => {
           const stats = await compile(compiler);
           const codeFromBundle = getCodeFromBundle(stats, compiler);
 
-          expect(codeFromBundle.css).toMatchSnapshot("css");
-          expect(getWarnings(stats)).toMatchSnapshot("warnings");
-          expect(getErrors(stats)).toMatchSnapshot("errors");
-
-          await close(compiler);
-        });
-      }
-
-      const isSassEmbedded = implementationName === "sass-embedded";
-
-      if (!isModernAPI && !isSassEmbedded) {
-        it(`should work with the "importer" as a array of functions option - glob ('${implementationName}', '${api}' API, '${syntax}' syntax)`, async () => {
-          const testId = getTestId("glob-importer", syntax);
-          const options = {
-            implementation,
-            api,
-            sassOptions: {
-              importer: [globImporter()],
-            },
-          };
-          const compiler = getCompiler(testId, { loader: { options } });
-          const stats = await compile(compiler);
-          const codeFromBundle = getCodeFromBundle(stats, compiler);
-          const codeFromSass = await getCodeFromSass(testId, options);
-
-          expect(codeFromBundle.css).toBe(codeFromSass.css);
           expect(codeFromBundle.css).toMatchSnapshot("css");
           expect(getWarnings(stats)).toMatchSnapshot("warnings");
           expect(getErrors(stats)).toMatchSnapshot("errors");

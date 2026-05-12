@@ -42,8 +42,6 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: "npm"
 
-      - run: npm uninstall node-sass
-
       - name: Install dependencies
         run: npm ci
 
@@ -90,16 +88,8 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: "npm"
 
-      - name: Install webpack ${{ matrix.webpack-version }}
-        if: matrix.node-version == '22.x' || matrix.node-version == '24.x'
-        run: npm uninstall node-sass
-
       - name: Install dependencies
         run: npm ci
-
-      - name: Install webpack ${{ matrix.webpack-version }}
-        if: matrix.webpack-version != 'latest'
-        run: npm i webpack@${{ matrix.webpack-version }}
 
       - name: Run tests for webpack version ${{ matrix.webpack-version }}
         run: npm run test:coverage -- --ci

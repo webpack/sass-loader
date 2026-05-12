@@ -132,7 +132,7 @@ describe("loader", () => {
         await close(compiler);
       });
 
-      if (syntax === "sass" && implementationName !== "node-sass") {
+      if (syntax === "sass") {
         it(`should emit good formatted warning ('${implementationName}', '${api}' API, '${syntax}' syntax)`, async () => {
           const testId = getTestId("broken", syntax);
           const options = {

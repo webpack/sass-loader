@@ -1,4 +1,3 @@
-/* eslint "import/no-unresolved": ["error", { ignore: ["node-sass"] }] */
 import {
   compile,
   getCompiler,
@@ -11,13 +10,9 @@ describe("validate options", () => {
     implementation: {
       success: [
         require("sass-embedded"),
-
         require("sass"),
-
-        require("node-sass"),
         "sass-embedded",
         "sass",
-        "node-sass",
       ],
       failure: [true, () => {}],
     },

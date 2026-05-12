@@ -16,7 +16,7 @@ import {
 /** @typedef {any} EXPECTED_ANY */
 
 /**
- * The sass-loader makes node-sass and dart-sass available to webpack modules.
+ * The sass-loader makes dart-sass and sass-embedded available to webpack modules.
  * @this {LoaderContext<{ string: EXPECTED_ANY }>}
  * @param {string} content content
  */
@@ -36,13 +36,8 @@ async function loader(content) {
 
   const useSourceMap =
     typeof options.sourceMap === "boolean" ? options.sourceMap : this.sourceMap;
-  // Use `legacy` for `node-sass` and `modern` for `dart-sass` and `sass-embedded`
-  const apiType =
-    typeof implementation.compileStringAsync === "undefined"
-      ? "legacy"
-      : typeof options.api === "undefined"
-        ? "modern"
-        : options.api;
+  // Use `modern` for `dart-sass` and `sass-embedded` by default
+  const apiType = typeof options.api === "undefined" ? "modern" : options.api;
   const sassOptions = await getSassOptions(
     this,
     options,
@@ -95,7 +90,7 @@ async function loader(content) {
     }
     // Legacy API
     else if (typeof error.file !== "undefined") {
-      // `node-sass` returns POSIX paths
+      // `sass` returns POSIX paths
       this.addDependency(path.normalize(error.file));
     }
 
