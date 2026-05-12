@@ -15,9 +15,9 @@
       ]
     },
     "api": {
-      "description": "Switch between old and modern API for `sass` (`Dart Sass`) and `Sass Embedded` implementations.",
+      "description": "Switch between `modern` and `modern-compiler` API for `sass` (`Dart Sass`) and `Sass Embedded` implementations.",
       "link": "https://github.com/webpack/sass-loader#sassoptions",
-      "enum": ["legacy", "modern", "modern-compiler"]
+      "enum": ["modern", "modern-compiler"]
     },
     "sassOptions": {
       "description": "Options for `sass` (`Dart Sass`) or `sass-embedded` implementation.",

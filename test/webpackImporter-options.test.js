@@ -18,11 +18,6 @@ describe("webpackImporter option", () => {
     for (const syntax of syntaxStyles) {
       const { name: implementationName, api, implementation } = item;
 
-      // TODO fix me https://github.com/webpack/sass-loader/issues/774
-      if (api === "modern" || api === "modern-compiler") {
-        continue;
-      }
-
       it(`not specify ('${implementationName}', '${api}' API, '${syntax}' syntax)`, async () => {
         const testId = getTestId("language", syntax);
         const options = {

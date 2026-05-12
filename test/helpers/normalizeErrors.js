@@ -19,16 +19,9 @@ function removeCWD(str) {
 
 export default (errors, needVerbose) =>
   errors
-    .filter((error) => {
-      if (
-        error.message.includes("Sass @import rules are deprecated") ||
-        error.message.includes("The legacy JS API is deprecated")
-      ) {
-        return false;
-      }
-
-      return true;
-    })
+    .filter(
+      (error) => !error.message.includes("Sass @import rules are deprecated"),
+    )
     .map((error) =>
       removeCWD(
         needVerbose

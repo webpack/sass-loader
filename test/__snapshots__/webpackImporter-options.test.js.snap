@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
-exports[`webpackImporter option false ('dart-sass', 'legacy' API, 'sass' syntax): css 1`] = `
+exports[`webpackImporter option false ('dart-sass', 'modern' API, 'sass' syntax): css 1`] = `
 "@charset "UTF-8";
 @import "./file.css";
 body {
@@ -56,11 +56,11 @@ nav a {
 }"
 `;
 
-exports[`webpackImporter option false ('dart-sass', 'legacy' API, 'sass' syntax): errors 1`] = `[]`;
+exports[`webpackImporter option false ('dart-sass', 'modern' API, 'sass' syntax): errors 1`] = `[]`;
 
-exports[`webpackImporter option false ('dart-sass', 'legacy' API, 'sass' syntax): warnings 1`] = `[]`;
+exports[`webpackImporter option false ('dart-sass', 'modern' API, 'sass' syntax): warnings 1`] = `[]`;
 
-exports[`webpackImporter option false ('dart-sass', 'legacy' API, 'scss' syntax): css 1`] = `
+exports[`webpackImporter option false ('dart-sass', 'modern' API, 'scss' syntax): css 1`] = `
 "@charset "UTF-8";
 @import "./file.css";
 body {
@@ -98,113 +98,11 @@ nav a {
 }"
 `;
 
-exports[`webpackImporter option false ('dart-sass', 'legacy' API, 'scss' syntax): errors 1`] = `[]`;
+exports[`webpackImporter option false ('dart-sass', 'modern' API, 'scss' syntax): errors 1`] = `[]`;
 
-exports[`webpackImporter option false ('dart-sass', 'legacy' API, 'scss' syntax): warnings 1`] = `[]`;
+exports[`webpackImporter option false ('dart-sass', 'modern' API, 'scss' syntax): warnings 1`] = `[]`;
 
-exports[`webpackImporter option false ('sass-embedded', 'legacy' API, 'sass' syntax): css 1`] = `
-"@charset "UTF-8";
-@import "./file.css";
-body {
-  font: 100% Helvetica, sans-serif;
-  color: #333;
-}
-
-nav ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-nav li {
-  display: inline-block;
-}
-nav a {
-  display: block;
-  padding: 6px 12px;
-  text-decoration: none;
-}
-
-.box {
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  -ms-border-radius: 10px;
-  border-radius: 10px;
-}
-
-.message, .warning, .error, .success {
-  border: 1px solid #ccc;
-  padding: 10px;
-  color: #333;
-}
-
-.success {
-  border-color: green;
-}
-
-.error {
-  border-color: red;
-}
-
-.warning {
-  border-color: yellow;
-}
-
-.foo:before {
-  content: "\\e0c6";
-}
-
-.bar:before {
-  content: "∑";
-}"
-`;
-
-exports[`webpackImporter option false ('sass-embedded', 'legacy' API, 'sass' syntax): errors 1`] = `[]`;
-
-exports[`webpackImporter option false ('sass-embedded', 'legacy' API, 'sass' syntax): warnings 1`] = `[]`;
-
-exports[`webpackImporter option false ('sass-embedded', 'legacy' API, 'scss' syntax): css 1`] = `
-"@charset "UTF-8";
-@import "./file.css";
-body {
-  font: 100% Helvetica, sans-serif;
-  color: #333;
-}
-
-nav ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-nav li {
-  display: inline-block;
-}
-nav a {
-  display: block;
-  padding: 6px 12px;
-  text-decoration: none;
-}
-
-.box {
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  -ms-border-radius: 10px;
-  border-radius: 10px;
-}
-
-.foo:before {
-  content: "\\e0c6";
-}
-
-.bar:before {
-  content: "∑";
-}"
-`;
-
-exports[`webpackImporter option false ('sass-embedded', 'legacy' API, 'scss' syntax): errors 1`] = `[]`;
-
-exports[`webpackImporter option false ('sass-embedded', 'legacy' API, 'scss' syntax): warnings 1`] = `[]`;
-
-exports[`webpackImporter option not specify ('dart-sass', 'legacy' API, 'sass' syntax): css 1`] = `
+exports[`webpackImporter option false ('dart-sass', 'modern-compiler' API, 'sass' syntax): css 1`] = `
 "@charset "UTF-8";
 @import "./file.css";
 body {
@@ -260,11 +158,11 @@ nav a {
 }"
 `;
 
-exports[`webpackImporter option not specify ('dart-sass', 'legacy' API, 'sass' syntax): errors 1`] = `[]`;
+exports[`webpackImporter option false ('dart-sass', 'modern-compiler' API, 'sass' syntax): errors 1`] = `[]`;
 
-exports[`webpackImporter option not specify ('dart-sass', 'legacy' API, 'sass' syntax): warnings 1`] = `[]`;
+exports[`webpackImporter option false ('dart-sass', 'modern-compiler' API, 'sass' syntax): warnings 1`] = `[]`;
 
-exports[`webpackImporter option not specify ('dart-sass', 'legacy' API, 'scss' syntax): css 1`] = `
+exports[`webpackImporter option false ('dart-sass', 'modern-compiler' API, 'scss' syntax): css 1`] = `
 "@charset "UTF-8";
 @import "./file.css";
 body {
@@ -302,113 +200,11 @@ nav a {
 }"
 `;
 
-exports[`webpackImporter option not specify ('dart-sass', 'legacy' API, 'scss' syntax): errors 1`] = `[]`;
+exports[`webpackImporter option false ('dart-sass', 'modern-compiler' API, 'scss' syntax): errors 1`] = `[]`;
 
-exports[`webpackImporter option not specify ('dart-sass', 'legacy' API, 'scss' syntax): warnings 1`] = `[]`;
+exports[`webpackImporter option false ('dart-sass', 'modern-compiler' API, 'scss' syntax): warnings 1`] = `[]`;
 
-exports[`webpackImporter option not specify ('sass-embedded', 'legacy' API, 'sass' syntax): css 1`] = `
-"@charset "UTF-8";
-@import "./file.css";
-body {
-  font: 100% Helvetica, sans-serif;
-  color: #333;
-}
-
-nav ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-nav li {
-  display: inline-block;
-}
-nav a {
-  display: block;
-  padding: 6px 12px;
-  text-decoration: none;
-}
-
-.box {
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  -ms-border-radius: 10px;
-  border-radius: 10px;
-}
-
-.message, .warning, .error, .success {
-  border: 1px solid #ccc;
-  padding: 10px;
-  color: #333;
-}
-
-.success {
-  border-color: green;
-}
-
-.error {
-  border-color: red;
-}
-
-.warning {
-  border-color: yellow;
-}
-
-.foo:before {
-  content: "\\e0c6";
-}
-
-.bar:before {
-  content: "∑";
-}"
-`;
-
-exports[`webpackImporter option not specify ('sass-embedded', 'legacy' API, 'sass' syntax): errors 1`] = `[]`;
-
-exports[`webpackImporter option not specify ('sass-embedded', 'legacy' API, 'sass' syntax): warnings 1`] = `[]`;
-
-exports[`webpackImporter option not specify ('sass-embedded', 'legacy' API, 'scss' syntax): css 1`] = `
-"@charset "UTF-8";
-@import "./file.css";
-body {
-  font: 100% Helvetica, sans-serif;
-  color: #333;
-}
-
-nav ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-nav li {
-  display: inline-block;
-}
-nav a {
-  display: block;
-  padding: 6px 12px;
-  text-decoration: none;
-}
-
-.box {
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  -ms-border-radius: 10px;
-  border-radius: 10px;
-}
-
-.foo:before {
-  content: "\\e0c6";
-}
-
-.bar:before {
-  content: "∑";
-}"
-`;
-
-exports[`webpackImporter option not specify ('sass-embedded', 'legacy' API, 'scss' syntax): errors 1`] = `[]`;
-
-exports[`webpackImporter option not specify ('sass-embedded', 'legacy' API, 'scss' syntax): warnings 1`] = `[]`;
-
-exports[`webpackImporter option true ('dart-sass', 'legacy' API, 'sass' syntax): css 1`] = `
+exports[`webpackImporter option false ('sass-embedded', 'modern' API, 'sass' syntax): css 1`] = `
 "@charset "UTF-8";
 @import "./file.css";
 body {
@@ -464,11 +260,11 @@ nav a {
 }"
 `;
 
-exports[`webpackImporter option true ('dart-sass', 'legacy' API, 'sass' syntax): errors 1`] = `[]`;
+exports[`webpackImporter option false ('sass-embedded', 'modern' API, 'sass' syntax): errors 1`] = `[]`;
 
-exports[`webpackImporter option true ('dart-sass', 'legacy' API, 'sass' syntax): warnings 1`] = `[]`;
+exports[`webpackImporter option false ('sass-embedded', 'modern' API, 'sass' syntax): warnings 1`] = `[]`;
 
-exports[`webpackImporter option true ('dart-sass', 'legacy' API, 'scss' syntax): css 1`] = `
+exports[`webpackImporter option false ('sass-embedded', 'modern' API, 'scss' syntax): css 1`] = `
 "@charset "UTF-8";
 @import "./file.css";
 body {
@@ -506,11 +302,11 @@ nav a {
 }"
 `;
 
-exports[`webpackImporter option true ('dart-sass', 'legacy' API, 'scss' syntax): errors 1`] = `[]`;
+exports[`webpackImporter option false ('sass-embedded', 'modern' API, 'scss' syntax): errors 1`] = `[]`;
 
-exports[`webpackImporter option true ('dart-sass', 'legacy' API, 'scss' syntax): warnings 1`] = `[]`;
+exports[`webpackImporter option false ('sass-embedded', 'modern' API, 'scss' syntax): warnings 1`] = `[]`;
 
-exports[`webpackImporter option true ('sass-embedded', 'legacy' API, 'sass' syntax): css 1`] = `
+exports[`webpackImporter option false ('sass-embedded', 'modern-compiler' API, 'sass' syntax): css 1`] = `
 "@charset "UTF-8";
 @import "./file.css";
 body {
@@ -566,11 +362,11 @@ nav a {
 }"
 `;
 
-exports[`webpackImporter option true ('sass-embedded', 'legacy' API, 'sass' syntax): errors 1`] = `[]`;
+exports[`webpackImporter option false ('sass-embedded', 'modern-compiler' API, 'sass' syntax): errors 1`] = `[]`;
 
-exports[`webpackImporter option true ('sass-embedded', 'legacy' API, 'sass' syntax): warnings 1`] = `[]`;
+exports[`webpackImporter option false ('sass-embedded', 'modern-compiler' API, 'sass' syntax): warnings 1`] = `[]`;
 
-exports[`webpackImporter option true ('sass-embedded', 'legacy' API, 'scss' syntax): css 1`] = `
+exports[`webpackImporter option false ('sass-embedded', 'modern-compiler' API, 'scss' syntax): css 1`] = `
 "@charset "UTF-8";
 @import "./file.css";
 body {
@@ -608,6 +404,822 @@ nav a {
 }"
 `;
 
-exports[`webpackImporter option true ('sass-embedded', 'legacy' API, 'scss' syntax): errors 1`] = `[]`;
+exports[`webpackImporter option false ('sass-embedded', 'modern-compiler' API, 'scss' syntax): errors 1`] = `[]`;
 
-exports[`webpackImporter option true ('sass-embedded', 'legacy' API, 'scss' syntax): warnings 1`] = `[]`;
+exports[`webpackImporter option false ('sass-embedded', 'modern-compiler' API, 'scss' syntax): warnings 1`] = `[]`;
+
+exports[`webpackImporter option not specify ('dart-sass', 'modern' API, 'sass' syntax): css 1`] = `
+"@charset "UTF-8";
+@import "./file.css";
+body {
+  font: 100% Helvetica, sans-serif;
+  color: #333;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+nav li {
+  display: inline-block;
+}
+nav a {
+  display: block;
+  padding: 6px 12px;
+  text-decoration: none;
+}
+
+.box {
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  border-radius: 10px;
+}
+
+.message, .warning, .error, .success {
+  border: 1px solid #ccc;
+  padding: 10px;
+  color: #333;
+}
+
+.success {
+  border-color: green;
+}
+
+.error {
+  border-color: red;
+}
+
+.warning {
+  border-color: yellow;
+}
+
+.foo:before {
+  content: "\\e0c6";
+}
+
+.bar:before {
+  content: "∑";
+}"
+`;
+
+exports[`webpackImporter option not specify ('dart-sass', 'modern' API, 'sass' syntax): errors 1`] = `[]`;
+
+exports[`webpackImporter option not specify ('dart-sass', 'modern' API, 'sass' syntax): warnings 1`] = `[]`;
+
+exports[`webpackImporter option not specify ('dart-sass', 'modern' API, 'scss' syntax): css 1`] = `
+"@charset "UTF-8";
+@import "./file.css";
+body {
+  font: 100% Helvetica, sans-serif;
+  color: #333;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+nav li {
+  display: inline-block;
+}
+nav a {
+  display: block;
+  padding: 6px 12px;
+  text-decoration: none;
+}
+
+.box {
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  border-radius: 10px;
+}
+
+.foo:before {
+  content: "\\e0c6";
+}
+
+.bar:before {
+  content: "∑";
+}"
+`;
+
+exports[`webpackImporter option not specify ('dart-sass', 'modern' API, 'scss' syntax): errors 1`] = `[]`;
+
+exports[`webpackImporter option not specify ('dart-sass', 'modern' API, 'scss' syntax): warnings 1`] = `[]`;
+
+exports[`webpackImporter option not specify ('dart-sass', 'modern-compiler' API, 'sass' syntax): css 1`] = `
+"@charset "UTF-8";
+@import "./file.css";
+body {
+  font: 100% Helvetica, sans-serif;
+  color: #333;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+nav li {
+  display: inline-block;
+}
+nav a {
+  display: block;
+  padding: 6px 12px;
+  text-decoration: none;
+}
+
+.box {
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  border-radius: 10px;
+}
+
+.message, .warning, .error, .success {
+  border: 1px solid #ccc;
+  padding: 10px;
+  color: #333;
+}
+
+.success {
+  border-color: green;
+}
+
+.error {
+  border-color: red;
+}
+
+.warning {
+  border-color: yellow;
+}
+
+.foo:before {
+  content: "\\e0c6";
+}
+
+.bar:before {
+  content: "∑";
+}"
+`;
+
+exports[`webpackImporter option not specify ('dart-sass', 'modern-compiler' API, 'sass' syntax): errors 1`] = `[]`;
+
+exports[`webpackImporter option not specify ('dart-sass', 'modern-compiler' API, 'sass' syntax): warnings 1`] = `[]`;
+
+exports[`webpackImporter option not specify ('dart-sass', 'modern-compiler' API, 'scss' syntax): css 1`] = `
+"@charset "UTF-8";
+@import "./file.css";
+body {
+  font: 100% Helvetica, sans-serif;
+  color: #333;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+nav li {
+  display: inline-block;
+}
+nav a {
+  display: block;
+  padding: 6px 12px;
+  text-decoration: none;
+}
+
+.box {
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  border-radius: 10px;
+}
+
+.foo:before {
+  content: "\\e0c6";
+}
+
+.bar:before {
+  content: "∑";
+}"
+`;
+
+exports[`webpackImporter option not specify ('dart-sass', 'modern-compiler' API, 'scss' syntax): errors 1`] = `[]`;
+
+exports[`webpackImporter option not specify ('dart-sass', 'modern-compiler' API, 'scss' syntax): warnings 1`] = `[]`;
+
+exports[`webpackImporter option not specify ('sass-embedded', 'modern' API, 'sass' syntax): css 1`] = `
+"@charset "UTF-8";
+@import "./file.css";
+body {
+  font: 100% Helvetica, sans-serif;
+  color: #333;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+nav li {
+  display: inline-block;
+}
+nav a {
+  display: block;
+  padding: 6px 12px;
+  text-decoration: none;
+}
+
+.box {
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  border-radius: 10px;
+}
+
+.message, .warning, .error, .success {
+  border: 1px solid #ccc;
+  padding: 10px;
+  color: #333;
+}
+
+.success {
+  border-color: green;
+}
+
+.error {
+  border-color: red;
+}
+
+.warning {
+  border-color: yellow;
+}
+
+.foo:before {
+  content: "\\e0c6";
+}
+
+.bar:before {
+  content: "∑";
+}"
+`;
+
+exports[`webpackImporter option not specify ('sass-embedded', 'modern' API, 'sass' syntax): errors 1`] = `[]`;
+
+exports[`webpackImporter option not specify ('sass-embedded', 'modern' API, 'sass' syntax): warnings 1`] = `[]`;
+
+exports[`webpackImporter option not specify ('sass-embedded', 'modern' API, 'scss' syntax): css 1`] = `
+"@charset "UTF-8";
+@import "./file.css";
+body {
+  font: 100% Helvetica, sans-serif;
+  color: #333;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+nav li {
+  display: inline-block;
+}
+nav a {
+  display: block;
+  padding: 6px 12px;
+  text-decoration: none;
+}
+
+.box {
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  border-radius: 10px;
+}
+
+.foo:before {
+  content: "\\e0c6";
+}
+
+.bar:before {
+  content: "∑";
+}"
+`;
+
+exports[`webpackImporter option not specify ('sass-embedded', 'modern' API, 'scss' syntax): errors 1`] = `[]`;
+
+exports[`webpackImporter option not specify ('sass-embedded', 'modern' API, 'scss' syntax): warnings 1`] = `[]`;
+
+exports[`webpackImporter option not specify ('sass-embedded', 'modern-compiler' API, 'sass' syntax): css 1`] = `
+"@charset "UTF-8";
+@import "./file.css";
+body {
+  font: 100% Helvetica, sans-serif;
+  color: #333;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+nav li {
+  display: inline-block;
+}
+nav a {
+  display: block;
+  padding: 6px 12px;
+  text-decoration: none;
+}
+
+.box {
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  border-radius: 10px;
+}
+
+.message, .warning, .error, .success {
+  border: 1px solid #ccc;
+  padding: 10px;
+  color: #333;
+}
+
+.success {
+  border-color: green;
+}
+
+.error {
+  border-color: red;
+}
+
+.warning {
+  border-color: yellow;
+}
+
+.foo:before {
+  content: "\\e0c6";
+}
+
+.bar:before {
+  content: "∑";
+}"
+`;
+
+exports[`webpackImporter option not specify ('sass-embedded', 'modern-compiler' API, 'sass' syntax): errors 1`] = `[]`;
+
+exports[`webpackImporter option not specify ('sass-embedded', 'modern-compiler' API, 'sass' syntax): warnings 1`] = `[]`;
+
+exports[`webpackImporter option not specify ('sass-embedded', 'modern-compiler' API, 'scss' syntax): css 1`] = `
+"@charset "UTF-8";
+@import "./file.css";
+body {
+  font: 100% Helvetica, sans-serif;
+  color: #333;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+nav li {
+  display: inline-block;
+}
+nav a {
+  display: block;
+  padding: 6px 12px;
+  text-decoration: none;
+}
+
+.box {
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  border-radius: 10px;
+}
+
+.foo:before {
+  content: "\\e0c6";
+}
+
+.bar:before {
+  content: "∑";
+}"
+`;
+
+exports[`webpackImporter option not specify ('sass-embedded', 'modern-compiler' API, 'scss' syntax): errors 1`] = `[]`;
+
+exports[`webpackImporter option not specify ('sass-embedded', 'modern-compiler' API, 'scss' syntax): warnings 1`] = `[]`;
+
+exports[`webpackImporter option true ('dart-sass', 'modern' API, 'sass' syntax): css 1`] = `
+"@charset "UTF-8";
+@import "./file.css";
+body {
+  font: 100% Helvetica, sans-serif;
+  color: #333;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+nav li {
+  display: inline-block;
+}
+nav a {
+  display: block;
+  padding: 6px 12px;
+  text-decoration: none;
+}
+
+.box {
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  border-radius: 10px;
+}
+
+.message, .warning, .error, .success {
+  border: 1px solid #ccc;
+  padding: 10px;
+  color: #333;
+}
+
+.success {
+  border-color: green;
+}
+
+.error {
+  border-color: red;
+}
+
+.warning {
+  border-color: yellow;
+}
+
+.foo:before {
+  content: "\\e0c6";
+}
+
+.bar:before {
+  content: "∑";
+}"
+`;
+
+exports[`webpackImporter option true ('dart-sass', 'modern' API, 'sass' syntax): errors 1`] = `[]`;
+
+exports[`webpackImporter option true ('dart-sass', 'modern' API, 'sass' syntax): warnings 1`] = `[]`;
+
+exports[`webpackImporter option true ('dart-sass', 'modern' API, 'scss' syntax): css 1`] = `
+"@charset "UTF-8";
+@import "./file.css";
+body {
+  font: 100% Helvetica, sans-serif;
+  color: #333;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+nav li {
+  display: inline-block;
+}
+nav a {
+  display: block;
+  padding: 6px 12px;
+  text-decoration: none;
+}
+
+.box {
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  border-radius: 10px;
+}
+
+.foo:before {
+  content: "\\e0c6";
+}
+
+.bar:before {
+  content: "∑";
+}"
+`;
+
+exports[`webpackImporter option true ('dart-sass', 'modern' API, 'scss' syntax): errors 1`] = `[]`;
+
+exports[`webpackImporter option true ('dart-sass', 'modern' API, 'scss' syntax): warnings 1`] = `[]`;
+
+exports[`webpackImporter option true ('dart-sass', 'modern-compiler' API, 'sass' syntax): css 1`] = `
+"@charset "UTF-8";
+@import "./file.css";
+body {
+  font: 100% Helvetica, sans-serif;
+  color: #333;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+nav li {
+  display: inline-block;
+}
+nav a {
+  display: block;
+  padding: 6px 12px;
+  text-decoration: none;
+}
+
+.box {
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  border-radius: 10px;
+}
+
+.message, .warning, .error, .success {
+  border: 1px solid #ccc;
+  padding: 10px;
+  color: #333;
+}
+
+.success {
+  border-color: green;
+}
+
+.error {
+  border-color: red;
+}
+
+.warning {
+  border-color: yellow;
+}
+
+.foo:before {
+  content: "\\e0c6";
+}
+
+.bar:before {
+  content: "∑";
+}"
+`;
+
+exports[`webpackImporter option true ('dart-sass', 'modern-compiler' API, 'sass' syntax): errors 1`] = `[]`;
+
+exports[`webpackImporter option true ('dart-sass', 'modern-compiler' API, 'sass' syntax): warnings 1`] = `[]`;
+
+exports[`webpackImporter option true ('dart-sass', 'modern-compiler' API, 'scss' syntax): css 1`] = `
+"@charset "UTF-8";
+@import "./file.css";
+body {
+  font: 100% Helvetica, sans-serif;
+  color: #333;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+nav li {
+  display: inline-block;
+}
+nav a {
+  display: block;
+  padding: 6px 12px;
+  text-decoration: none;
+}
+
+.box {
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  border-radius: 10px;
+}
+
+.foo:before {
+  content: "\\e0c6";
+}
+
+.bar:before {
+  content: "∑";
+}"
+`;
+
+exports[`webpackImporter option true ('dart-sass', 'modern-compiler' API, 'scss' syntax): errors 1`] = `[]`;
+
+exports[`webpackImporter option true ('dart-sass', 'modern-compiler' API, 'scss' syntax): warnings 1`] = `[]`;
+
+exports[`webpackImporter option true ('sass-embedded', 'modern' API, 'sass' syntax): css 1`] = `
+"@charset "UTF-8";
+@import "./file.css";
+body {
+  font: 100% Helvetica, sans-serif;
+  color: #333;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+nav li {
+  display: inline-block;
+}
+nav a {
+  display: block;
+  padding: 6px 12px;
+  text-decoration: none;
+}
+
+.box {
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  border-radius: 10px;
+}
+
+.message, .warning, .error, .success {
+  border: 1px solid #ccc;
+  padding: 10px;
+  color: #333;
+}
+
+.success {
+  border-color: green;
+}
+
+.error {
+  border-color: red;
+}
+
+.warning {
+  border-color: yellow;
+}
+
+.foo:before {
+  content: "\\e0c6";
+}
+
+.bar:before {
+  content: "∑";
+}"
+`;
+
+exports[`webpackImporter option true ('sass-embedded', 'modern' API, 'sass' syntax): errors 1`] = `[]`;
+
+exports[`webpackImporter option true ('sass-embedded', 'modern' API, 'sass' syntax): warnings 1`] = `[]`;
+
+exports[`webpackImporter option true ('sass-embedded', 'modern' API, 'scss' syntax): css 1`] = `
+"@charset "UTF-8";
+@import "./file.css";
+body {
+  font: 100% Helvetica, sans-serif;
+  color: #333;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+nav li {
+  display: inline-block;
+}
+nav a {
+  display: block;
+  padding: 6px 12px;
+  text-decoration: none;
+}
+
+.box {
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  border-radius: 10px;
+}
+
+.foo:before {
+  content: "\\e0c6";
+}
+
+.bar:before {
+  content: "∑";
+}"
+`;
+
+exports[`webpackImporter option true ('sass-embedded', 'modern' API, 'scss' syntax): errors 1`] = `[]`;
+
+exports[`webpackImporter option true ('sass-embedded', 'modern' API, 'scss' syntax): warnings 1`] = `[]`;
+
+exports[`webpackImporter option true ('sass-embedded', 'modern-compiler' API, 'sass' syntax): css 1`] = `
+"@charset "UTF-8";
+@import "./file.css";
+body {
+  font: 100% Helvetica, sans-serif;
+  color: #333;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+nav li {
+  display: inline-block;
+}
+nav a {
+  display: block;
+  padding: 6px 12px;
+  text-decoration: none;
+}
+
+.box {
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  border-radius: 10px;
+}
+
+.message, .warning, .error, .success {
+  border: 1px solid #ccc;
+  padding: 10px;
+  color: #333;
+}
+
+.success {
+  border-color: green;
+}
+
+.error {
+  border-color: red;
+}
+
+.warning {
+  border-color: yellow;
+}
+
+.foo:before {
+  content: "\\e0c6";
+}
+
+.bar:before {
+  content: "∑";
+}"
+`;
+
+exports[`webpackImporter option true ('sass-embedded', 'modern-compiler' API, 'sass' syntax): errors 1`] = `[]`;
+
+exports[`webpackImporter option true ('sass-embedded', 'modern-compiler' API, 'sass' syntax): warnings 1`] = `[]`;
+
+exports[`webpackImporter option true ('sass-embedded', 'modern-compiler' API, 'scss' syntax): css 1`] = `
+"@charset "UTF-8";
+@import "./file.css";
+body {
+  font: 100% Helvetica, sans-serif;
+  color: #333;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+nav li {
+  display: inline-block;
+}
+nav a {
+  display: block;
+  padding: 6px 12px;
+  text-decoration: none;
+}
+
+.box {
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  border-radius: 10px;
+}
+
+.foo:before {
+  content: "\\e0c6";
+}
+
+.bar:before {
+  content: "∑";
+}"
+`;
+
+exports[`webpackImporter option true ('sass-embedded', 'modern-compiler' API, 'scss' syntax): errors 1`] = `[]`;
+
+exports[`webpackImporter option true ('sass-embedded', 'modern-compiler' API, 'scss' syntax): warnings 1`] = `[]`;
