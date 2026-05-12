@@ -20,6 +20,14 @@ exports[`implementation option 'sass-embedded', 'modern-compiler' API: errors 1`
 
 exports[`implementation option 'sass-embedded', 'modern-compiler' API: warnings 1`] = `[]`;
 
+exports[`implementation option auto API falls back to modern when initAsyncCompiler is absent: errors 1`] = `[]`;
+
+exports[`implementation option auto API falls back to modern when initAsyncCompiler is absent: warnings 1`] = `[]`;
+
+exports[`implementation option not specify with auto API: errors 1`] = `[]`;
+
+exports[`implementation option not specify with auto API: warnings 1`] = `[]`;
+
 exports[`implementation option not specify with modern API: errors 1`] = `[]`;
 
 exports[`implementation option not specify with modern API: warnings 1`] = `[]`;

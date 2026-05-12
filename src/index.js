@@ -35,7 +35,14 @@ async function loader(content) {
 
   const useSourceMap =
     typeof options.sourceMap === "boolean" ? options.sourceMap : this.sourceMap;
-  const apiType = typeof options.api === "undefined" ? "modern" : options.api;
+  const requestedApi =
+    typeof options.api === "undefined" ? "auto" : options.api;
+  const apiType =
+    requestedApi === "auto"
+      ? typeof implementation.initAsyncCompiler === "function"
+        ? "modern-compiler"
+        : "modern"
+      : requestedApi;
   const sassOptions = await getSassOptions(
     this,
     options,

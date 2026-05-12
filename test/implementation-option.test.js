@@ -149,10 +149,72 @@ describe("implementation option", () => {
     expect(getWarnings(stats)).toMatchSnapshot("warnings");
     expect(getErrors(stats)).toMatchSnapshot("errors");
 
-    expect(sassEmbeddedSpyModernAPI).toHaveBeenCalledTimes(1);
+    // Default is `auto`, which prefers `modern-compiler` when the
+    // implementation exposes `initAsyncCompiler` (sass-embedded does).
+    expect(sassEmbeddedCompilerSpies.compileStringSpy).toHaveBeenCalledTimes(1);
+    expect(sassEmbeddedSpyModernAPI).not.toHaveBeenCalled();
     expect(dartSassSpyModernAPI).not.toHaveBeenCalled();
+    expect(dartSassCompilerSpies.compileStringSpy).not.toHaveBeenCalled();
 
+    sassEmbeddedCompilerSpies.mockClear();
     sassEmbeddedSpyModernAPI.mockClear();
+    dartSassSpyModernAPI.mockClear();
+
+    await close(compiler);
+  });
+
+  it("not specify with auto API", async () => {
+    const testId = getTestId("language", "scss");
+    const options = {
+      api: "auto",
+    };
+    const compiler = getCompiler(testId, { loader: { options } });
+    const stats = await compile(compiler);
+    const { css, sourceMap } = getCodeFromBundle(stats, compiler);
+
+    expect(css).toBeDefined();
+    expect(sourceMap).toBeUndefined();
+
+    expect(getWarnings(stats)).toMatchSnapshot("warnings");
+    expect(getErrors(stats)).toMatchSnapshot("errors");
+
+    expect(sassEmbeddedCompilerSpies.compileStringSpy).toHaveBeenCalledTimes(1);
+    expect(sassEmbeddedSpyModernAPI).not.toHaveBeenCalled();
+    expect(dartSassSpyModernAPI).not.toHaveBeenCalled();
+    expect(dartSassCompilerSpies.compileStringSpy).not.toHaveBeenCalled();
+
+    sassEmbeddedCompilerSpies.mockClear();
+    sassEmbeddedSpyModernAPI.mockClear();
+    dartSassSpyModernAPI.mockClear();
+
+    await close(compiler);
+  });
+
+  it("auto API falls back to modern when initAsyncCompiler is absent", async () => {
+    const testId = getTestId("language", "scss");
+    const fakeImplementation = {
+      ...dartSass,
+      initAsyncCompiler: undefined,
+    };
+    const options = {
+      api: "auto",
+      implementation: fakeImplementation,
+    };
+    const compiler = getCompiler(testId, { loader: { options } });
+    const stats = await compile(compiler);
+    const { css, sourceMap } = getCodeFromBundle(stats, compiler);
+
+    expect(css).toBeDefined();
+    expect(sourceMap).toBeUndefined();
+
+    expect(getWarnings(stats)).toMatchSnapshot("warnings");
+    expect(getErrors(stats)).toMatchSnapshot("errors");
+
+    expect(dartSassSpyModernAPI).toHaveBeenCalledTimes(1);
+    expect(dartSassCompilerSpies.compileStringSpy).not.toHaveBeenCalled();
+    expect(sassEmbeddedSpyModernAPI).not.toHaveBeenCalled();
+    expect(sassEmbeddedCompilerSpies.compileStringSpy).not.toHaveBeenCalled();
+
     dartSassSpyModernAPI.mockClear();
 
     await close(compiler);

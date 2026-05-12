@@ -657,16 +657,18 @@ module.exports = {
 Type:
 
 ```ts
-type api = "modern" | "modern-compiler";
+type api = "auto" | "modern" | "modern-compiler";
 ```
 
-Default: `"modern"` for `sass` (`dart-sass`) and `sass-embedded`
+Default: `"auto"` for `sass` (`dart-sass`) and `sass-embedded`
 
 Allows you to switch between the `modern` and `modern-compiler` APIs. You can find more information [here](https://sass-lang.com/documentation/js-api). The `modern-compiler` option enables the modern API with support for [Shared Resources](https://github.com/sass/sass/blob/main/accepted/shared-resources.d.ts.md).
 
+When `"auto"` is used, the loader picks `"modern-compiler"` whenever the implementation exposes `initAsyncCompiler` (i.e. recent versions of `sass` and `sass-embedded`) and falls back to `"modern"` otherwise. Combined with `sass-embedded`, this yields the best build performance out of the box.
+
 > [!NOTE]
 >
-> Using `modern-compiler` and `sass-embedded` together significantly improves performance and decreases build time. We strongly recommend their use. We will enable them by default in a future major release.
+> Using `modern-compiler` and `sass-embedded` together significantly improves performance and decreases build time. They are now selected automatically by the default `"auto"` API.
 
 > [!NOTE]
 >

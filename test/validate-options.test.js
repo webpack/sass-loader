@@ -37,7 +37,7 @@ describe("validate options", () => {
       failure: ["string"],
     },
     api: {
-      success: ["modern", "modern-compiler"],
+      success: ["auto", "modern", "modern-compiler"],
       failure: ["legacy", "string", true],
     },
     unknown: {
