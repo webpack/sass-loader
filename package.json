@@ -42,13 +42,16 @@
     "pretest": "npm run lint",
     "test": "npm run test:coverage",
     "prepare": "husky && npm run build",
-    "release": "standard-version"
+    "version": "changeset version",
+    "release": "npm run build && changeset publish"
   },
   "dependencies": {},
   "devDependencies": {
     "@babel/cli": "^7.28.6",
     "@babel/core": "^7.28.6",
     "@babel/preset-env": "^7.28.6",
+    "@changesets/cli": "^2.30.0",
+    "@changesets/get-github-info": "^0.8.0",
     "@commitlint/cli": "^19.8.1",
     "@commitlint/config-conventional": "^19.8.1",
     "bootstrap-sass": "^3.4.1",
@@ -73,7 +76,6 @@
     "sass": "^1.89.2",
     "sass-embedded": "^1.89.2",
     "semver": "^7.7.4",
-    "standard-version": "^9.3.1",
     "style-loader": "^3.3.4",
     "typescript": "^5.9.2",
     "webpack": "^5.106.2",
