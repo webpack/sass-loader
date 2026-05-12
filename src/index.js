@@ -35,14 +35,6 @@ async function loader(content) {
 
   const useSourceMap =
     typeof options.sourceMap === "boolean" ? options.sourceMap : this.sourceMap;
-  const requestedApi =
-    typeof options.api === "undefined" ? "auto" : options.api;
-  const apiType =
-    requestedApi === "auto"
-      ? typeof implementation.initAsyncCompiler === "function"
-        ? "modern-compiler"
-        : "modern"
-      : requestedApi;
   const sassOptions = await getSassOptions(
     this,
     options,
@@ -66,7 +58,7 @@ async function loader(content) {
   let compile;
 
   try {
-    compile = getCompileFn(this, implementation, apiType);
+    compile = getCompileFn(this, implementation, options.api);
   } catch (error) {
     callback(error);
     return;
