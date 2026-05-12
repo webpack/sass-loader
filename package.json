@@ -17,7 +17,7 @@
   },
   "license": "MIT",
   "author": "J. Tangelder",
-  "main": "dist/cjs.js",
+  "main": "dist/cjs.cjs",
   "files": [
     "dist"
   ],
@@ -25,7 +25,7 @@
     "start": "npm run build -- -w",
     "clean": "del-cli dist",
     "prebuild": "npm run clean",
-    "build": "babel src -d dist --copy-files",
+    "build": "babel src -d dist --copy-files --extensions \".js\" && node -e \"require('node:fs').rmSync('dist/package.json', { force: true })\"",
     "commitlint": "commitlint --from=main",
     "security": "npm audit --production",
     "lint:prettier": "prettier --cache --list-different .",
@@ -36,11 +36,11 @@
     "fix:prettier": "npm run lint:prettier -- --write",
     "fix": "npm-run-all -l fix:code fix:prettier",
     "test:watch": "npm run test:only -- --watch",
-    "test:only": "jest",
-    "test:manual": "npm run build && webpack-dev-server test/manual/src/index.js --open --config test/manual/webpack.config.js",
-    "test:coverage": "npm run test:only -- --collectCoverageFrom=\"src/**/*.js\" --coverage",
+    "test:only": "node --test --experimental-test-snapshots --experimental-test-module-mocks \"test/*.test.mjs\"",
+    "test:manual": "npm run build && webpack-dev-server test/manual/src/index.js --open --config test/manual/webpack.config.cjs",
+    "test:coverage": "node --test --experimental-test-snapshots --experimental-test-module-mocks --experimental-test-coverage --test-coverage-include=\"src/**/*.js\" \"test/*.test.mjs\"",
     "pretest": "npm run lint",
-    "test": "npm run test:coverage",
+    "test": "npm run test:only",
     "prepare": "husky && npm run build",
     "release": "standard-version"
   },
@@ -64,7 +64,6 @@
     "file-loader": "^6.2.0",
     "foundation-sites": "^6.7.5",
     "husky": "^9.1.3",
-    "jest": "^30.4.1",
     "lint-staged": "^15.5.2",
     "material-components-web": "^9.0.0",
     "memfs": "^4.57.2",
@@ -101,6 +100,6 @@
     }
   },
   "engines": {
-    "node": ">= 18.12.0"
+    "node": ">=22.0.0"
   }
 }

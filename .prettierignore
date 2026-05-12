@@ -5,3 +5,5 @@
 CHANGELOG.md
 /test/sass
 /test/scss
+**/*.snapshot
+**/__snapshots__

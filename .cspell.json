@@ -26,6 +26,7 @@
     "package.json",
     "dist/**",
     "**/__snapshots__/**",
+    "**/*.snapshot",
     "package-lock.json",
     "*.sass",
     "node_modules",

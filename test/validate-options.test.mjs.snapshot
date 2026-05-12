@@ -1,0 +1,71 @@
+exports[`validate options > should throw an error on the \"additionalData\" option with \"true\" value 1`] = `
+"Invalid options object. Sass Loader has been initialized using an options object that does not match the API schema.\\n - options.additionalData should be one of these:\\n   string | function\\n   -> Prepends/Appends \`Sass\`/\`SCSS\` code before the actual entry file.\\n   -> Read more at https://github.com/webpack/sass-loader#additionaldata\\n   Details:\\n    * options.additionalData should be a string.\\n    * options.additionalData should be an instance of function."
+`;
+
+exports[`validate options > should throw an error on the \"api\" option with \"string\" value 1`] = `
+"Invalid options object. Sass Loader has been initialized using an options object that does not match the API schema.\\n - options.api should be one of these:\\n   \\"legacy\\" | \\"modern\\" | \\"modern-compiler\\"\\n   -> Switch between old and modern API for \`sass\` (\`Dart Sass\`) and \`Sass Embedded\` implementations.\\n   -> Read more at https://github.com/webpack/sass-loader#sassoptions"
+`;
+
+exports[`validate options > should throw an error on the \"api\" option with \"true\" value 1`] = `
+"Invalid options object. Sass Loader has been initialized using an options object that does not match the API schema.\\n - options.api should be one of these:\\n   \\"legacy\\" | \\"modern\\" | \\"modern-compiler\\"\\n   -> Switch between old and modern API for \`sass\` (\`Dart Sass\`) and \`Sass Embedded\` implementations.\\n   -> Read more at https://github.com/webpack/sass-loader#sassoptions"
+`;
+
+exports[`validate options > should throw an error on the \"implementation\" option with \"() => {}\" value 1`] = `
+"Invalid options object. Sass Loader has been initialized using an options object that does not match the API schema.\\n - options.implementation should be one of these:\\n   string | object { … }\\n   -> The implementation of the sass to be used.\\n   -> Read more at https://github.com/webpack/sass-loader#implementation\\n   Details:\\n    * options.implementation should be a string.\\n    * options.implementation should be an object:\\n      object { … }"
+`;
+
+exports[`validate options > should throw an error on the \"implementation\" option with \"true\" value 1`] = `
+"Invalid options object. Sass Loader has been initialized using an options object that does not match the API schema.\\n - options.implementation should be one of these:\\n   string | object { … }\\n   -> The implementation of the sass to be used.\\n   -> Read more at https://github.com/webpack/sass-loader#implementation\\n   Details:\\n    * options.implementation should be a string.\\n    * options.implementation should be an object:\\n      object { … }"
+`;
+
+exports[`validate options > should throw an error on the \"sassOptions\" option with \"string\" value 1`] = `
+"Invalid options object. Sass Loader has been initialized using an options object that does not match the API schema.\\n - options.sassOptions should be one of these:\\n   object { … } | function\\n   -> Options for \`sass\` (\`Dart Sass\`) or \`sass-embedded\` implementation.\\n   -> Read more at https://github.com/webpack/sass-loader#sassoptions\\n   Details:\\n    * options.sassOptions should be an object:\\n      object { … }\\n    * options.sassOptions should be an instance of function."
+`;
+
+exports[`validate options > should throw an error on the \"sassOptions\" option with \"true\" value 1`] = `
+"Invalid options object. Sass Loader has been initialized using an options object that does not match the API schema.\\n - options.sassOptions should be one of these:\\n   object { … } | function\\n   -> Options for \`sass\` (\`Dart Sass\`) or \`sass-embedded\` implementation.\\n   -> Read more at https://github.com/webpack/sass-loader#sassoptions\\n   Details:\\n    * options.sassOptions should be an object:\\n      object { … }\\n    * options.sassOptions should be an instance of function."
+`;
+
+exports[`validate options > should throw an error on the \"sourceMap\" option with \"string\" value 1`] = `
+"Invalid options object. Sass Loader has been initialized using an options object that does not match the API schema.\\n - options.sourceMap should be a boolean.\\n   -> Enables/Disables generation of source maps.\\n   -> Read more at https://github.com/webpack/sass-loader#sourcemap"
+`;
+
+exports[`validate options > should throw an error on the \"unknown\" option with \"/test/\" value 1`] = `
+"Invalid options object. Sass Loader has been initialized using an options object that does not match the API schema.\\n - options has an unknown property 'unknown'. These properties are valid:\\n   object { implementation?, api?, sassOptions?, additionalData?, sourceMap?, webpackImporter?, warnRuleAsWarning? }"
+`;
+
+exports[`validate options > should throw an error on the \"unknown\" option with \"1\" value 1`] = `
+"Invalid options object. Sass Loader has been initialized using an options object that does not match the API schema.\\n - options has an unknown property 'unknown'. These properties are valid:\\n   object { implementation?, api?, sassOptions?, additionalData?, sourceMap?, webpackImporter?, warnRuleAsWarning? }"
+`;
+
+exports[`validate options > should throw an error on the \"unknown\" option with \"[]\" value 1`] = `
+"Invalid options object. Sass Loader has been initialized using an options object that does not match the API schema.\\n - options has an unknown property 'unknown'. These properties are valid:\\n   object { implementation?, api?, sassOptions?, additionalData?, sourceMap?, webpackImporter?, warnRuleAsWarning? }"
+`;
+
+exports[`validate options > should throw an error on the \"unknown\" option with \"false\" value 1`] = `
+"Invalid options object. Sass Loader has been initialized using an options object that does not match the API schema.\\n - options has an unknown property 'unknown'. These properties are valid:\\n   object { implementation?, api?, sassOptions?, additionalData?, sourceMap?, webpackImporter?, warnRuleAsWarning? }"
+`;
+
+exports[`validate options > should throw an error on the \"unknown\" option with \"test\" value 1`] = `
+"Invalid options object. Sass Loader has been initialized using an options object that does not match the API schema.\\n - options has an unknown property 'unknown'. These properties are valid:\\n   object { implementation?, api?, sassOptions?, additionalData?, sourceMap?, webpackImporter?, warnRuleAsWarning? }"
+`;
+
+exports[`validate options > should throw an error on the \"unknown\" option with \"true\" value 1`] = `
+"Invalid options object. Sass Loader has been initialized using an options object that does not match the API schema.\\n - options has an unknown property 'unknown'. These properties are valid:\\n   object { implementation?, api?, sassOptions?, additionalData?, sourceMap?, webpackImporter?, warnRuleAsWarning? }"
+`;
+
+exports[`validate options > should throw an error on the \"unknown\" option with \"{\"foo\":\"bar\"}\" value 1`] = `
+"Invalid options object. Sass Loader has been initialized using an options object that does not match the API schema.\\n - options has an unknown property 'unknown'. These properties are valid:\\n   object { implementation?, api?, sassOptions?, additionalData?, sourceMap?, webpackImporter?, warnRuleAsWarning? }"
+`;
+
+exports[`validate options > should throw an error on the \"unknown\" option with \"{}\" value 1`] = `
+"Invalid options object. Sass Loader has been initialized using an options object that does not match the API schema.\\n - options has an unknown property 'unknown'. These properties are valid:\\n   object { implementation?, api?, sassOptions?, additionalData?, sourceMap?, webpackImporter?, warnRuleAsWarning? }"
+`;
+
+exports[`validate options > should throw an error on the \"warnRuleAsWarning\" option with \"string\" value 1`] = `
+"Invalid options object. Sass Loader has been initialized using an options object that does not match the API schema.\\n - options.warnRuleAsWarning should be a boolean.\\n   -> Treats the '@warn' rule as a webpack warning.\\n   -> Read more at https://github.com/webpack/sass-loader#warnruleaswarning"
+`;
+
+exports[`validate options > should throw an error on the \"webpackImporter\" option with \"string\" value 1`] = `
+"Invalid options object. Sass Loader has been initialized using an options object that does not match the API schema.\\n - options.webpackImporter should be a boolean.\\n   -> Enables/Disables default \`webpack\` importer.\\n   -> Read more at https://github.com/webpack/sass-loader#webpackimporter"
+`;

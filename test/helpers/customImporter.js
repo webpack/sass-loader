@@ -1,4 +1,4 @@
-/* global expect */
+import assert from "node:assert/strict";
 
 /** @typedef {import("../../src/index.js").EXPECTED_ANY} EXPECTED_ANY */
 
@@ -9,9 +9,9 @@
  * @returns {EXPECTED_ANY} result
  */
 function customImporter(url, prev, done) {
-  expect(url).toBe("import-with-custom-logic");
-  expect(prev).toMatch(/(sass|scss)[/\\]custom-importer\.(scss|sass)/);
-  expect(this.options).toBeDefined();
+  assert.equal(url, "import-with-custom-logic");
+  assert.match(prev, /(sass|scss)[/\\]custom-importer\.(scss|sass)/);
+  assert.notEqual(this.options, undefined);
 
   if (done) {
     done(customImporter.returnValue);

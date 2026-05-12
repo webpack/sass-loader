@@ -1,0 +1,151 @@
+exports[`implementation option > 'dart-sass', 'legacy' API 1`] = `
+[]
+`;
+
+exports[`implementation option > 'dart-sass', 'legacy' API 2`] = `
+[]
+`;
+
+exports[`implementation option > 'dart-sass', 'modern' API 1`] = `
+[]
+`;
+
+exports[`implementation option > 'dart-sass', 'modern' API 2`] = `
+[]
+`;
+
+exports[`implementation option > 'dart-sass', 'modern-compiler' API 1`] = `
+[]
+`;
+
+exports[`implementation option > 'dart-sass', 'modern-compiler' API 2`] = `
+[]
+`;
+
+exports[`implementation option > 'sass-embedded', 'legacy' API 1`] = `
+[]
+`;
+
+exports[`implementation option > 'sass-embedded', 'legacy' API 2`] = `
+[]
+`;
+
+exports[`implementation option > 'sass-embedded', 'modern' API 1`] = `
+[]
+`;
+
+exports[`implementation option > 'sass-embedded', 'modern' API 2`] = `
+[]
+`;
+
+exports[`implementation option > 'sass-embedded', 'modern-compiler' API 1`] = `
+[]
+`;
+
+exports[`implementation option > 'sass-embedded', 'modern-compiler' API 2`] = `
+[]
+`;
+
+exports[`implementation option > 'sass_string', 'legacy' API 1`] = `
+[]
+`;
+
+exports[`implementation option > 'sass_string', 'legacy' API 2`] = `
+[]
+`;
+
+exports[`implementation option > not specify 1`] = `
+[]
+`;
+
+exports[`implementation option > not specify 2`] = `
+[]
+`;
+
+exports[`implementation option > not specify with legacy API 1`] = `
+[]
+`;
+
+exports[`implementation option > not specify with legacy API 2`] = `
+[]
+`;
+
+exports[`implementation option > not specify with modern API 1`] = `
+[]
+`;
+
+exports[`implementation option > not specify with modern API 2`] = `
+[]
+`;
+
+exports[`implementation option > not specify with modern-compiler API 1`] = `
+[]
+`;
+
+exports[`implementation option > not specify with modern-compiler API 2`] = `
+[]
+`;
+
+exports[`implementation option > should dispose redundant compilers for \`modern-compiler\` 1`] = `
+[]
+`;
+
+exports[`implementation option > should dispose redundant compilers for \`modern-compiler\` 2`] = `
+[]
+`;
+
+exports[`implementation option > should support switching the implementation within the same process when using the modern-compiler API (dart-sass) 1`] = `
+[]
+`;
+
+exports[`implementation option > should support switching the implementation within the same process when using the modern-compiler API (dart-sass) 2`] = `
+[]
+`;
+
+exports[`implementation option > should support switching the implementation within the same process when using the modern-compiler API (sass-embedded) 1`] = `
+[]
+`;
+
+exports[`implementation option > should support switching the implementation within the same process when using the modern-compiler API (sass-embedded) 2`] = `
+[]
+`;
+
+exports[`implementation option > should throw an error on an unknown sass implementation 1`] = `
+[]
+`;
+
+exports[`implementation option > should throw an error on an unknown sass implementation 2`] = `
+[
+  "ModuleBuildError: Module build failed (from ../src/index.js):\\nError: Unknown Sass implementation \\"strange-sass\\"."
+]
+`;
+
+exports[`implementation option > should throw an error when the \"info\" is unparseable 1`] = `
+[]
+`;
+
+exports[`implementation option > should throw an error when the \"info\" is unparseable 2`] = `
+[
+  "ModuleBuildError: Module build failed (from ../src/index.js):\\nError: Unknown Sass implementation \\"asdfj\\"."
+]
+`;
+
+exports[`implementation option > should throw error when the \"info\" does not exist 1`] = `
+[]
+`;
+
+exports[`implementation option > should throw error when the \"info\" does not exist 2`] = `
+[
+  "ModuleBuildError: Module build failed (from ../src/index.js):\\nError: Unknown Sass implementation."
+]
+`;
+
+exports[`implementation option > should throw error when unresolved package 1`] = `
+[]
+`;
+
+exports[`implementation option > should throw error when unresolved package 2`] = `
+[
+  "ModuleBuildError: Module build failed (from ../src/index.js):\\nError: Cannot find module 'unresolved'"
+]
+`;

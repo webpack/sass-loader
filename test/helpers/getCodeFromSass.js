@@ -1,8 +1,12 @@
 import fs from "node:fs";
+import { createRequire } from "node:module";
 import path from "node:path";
-import { pathToFileURL } from "node:url";
+import { fileURLToPath, pathToFileURL } from "node:url";
 
-import { getModernWebpackImporter } from "../../src/utils";
+import { getModernWebpackImporter } from "../../src/utils.js";
+
+const require = createRequire(import.meta.url);
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 /**
  * @param {string} testId test ID

@@ -1,5 +1,8 @@
+import { createRequire } from "node:module";
 import path from "node:path";
 import url from "node:url";
+
+const require = createRequire(import.meta.url);
 
 /** @typedef {import("sass")} Sass */
 /** @typedef {import("sass").StringOptionsWithImporter} SassSassOptions */

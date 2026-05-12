@@ -1,7 +1,7 @@
+import { createRequire } from "node:module";
 import path from "node:path";
 import url from "node:url";
 
-import schema from "./options.json";
 import {
   errorFactory,
   getCompileFn,
@@ -10,7 +10,9 @@ import {
   getSassOptions,
   getWebpackImporter,
   normalizeSourceMap,
-} from "./utils";
+} from "./utils.js";
+
+const schema = createRequire(import.meta.url)("./options.json");
 
 // eslint-disable-next-line jsdoc/reject-any-type
 /** @typedef {any} EXPECTED_ANY */

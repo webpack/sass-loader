@@ -1,8 +1,12 @@
+import { createRequire } from "node:module";
 import path from "node:path";
 
 import del from "del";
 import { Volume, createFsFromVolume } from "memfs";
 import webpack from "webpack";
+
+const require = createRequire(import.meta.url);
+const __dirname = path.dirname(new URL(import.meta.url).pathname);
 
 /**
  * @param {Configuration} config config
@@ -15,10 +19,10 @@ const module = (config) => ({
       resolve: config.loader.resolve,
       use: [
         {
-          loader: require.resolve("./testLoader"),
+          loader: require.resolve("./testLoader.cjs"),
         },
         {
-          loader: path.join(__dirname, "../../src/cjs.js"),
+          loader: path.join(__dirname, "../../src/index.js"),
           options: (config.loader && config.loader.options) || {},
         },
       ],

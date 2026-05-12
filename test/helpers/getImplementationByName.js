@@ -1,3 +1,7 @@
+import { createRequire } from "node:module";
+
+const require = createRequire(import.meta.url);
+
 /**
  * @param {"dart-sass" | "sass" | "sass-embedded"} implementationName implementation name
  * @returns {SassImplementation} a sass implementation
