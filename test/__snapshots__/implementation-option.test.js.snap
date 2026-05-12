@@ -1,9 +1,5 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
-exports[`implementation option 'dart-sass', 'legacy' API: errors 1`] = `[]`;
-
-exports[`implementation option 'dart-sass', 'legacy' API: warnings 1`] = `[]`;
-
 exports[`implementation option 'dart-sass', 'modern' API: errors 1`] = `[]`;
 
 exports[`implementation option 'dart-sass', 'modern' API: warnings 1`] = `[]`;
@@ -12,13 +8,9 @@ exports[`implementation option 'dart-sass', 'modern-compiler' API: errors 1`] = 
 
 exports[`implementation option 'dart-sass', 'modern-compiler' API: warnings 1`] = `[]`;
 
-exports[`implementation option 'sass_string', 'legacy' API: errors 1`] = `[]`;
+exports[`implementation option 'sass_string', 'modern' API: errors 1`] = `[]`;
 
-exports[`implementation option 'sass_string', 'legacy' API: warnings 1`] = `[]`;
-
-exports[`implementation option 'sass-embedded', 'legacy' API: errors 1`] = `[]`;
-
-exports[`implementation option 'sass-embedded', 'legacy' API: warnings 1`] = `[]`;
+exports[`implementation option 'sass_string', 'modern' API: warnings 1`] = `[]`;
 
 exports[`implementation option 'sass-embedded', 'modern' API: errors 1`] = `[]`;
 
@@ -27,10 +19,6 @@ exports[`implementation option 'sass-embedded', 'modern' API: warnings 1`] = `[]
 exports[`implementation option 'sass-embedded', 'modern-compiler' API: errors 1`] = `[]`;
 
 exports[`implementation option 'sass-embedded', 'modern-compiler' API: warnings 1`] = `[]`;
-
-exports[`implementation option not specify with legacy API: errors 1`] = `[]`;
-
-exports[`implementation option not specify with legacy API: warnings 1`] = `[]`;
 
 exports[`implementation option not specify with modern API: errors 1`] = `[]`;
 

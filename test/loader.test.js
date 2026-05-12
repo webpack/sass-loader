@@ -23,7 +23,6 @@ const syntaxStyles = ["scss", "sass"];
 describe("loader", () => {
   for (const item of implementations) {
     const { name: implementationName, api, implementation } = item;
-    const isModernAPI = api === "modern" || api === "modern-compiler";
 
     for (const syntax of syntaxStyles) {
       it(`should work ('${implementationName}', '${api}' API, '${syntax}' syntax)`, async () => {
@@ -48,9 +47,9 @@ describe("loader", () => {
 
       it(`should work ('${implementationName}', '${api}' API, '${syntax}' syntax) and don't modify sass options`, async () => {
         const testId = getTestId("language", syntax);
-        const sassOptions = isModernAPI
-          ? { loadPaths: ["node_modules/foundation-sites/scss"] }
-          : { includePaths: ["node_modules/foundation-sites/scss"] };
+        const sassOptions = {
+          loadPaths: ["node_modules/foundation-sites/scss"],
+        };
         const options = {
           implementation,
           api,
@@ -61,15 +60,9 @@ describe("loader", () => {
         const codeFromBundle = getCodeFromBundle(stats, compiler);
         const codeFromSass = await getCodeFromSass(testId, options);
 
-        if (isModernAPI) {
-          expect(sassOptions).toEqual({
-            loadPaths: ["node_modules/foundation-sites/scss"],
-          });
-        } else {
-          expect(sassOptions).toEqual({
-            includePaths: ["node_modules/foundation-sites/scss"],
-          });
-        }
+        expect(sassOptions).toEqual({
+          loadPaths: ["node_modules/foundation-sites/scss"],
+        });
 
         expect(codeFromBundle.css).toBe(codeFromSass.css);
         expect(codeFromBundle.css).toMatchSnapshot("css");
@@ -640,9 +633,7 @@ describe("loader", () => {
         const options = {
           implementation,
           api,
-          sassOptions: isModernAPI
-            ? { loadPaths: ["node_modules/foundation-sites/scss"] }
-            : { includePaths: ["node_modules/foundation-sites/scss"] },
+          sassOptions: { loadPaths: ["node_modules/foundation-sites/scss"] },
         };
         const compiler = getCompiler(testId, { loader: { options } });
         const stats = await compile(compiler);
@@ -862,9 +853,7 @@ describe("loader", () => {
         const options = {
           implementation,
           api,
-          sassOptions: isModernAPI
-            ? { loadPaths: ["node_modules/foundation-sites/scss"] }
-            : { includePaths: ["node_modules/foundation-sites/scss"] },
+          sassOptions: { loadPaths: ["node_modules/foundation-sites/scss"] },
         };
         const compiler = getCompiler(testId, { loader: { options } });
         const stats = await compile(compiler);
@@ -887,9 +876,7 @@ describe("loader", () => {
         const options = {
           implementation,
           api,
-          sassOptions: isModernAPI
-            ? { loadPaths: ["node_modules/foundation-sites/scss"] }
-            : { includePaths: ["node_modules/foundation-sites/scss"] },
+          sassOptions: { loadPaths: ["node_modules/foundation-sites/scss"] },
         };
         const compiler = getCompiler(testId, { loader: { options } });
         const stats = await compile(compiler);
@@ -918,9 +905,7 @@ describe("loader", () => {
         const codeFromBundle = getCodeFromBundle(stats, compiler);
         const codeFromSass = await getCodeFromSass(testId, {
           ...options,
-          sassOptions: isModernAPI
-            ? { style: "compressed" }
-            : { outputStyle: "compressed" },
+          sassOptions: { style: "compressed" },
         });
 
         expect(codeFromBundle.css).toBe(codeFromSass.css);
@@ -934,21 +919,13 @@ describe("loader", () => {
       it(`should watch firstly in the "includePaths" values ('${implementationName}', '${api}' API, '${syntax}' syntax)`, async () => {
         const testId = getTestId("prefer-include-paths", syntax);
         const options = {
-          sassOptions: isModernAPI
-            ? {
-                loadPaths: [
-                  path.resolve(
-                    `./test/node_modules/package-with-style-field-and-css/${syntax}`,
-                  ),
-                ],
-              }
-            : {
-                includePaths: [
-                  path.resolve(
-                    `./test/node_modules/package-with-style-field-and-css/${syntax}`,
-                  ),
-                ],
-              },
+          sassOptions: {
+            loadPaths: [
+              path.resolve(
+                `./test/node_modules/package-with-style-field-and-css/${syntax}`,
+              ),
+            ],
+          },
           implementation,
           api,
         };
@@ -1040,50 +1017,6 @@ describe("loader", () => {
         delete process.env.SASS_PATH;
       });
 
-      // Modern API doesn't support resolving from `process.cwd()`
-      if (!isModernAPI) {
-        it(`should respect resolving from "process.cwd()" ('${implementationName}', '${api}' API, '${syntax}' syntax)`, async () => {
-          const testId = getTestId("process-cwd", syntax);
-          const options = {
-            implementation,
-            api,
-          };
-          const compiler = getCompiler(testId, { loader: { options } });
-          const stats = await compile(compiler);
-          const codeFromBundle = getCodeFromBundle(stats, compiler);
-          const codeFromSass = await getCodeFromSass(testId, options);
-
-          expect(codeFromBundle.css).toBe(codeFromSass.css);
-          expect(codeFromBundle.css).toMatchSnapshot("css");
-          expect(getWarnings(stats)).toMatchSnapshot("warnings");
-          expect(getErrors(stats)).toMatchSnapshot("errors");
-
-          await close(compiler);
-        });
-
-        it(`should respect resolving directory with the "index" file from "process.cwd()"  ('${implementationName}', '${api}' API, '${syntax}' syntax)`, async () => {
-          const testId = getTestId(
-            "process-cwd-with-index-file-inside-directory",
-            syntax,
-          );
-          const options = {
-            implementation,
-            api,
-          };
-          const compiler = getCompiler(testId, { loader: { options } });
-          const stats = await compile(compiler);
-          const codeFromBundle = getCodeFromBundle(stats, compiler);
-          const codeFromSass = await getCodeFromSass(testId, options);
-
-          expect(codeFromBundle.css).toBe(codeFromSass.css);
-          expect(codeFromBundle.css).toMatchSnapshot("css");
-          expect(getWarnings(stats)).toMatchSnapshot("warnings");
-          expect(getErrors(stats)).toMatchSnapshot("errors");
-
-          await close(compiler);
-        });
-      }
-
       it(`should work with a package with "sass" and "exports" fields ('${implementationName}', '${api}' API, '${syntax}' syntax)`, async () => {
         const testId = getTestId("import-package-with-exports", syntax);
         const options = {
@@ -1161,51 +1094,8 @@ describe("loader", () => {
         await close(compiler);
       });
 
-      if (!isModernAPI) {
-        it(`should support resolving using the "file" schema ('${implementationName}', '${api}' API, '${syntax}' syntax)`, async () => {
-          const testId = getTestId("import-file-scheme", syntax);
-          const options = {
-            implementation,
-            api,
-          };
-          const compiler = getCompiler(testId, {
-            loader: { options },
-            resolve: {
-              alias: {
-                "/language": path.resolve(
-                  "./test",
-                  syntax,
-                  `language.${syntax}`,
-                ),
-              },
-            },
-          });
-          const stats = await compile(compiler);
-          const codeFromBundle = getCodeFromBundle(stats, compiler);
-          const codeFromSass = await getCodeFromSass(testId, options, {
-            syntax,
-          });
-
-          expect(codeFromBundle.css).toBe(codeFromSass.css);
-          expect(codeFromBundle.css).toMatchSnapshot("css");
-          expect(getWarnings(stats)).toMatchSnapshot("warnings");
-          expect(getErrors(stats)).toMatchSnapshot("errors");
-
-          await close(compiler);
-        });
-      }
-
       it(`should resolve server-relative URLs ('${implementationName}', '${api}' API, '${syntax}' syntax)`, async () => {
-        //
-        const testId = getTestId(
-          // legacy sass-embedded API doesn't support absolute paths
-          process.platform === "win32" &&
-            implementationName === "sass-embedded" &&
-            !isModernAPI
-            ? "import-absolute-path-windows"
-            : "import-absolute-path",
-          syntax,
-        );
+        const testId = getTestId("import-absolute-path", syntax);
         const options = {
           implementation,
           api,
@@ -1351,13 +1241,9 @@ describe("loader", () => {
         const options = {
           implementation,
           api,
-          sassOptions: isModernAPI
-            ? { loadPaths: [path.resolve(__dirname, "outside", "my-pkg-path")] }
-            : {
-                includePaths: [
-                  path.resolve(__dirname, "outside", "my-pkg-path"),
-                ],
-              },
+          sassOptions: {
+            loadPaths: [path.resolve(__dirname, "outside", "my-pkg-path")],
+          },
         };
         const compiler = getCompiler(testId, { loader: { options } });
         const stats = await compile(compiler);
@@ -2033,9 +1919,7 @@ describe("loader", () => {
           const options = {
             implementation,
             api,
-            sassOptions: isModernAPI
-              ? { loadPaths: ["node_modules"] }
-              : { includePaths: ["node_modules"] },
+            sassOptions: { loadPaths: ["node_modules"] },
           };
           const compiler = getCompiler(testId, { loader: { options } });
           const stats = await compile(compiler);
@@ -2074,9 +1958,7 @@ describe("loader", () => {
           const options = {
             implementation,
             api,
-            sassOptions: isModernAPI
-              ? { loadPaths: ["node_modules"] }
-              : { includePaths: ["node_modules"] },
+            sassOptions: { loadPaths: ["node_modules"] },
           };
           const compiler = getCompiler(testId, { loader: { options } });
           const stats = await compile(compiler);

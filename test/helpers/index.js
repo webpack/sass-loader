@@ -1,4 +1,3 @@
-export { default as customImporter } from "./customImporter";
 export { default as close } from "./close";
 export { default as customFunctions } from "./customFunctions";
 export { default as compile } from "./compiler";

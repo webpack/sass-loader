@@ -95,9 +95,9 @@ module.exports = {
 
 Finally run `webpack` via your preferred method (e.g., via CLI or an npm script).
 
-### The `style` (new API, by default since 16 version) and `outputStyle` (old API) options in `production` mode
+### The `style` option in `production` mode
 
-For `production` mode, the `style` (new API, by default since 16 version) and `outputStyle` (old API) options default to `compressed` unless otherwise specified in `sassOptions`.
+For `production` mode, the `style` option defaults to `compressed` unless otherwise specified in `sassOptions`.
 
 ### Resolving `import` and `use` at-rules
 
@@ -265,12 +265,12 @@ Type:
 
 ```ts
 type sassOptions =
-  | import("sass").LegacyOptions<"async">
+  | import("sass").StringOptionsWithImporter<"async">
   | ((
       content: string | Buffer,
       loaderContext: LoaderContext,
       meta: any,
-    ) => import("sass").LegacyOptions<"async">);
+    ) => import("sass").StringOptionsWithImporter<"async">);
 ```
 
 Default: defaults values for Sass implementation
@@ -283,17 +283,13 @@ Options for [Dart Sass](http://sass-lang.com/dart-sass) or [Sass Embedded](https
 
 > [!NOTE]
 >
-> The `syntax` (new API, by default since 16 version) and `indentedSyntax` (old API) option is `scss` for the `scss` extension, `indented` for the `sass` extension, and `css` for the `css` extension.
+> The `syntax` option is `scss` for the `scss` extension, `indented` for the `sass` extension, and `css` for the `css` extension.
 
 > [!NOTE]
 >
-> Options such as `data` and `file` are unavailable and will be ignored.
+> Options such as `data` and `url` are unavailable and will be ignored.
 
-> ℹ We strongly discourage changing the `sourceMap` (new API, by default since 16 version), `outFile` (old API), `sourceMapContents` (old API), `sourceMapEmbed` (old API), and `sourceMapRoot` (old API) options because `sass-loader` sets these automatically when the `sourceMap` option is `true`.
-
-> [!NOTE]
->
-> Access to the [loader context](https://webpack.js.org/api/loaders/#the-loader-context) inside the custom importer can be done using the `this.webpackLoaderContext` property.
+> ℹ We strongly discourage changing the `sourceMap` option because `sass-loader` sets it automatically when the `sourceMap` option is `true`.
 
 Please consult their respective documentation before using them:
 
@@ -386,7 +382,7 @@ Enables/disables generation of source maps.
 By default generation of source maps depends on the [`devtool`](https://webpack.js.org/configuration/devtool/) option.
 All values enable source map generation except `eval` and `false`.
 
-> ℹ If `true`, the `sourceMap` (new API, by default since 16 version), `outFile` (old API), `sourceMapContents` (old API), `sourceMapEmbed` (old API), and `sourceMapRoot` (old API) from `sassOptions` will be ignored.
+> ℹ If `true`, the `sourceMap` option from `sassOptions` will be ignored.
 
 **webpack.config.js**
 
@@ -433,7 +429,7 @@ module.exports = {
             options: {
               sourceMap: true,
               sassOptions: {
-                outputStyle: "compressed",
+                style: "compressed",
               },
             },
           },
@@ -661,20 +657,20 @@ module.exports = {
 Type:
 
 ```ts
-type api = "legacy" | "modern" | "modern-compiler";
+type api = "modern" | "modern-compiler";
 ```
 
 Default: `"modern"` for `sass` (`dart-sass`) and `sass-embedded`
 
-Allows you to switch between the `legacy` and `modern` APIs. You can find more information [here](https://sass-lang.com/documentation/js-api). The `modern-compiler` option enables the modern API with support for [Shared Resources](https://github.com/sass/sass/blob/main/accepted/shared-resources.d.ts.md).
+Allows you to switch between the `modern` and `modern-compiler` APIs. You can find more information [here](https://sass-lang.com/documentation/js-api). The `modern-compiler` option enables the modern API with support for [Shared Resources](https://github.com/sass/sass/blob/main/accepted/shared-resources.d.ts.md).
 
 > [!NOTE]
 >
 > Using `modern-compiler` and `sass-embedded` together significantly improves performance and decreases build time. We strongly recommend their use. We will enable them by default in a future major release.
 
-> [!WARNING]
+> [!NOTE]
 >
-> The Sass options are different for the `legacy` and `modern` APIs. Please look at [docs](https://sass-lang.com/documentation/js-api) to learn how to migrate to the modern options.
+> The legacy Sass JS API is no longer supported. If you were using `api: "legacy"`, please migrate to the modern API. See the [Sass JS API docs](https://sass-lang.com/documentation/js-api) to learn how to migrate.
 
 **webpack.config.js**
 

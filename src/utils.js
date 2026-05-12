@@ -76,29 +76,12 @@ function isProductionLikeMode(loaderContext) {
 }
 
 /**
- * @param {Importer[]} importers importers
- * @param {LoaderContext} loaderContext loader context
- * @returns {Importer[]} proxied importers
- */
-function proxyCustomImporters(importers, loaderContext) {
-  return [importers].flat().map(
-    (importer) =>
-      function proxyImporter(...args) {
-        const self = { ...this, webpackLoaderContext: loaderContext };
-
-        return importer.apply(self, args);
-      },
-  );
-}
-
-/**
  * Derives the sass options from the loader context and normalizes its values with sane defaults.
  * @param {LoaderContext} loaderContext loader context
  * @param {LoaderOptions} loaderOptions loader options
  * @param {string} content content
  * @param {SassImplementation} implementation sass implementation
  * @param {boolean} useSourceMap true when need to generate source maps, otherwise false
- * @param {"legacy" | "modern" | "modern-compiler"} apiType api type
  * @returns {SassOptions} sass options
  */
 async function getSassOptions(
@@ -107,7 +90,6 @@ async function getSassOptions(
   content,
   implementation,
   useSourceMap,
-  apiType,
 ) {
   const options = loaderOptions.sassOptions
     ? typeof loaderOptions.sassOptions === "function"
@@ -180,127 +162,51 @@ async function getSassOptions(
     };
   }
 
-  const isModernAPI = apiType === "modern" || apiType === "modern-compiler";
   const { resourcePath } = loaderContext;
 
-  if (isModernAPI) {
-    sassOptions.url = url.pathToFileURL(resourcePath);
+  sassOptions.url = url.pathToFileURL(resourcePath);
 
-    // opt.outputStyle
-    if (!sassOptions.style && isProductionLikeMode(loaderContext)) {
-      sassOptions.style = "compressed";
-    }
+  // opt.outputStyle
+  if (!sassOptions.style && isProductionLikeMode(loaderContext)) {
+    sassOptions.style = "compressed";
+  }
 
-    if (useSourceMap) {
-      sassOptions.sourceMap = true;
-      sassOptions.sourceMapIncludeSources = true;
-    }
+  if (useSourceMap) {
+    sassOptions.sourceMap = true;
+    sassOptions.sourceMapIncludeSources = true;
+  }
 
-    // If we are compiling sass and indentedSyntax isn't set, automatically set it.
-    if (typeof sassOptions.syntax === "undefined") {
-      const ext = path.extname(resourcePath);
-
-      if (ext && ext.toLowerCase() === ".scss") {
-        sassOptions.syntax = "scss";
-      } else if (ext && ext.toLowerCase() === ".sass") {
-        sassOptions.syntax = "indented";
-      } else if (ext && ext.toLowerCase() === ".css") {
-        sassOptions.syntax = "css";
-      }
-    }
-
-    sassOptions.loadPaths = [
-      // We use `loadPaths` in context for resolver, so it should be always absolute
-      ...(sassOptions.loadPaths ? [...sassOptions.loadPaths] : []).map(
-        (includePath) =>
-          path.isAbsolute(includePath)
-            ? includePath
-            : path.join(process.cwd(), includePath),
-      ),
-      ...(process.env.SASS_PATH
-        ? process.env.SASS_PATH.split(process.platform === "win32" ? ";" : ":")
-        : []),
-    ];
-
-    sassOptions.importers = sassOptions.importers
-      ? Array.isArray(sassOptions.importers)
-        ? [...sassOptions.importers]
-        : [sassOptions.importers]
-      : [];
-  } else {
-    sassOptions.file = resourcePath;
-
-    // opt.outputStyle
-    if (!sassOptions.outputStyle && isProductionLikeMode(loaderContext)) {
-      sassOptions.outputStyle = "compressed";
-    }
-
-    if (useSourceMap) {
-      // Deliberately overriding the sourceMap option here.
-      // `sass` won't produce source maps if the data option is used and options.sourceMap is not a string.
-      // In case it is a string, options.sourceMap should be a path where the source map is written.
-      // But since we're using the data option, the source map will not actually be written, but
-      // all paths in sourceMap.sources will be relative to that path.
-      // Pretty complicated... :(
-      sassOptions.sourceMap = true;
-      sassOptions.outFile = path.join(
-        loaderContext.rootContext,
-        "style.css.map",
-      );
-      sassOptions.sourceMapContents = true;
-      sassOptions.omitSourceMapUrl = true;
-      sassOptions.sourceMapEmbed = false;
-    }
-
+  // If we are compiling sass and indentedSyntax isn't set, automatically set it.
+  if (typeof sassOptions.syntax === "undefined") {
     const ext = path.extname(resourcePath);
 
-    // If we are compiling sass and indentedSyntax isn't set, automatically set it.
-    if (
-      ext &&
-      ext.toLowerCase() === ".sass" &&
-      typeof sassOptions.indentedSyntax === "undefined"
-    ) {
-      sassOptions.indentedSyntax = true;
-    } else {
-      sassOptions.indentedSyntax = Boolean(sassOptions.indentedSyntax);
-    }
-
-    // Allow passing custom importers to `sass`. Accepts `Function` or an array of `Function`s.
-    sassOptions.importer = sassOptions.importer
-      ? proxyCustomImporters(
-          Array.isArray(sassOptions.importer)
-            ? [...sassOptions.importer]
-            : [sassOptions.importer],
-          loaderContext,
-        )
-      : [];
-
-    // Regression on the `sass-embedded` side
-    if (
-      loaderOptions.webpackImporter === false &&
-      sassOptions.importer.length === 0
-    ) {
-      sassOptions.importer = undefined;
-    }
-
-    sassOptions.includePaths = [
-      process.cwd(),
-      ...// We use `includePaths` in context for resolver, so it should be always absolute
-      (sassOptions.includePaths ? [...sassOptions.includePaths] : []).map(
-        (includePath) =>
-          path.isAbsolute(includePath)
-            ? includePath
-            : path.join(process.cwd(), includePath),
-      ),
-      ...(process.env.SASS_PATH
-        ? process.env.SASS_PATH.split(process.platform === "win32" ? ";" : ":")
-        : []),
-    ];
-
-    if (typeof sassOptions.charset === "undefined") {
-      sassOptions.charset = true;
+    if (ext && ext.toLowerCase() === ".scss") {
+      sassOptions.syntax = "scss";
+    } else if (ext && ext.toLowerCase() === ".sass") {
+      sassOptions.syntax = "indented";
+    } else if (ext && ext.toLowerCase() === ".css") {
+      sassOptions.syntax = "css";
     }
   }
+
+  sassOptions.loadPaths = [
+    // We use `loadPaths` in context for resolver, so it should be always absolute
+    ...(sassOptions.loadPaths ? [...sassOptions.loadPaths] : []).map(
+      (includePath) =>
+        path.isAbsolute(includePath)
+          ? includePath
+          : path.join(process.cwd(), includePath),
+    ),
+    ...(process.env.SASS_PATH
+      ? process.env.SASS_PATH.split(process.platform === "win32" ? ";" : ":")
+      : []),
+  ];
+
+  sassOptions.importers = sassOptions.importers
+    ? Array.isArray(sassOptions.importers)
+      ? [...sassOptions.importers]
+      : [sassOptions.importers]
+    : [];
 
   return sassOptions;
 }
@@ -600,8 +506,6 @@ function getWebpackResolver(
   };
 }
 
-const MATCH_CSS = /\.css$/i;
-
 /**
  * @param {LoaderContext} loaderContext loader context
  * @param {SassImplementation} implementation sass implementation
@@ -675,57 +579,16 @@ function getModernWebpackImporter(loaderContext, implementation, loadPaths) {
   };
 }
 
-/**
- * @param {LoaderContext} loaderContext loader context
- * @param {SassImplementation} implementation sass implementation
- * @param {string[]} includePaths include paths
- * @returns {Importer} the webpack importer
- */
-function getWebpackImporter(loaderContext, implementation, includePaths) {
-  const resolve = getWebpackResolver(
-    loaderContext.getResolve,
-    implementation,
-    includePaths,
-  );
-
-  return function importer(originalUrl, prev, done) {
-    const { fromImport } = this;
-
-    resolve(prev, originalUrl, fromImport)
-      .then((result) => {
-        // Add the result as dependency.
-        // Although we're also using stats.includedFiles, this might come in handy when an error occurs.
-        // In this case, we don't get stats.includedFiles from sass.
-        loaderContext.addDependency(path.normalize(result));
-
-        // By removing the CSS file extension, we trigger sass to include the CSS file instead of just linking it.
-        done({ file: result.replace(MATCH_CSS, "") });
-      })
-      // Catch all resolving errors, return the original file and pass responsibility back to other custom importers
-      .catch(() => {
-        done({ file: originalUrl });
-      });
-  };
-}
-
 const sassModernCompilers = new WeakMap();
 
 /**
  * Verifies that the implementation and version of Sass is supported by this loader.
  * @param {LoaderContext} loaderContext loader context
  * @param {SassImplementation} implementation sass implementation
- * @param {"legacy" | "modern" | "modern-compiler"} apiType api type
+ * @param {"modern" | "modern-compiler"} apiType api type
  * @returns {SassCompileFunction} compile function
  */
 function getCompileFn(loaderContext, implementation, apiType) {
-  if (apiType === "modern") {
-    return (sassOptions) => {
-      const { data, ...rest } = sassOptions;
-
-      return implementation.compileStringAsync(data, rest);
-    };
-  }
-
   if (apiType === "modern-compiler") {
     return async (sassOptions) => {
       const webpackCompiler = loaderContext._compiler;
@@ -760,18 +623,11 @@ function getCompileFn(loaderContext, implementation, apiType) {
     };
   }
 
-  return (sassOptions) =>
-    new Promise((resolve, reject) => {
-      implementation.render(sassOptions, (error, result) => {
-        if (error) {
-          reject(error);
+  return (sassOptions) => {
+    const { data, ...rest } = sassOptions;
 
-          return;
-        }
-
-        resolve(result);
-      });
-    });
+    return implementation.compileStringAsync(data, rest);
+  };
 }
 
 const ABSOLUTE_SCHEME = /^[A-Za-z0-9+\-.]+:/;
@@ -856,7 +712,6 @@ export {
   getModernWebpackImporter,
   getSassImplementation,
   getSassOptions,
-  getWebpackImporter,
   getWebpackResolver,
   normalizeSourceMap,
 };

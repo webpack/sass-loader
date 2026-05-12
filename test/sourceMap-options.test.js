@@ -21,26 +21,7 @@ describe("sourceMap option", () => {
     for (const syntax of syntaxStyles) {
       const { name: implementationName, api, implementation } = item;
 
-      const getSourceMap = (sourceMap) => {
-        if (
-          implementationName === "sass-embedded" &&
-          api === "legacy" &&
-          sourceMap &&
-          sourceMap.sourcesContent
-        ) {
-          sourceMap.mappings = "<dynamic mappings generation>";
-
-          sourceMap.sourcesContent = sourceMap.sourcesContent.map((code) => {
-            if (code.includes("sass-embedded-legacy-load-done")) {
-              return "<dynamic content generation>";
-            }
-
-            return code;
-          });
-        }
-
-        return sourceMap;
-      };
+      const getSourceMap = (sourceMap) => sourceMap;
 
       it(`should generate source maps when value is not specified and the "devtool" option has "source-map" value ('${implementationName}', '${api}' API, '${syntax}' syntax)`, async () => {
         expect.assertions(10);
@@ -142,26 +123,16 @@ describe("sourceMap option", () => {
       });
 
       it(`should generate source maps when value has "false" value, but the "sassOptions.sourceMap" has the "true" value ('${implementationName}', '${api}' API, '${syntax}' syntax)`, async () => {
-        const isLegacyAPI = api === "legacy";
-
-        expect.assertions(isLegacyAPI ? 8 : 10);
+        expect.assertions(10);
 
         const testId = getTestId("language", syntax);
         const options = {
           implementation,
           api,
           sourceMap: false,
-          sassOptions: !isLegacyAPI
-            ? {
-                sourceMap: true,
-              }
-            : {
-                sourceMap: true,
-                outFile: path.join(__dirname, "style.css.map"),
-                sourceMapContents: true,
-                omitSourceMapUrl: true,
-                sourceMapEmbed: false,
-              },
+          sassOptions: {
+            sourceMap: true,
+          },
         };
         const compiler = getCompiler(testId, {
           devtool: false,
@@ -172,16 +143,10 @@ describe("sourceMap option", () => {
 
         sourceMap.sourceRoot = "";
         sourceMap.sources = sourceMap.sources.map((source) => {
-          let normalizedSource = source;
+          const normalizedSource = url.fileURLToPath(source);
 
-          if (api === "modern" || api === "modern-compiler") {
-            normalizedSource = url.fileURLToPath(normalizedSource);
-
-            expect(source).toMatch(/^file:/);
-            expect(path.isAbsolute(normalizedSource)).toBe(true);
-          } else {
-            expect(path.isAbsolute(source)).toBe(false);
-          }
+          expect(source).toMatch(/^file:/);
+          expect(path.isAbsolute(normalizedSource)).toBe(true);
 
           expect(
             fs.existsSync(
