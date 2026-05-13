@@ -52,6 +52,10 @@ describe("validate options", () => {
     },
   };
 
+  /**
+   * @param {EXPECTED_ANY} value value
+   * @returns {string} stringified value
+   */
   function stringifyValue(value) {
     if (
       Array.isArray(value) ||
@@ -63,6 +67,12 @@ describe("validate options", () => {
     return value;
   }
 
+  /**
+   * @param {string} key key
+   * @param {EXPECTED_ANY} value value
+   * @param {string} type type
+   * @returns {Promise<void>} created test case
+   */
   async function createTestCase(key, value, type) {
     it(`should ${
       type === "success" ? "successfully validate" : "throw an error on"
@@ -94,8 +104,8 @@ describe("validate options", () => {
               try {
                 fn();
                 return null;
-              } catch (e) {
-                return e.message;
+              } catch (err) {
+                return err.message;
               }
             })(() => {
               throw new Error(errors[0].error.message);

@@ -1,11 +1,9 @@
 import fs from "node:fs";
-import { createRequire } from "node:module";
 import path from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
-
+import ResolverFactory from "webpack/lib/ResolverFactory.js";
 import { getModernWebpackImporter } from "../../src/utils.js";
 
-const require = createRequire(import.meta.url);
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 /**
@@ -68,8 +66,6 @@ async function getCodeFromSass(testId, options, context = {}) {
       add: (dep) => loaderContext.addMissingDependency(dep),
     },
   });
-
-  const ResolverFactory = require("webpack/lib/ResolverFactory");
 
   const resolverFactory = new ResolverFactory();
   const syntax = context.syntax || "scss";
