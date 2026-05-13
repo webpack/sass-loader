@@ -1,8 +1,6 @@
-"use strict";
-
 const MIN_BABEL_VERSION = 7;
 
-module.exports = (api) => {
+export default (api) => {
   api.assertVersion(MIN_BABEL_VERSION);
 
   // `api.env()` caches the config by the active env name (set via
@@ -18,7 +16,6 @@ module.exports = (api) => {
         {
           targets: { node: "22.11.0" },
           // ESM build: keep ESM syntax. CJS build: convert to CJS.
-          // Default (e.g. babel-jest): let preset-env decide.
           modules: isEsm ? false : isCjs ? "commonjs" : "auto",
         },
       ],

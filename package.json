@@ -48,7 +48,7 @@
     "pretest": "npm run lint",
     "test": "npm run test:base",
     "pretest:base": "npm run build",
-    "test:base": "node --import ./test/setup-snapshots.mjs --test --test-force-exit --test-reporter=dot --test-reporter-destination=stdout --experimental-test-module-mocks",
+    "test:base": "node --import ./test/setup-snapshots.js --test --test-force-exit --test-reporter=dot --test-reporter-destination=stdout --experimental-test-module-mocks",
     "test:coverage": "npm run test:base -- --experimental-test-coverage --test-reporter=lcov --test-reporter-destination=coverage.lcov --test-coverage-include=\"src/**/*.js\"",
     "prepare": "husky && npm run build",
     "version": "changeset version",
