@@ -1,7 +1,5 @@
-"use strict";
-
-const path = require("node:path");
-const url = require("node:url");
+import path from "node:path";
+import url from "node:url";
 
 /** @typedef {import("sass")} Sass */
 /** @typedef {import("sass").StringOptionsWithImporter} SassSassOptions */
@@ -14,36 +12,31 @@ const url = require("node:url");
 /** @typedef {Record<string, EXPECTED_ANY>} LoaderOptions */
 
 /**
- * @returns {Sass | SassEmbedded} sass implementation
+ * @returns {Promise<Sass | SassEmbedded>} sass implementation
  */
-function getDefaultSassImplementation() {
-  let sassImplPkg = "sass";
-
+async function getDefaultSassImplementation() {
   try {
-    require.resolve("sass-embedded");
-    sassImplPkg = "sass-embedded";
+    return await import("sass-embedded");
   } catch {
-    sassImplPkg = "sass";
+    return await import("sass");
   }
-
-  return require(sassImplPkg);
 }
 
 /**
  * This function is not Webpack-specific and can be used by tools wishing to mimic `sass-loader`'s behaviour, so its signature should not be changed.
  * @param {LoaderContext} loaderContext loader context
- * @param {SassImplementation} implementation sass implementation
- * @returns {SassImplementation} resolved sass implementation
+ * @param {SassImplementation | string} implementation sass implementation
+ * @returns {Promise<SassImplementation>} resolved sass implementation
  */
-function getSassImplementation(loaderContext, implementation) {
+async function getSassImplementation(loaderContext, implementation) {
   let resolvedImplementation = implementation;
 
   if (!resolvedImplementation) {
-    resolvedImplementation = getDefaultSassImplementation();
+    resolvedImplementation = await getDefaultSassImplementation();
   }
 
   if (typeof resolvedImplementation === "string") {
-    resolvedImplementation = require(resolvedImplementation);
+    resolvedImplementation = await import(resolvedImplementation);
   }
 
   const { info } = resolvedImplementation;
@@ -712,7 +705,7 @@ function errorFactory(error) {
   return obj;
 }
 
-module.exports = {
+export {
   errorFactory,
   getCompileFn,
   getModernWebpackImporter,

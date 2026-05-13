@@ -108,7 +108,7 @@ exports[`implementation option > should throw an error on an unknown sass implem
 
 exports[`implementation option > should throw an error on an unknown sass implementation 2`] = `
 [
-  "ModuleBuildError: Module build failed (from ../src/cjs.js):\\nError: Unknown Sass implementation \\"strange-sass\\"."
+  "ModuleBuildError: Module build failed (from ../dist/cjs/index.js):\\nError: Unknown Sass implementation \\"strange-sass\\"."
 ]
 `;
 
@@ -118,7 +118,7 @@ exports[`implementation option > should throw an error when the \"info\" is unpa
 
 exports[`implementation option > should throw an error when the \"info\" is unparseable 2`] = `
 [
-  "ModuleBuildError: Module build failed (from ../src/cjs.js):\\nError: Unknown Sass implementation \\"asdfj\\"."
+  "ModuleBuildError: Module build failed (from ../dist/cjs/index.js):\\nError: Unknown Sass implementation \\"asdfj\\"."
 ]
 `;
 
@@ -128,7 +128,7 @@ exports[`implementation option > should throw error when the \"info\" does not e
 
 exports[`implementation option > should throw error when the \"info\" does not exist 2`] = `
 [
-  "ModuleBuildError: Module build failed (from ../src/cjs.js):\\nError: Unknown Sass implementation."
+  "ModuleBuildError: Module build failed (from ../dist/cjs/index.js):\\nError: Unknown Sass implementation."
 ]
 `;
 
@@ -138,6 +138,6 @@ exports[`implementation option > should throw error when unresolved package 1`] 
 
 exports[`implementation option > should throw error when unresolved package 2`] = `
 [
-  "ModuleBuildError: Module build failed (from ../src/cjs.js):\\nError: Cannot find module 'unresolved'"
+  "ModuleBuildError: Module build failed (from ../dist/cjs/index.js):\\nError: Cannot find module 'unresolved'"
 ]
 `;

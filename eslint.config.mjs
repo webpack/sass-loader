@@ -3,11 +3,14 @@ import configs from "eslint-config-webpack/configs.js";
 
 export default defineConfig([
   {
-    extends: [configs["node-recommended-commonjs"]],
+    extends: [configs["node-recommended-module"]],
+    rules: {
+      "n/no-unsupported-features/node-builtins": "off",
+    },
   },
   {
-    files: ["test/**/*"],
-    extends: [configs["node-recommended-module"]],
+    files: ["**/*.cjs"],
+    extends: [configs["node-recommended-commonjs"]],
     rules: {
       "n/no-unsupported-features/node-builtins": "off",
     },

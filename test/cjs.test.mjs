@@ -1,11 +1,10 @@
 import assert from "node:assert";
 import { describe, it } from "node:test";
 
-import cjs from "../src/cjs.js";
 import src from "../src/index.js";
 
 describe("cjs", () => {
-  it("should exported", () => {
-    assert.strictEqual(cjs, src);
+  it("should expose the loader as the default export of the ESM entry", () => {
+    assert.strictEqual(typeof src, "function");
   });
 });

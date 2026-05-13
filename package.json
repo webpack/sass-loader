@@ -17,14 +17,26 @@
   },
   "license": "MIT",
   "author": "J. Tangelder",
-  "main": "dist/cjs.js",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js",
+      "default": "./dist/esm/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
   "files": [
     "dist"
   ],
   "scripts": {
     "clean": "del-cli dist",
     "prebuild": "npm run clean",
-    "build": "node -e \"require('node:fs').cpSync('src', 'dist', { recursive: true })\"",
+    "build:esm": "babel src -d dist/esm --env-name esm --copy-files --no-copy-ignored",
+    "build:cjs": "babel src -d dist/cjs --env-name cjs --copy-files --no-copy-ignored && node -e \"require('fs').writeFileSync('dist/cjs/package.json','{\\\"type\\\":\\\"commonjs\\\"}\\n')\"",
+    "build": "npm-run-all -p \"build:*\"",
     "security": "npm audit --production",
     "lint": "npm-run-all -l -p \"lint:**\" && npm run fmt:check",
     "lint:code": "eslint --cache .",
@@ -35,6 +47,7 @@
     "fix:code": "npm run lint:code -- --fix",
     "pretest": "npm run lint",
     "test": "npm run test:base",
+    "pretest:base": "npm run build",
     "test:base": "node --import ./test/setup-snapshots.mjs --test --test-force-exit --test-reporter=dot --test-reporter-destination=stdout --experimental-test-module-mocks",
     "test:coverage": "npm run test:base -- --experimental-test-coverage --test-reporter=lcov --test-reporter-destination=coverage.lcov --test-coverage-include=\"src/**/*.js\"",
     "prepare": "husky && npm run build",
@@ -43,6 +56,9 @@
   },
   "dependencies": {},
   "devDependencies": {
+    "@babel/cli": "^7.28.6",
+    "@babel/core": "^7.28.6",
+    "@babel/preset-env": "^7.28.6",
     "@changesets/cli": "^2.30.0",
     "@changesets/get-github-info": "^0.8.0",
     "bootstrap-sass": "^3.4.1",

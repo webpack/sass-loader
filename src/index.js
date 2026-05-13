@@ -1,17 +1,15 @@
-"use strict";
+import path from "node:path";
+import url from "node:url";
 
-const path = require("node:path");
-const url = require("node:url");
-
-const schema = require("./options.json");
-const {
+import schema from "./options.js";
+import {
   errorFactory,
   getCompileFn,
   getModernWebpackImporter,
   getSassImplementation,
   getSassOptions,
   normalizeSourceMap,
-} = require("./utils");
+} from "./utils.js";
 
 // eslint-disable-next-line jsdoc/reject-any-type
 /** @typedef {any} EXPECTED_ANY */
@@ -28,7 +26,7 @@ async function loader(content) {
   let implementation;
 
   try {
-    implementation = getSassImplementation(this, options.implementation);
+    implementation = await getSassImplementation(this, options.implementation);
   } catch (error) {
     callback(error);
 
@@ -104,5 +102,4 @@ async function loader(content) {
   callback(null, result.css.toString(), map);
 }
 
-module.exports = loader;
-module.exports.default = loader;
+export default loader;
