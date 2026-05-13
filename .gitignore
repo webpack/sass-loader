@@ -5,6 +5,8 @@ npm-debug.log*
 .cspellcache
 
 /coverage
+coverage.lcov
+
 /dist
 /local
 /reports

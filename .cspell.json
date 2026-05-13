@@ -17,9 +17,9 @@
     "wekbit",
     "commitlint",
     "bgcolor",
-    "autocrlf"
+    "autocrlf",
+    "eslintcache"
   ],
-
   "ignorePaths": [
     "CHANGELOG.md",
     "coverage",

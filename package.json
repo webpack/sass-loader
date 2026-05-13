@@ -35,10 +35,8 @@
     "fix:code": "npm run lint:code -- --fix",
     "pretest": "npm run lint",
     "test": "npm run test:base",
-    "test:watch": "npm run test:base -- --watch",
-    "test:base": "node --import ./test/setup-snapshots.mjs --test --test-force-exit --experimental-test-snapshots --experimental-test-module-mocks",
-    "test:manual": "npm run build && webpack-dev-server test/manual/src/index.js --open --config test/manual/webpack.config.cjs",
-    "test:coverage": "npm run test:base -- --experimental-test-coverage --test-coverage-include=\"src/**/*.js\"",
+    "test:base": "node --import ./test/setup-snapshots.mjs --test --test-force-exit --test-reporter=dot --test-reporter-destination=stdout --experimental-test-module-mocks",
+    "test:coverage": "npm run test:base -- --test-reporter=lcov --test-reporter-destination=coverage.lcov --test-coverage-include=\"src/**/*.js\"",
     "prepare": "husky && npm run build",
     "version": "changeset version",
     "release": "npm run build && changeset publish"
@@ -69,9 +67,7 @@
     "sass-embedded": "^1.89.2",
     "style-loader": "^3.3.4",
     "typescript": "^5.9.2",
-    "webpack": "^5.106.2",
-    "webpack-cli": "^6.0.1",
-    "webpack-dev-server": "^5.2.3"
+    "webpack": "^5.106.2"
   },
   "peerDependencies": {
     "@rspack/core": "0.x || ^1.0.0 || ^2.0.0-0",
