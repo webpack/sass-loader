@@ -55,7 +55,7 @@
     "bootstrap-v5": "npm:bootstrap@^5.3.8",
     "cspell": "^10.0.0",
     "css-loader": "^7.1.4",
-    "del": "^8.0.1",
+    "del": "^6.1.1",
     "del-cli": "^7.0.0",
     "enhanced-resolve": "^5.21.3",
     "eslint": "^9.38.0",
