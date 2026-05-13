@@ -1,0 +1,1767 @@
+exports[`sourceMap option > should generate source maps when value has \"false\" value, but the \"sassOptions.sourceMap\" has the \"true\" value ('dart-sass', 'modern' API, 'sass' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.message, .warning, .error, .success {\\n  border: 1px solid #ccc;\\n  padding: 10px;\\n  color: #333;\\n}\\n\\n.success {\\n  border-color: green;\\n}\\n\\n.error {\\n  border-color: red;\\n}\\n\\n.warning {\\n  border-color: yellow;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sourceMap option > should generate source maps when value has \"false\" value, but the \"sassOptions.sourceMap\" has the \"true\" value ('dart-sass', 'modern' API, 'sass' syntax) 2`] = `
+{
+  "version": 3,
+  "sourceRoot": "",
+  "sources": [
+    "test/sass/language.sass",
+    "test/sass/another/variables.sass"
+  ],
+  "names": [],
+  "mappings": ";AACQ;AAMR;EACE;EACA,OALc;;;AAQd;EACE;EACA;EACA;;AAEF;EACE;;AAEF;EACE;EACA;EACA;;;AAQJ;EALE,uBAMe;EALf,oBAKe;EAJf,mBAIe;EAHf,eAGe;;;AAEjB;EACE;EACA;EACA;;;AAEF;EAEE;;;AAEF;EAEE;;;AAEF;EAEE;;;AAGA;EACE,SAhDY;;;AAmDd;EACE,SCzDc"
+}
+`;
+
+exports[`sourceMap option > should generate source maps when value has \"false\" value, but the \"sassOptions.sourceMap\" has the \"true\" value ('dart-sass', 'modern' API, 'sass' syntax) 3`] = `
+[]
+`;
+
+exports[`sourceMap option > should generate source maps when value has \"false\" value, but the \"sassOptions.sourceMap\" has the \"true\" value ('dart-sass', 'modern' API, 'sass' syntax) 4`] = `
+[]
+`;
+
+exports[`sourceMap option > should generate source maps when value has \"false\" value, but the \"sassOptions.sourceMap\" has the \"true\" value ('dart-sass', 'modern' API, 'scss' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sourceMap option > should generate source maps when value has \"false\" value, but the \"sassOptions.sourceMap\" has the \"true\" value ('dart-sass', 'modern' API, 'scss' syntax) 2`] = `
+{
+  "version": 3,
+  "sourceRoot": "",
+  "sources": [
+    "test/scss/language.scss",
+    "test/scss/another/_variables.scss"
+  ],
+  "names": [],
+  "mappings": ";AACQ;AAMR;EACE;EACA,OALc;;;AASd;EACE;EACA;EACA;;AAGF;EAAK;;AAEL;EACE;EACA;EACA;;;AAWJ;EANE,uBAM4B;EALzB,oBAKyB;EAJxB,mBAIwB;EAHpB,eAGoB;;;AAG5B;EACE,SAlCY;;;AAuCd;EACE,SC7Cc"
+}
+`;
+
+exports[`sourceMap option > should generate source maps when value has \"false\" value, but the \"sassOptions.sourceMap\" has the \"true\" value ('dart-sass', 'modern' API, 'scss' syntax) 3`] = `
+[]
+`;
+
+exports[`sourceMap option > should generate source maps when value has \"false\" value, but the \"sassOptions.sourceMap\" has the \"true\" value ('dart-sass', 'modern' API, 'scss' syntax) 4`] = `
+[]
+`;
+
+exports[`sourceMap option > should generate source maps when value has \"false\" value, but the \"sassOptions.sourceMap\" has the \"true\" value ('dart-sass', 'modern-compiler' API, 'sass' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.message, .warning, .error, .success {\\n  border: 1px solid #ccc;\\n  padding: 10px;\\n  color: #333;\\n}\\n\\n.success {\\n  border-color: green;\\n}\\n\\n.error {\\n  border-color: red;\\n}\\n\\n.warning {\\n  border-color: yellow;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sourceMap option > should generate source maps when value has \"false\" value, but the \"sassOptions.sourceMap\" has the \"true\" value ('dart-sass', 'modern-compiler' API, 'sass' syntax) 2`] = `
+{
+  "version": 3,
+  "sourceRoot": "",
+  "sources": [
+    "test/sass/language.sass",
+    "test/sass/another/variables.sass"
+  ],
+  "names": [],
+  "mappings": ";AACQ;AAMR;EACE;EACA,OALc;;;AAQd;EACE;EACA;EACA;;AAEF;EACE;;AAEF;EACE;EACA;EACA;;;AAQJ;EALE,uBAMe;EALf,oBAKe;EAJf,mBAIe;EAHf,eAGe;;;AAEjB;EACE;EACA;EACA;;;AAEF;EAEE;;;AAEF;EAEE;;;AAEF;EAEE;;;AAGA;EACE,SAhDY;;;AAmDd;EACE,SCzDc"
+}
+`;
+
+exports[`sourceMap option > should generate source maps when value has \"false\" value, but the \"sassOptions.sourceMap\" has the \"true\" value ('dart-sass', 'modern-compiler' API, 'sass' syntax) 3`] = `
+[]
+`;
+
+exports[`sourceMap option > should generate source maps when value has \"false\" value, but the \"sassOptions.sourceMap\" has the \"true\" value ('dart-sass', 'modern-compiler' API, 'sass' syntax) 4`] = `
+[]
+`;
+
+exports[`sourceMap option > should generate source maps when value has \"false\" value, but the \"sassOptions.sourceMap\" has the \"true\" value ('dart-sass', 'modern-compiler' API, 'scss' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sourceMap option > should generate source maps when value has \"false\" value, but the \"sassOptions.sourceMap\" has the \"true\" value ('dart-sass', 'modern-compiler' API, 'scss' syntax) 2`] = `
+{
+  "version": 3,
+  "sourceRoot": "",
+  "sources": [
+    "test/scss/language.scss",
+    "test/scss/another/_variables.scss"
+  ],
+  "names": [],
+  "mappings": ";AACQ;AAMR;EACE;EACA,OALc;;;AASd;EACE;EACA;EACA;;AAGF;EAAK;;AAEL;EACE;EACA;EACA;;;AAWJ;EANE,uBAM4B;EALzB,oBAKyB;EAJxB,mBAIwB;EAHpB,eAGoB;;;AAG5B;EACE,SAlCY;;;AAuCd;EACE,SC7Cc"
+}
+`;
+
+exports[`sourceMap option > should generate source maps when value has \"false\" value, but the \"sassOptions.sourceMap\" has the \"true\" value ('dart-sass', 'modern-compiler' API, 'scss' syntax) 3`] = `
+[]
+`;
+
+exports[`sourceMap option > should generate source maps when value has \"false\" value, but the \"sassOptions.sourceMap\" has the \"true\" value ('dart-sass', 'modern-compiler' API, 'scss' syntax) 4`] = `
+[]
+`;
+
+exports[`sourceMap option > should generate source maps when value has \"false\" value, but the \"sassOptions.sourceMap\" has the \"true\" value ('sass-embedded', 'modern' API, 'sass' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.message, .warning, .error, .success {\\n  border: 1px solid #ccc;\\n  padding: 10px;\\n  color: #333;\\n}\\n\\n.success {\\n  border-color: green;\\n}\\n\\n.error {\\n  border-color: red;\\n}\\n\\n.warning {\\n  border-color: yellow;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sourceMap option > should generate source maps when value has \"false\" value, but the \"sassOptions.sourceMap\" has the \"true\" value ('sass-embedded', 'modern' API, 'sass' syntax) 2`] = `
+{
+  "version": 3,
+  "sourceRoot": "",
+  "sources": [
+    "test/sass/language.sass",
+    "test/sass/another/variables.sass"
+  ],
+  "names": [],
+  "mappings": ";AACQ;AAMR;EACE;EACA,OALc;;;AAQd;EACE;EACA;EACA;;AAEF;EACE;;AAEF;EACE;EACA;EACA;;;AAQJ;EALE,uBAMe;EALf,oBAKe;EAJf,mBAIe;EAHf,eAGe;;;AAEjB;EACE;EACA;EACA;;;AAEF;EAEE;;;AAEF;EAEE;;;AAEF;EAEE;;;AAGA;EACE,SAhDY;;;AAmDd;EACE,SCzDc"
+}
+`;
+
+exports[`sourceMap option > should generate source maps when value has \"false\" value, but the \"sassOptions.sourceMap\" has the \"true\" value ('sass-embedded', 'modern' API, 'sass' syntax) 3`] = `
+[]
+`;
+
+exports[`sourceMap option > should generate source maps when value has \"false\" value, but the \"sassOptions.sourceMap\" has the \"true\" value ('sass-embedded', 'modern' API, 'sass' syntax) 4`] = `
+[]
+`;
+
+exports[`sourceMap option > should generate source maps when value has \"false\" value, but the \"sassOptions.sourceMap\" has the \"true\" value ('sass-embedded', 'modern' API, 'scss' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sourceMap option > should generate source maps when value has \"false\" value, but the \"sassOptions.sourceMap\" has the \"true\" value ('sass-embedded', 'modern' API, 'scss' syntax) 2`] = `
+{
+  "version": 3,
+  "sourceRoot": "",
+  "sources": [
+    "test/scss/language.scss",
+    "test/scss/another/_variables.scss"
+  ],
+  "names": [],
+  "mappings": ";AACQ;AAMR;EACE;EACA,OALc;;;AASd;EACE;EACA;EACA;;AAGF;EAAK;;AAEL;EACE;EACA;EACA;;;AAWJ;EANE,uBAM4B;EALzB,oBAKyB;EAJxB,mBAIwB;EAHpB,eAGoB;;;AAG5B;EACE,SAlCY;;;AAuCd;EACE,SC7Cc"
+}
+`;
+
+exports[`sourceMap option > should generate source maps when value has \"false\" value, but the \"sassOptions.sourceMap\" has the \"true\" value ('sass-embedded', 'modern' API, 'scss' syntax) 3`] = `
+[]
+`;
+
+exports[`sourceMap option > should generate source maps when value has \"false\" value, but the \"sassOptions.sourceMap\" has the \"true\" value ('sass-embedded', 'modern' API, 'scss' syntax) 4`] = `
+[]
+`;
+
+exports[`sourceMap option > should generate source maps when value has \"false\" value, but the \"sassOptions.sourceMap\" has the \"true\" value ('sass-embedded', 'modern-compiler' API, 'sass' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.message, .warning, .error, .success {\\n  border: 1px solid #ccc;\\n  padding: 10px;\\n  color: #333;\\n}\\n\\n.success {\\n  border-color: green;\\n}\\n\\n.error {\\n  border-color: red;\\n}\\n\\n.warning {\\n  border-color: yellow;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sourceMap option > should generate source maps when value has \"false\" value, but the \"sassOptions.sourceMap\" has the \"true\" value ('sass-embedded', 'modern-compiler' API, 'sass' syntax) 2`] = `
+{
+  "version": 3,
+  "sourceRoot": "",
+  "sources": [
+    "test/sass/language.sass",
+    "test/sass/another/variables.sass"
+  ],
+  "names": [],
+  "mappings": ";AACQ;AAMR;EACE;EACA,OALc;;;AAQd;EACE;EACA;EACA;;AAEF;EACE;;AAEF;EACE;EACA;EACA;;;AAQJ;EALE,uBAMe;EALf,oBAKe;EAJf,mBAIe;EAHf,eAGe;;;AAEjB;EACE;EACA;EACA;;;AAEF;EAEE;;;AAEF;EAEE;;;AAEF;EAEE;;;AAGA;EACE,SAhDY;;;AAmDd;EACE,SCzDc"
+}
+`;
+
+exports[`sourceMap option > should generate source maps when value has \"false\" value, but the \"sassOptions.sourceMap\" has the \"true\" value ('sass-embedded', 'modern-compiler' API, 'sass' syntax) 3`] = `
+[]
+`;
+
+exports[`sourceMap option > should generate source maps when value has \"false\" value, but the \"sassOptions.sourceMap\" has the \"true\" value ('sass-embedded', 'modern-compiler' API, 'sass' syntax) 4`] = `
+[]
+`;
+
+exports[`sourceMap option > should generate source maps when value has \"false\" value, but the \"sassOptions.sourceMap\" has the \"true\" value ('sass-embedded', 'modern-compiler' API, 'scss' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sourceMap option > should generate source maps when value has \"false\" value, but the \"sassOptions.sourceMap\" has the \"true\" value ('sass-embedded', 'modern-compiler' API, 'scss' syntax) 2`] = `
+{
+  "version": 3,
+  "sourceRoot": "",
+  "sources": [
+    "test/scss/language.scss",
+    "test/scss/another/_variables.scss"
+  ],
+  "names": [],
+  "mappings": ";AACQ;AAMR;EACE;EACA,OALc;;;AASd;EACE;EACA;EACA;;AAGF;EAAK;;AAEL;EACE;EACA;EACA;;;AAWJ;EANE,uBAM4B;EALzB,oBAKyB;EAJxB,mBAIwB;EAHpB,eAGoB;;;AAG5B;EACE,SAlCY;;;AAuCd;EACE,SC7Cc"
+}
+`;
+
+exports[`sourceMap option > should generate source maps when value has \"false\" value, but the \"sassOptions.sourceMap\" has the \"true\" value ('sass-embedded', 'modern-compiler' API, 'scss' syntax) 3`] = `
+[]
+`;
+
+exports[`sourceMap option > should generate source maps when value has \"false\" value, but the \"sassOptions.sourceMap\" has the \"true\" value ('sass-embedded', 'modern-compiler' API, 'scss' syntax) 4`] = `
+[]
+`;
+
+exports[`sourceMap option > should generate source maps when value has \"true\" value and the \"devtool\" option has \"false\" value ('dart-sass', 'modern' API, 'sass' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.message, .warning, .error, .success {\\n  border: 1px solid #ccc;\\n  padding: 10px;\\n  color: #333;\\n}\\n\\n.success {\\n  border-color: green;\\n}\\n\\n.error {\\n  border-color: red;\\n}\\n\\n.warning {\\n  border-color: yellow;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sourceMap option > should generate source maps when value has \"true\" value and the \"devtool\" option has \"false\" value ('dart-sass', 'modern' API, 'sass' syntax) 2`] = `
+{
+  "version": 3,
+  "sourceRoot": "",
+  "sources": [
+    "test/sass/language.sass",
+    "test/sass/another/variables.sass"
+  ],
+  "names": [],
+  "mappings": ";AACQ;AAMR;EACE;EACA,OALc;;;AAQd;EACE;EACA;EACA;;AAEF;EACE;;AAEF;EACE;EACA;EACA;;;AAQJ;EALE,uBAMe;EALf,oBAKe;EAJf,mBAIe;EAHf,eAGe;;;AAEjB;EACE;EACA;EACA;;;AAEF;EAEE;;;AAEF;EAEE;;;AAEF;EAEE;;;AAGA;EACE,SAhDY;;;AAmDd;EACE,SCzDc",
+  "sourcesContent": [
+    "@import \\"another/variables\\"\\n@import \\"./file.css\\"\\n\\n$font-stack:    Helvetica, sans-serif\\n$primary-color: #333\\n$pi:            '\\\\e0C6'\\n\\nbody\\n  font: 100% $font-stack\\n  color: $primary-color\\n\\nnav\\n  ul\\n    margin: 0\\n    padding: 0\\n    list-style: none\\n\\n  li\\n    display: inline-block\\n\\n  a\\n    display: block\\n    padding: 6px 12px\\n    text-decoration: none\\n\\n=border-radius($radius)\\n  -webkit-border-radius: $radius\\n  -moz-border-radius:    $radius\\n  -ms-border-radius:     $radius\\n  border-radius:         $radius\\n\\n.box\\n  +border-radius(10px)\\n\\n.message\\n  border: 1px solid #ccc\\n  padding: 10px\\n  color: #333\\n\\n.success\\n  @extend .message\\n  border-color: green\\n\\n.error\\n  @extend .message\\n  border-color: red\\n\\n.warning\\n  @extend .message\\n  border-color: yellow\\n\\n.foo\\n  &:before\\n    content: $pi\\n\\n.bar\\n  &:before\\n    content: $n-ary-summation\\n\\n",
+    "$n-ary-summation: '\\\\2211'\\n"
+  ]
+}
+`;
+
+exports[`sourceMap option > should generate source maps when value has \"true\" value and the \"devtool\" option has \"false\" value ('dart-sass', 'modern' API, 'sass' syntax) 3`] = `
+[]
+`;
+
+exports[`sourceMap option > should generate source maps when value has \"true\" value and the \"devtool\" option has \"false\" value ('dart-sass', 'modern' API, 'sass' syntax) 4`] = `
+[]
+`;
+
+exports[`sourceMap option > should generate source maps when value has \"true\" value and the \"devtool\" option has \"false\" value ('dart-sass', 'modern' API, 'scss' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sourceMap option > should generate source maps when value has \"true\" value and the \"devtool\" option has \"false\" value ('dart-sass', 'modern' API, 'scss' syntax) 2`] = `
+{
+  "version": 3,
+  "sourceRoot": "",
+  "sources": [
+    "test/scss/language.scss",
+    "test/scss/another/_variables.scss"
+  ],
+  "names": [],
+  "mappings": ";AACQ;AAMR;EACE;EACA,OALc;;;AASd;EACE;EACA;EACA;;AAGF;EAAK;;AAEL;EACE;EACA;EACA;;;AAWJ;EANE,uBAM4B;EALzB,oBAKyB;EAJxB,mBAIwB;EAHpB,eAGoB;;;AAG5B;EACE,SAlCY;;;AAuCd;EACE,SC7Cc",
+  "sourcesContent": [
+    "@import \\"another/variables\\";\\n@import \\"./file.css\\";\\n\\n$font-stack:    Helvetica, sans-serif;\\n$primary-color: #333;\\n$pi:            '\\\\e0C6';\\n\\nbody {\\n  font: 100% $font-stack;\\n  color: $primary-color;\\n}\\n\\nnav {\\n  ul {\\n    margin: 0;\\n    padding: 0;\\n    list-style: none;\\n  }\\n\\n  li { display: inline-block; }\\n\\n  a {\\n    display: block;\\n    padding: 6px 12px;\\n    text-decoration: none;\\n  }\\n}\\n\\n@mixin border-radius($radius) {\\n  -webkit-border-radius: $radius;\\n     -moz-border-radius: $radius;\\n      -ms-border-radius: $radius;\\n          border-radius: $radius;\\n}\\n\\n.box { @include border-radius(10px); }\\n\\n.foo {\\n  &:before {\\n    content: $pi;\\n  }\\n}\\n\\n.bar {\\n  &:before {\\n    content: $n-ary-summation;\\n  }\\n}\\n",
+    "$n-ary-summation: '\\\\2211'\\n"
+  ]
+}
+`;
+
+exports[`sourceMap option > should generate source maps when value has \"true\" value and the \"devtool\" option has \"false\" value ('dart-sass', 'modern' API, 'scss' syntax) 3`] = `
+[]
+`;
+
+exports[`sourceMap option > should generate source maps when value has \"true\" value and the \"devtool\" option has \"false\" value ('dart-sass', 'modern' API, 'scss' syntax) 4`] = `
+[]
+`;
+
+exports[`sourceMap option > should generate source maps when value has \"true\" value and the \"devtool\" option has \"false\" value ('dart-sass', 'modern-compiler' API, 'sass' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.message, .warning, .error, .success {\\n  border: 1px solid #ccc;\\n  padding: 10px;\\n  color: #333;\\n}\\n\\n.success {\\n  border-color: green;\\n}\\n\\n.error {\\n  border-color: red;\\n}\\n\\n.warning {\\n  border-color: yellow;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sourceMap option > should generate source maps when value has \"true\" value and the \"devtool\" option has \"false\" value ('dart-sass', 'modern-compiler' API, 'sass' syntax) 2`] = `
+{
+  "version": 3,
+  "sourceRoot": "",
+  "sources": [
+    "test/sass/language.sass",
+    "test/sass/another/variables.sass"
+  ],
+  "names": [],
+  "mappings": ";AACQ;AAMR;EACE;EACA,OALc;;;AAQd;EACE;EACA;EACA;;AAEF;EACE;;AAEF;EACE;EACA;EACA;;;AAQJ;EALE,uBAMe;EALf,oBAKe;EAJf,mBAIe;EAHf,eAGe;;;AAEjB;EACE;EACA;EACA;;;AAEF;EAEE;;;AAEF;EAEE;;;AAEF;EAEE;;;AAGA;EACE,SAhDY;;;AAmDd;EACE,SCzDc",
+  "sourcesContent": [
+    "@import \\"another/variables\\"\\n@import \\"./file.css\\"\\n\\n$font-stack:    Helvetica, sans-serif\\n$primary-color: #333\\n$pi:            '\\\\e0C6'\\n\\nbody\\n  font: 100% $font-stack\\n  color: $primary-color\\n\\nnav\\n  ul\\n    margin: 0\\n    padding: 0\\n    list-style: none\\n\\n  li\\n    display: inline-block\\n\\n  a\\n    display: block\\n    padding: 6px 12px\\n    text-decoration: none\\n\\n=border-radius($radius)\\n  -webkit-border-radius: $radius\\n  -moz-border-radius:    $radius\\n  -ms-border-radius:     $radius\\n  border-radius:         $radius\\n\\n.box\\n  +border-radius(10px)\\n\\n.message\\n  border: 1px solid #ccc\\n  padding: 10px\\n  color: #333\\n\\n.success\\n  @extend .message\\n  border-color: green\\n\\n.error\\n  @extend .message\\n  border-color: red\\n\\n.warning\\n  @extend .message\\n  border-color: yellow\\n\\n.foo\\n  &:before\\n    content: $pi\\n\\n.bar\\n  &:before\\n    content: $n-ary-summation\\n\\n",
+    "$n-ary-summation: '\\\\2211'\\n"
+  ]
+}
+`;
+
+exports[`sourceMap option > should generate source maps when value has \"true\" value and the \"devtool\" option has \"false\" value ('dart-sass', 'modern-compiler' API, 'sass' syntax) 3`] = `
+[]
+`;
+
+exports[`sourceMap option > should generate source maps when value has \"true\" value and the \"devtool\" option has \"false\" value ('dart-sass', 'modern-compiler' API, 'sass' syntax) 4`] = `
+[]
+`;
+
+exports[`sourceMap option > should generate source maps when value has \"true\" value and the \"devtool\" option has \"false\" value ('dart-sass', 'modern-compiler' API, 'scss' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sourceMap option > should generate source maps when value has \"true\" value and the \"devtool\" option has \"false\" value ('dart-sass', 'modern-compiler' API, 'scss' syntax) 2`] = `
+{
+  "version": 3,
+  "sourceRoot": "",
+  "sources": [
+    "test/scss/language.scss",
+    "test/scss/another/_variables.scss"
+  ],
+  "names": [],
+  "mappings": ";AACQ;AAMR;EACE;EACA,OALc;;;AASd;EACE;EACA;EACA;;AAGF;EAAK;;AAEL;EACE;EACA;EACA;;;AAWJ;EANE,uBAM4B;EALzB,oBAKyB;EAJxB,mBAIwB;EAHpB,eAGoB;;;AAG5B;EACE,SAlCY;;;AAuCd;EACE,SC7Cc",
+  "sourcesContent": [
+    "@import \\"another/variables\\";\\n@import \\"./file.css\\";\\n\\n$font-stack:    Helvetica, sans-serif;\\n$primary-color: #333;\\n$pi:            '\\\\e0C6';\\n\\nbody {\\n  font: 100% $font-stack;\\n  color: $primary-color;\\n}\\n\\nnav {\\n  ul {\\n    margin: 0;\\n    padding: 0;\\n    list-style: none;\\n  }\\n\\n  li { display: inline-block; }\\n\\n  a {\\n    display: block;\\n    padding: 6px 12px;\\n    text-decoration: none;\\n  }\\n}\\n\\n@mixin border-radius($radius) {\\n  -webkit-border-radius: $radius;\\n     -moz-border-radius: $radius;\\n      -ms-border-radius: $radius;\\n          border-radius: $radius;\\n}\\n\\n.box { @include border-radius(10px); }\\n\\n.foo {\\n  &:before {\\n    content: $pi;\\n  }\\n}\\n\\n.bar {\\n  &:before {\\n    content: $n-ary-summation;\\n  }\\n}\\n",
+    "$n-ary-summation: '\\\\2211'\\n"
+  ]
+}
+`;
+
+exports[`sourceMap option > should generate source maps when value has \"true\" value and the \"devtool\" option has \"false\" value ('dart-sass', 'modern-compiler' API, 'scss' syntax) 3`] = `
+[]
+`;
+
+exports[`sourceMap option > should generate source maps when value has \"true\" value and the \"devtool\" option has \"false\" value ('dart-sass', 'modern-compiler' API, 'scss' syntax) 4`] = `
+[]
+`;
+
+exports[`sourceMap option > should generate source maps when value has \"true\" value and the \"devtool\" option has \"false\" value ('sass-embedded', 'modern' API, 'sass' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.message, .warning, .error, .success {\\n  border: 1px solid #ccc;\\n  padding: 10px;\\n  color: #333;\\n}\\n\\n.success {\\n  border-color: green;\\n}\\n\\n.error {\\n  border-color: red;\\n}\\n\\n.warning {\\n  border-color: yellow;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sourceMap option > should generate source maps when value has \"true\" value and the \"devtool\" option has \"false\" value ('sass-embedded', 'modern' API, 'sass' syntax) 2`] = `
+{
+  "version": 3,
+  "sourceRoot": "",
+  "sources": [
+    "test/sass/language.sass",
+    "test/sass/another/variables.sass"
+  ],
+  "names": [],
+  "mappings": ";AACQ;AAMR;EACE;EACA,OALc;;;AAQd;EACE;EACA;EACA;;AAEF;EACE;;AAEF;EACE;EACA;EACA;;;AAQJ;EALE,uBAMe;EALf,oBAKe;EAJf,mBAIe;EAHf,eAGe;;;AAEjB;EACE;EACA;EACA;;;AAEF;EAEE;;;AAEF;EAEE;;;AAEF;EAEE;;;AAGA;EACE,SAhDY;;;AAmDd;EACE,SCzDc",
+  "sourcesContent": [
+    "@import \\"another/variables\\"\\n@import \\"./file.css\\"\\n\\n$font-stack:    Helvetica, sans-serif\\n$primary-color: #333\\n$pi:            '\\\\e0C6'\\n\\nbody\\n  font: 100% $font-stack\\n  color: $primary-color\\n\\nnav\\n  ul\\n    margin: 0\\n    padding: 0\\n    list-style: none\\n\\n  li\\n    display: inline-block\\n\\n  a\\n    display: block\\n    padding: 6px 12px\\n    text-decoration: none\\n\\n=border-radius($radius)\\n  -webkit-border-radius: $radius\\n  -moz-border-radius:    $radius\\n  -ms-border-radius:     $radius\\n  border-radius:         $radius\\n\\n.box\\n  +border-radius(10px)\\n\\n.message\\n  border: 1px solid #ccc\\n  padding: 10px\\n  color: #333\\n\\n.success\\n  @extend .message\\n  border-color: green\\n\\n.error\\n  @extend .message\\n  border-color: red\\n\\n.warning\\n  @extend .message\\n  border-color: yellow\\n\\n.foo\\n  &:before\\n    content: $pi\\n\\n.bar\\n  &:before\\n    content: $n-ary-summation\\n\\n",
+    "$n-ary-summation: '\\\\2211'\\n"
+  ]
+}
+`;
+
+exports[`sourceMap option > should generate source maps when value has \"true\" value and the \"devtool\" option has \"false\" value ('sass-embedded', 'modern' API, 'sass' syntax) 3`] = `
+[]
+`;
+
+exports[`sourceMap option > should generate source maps when value has \"true\" value and the \"devtool\" option has \"false\" value ('sass-embedded', 'modern' API, 'sass' syntax) 4`] = `
+[]
+`;
+
+exports[`sourceMap option > should generate source maps when value has \"true\" value and the \"devtool\" option has \"false\" value ('sass-embedded', 'modern' API, 'scss' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sourceMap option > should generate source maps when value has \"true\" value and the \"devtool\" option has \"false\" value ('sass-embedded', 'modern' API, 'scss' syntax) 2`] = `
+{
+  "version": 3,
+  "sourceRoot": "",
+  "sources": [
+    "test/scss/language.scss",
+    "test/scss/another/_variables.scss"
+  ],
+  "names": [],
+  "mappings": ";AACQ;AAMR;EACE;EACA,OALc;;;AASd;EACE;EACA;EACA;;AAGF;EAAK;;AAEL;EACE;EACA;EACA;;;AAWJ;EANE,uBAM4B;EALzB,oBAKyB;EAJxB,mBAIwB;EAHpB,eAGoB;;;AAG5B;EACE,SAlCY;;;AAuCd;EACE,SC7Cc",
+  "sourcesContent": [
+    "@import \\"another/variables\\";\\n@import \\"./file.css\\";\\n\\n$font-stack:    Helvetica, sans-serif;\\n$primary-color: #333;\\n$pi:            '\\\\e0C6';\\n\\nbody {\\n  font: 100% $font-stack;\\n  color: $primary-color;\\n}\\n\\nnav {\\n  ul {\\n    margin: 0;\\n    padding: 0;\\n    list-style: none;\\n  }\\n\\n  li { display: inline-block; }\\n\\n  a {\\n    display: block;\\n    padding: 6px 12px;\\n    text-decoration: none;\\n  }\\n}\\n\\n@mixin border-radius($radius) {\\n  -webkit-border-radius: $radius;\\n     -moz-border-radius: $radius;\\n      -ms-border-radius: $radius;\\n          border-radius: $radius;\\n}\\n\\n.box { @include border-radius(10px); }\\n\\n.foo {\\n  &:before {\\n    content: $pi;\\n  }\\n}\\n\\n.bar {\\n  &:before {\\n    content: $n-ary-summation;\\n  }\\n}\\n",
+    "$n-ary-summation: '\\\\2211'\\n"
+  ]
+}
+`;
+
+exports[`sourceMap option > should generate source maps when value has \"true\" value and the \"devtool\" option has \"false\" value ('sass-embedded', 'modern' API, 'scss' syntax) 3`] = `
+[]
+`;
+
+exports[`sourceMap option > should generate source maps when value has \"true\" value and the \"devtool\" option has \"false\" value ('sass-embedded', 'modern' API, 'scss' syntax) 4`] = `
+[]
+`;
+
+exports[`sourceMap option > should generate source maps when value has \"true\" value and the \"devtool\" option has \"false\" value ('sass-embedded', 'modern-compiler' API, 'sass' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.message, .warning, .error, .success {\\n  border: 1px solid #ccc;\\n  padding: 10px;\\n  color: #333;\\n}\\n\\n.success {\\n  border-color: green;\\n}\\n\\n.error {\\n  border-color: red;\\n}\\n\\n.warning {\\n  border-color: yellow;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sourceMap option > should generate source maps when value has \"true\" value and the \"devtool\" option has \"false\" value ('sass-embedded', 'modern-compiler' API, 'sass' syntax) 2`] = `
+{
+  "version": 3,
+  "sourceRoot": "",
+  "sources": [
+    "test/sass/language.sass",
+    "test/sass/another/variables.sass"
+  ],
+  "names": [],
+  "mappings": ";AACQ;AAMR;EACE;EACA,OALc;;;AAQd;EACE;EACA;EACA;;AAEF;EACE;;AAEF;EACE;EACA;EACA;;;AAQJ;EALE,uBAMe;EALf,oBAKe;EAJf,mBAIe;EAHf,eAGe;;;AAEjB;EACE;EACA;EACA;;;AAEF;EAEE;;;AAEF;EAEE;;;AAEF;EAEE;;;AAGA;EACE,SAhDY;;;AAmDd;EACE,SCzDc",
+  "sourcesContent": [
+    "@import \\"another/variables\\"\\n@import \\"./file.css\\"\\n\\n$font-stack:    Helvetica, sans-serif\\n$primary-color: #333\\n$pi:            '\\\\e0C6'\\n\\nbody\\n  font: 100% $font-stack\\n  color: $primary-color\\n\\nnav\\n  ul\\n    margin: 0\\n    padding: 0\\n    list-style: none\\n\\n  li\\n    display: inline-block\\n\\n  a\\n    display: block\\n    padding: 6px 12px\\n    text-decoration: none\\n\\n=border-radius($radius)\\n  -webkit-border-radius: $radius\\n  -moz-border-radius:    $radius\\n  -ms-border-radius:     $radius\\n  border-radius:         $radius\\n\\n.box\\n  +border-radius(10px)\\n\\n.message\\n  border: 1px solid #ccc\\n  padding: 10px\\n  color: #333\\n\\n.success\\n  @extend .message\\n  border-color: green\\n\\n.error\\n  @extend .message\\n  border-color: red\\n\\n.warning\\n  @extend .message\\n  border-color: yellow\\n\\n.foo\\n  &:before\\n    content: $pi\\n\\n.bar\\n  &:before\\n    content: $n-ary-summation\\n\\n",
+    "$n-ary-summation: '\\\\2211'\\n"
+  ]
+}
+`;
+
+exports[`sourceMap option > should generate source maps when value has \"true\" value and the \"devtool\" option has \"false\" value ('sass-embedded', 'modern-compiler' API, 'sass' syntax) 3`] = `
+[]
+`;
+
+exports[`sourceMap option > should generate source maps when value has \"true\" value and the \"devtool\" option has \"false\" value ('sass-embedded', 'modern-compiler' API, 'sass' syntax) 4`] = `
+[]
+`;
+
+exports[`sourceMap option > should generate source maps when value has \"true\" value and the \"devtool\" option has \"false\" value ('sass-embedded', 'modern-compiler' API, 'scss' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sourceMap option > should generate source maps when value has \"true\" value and the \"devtool\" option has \"false\" value ('sass-embedded', 'modern-compiler' API, 'scss' syntax) 2`] = `
+{
+  "version": 3,
+  "sourceRoot": "",
+  "sources": [
+    "test/scss/language.scss",
+    "test/scss/another/_variables.scss"
+  ],
+  "names": [],
+  "mappings": ";AACQ;AAMR;EACE;EACA,OALc;;;AASd;EACE;EACA;EACA;;AAGF;EAAK;;AAEL;EACE;EACA;EACA;;;AAWJ;EANE,uBAM4B;EALzB,oBAKyB;EAJxB,mBAIwB;EAHpB,eAGoB;;;AAG5B;EACE,SAlCY;;;AAuCd;EACE,SC7Cc",
+  "sourcesContent": [
+    "@import \\"another/variables\\";\\n@import \\"./file.css\\";\\n\\n$font-stack:    Helvetica, sans-serif;\\n$primary-color: #333;\\n$pi:            '\\\\e0C6';\\n\\nbody {\\n  font: 100% $font-stack;\\n  color: $primary-color;\\n}\\n\\nnav {\\n  ul {\\n    margin: 0;\\n    padding: 0;\\n    list-style: none;\\n  }\\n\\n  li { display: inline-block; }\\n\\n  a {\\n    display: block;\\n    padding: 6px 12px;\\n    text-decoration: none;\\n  }\\n}\\n\\n@mixin border-radius($radius) {\\n  -webkit-border-radius: $radius;\\n     -moz-border-radius: $radius;\\n      -ms-border-radius: $radius;\\n          border-radius: $radius;\\n}\\n\\n.box { @include border-radius(10px); }\\n\\n.foo {\\n  &:before {\\n    content: $pi;\\n  }\\n}\\n\\n.bar {\\n  &:before {\\n    content: $n-ary-summation;\\n  }\\n}\\n",
+    "$n-ary-summation: '\\\\2211'\\n"
+  ]
+}
+`;
+
+exports[`sourceMap option > should generate source maps when value has \"true\" value and the \"devtool\" option has \"false\" value ('sass-embedded', 'modern-compiler' API, 'scss' syntax) 3`] = `
+[]
+`;
+
+exports[`sourceMap option > should generate source maps when value has \"true\" value and the \"devtool\" option has \"false\" value ('sass-embedded', 'modern-compiler' API, 'scss' syntax) 4`] = `
+[]
+`;
+
+exports[`sourceMap option > should generate source maps when value has \"true\" value and the \"devtool\" option has \"source-map\" value ('dart-sass', 'modern' API, 'sass' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.message, .warning, .error, .success {\\n  border: 1px solid #ccc;\\n  padding: 10px;\\n  color: #333;\\n}\\n\\n.success {\\n  border-color: green;\\n}\\n\\n.error {\\n  border-color: red;\\n}\\n\\n.warning {\\n  border-color: yellow;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sourceMap option > should generate source maps when value has \"true\" value and the \"devtool\" option has \"source-map\" value ('dart-sass', 'modern' API, 'sass' syntax) 2`] = `
+{
+  "version": 3,
+  "sourceRoot": "",
+  "sources": [
+    "test/sass/language.sass",
+    "test/sass/another/variables.sass"
+  ],
+  "names": [],
+  "mappings": ";AACQ;AAMR;EACE;EACA,OALc;;;AAQd;EACE;EACA;EACA;;AAEF;EACE;;AAEF;EACE;EACA;EACA;;;AAQJ;EALE,uBAMe;EALf,oBAKe;EAJf,mBAIe;EAHf,eAGe;;;AAEjB;EACE;EACA;EACA;;;AAEF;EAEE;;;AAEF;EAEE;;;AAEF;EAEE;;;AAGA;EACE,SAhDY;;;AAmDd;EACE,SCzDc",
+  "sourcesContent": [
+    "@import \\"another/variables\\"\\n@import \\"./file.css\\"\\n\\n$font-stack:    Helvetica, sans-serif\\n$primary-color: #333\\n$pi:            '\\\\e0C6'\\n\\nbody\\n  font: 100% $font-stack\\n  color: $primary-color\\n\\nnav\\n  ul\\n    margin: 0\\n    padding: 0\\n    list-style: none\\n\\n  li\\n    display: inline-block\\n\\n  a\\n    display: block\\n    padding: 6px 12px\\n    text-decoration: none\\n\\n=border-radius($radius)\\n  -webkit-border-radius: $radius\\n  -moz-border-radius:    $radius\\n  -ms-border-radius:     $radius\\n  border-radius:         $radius\\n\\n.box\\n  +border-radius(10px)\\n\\n.message\\n  border: 1px solid #ccc\\n  padding: 10px\\n  color: #333\\n\\n.success\\n  @extend .message\\n  border-color: green\\n\\n.error\\n  @extend .message\\n  border-color: red\\n\\n.warning\\n  @extend .message\\n  border-color: yellow\\n\\n.foo\\n  &:before\\n    content: $pi\\n\\n.bar\\n  &:before\\n    content: $n-ary-summation\\n\\n",
+    "$n-ary-summation: '\\\\2211'\\n"
+  ]
+}
+`;
+
+exports[`sourceMap option > should generate source maps when value has \"true\" value and the \"devtool\" option has \"source-map\" value ('dart-sass', 'modern' API, 'sass' syntax) 3`] = `
+[]
+`;
+
+exports[`sourceMap option > should generate source maps when value has \"true\" value and the \"devtool\" option has \"source-map\" value ('dart-sass', 'modern' API, 'sass' syntax) 4`] = `
+[]
+`;
+
+exports[`sourceMap option > should generate source maps when value has \"true\" value and the \"devtool\" option has \"source-map\" value ('dart-sass', 'modern' API, 'scss' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sourceMap option > should generate source maps when value has \"true\" value and the \"devtool\" option has \"source-map\" value ('dart-sass', 'modern' API, 'scss' syntax) 2`] = `
+{
+  "version": 3,
+  "sourceRoot": "",
+  "sources": [
+    "test/scss/language.scss",
+    "test/scss/another/_variables.scss"
+  ],
+  "names": [],
+  "mappings": ";AACQ;AAMR;EACE;EACA,OALc;;;AASd;EACE;EACA;EACA;;AAGF;EAAK;;AAEL;EACE;EACA;EACA;;;AAWJ;EANE,uBAM4B;EALzB,oBAKyB;EAJxB,mBAIwB;EAHpB,eAGoB;;;AAG5B;EACE,SAlCY;;;AAuCd;EACE,SC7Cc",
+  "sourcesContent": [
+    "@import \\"another/variables\\";\\n@import \\"./file.css\\";\\n\\n$font-stack:    Helvetica, sans-serif;\\n$primary-color: #333;\\n$pi:            '\\\\e0C6';\\n\\nbody {\\n  font: 100% $font-stack;\\n  color: $primary-color;\\n}\\n\\nnav {\\n  ul {\\n    margin: 0;\\n    padding: 0;\\n    list-style: none;\\n  }\\n\\n  li { display: inline-block; }\\n\\n  a {\\n    display: block;\\n    padding: 6px 12px;\\n    text-decoration: none;\\n  }\\n}\\n\\n@mixin border-radius($radius) {\\n  -webkit-border-radius: $radius;\\n     -moz-border-radius: $radius;\\n      -ms-border-radius: $radius;\\n          border-radius: $radius;\\n}\\n\\n.box { @include border-radius(10px); }\\n\\n.foo {\\n  &:before {\\n    content: $pi;\\n  }\\n}\\n\\n.bar {\\n  &:before {\\n    content: $n-ary-summation;\\n  }\\n}\\n",
+    "$n-ary-summation: '\\\\2211'\\n"
+  ]
+}
+`;
+
+exports[`sourceMap option > should generate source maps when value has \"true\" value and the \"devtool\" option has \"source-map\" value ('dart-sass', 'modern' API, 'scss' syntax) 3`] = `
+[]
+`;
+
+exports[`sourceMap option > should generate source maps when value has \"true\" value and the \"devtool\" option has \"source-map\" value ('dart-sass', 'modern' API, 'scss' syntax) 4`] = `
+[]
+`;
+
+exports[`sourceMap option > should generate source maps when value has \"true\" value and the \"devtool\" option has \"source-map\" value ('dart-sass', 'modern-compiler' API, 'sass' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.message, .warning, .error, .success {\\n  border: 1px solid #ccc;\\n  padding: 10px;\\n  color: #333;\\n}\\n\\n.success {\\n  border-color: green;\\n}\\n\\n.error {\\n  border-color: red;\\n}\\n\\n.warning {\\n  border-color: yellow;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sourceMap option > should generate source maps when value has \"true\" value and the \"devtool\" option has \"source-map\" value ('dart-sass', 'modern-compiler' API, 'sass' syntax) 2`] = `
+{
+  "version": 3,
+  "sourceRoot": "",
+  "sources": [
+    "test/sass/language.sass",
+    "test/sass/another/variables.sass"
+  ],
+  "names": [],
+  "mappings": ";AACQ;AAMR;EACE;EACA,OALc;;;AAQd;EACE;EACA;EACA;;AAEF;EACE;;AAEF;EACE;EACA;EACA;;;AAQJ;EALE,uBAMe;EALf,oBAKe;EAJf,mBAIe;EAHf,eAGe;;;AAEjB;EACE;EACA;EACA;;;AAEF;EAEE;;;AAEF;EAEE;;;AAEF;EAEE;;;AAGA;EACE,SAhDY;;;AAmDd;EACE,SCzDc",
+  "sourcesContent": [
+    "@import \\"another/variables\\"\\n@import \\"./file.css\\"\\n\\n$font-stack:    Helvetica, sans-serif\\n$primary-color: #333\\n$pi:            '\\\\e0C6'\\n\\nbody\\n  font: 100% $font-stack\\n  color: $primary-color\\n\\nnav\\n  ul\\n    margin: 0\\n    padding: 0\\n    list-style: none\\n\\n  li\\n    display: inline-block\\n\\n  a\\n    display: block\\n    padding: 6px 12px\\n    text-decoration: none\\n\\n=border-radius($radius)\\n  -webkit-border-radius: $radius\\n  -moz-border-radius:    $radius\\n  -ms-border-radius:     $radius\\n  border-radius:         $radius\\n\\n.box\\n  +border-radius(10px)\\n\\n.message\\n  border: 1px solid #ccc\\n  padding: 10px\\n  color: #333\\n\\n.success\\n  @extend .message\\n  border-color: green\\n\\n.error\\n  @extend .message\\n  border-color: red\\n\\n.warning\\n  @extend .message\\n  border-color: yellow\\n\\n.foo\\n  &:before\\n    content: $pi\\n\\n.bar\\n  &:before\\n    content: $n-ary-summation\\n\\n",
+    "$n-ary-summation: '\\\\2211'\\n"
+  ]
+}
+`;
+
+exports[`sourceMap option > should generate source maps when value has \"true\" value and the \"devtool\" option has \"source-map\" value ('dart-sass', 'modern-compiler' API, 'sass' syntax) 3`] = `
+[]
+`;
+
+exports[`sourceMap option > should generate source maps when value has \"true\" value and the \"devtool\" option has \"source-map\" value ('dart-sass', 'modern-compiler' API, 'sass' syntax) 4`] = `
+[]
+`;
+
+exports[`sourceMap option > should generate source maps when value has \"true\" value and the \"devtool\" option has \"source-map\" value ('dart-sass', 'modern-compiler' API, 'scss' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sourceMap option > should generate source maps when value has \"true\" value and the \"devtool\" option has \"source-map\" value ('dart-sass', 'modern-compiler' API, 'scss' syntax) 2`] = `
+{
+  "version": 3,
+  "sourceRoot": "",
+  "sources": [
+    "test/scss/language.scss",
+    "test/scss/another/_variables.scss"
+  ],
+  "names": [],
+  "mappings": ";AACQ;AAMR;EACE;EACA,OALc;;;AASd;EACE;EACA;EACA;;AAGF;EAAK;;AAEL;EACE;EACA;EACA;;;AAWJ;EANE,uBAM4B;EALzB,oBAKyB;EAJxB,mBAIwB;EAHpB,eAGoB;;;AAG5B;EACE,SAlCY;;;AAuCd;EACE,SC7Cc",
+  "sourcesContent": [
+    "@import \\"another/variables\\";\\n@import \\"./file.css\\";\\n\\n$font-stack:    Helvetica, sans-serif;\\n$primary-color: #333;\\n$pi:            '\\\\e0C6';\\n\\nbody {\\n  font: 100% $font-stack;\\n  color: $primary-color;\\n}\\n\\nnav {\\n  ul {\\n    margin: 0;\\n    padding: 0;\\n    list-style: none;\\n  }\\n\\n  li { display: inline-block; }\\n\\n  a {\\n    display: block;\\n    padding: 6px 12px;\\n    text-decoration: none;\\n  }\\n}\\n\\n@mixin border-radius($radius) {\\n  -webkit-border-radius: $radius;\\n     -moz-border-radius: $radius;\\n      -ms-border-radius: $radius;\\n          border-radius: $radius;\\n}\\n\\n.box { @include border-radius(10px); }\\n\\n.foo {\\n  &:before {\\n    content: $pi;\\n  }\\n}\\n\\n.bar {\\n  &:before {\\n    content: $n-ary-summation;\\n  }\\n}\\n",
+    "$n-ary-summation: '\\\\2211'\\n"
+  ]
+}
+`;
+
+exports[`sourceMap option > should generate source maps when value has \"true\" value and the \"devtool\" option has \"source-map\" value ('dart-sass', 'modern-compiler' API, 'scss' syntax) 3`] = `
+[]
+`;
+
+exports[`sourceMap option > should generate source maps when value has \"true\" value and the \"devtool\" option has \"source-map\" value ('dart-sass', 'modern-compiler' API, 'scss' syntax) 4`] = `
+[]
+`;
+
+exports[`sourceMap option > should generate source maps when value has \"true\" value and the \"devtool\" option has \"source-map\" value ('sass-embedded', 'modern' API, 'sass' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.message, .warning, .error, .success {\\n  border: 1px solid #ccc;\\n  padding: 10px;\\n  color: #333;\\n}\\n\\n.success {\\n  border-color: green;\\n}\\n\\n.error {\\n  border-color: red;\\n}\\n\\n.warning {\\n  border-color: yellow;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sourceMap option > should generate source maps when value has \"true\" value and the \"devtool\" option has \"source-map\" value ('sass-embedded', 'modern' API, 'sass' syntax) 2`] = `
+{
+  "version": 3,
+  "sourceRoot": "",
+  "sources": [
+    "test/sass/language.sass",
+    "test/sass/another/variables.sass"
+  ],
+  "names": [],
+  "mappings": ";AACQ;AAMR;EACE;EACA,OALc;;;AAQd;EACE;EACA;EACA;;AAEF;EACE;;AAEF;EACE;EACA;EACA;;;AAQJ;EALE,uBAMe;EALf,oBAKe;EAJf,mBAIe;EAHf,eAGe;;;AAEjB;EACE;EACA;EACA;;;AAEF;EAEE;;;AAEF;EAEE;;;AAEF;EAEE;;;AAGA;EACE,SAhDY;;;AAmDd;EACE,SCzDc",
+  "sourcesContent": [
+    "@import \\"another/variables\\"\\n@import \\"./file.css\\"\\n\\n$font-stack:    Helvetica, sans-serif\\n$primary-color: #333\\n$pi:            '\\\\e0C6'\\n\\nbody\\n  font: 100% $font-stack\\n  color: $primary-color\\n\\nnav\\n  ul\\n    margin: 0\\n    padding: 0\\n    list-style: none\\n\\n  li\\n    display: inline-block\\n\\n  a\\n    display: block\\n    padding: 6px 12px\\n    text-decoration: none\\n\\n=border-radius($radius)\\n  -webkit-border-radius: $radius\\n  -moz-border-radius:    $radius\\n  -ms-border-radius:     $radius\\n  border-radius:         $radius\\n\\n.box\\n  +border-radius(10px)\\n\\n.message\\n  border: 1px solid #ccc\\n  padding: 10px\\n  color: #333\\n\\n.success\\n  @extend .message\\n  border-color: green\\n\\n.error\\n  @extend .message\\n  border-color: red\\n\\n.warning\\n  @extend .message\\n  border-color: yellow\\n\\n.foo\\n  &:before\\n    content: $pi\\n\\n.bar\\n  &:before\\n    content: $n-ary-summation\\n\\n",
+    "$n-ary-summation: '\\\\2211'\\n"
+  ]
+}
+`;
+
+exports[`sourceMap option > should generate source maps when value has \"true\" value and the \"devtool\" option has \"source-map\" value ('sass-embedded', 'modern' API, 'sass' syntax) 3`] = `
+[]
+`;
+
+exports[`sourceMap option > should generate source maps when value has \"true\" value and the \"devtool\" option has \"source-map\" value ('sass-embedded', 'modern' API, 'sass' syntax) 4`] = `
+[]
+`;
+
+exports[`sourceMap option > should generate source maps when value has \"true\" value and the \"devtool\" option has \"source-map\" value ('sass-embedded', 'modern' API, 'scss' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sourceMap option > should generate source maps when value has \"true\" value and the \"devtool\" option has \"source-map\" value ('sass-embedded', 'modern' API, 'scss' syntax) 2`] = `
+{
+  "version": 3,
+  "sourceRoot": "",
+  "sources": [
+    "test/scss/language.scss",
+    "test/scss/another/_variables.scss"
+  ],
+  "names": [],
+  "mappings": ";AACQ;AAMR;EACE;EACA,OALc;;;AASd;EACE;EACA;EACA;;AAGF;EAAK;;AAEL;EACE;EACA;EACA;;;AAWJ;EANE,uBAM4B;EALzB,oBAKyB;EAJxB,mBAIwB;EAHpB,eAGoB;;;AAG5B;EACE,SAlCY;;;AAuCd;EACE,SC7Cc",
+  "sourcesContent": [
+    "@import \\"another/variables\\";\\n@import \\"./file.css\\";\\n\\n$font-stack:    Helvetica, sans-serif;\\n$primary-color: #333;\\n$pi:            '\\\\e0C6';\\n\\nbody {\\n  font: 100% $font-stack;\\n  color: $primary-color;\\n}\\n\\nnav {\\n  ul {\\n    margin: 0;\\n    padding: 0;\\n    list-style: none;\\n  }\\n\\n  li { display: inline-block; }\\n\\n  a {\\n    display: block;\\n    padding: 6px 12px;\\n    text-decoration: none;\\n  }\\n}\\n\\n@mixin border-radius($radius) {\\n  -webkit-border-radius: $radius;\\n     -moz-border-radius: $radius;\\n      -ms-border-radius: $radius;\\n          border-radius: $radius;\\n}\\n\\n.box { @include border-radius(10px); }\\n\\n.foo {\\n  &:before {\\n    content: $pi;\\n  }\\n}\\n\\n.bar {\\n  &:before {\\n    content: $n-ary-summation;\\n  }\\n}\\n",
+    "$n-ary-summation: '\\\\2211'\\n"
+  ]
+}
+`;
+
+exports[`sourceMap option > should generate source maps when value has \"true\" value and the \"devtool\" option has \"source-map\" value ('sass-embedded', 'modern' API, 'scss' syntax) 3`] = `
+[]
+`;
+
+exports[`sourceMap option > should generate source maps when value has \"true\" value and the \"devtool\" option has \"source-map\" value ('sass-embedded', 'modern' API, 'scss' syntax) 4`] = `
+[]
+`;
+
+exports[`sourceMap option > should generate source maps when value has \"true\" value and the \"devtool\" option has \"source-map\" value ('sass-embedded', 'modern-compiler' API, 'sass' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.message, .warning, .error, .success {\\n  border: 1px solid #ccc;\\n  padding: 10px;\\n  color: #333;\\n}\\n\\n.success {\\n  border-color: green;\\n}\\n\\n.error {\\n  border-color: red;\\n}\\n\\n.warning {\\n  border-color: yellow;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sourceMap option > should generate source maps when value has \"true\" value and the \"devtool\" option has \"source-map\" value ('sass-embedded', 'modern-compiler' API, 'sass' syntax) 2`] = `
+{
+  "version": 3,
+  "sourceRoot": "",
+  "sources": [
+    "test/sass/language.sass",
+    "test/sass/another/variables.sass"
+  ],
+  "names": [],
+  "mappings": ";AACQ;AAMR;EACE;EACA,OALc;;;AAQd;EACE;EACA;EACA;;AAEF;EACE;;AAEF;EACE;EACA;EACA;;;AAQJ;EALE,uBAMe;EALf,oBAKe;EAJf,mBAIe;EAHf,eAGe;;;AAEjB;EACE;EACA;EACA;;;AAEF;EAEE;;;AAEF;EAEE;;;AAEF;EAEE;;;AAGA;EACE,SAhDY;;;AAmDd;EACE,SCzDc",
+  "sourcesContent": [
+    "@import \\"another/variables\\"\\n@import \\"./file.css\\"\\n\\n$font-stack:    Helvetica, sans-serif\\n$primary-color: #333\\n$pi:            '\\\\e0C6'\\n\\nbody\\n  font: 100% $font-stack\\n  color: $primary-color\\n\\nnav\\n  ul\\n    margin: 0\\n    padding: 0\\n    list-style: none\\n\\n  li\\n    display: inline-block\\n\\n  a\\n    display: block\\n    padding: 6px 12px\\n    text-decoration: none\\n\\n=border-radius($radius)\\n  -webkit-border-radius: $radius\\n  -moz-border-radius:    $radius\\n  -ms-border-radius:     $radius\\n  border-radius:         $radius\\n\\n.box\\n  +border-radius(10px)\\n\\n.message\\n  border: 1px solid #ccc\\n  padding: 10px\\n  color: #333\\n\\n.success\\n  @extend .message\\n  border-color: green\\n\\n.error\\n  @extend .message\\n  border-color: red\\n\\n.warning\\n  @extend .message\\n  border-color: yellow\\n\\n.foo\\n  &:before\\n    content: $pi\\n\\n.bar\\n  &:before\\n    content: $n-ary-summation\\n\\n",
+    "$n-ary-summation: '\\\\2211'\\n"
+  ]
+}
+`;
+
+exports[`sourceMap option > should generate source maps when value has \"true\" value and the \"devtool\" option has \"source-map\" value ('sass-embedded', 'modern-compiler' API, 'sass' syntax) 3`] = `
+[]
+`;
+
+exports[`sourceMap option > should generate source maps when value has \"true\" value and the \"devtool\" option has \"source-map\" value ('sass-embedded', 'modern-compiler' API, 'sass' syntax) 4`] = `
+[]
+`;
+
+exports[`sourceMap option > should generate source maps when value has \"true\" value and the \"devtool\" option has \"source-map\" value ('sass-embedded', 'modern-compiler' API, 'scss' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sourceMap option > should generate source maps when value has \"true\" value and the \"devtool\" option has \"source-map\" value ('sass-embedded', 'modern-compiler' API, 'scss' syntax) 2`] = `
+{
+  "version": 3,
+  "sourceRoot": "",
+  "sources": [
+    "test/scss/language.scss",
+    "test/scss/another/_variables.scss"
+  ],
+  "names": [],
+  "mappings": ";AACQ;AAMR;EACE;EACA,OALc;;;AASd;EACE;EACA;EACA;;AAGF;EAAK;;AAEL;EACE;EACA;EACA;;;AAWJ;EANE,uBAM4B;EALzB,oBAKyB;EAJxB,mBAIwB;EAHpB,eAGoB;;;AAG5B;EACE,SAlCY;;;AAuCd;EACE,SC7Cc",
+  "sourcesContent": [
+    "@import \\"another/variables\\";\\n@import \\"./file.css\\";\\n\\n$font-stack:    Helvetica, sans-serif;\\n$primary-color: #333;\\n$pi:            '\\\\e0C6';\\n\\nbody {\\n  font: 100% $font-stack;\\n  color: $primary-color;\\n}\\n\\nnav {\\n  ul {\\n    margin: 0;\\n    padding: 0;\\n    list-style: none;\\n  }\\n\\n  li { display: inline-block; }\\n\\n  a {\\n    display: block;\\n    padding: 6px 12px;\\n    text-decoration: none;\\n  }\\n}\\n\\n@mixin border-radius($radius) {\\n  -webkit-border-radius: $radius;\\n     -moz-border-radius: $radius;\\n      -ms-border-radius: $radius;\\n          border-radius: $radius;\\n}\\n\\n.box { @include border-radius(10px); }\\n\\n.foo {\\n  &:before {\\n    content: $pi;\\n  }\\n}\\n\\n.bar {\\n  &:before {\\n    content: $n-ary-summation;\\n  }\\n}\\n",
+    "$n-ary-summation: '\\\\2211'\\n"
+  ]
+}
+`;
+
+exports[`sourceMap option > should generate source maps when value has \"true\" value and the \"devtool\" option has \"source-map\" value ('sass-embedded', 'modern-compiler' API, 'scss' syntax) 3`] = `
+[]
+`;
+
+exports[`sourceMap option > should generate source maps when value has \"true\" value and the \"devtool\" option has \"source-map\" value ('sass-embedded', 'modern-compiler' API, 'scss' syntax) 4`] = `
+[]
+`;
+
+exports[`sourceMap option > should generate source maps when value is not specified and the \"devtool\" option has \"source-map\" value ('dart-sass', 'modern' API, 'sass' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.message, .warning, .error, .success {\\n  border: 1px solid #ccc;\\n  padding: 10px;\\n  color: #333;\\n}\\n\\n.success {\\n  border-color: green;\\n}\\n\\n.error {\\n  border-color: red;\\n}\\n\\n.warning {\\n  border-color: yellow;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sourceMap option > should generate source maps when value is not specified and the \"devtool\" option has \"source-map\" value ('dart-sass', 'modern' API, 'sass' syntax) 2`] = `
+{
+  "version": 3,
+  "sourceRoot": "",
+  "sources": [
+    "test/sass/language.sass",
+    "test/sass/another/variables.sass"
+  ],
+  "names": [],
+  "mappings": ";AACQ;AAMR;EACE;EACA,OALc;;;AAQd;EACE;EACA;EACA;;AAEF;EACE;;AAEF;EACE;EACA;EACA;;;AAQJ;EALE,uBAMe;EALf,oBAKe;EAJf,mBAIe;EAHf,eAGe;;;AAEjB;EACE;EACA;EACA;;;AAEF;EAEE;;;AAEF;EAEE;;;AAEF;EAEE;;;AAGA;EACE,SAhDY;;;AAmDd;EACE,SCzDc",
+  "sourcesContent": [
+    "@import \\"another/variables\\"\\n@import \\"./file.css\\"\\n\\n$font-stack:    Helvetica, sans-serif\\n$primary-color: #333\\n$pi:            '\\\\e0C6'\\n\\nbody\\n  font: 100% $font-stack\\n  color: $primary-color\\n\\nnav\\n  ul\\n    margin: 0\\n    padding: 0\\n    list-style: none\\n\\n  li\\n    display: inline-block\\n\\n  a\\n    display: block\\n    padding: 6px 12px\\n    text-decoration: none\\n\\n=border-radius($radius)\\n  -webkit-border-radius: $radius\\n  -moz-border-radius:    $radius\\n  -ms-border-radius:     $radius\\n  border-radius:         $radius\\n\\n.box\\n  +border-radius(10px)\\n\\n.message\\n  border: 1px solid #ccc\\n  padding: 10px\\n  color: #333\\n\\n.success\\n  @extend .message\\n  border-color: green\\n\\n.error\\n  @extend .message\\n  border-color: red\\n\\n.warning\\n  @extend .message\\n  border-color: yellow\\n\\n.foo\\n  &:before\\n    content: $pi\\n\\n.bar\\n  &:before\\n    content: $n-ary-summation\\n\\n",
+    "$n-ary-summation: '\\\\2211'\\n"
+  ]
+}
+`;
+
+exports[`sourceMap option > should generate source maps when value is not specified and the \"devtool\" option has \"source-map\" value ('dart-sass', 'modern' API, 'sass' syntax) 3`] = `
+[]
+`;
+
+exports[`sourceMap option > should generate source maps when value is not specified and the \"devtool\" option has \"source-map\" value ('dart-sass', 'modern' API, 'sass' syntax) 4`] = `
+[]
+`;
+
+exports[`sourceMap option > should generate source maps when value is not specified and the \"devtool\" option has \"source-map\" value ('dart-sass', 'modern' API, 'scss' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sourceMap option > should generate source maps when value is not specified and the \"devtool\" option has \"source-map\" value ('dart-sass', 'modern' API, 'scss' syntax) 2`] = `
+{
+  "version": 3,
+  "sourceRoot": "",
+  "sources": [
+    "test/scss/language.scss",
+    "test/scss/another/_variables.scss"
+  ],
+  "names": [],
+  "mappings": ";AACQ;AAMR;EACE;EACA,OALc;;;AASd;EACE;EACA;EACA;;AAGF;EAAK;;AAEL;EACE;EACA;EACA;;;AAWJ;EANE,uBAM4B;EALzB,oBAKyB;EAJxB,mBAIwB;EAHpB,eAGoB;;;AAG5B;EACE,SAlCY;;;AAuCd;EACE,SC7Cc",
+  "sourcesContent": [
+    "@import \\"another/variables\\";\\n@import \\"./file.css\\";\\n\\n$font-stack:    Helvetica, sans-serif;\\n$primary-color: #333;\\n$pi:            '\\\\e0C6';\\n\\nbody {\\n  font: 100% $font-stack;\\n  color: $primary-color;\\n}\\n\\nnav {\\n  ul {\\n    margin: 0;\\n    padding: 0;\\n    list-style: none;\\n  }\\n\\n  li { display: inline-block; }\\n\\n  a {\\n    display: block;\\n    padding: 6px 12px;\\n    text-decoration: none;\\n  }\\n}\\n\\n@mixin border-radius($radius) {\\n  -webkit-border-radius: $radius;\\n     -moz-border-radius: $radius;\\n      -ms-border-radius: $radius;\\n          border-radius: $radius;\\n}\\n\\n.box { @include border-radius(10px); }\\n\\n.foo {\\n  &:before {\\n    content: $pi;\\n  }\\n}\\n\\n.bar {\\n  &:before {\\n    content: $n-ary-summation;\\n  }\\n}\\n",
+    "$n-ary-summation: '\\\\2211'\\n"
+  ]
+}
+`;
+
+exports[`sourceMap option > should generate source maps when value is not specified and the \"devtool\" option has \"source-map\" value ('dart-sass', 'modern' API, 'scss' syntax) 3`] = `
+[]
+`;
+
+exports[`sourceMap option > should generate source maps when value is not specified and the \"devtool\" option has \"source-map\" value ('dart-sass', 'modern' API, 'scss' syntax) 4`] = `
+[]
+`;
+
+exports[`sourceMap option > should generate source maps when value is not specified and the \"devtool\" option has \"source-map\" value ('dart-sass', 'modern-compiler' API, 'sass' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.message, .warning, .error, .success {\\n  border: 1px solid #ccc;\\n  padding: 10px;\\n  color: #333;\\n}\\n\\n.success {\\n  border-color: green;\\n}\\n\\n.error {\\n  border-color: red;\\n}\\n\\n.warning {\\n  border-color: yellow;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sourceMap option > should generate source maps when value is not specified and the \"devtool\" option has \"source-map\" value ('dart-sass', 'modern-compiler' API, 'sass' syntax) 2`] = `
+{
+  "version": 3,
+  "sourceRoot": "",
+  "sources": [
+    "test/sass/language.sass",
+    "test/sass/another/variables.sass"
+  ],
+  "names": [],
+  "mappings": ";AACQ;AAMR;EACE;EACA,OALc;;;AAQd;EACE;EACA;EACA;;AAEF;EACE;;AAEF;EACE;EACA;EACA;;;AAQJ;EALE,uBAMe;EALf,oBAKe;EAJf,mBAIe;EAHf,eAGe;;;AAEjB;EACE;EACA;EACA;;;AAEF;EAEE;;;AAEF;EAEE;;;AAEF;EAEE;;;AAGA;EACE,SAhDY;;;AAmDd;EACE,SCzDc",
+  "sourcesContent": [
+    "@import \\"another/variables\\"\\n@import \\"./file.css\\"\\n\\n$font-stack:    Helvetica, sans-serif\\n$primary-color: #333\\n$pi:            '\\\\e0C6'\\n\\nbody\\n  font: 100% $font-stack\\n  color: $primary-color\\n\\nnav\\n  ul\\n    margin: 0\\n    padding: 0\\n    list-style: none\\n\\n  li\\n    display: inline-block\\n\\n  a\\n    display: block\\n    padding: 6px 12px\\n    text-decoration: none\\n\\n=border-radius($radius)\\n  -webkit-border-radius: $radius\\n  -moz-border-radius:    $radius\\n  -ms-border-radius:     $radius\\n  border-radius:         $radius\\n\\n.box\\n  +border-radius(10px)\\n\\n.message\\n  border: 1px solid #ccc\\n  padding: 10px\\n  color: #333\\n\\n.success\\n  @extend .message\\n  border-color: green\\n\\n.error\\n  @extend .message\\n  border-color: red\\n\\n.warning\\n  @extend .message\\n  border-color: yellow\\n\\n.foo\\n  &:before\\n    content: $pi\\n\\n.bar\\n  &:before\\n    content: $n-ary-summation\\n\\n",
+    "$n-ary-summation: '\\\\2211'\\n"
+  ]
+}
+`;
+
+exports[`sourceMap option > should generate source maps when value is not specified and the \"devtool\" option has \"source-map\" value ('dart-sass', 'modern-compiler' API, 'sass' syntax) 3`] = `
+[]
+`;
+
+exports[`sourceMap option > should generate source maps when value is not specified and the \"devtool\" option has \"source-map\" value ('dart-sass', 'modern-compiler' API, 'sass' syntax) 4`] = `
+[]
+`;
+
+exports[`sourceMap option > should generate source maps when value is not specified and the \"devtool\" option has \"source-map\" value ('dart-sass', 'modern-compiler' API, 'scss' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sourceMap option > should generate source maps when value is not specified and the \"devtool\" option has \"source-map\" value ('dart-sass', 'modern-compiler' API, 'scss' syntax) 2`] = `
+{
+  "version": 3,
+  "sourceRoot": "",
+  "sources": [
+    "test/scss/language.scss",
+    "test/scss/another/_variables.scss"
+  ],
+  "names": [],
+  "mappings": ";AACQ;AAMR;EACE;EACA,OALc;;;AASd;EACE;EACA;EACA;;AAGF;EAAK;;AAEL;EACE;EACA;EACA;;;AAWJ;EANE,uBAM4B;EALzB,oBAKyB;EAJxB,mBAIwB;EAHpB,eAGoB;;;AAG5B;EACE,SAlCY;;;AAuCd;EACE,SC7Cc",
+  "sourcesContent": [
+    "@import \\"another/variables\\";\\n@import \\"./file.css\\";\\n\\n$font-stack:    Helvetica, sans-serif;\\n$primary-color: #333;\\n$pi:            '\\\\e0C6';\\n\\nbody {\\n  font: 100% $font-stack;\\n  color: $primary-color;\\n}\\n\\nnav {\\n  ul {\\n    margin: 0;\\n    padding: 0;\\n    list-style: none;\\n  }\\n\\n  li { display: inline-block; }\\n\\n  a {\\n    display: block;\\n    padding: 6px 12px;\\n    text-decoration: none;\\n  }\\n}\\n\\n@mixin border-radius($radius) {\\n  -webkit-border-radius: $radius;\\n     -moz-border-radius: $radius;\\n      -ms-border-radius: $radius;\\n          border-radius: $radius;\\n}\\n\\n.box { @include border-radius(10px); }\\n\\n.foo {\\n  &:before {\\n    content: $pi;\\n  }\\n}\\n\\n.bar {\\n  &:before {\\n    content: $n-ary-summation;\\n  }\\n}\\n",
+    "$n-ary-summation: '\\\\2211'\\n"
+  ]
+}
+`;
+
+exports[`sourceMap option > should generate source maps when value is not specified and the \"devtool\" option has \"source-map\" value ('dart-sass', 'modern-compiler' API, 'scss' syntax) 3`] = `
+[]
+`;
+
+exports[`sourceMap option > should generate source maps when value is not specified and the \"devtool\" option has \"source-map\" value ('dart-sass', 'modern-compiler' API, 'scss' syntax) 4`] = `
+[]
+`;
+
+exports[`sourceMap option > should generate source maps when value is not specified and the \"devtool\" option has \"source-map\" value ('sass-embedded', 'modern' API, 'sass' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.message, .warning, .error, .success {\\n  border: 1px solid #ccc;\\n  padding: 10px;\\n  color: #333;\\n}\\n\\n.success {\\n  border-color: green;\\n}\\n\\n.error {\\n  border-color: red;\\n}\\n\\n.warning {\\n  border-color: yellow;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sourceMap option > should generate source maps when value is not specified and the \"devtool\" option has \"source-map\" value ('sass-embedded', 'modern' API, 'sass' syntax) 2`] = `
+{
+  "version": 3,
+  "sourceRoot": "",
+  "sources": [
+    "test/sass/language.sass",
+    "test/sass/another/variables.sass"
+  ],
+  "names": [],
+  "mappings": ";AACQ;AAMR;EACE;EACA,OALc;;;AAQd;EACE;EACA;EACA;;AAEF;EACE;;AAEF;EACE;EACA;EACA;;;AAQJ;EALE,uBAMe;EALf,oBAKe;EAJf,mBAIe;EAHf,eAGe;;;AAEjB;EACE;EACA;EACA;;;AAEF;EAEE;;;AAEF;EAEE;;;AAEF;EAEE;;;AAGA;EACE,SAhDY;;;AAmDd;EACE,SCzDc",
+  "sourcesContent": [
+    "@import \\"another/variables\\"\\n@import \\"./file.css\\"\\n\\n$font-stack:    Helvetica, sans-serif\\n$primary-color: #333\\n$pi:            '\\\\e0C6'\\n\\nbody\\n  font: 100% $font-stack\\n  color: $primary-color\\n\\nnav\\n  ul\\n    margin: 0\\n    padding: 0\\n    list-style: none\\n\\n  li\\n    display: inline-block\\n\\n  a\\n    display: block\\n    padding: 6px 12px\\n    text-decoration: none\\n\\n=border-radius($radius)\\n  -webkit-border-radius: $radius\\n  -moz-border-radius:    $radius\\n  -ms-border-radius:     $radius\\n  border-radius:         $radius\\n\\n.box\\n  +border-radius(10px)\\n\\n.message\\n  border: 1px solid #ccc\\n  padding: 10px\\n  color: #333\\n\\n.success\\n  @extend .message\\n  border-color: green\\n\\n.error\\n  @extend .message\\n  border-color: red\\n\\n.warning\\n  @extend .message\\n  border-color: yellow\\n\\n.foo\\n  &:before\\n    content: $pi\\n\\n.bar\\n  &:before\\n    content: $n-ary-summation\\n\\n",
+    "$n-ary-summation: '\\\\2211'\\n"
+  ]
+}
+`;
+
+exports[`sourceMap option > should generate source maps when value is not specified and the \"devtool\" option has \"source-map\" value ('sass-embedded', 'modern' API, 'sass' syntax) 3`] = `
+[]
+`;
+
+exports[`sourceMap option > should generate source maps when value is not specified and the \"devtool\" option has \"source-map\" value ('sass-embedded', 'modern' API, 'sass' syntax) 4`] = `
+[]
+`;
+
+exports[`sourceMap option > should generate source maps when value is not specified and the \"devtool\" option has \"source-map\" value ('sass-embedded', 'modern' API, 'scss' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sourceMap option > should generate source maps when value is not specified and the \"devtool\" option has \"source-map\" value ('sass-embedded', 'modern' API, 'scss' syntax) 2`] = `
+{
+  "version": 3,
+  "sourceRoot": "",
+  "sources": [
+    "test/scss/language.scss",
+    "test/scss/another/_variables.scss"
+  ],
+  "names": [],
+  "mappings": ";AACQ;AAMR;EACE;EACA,OALc;;;AASd;EACE;EACA;EACA;;AAGF;EAAK;;AAEL;EACE;EACA;EACA;;;AAWJ;EANE,uBAM4B;EALzB,oBAKyB;EAJxB,mBAIwB;EAHpB,eAGoB;;;AAG5B;EACE,SAlCY;;;AAuCd;EACE,SC7Cc",
+  "sourcesContent": [
+    "@import \\"another/variables\\";\\n@import \\"./file.css\\";\\n\\n$font-stack:    Helvetica, sans-serif;\\n$primary-color: #333;\\n$pi:            '\\\\e0C6';\\n\\nbody {\\n  font: 100% $font-stack;\\n  color: $primary-color;\\n}\\n\\nnav {\\n  ul {\\n    margin: 0;\\n    padding: 0;\\n    list-style: none;\\n  }\\n\\n  li { display: inline-block; }\\n\\n  a {\\n    display: block;\\n    padding: 6px 12px;\\n    text-decoration: none;\\n  }\\n}\\n\\n@mixin border-radius($radius) {\\n  -webkit-border-radius: $radius;\\n     -moz-border-radius: $radius;\\n      -ms-border-radius: $radius;\\n          border-radius: $radius;\\n}\\n\\n.box { @include border-radius(10px); }\\n\\n.foo {\\n  &:before {\\n    content: $pi;\\n  }\\n}\\n\\n.bar {\\n  &:before {\\n    content: $n-ary-summation;\\n  }\\n}\\n",
+    "$n-ary-summation: '\\\\2211'\\n"
+  ]
+}
+`;
+
+exports[`sourceMap option > should generate source maps when value is not specified and the \"devtool\" option has \"source-map\" value ('sass-embedded', 'modern' API, 'scss' syntax) 3`] = `
+[]
+`;
+
+exports[`sourceMap option > should generate source maps when value is not specified and the \"devtool\" option has \"source-map\" value ('sass-embedded', 'modern' API, 'scss' syntax) 4`] = `
+[]
+`;
+
+exports[`sourceMap option > should generate source maps when value is not specified and the \"devtool\" option has \"source-map\" value ('sass-embedded', 'modern-compiler' API, 'sass' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.message, .warning, .error, .success {\\n  border: 1px solid #ccc;\\n  padding: 10px;\\n  color: #333;\\n}\\n\\n.success {\\n  border-color: green;\\n}\\n\\n.error {\\n  border-color: red;\\n}\\n\\n.warning {\\n  border-color: yellow;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sourceMap option > should generate source maps when value is not specified and the \"devtool\" option has \"source-map\" value ('sass-embedded', 'modern-compiler' API, 'sass' syntax) 2`] = `
+{
+  "version": 3,
+  "sourceRoot": "",
+  "sources": [
+    "test/sass/language.sass",
+    "test/sass/another/variables.sass"
+  ],
+  "names": [],
+  "mappings": ";AACQ;AAMR;EACE;EACA,OALc;;;AAQd;EACE;EACA;EACA;;AAEF;EACE;;AAEF;EACE;EACA;EACA;;;AAQJ;EALE,uBAMe;EALf,oBAKe;EAJf,mBAIe;EAHf,eAGe;;;AAEjB;EACE;EACA;EACA;;;AAEF;EAEE;;;AAEF;EAEE;;;AAEF;EAEE;;;AAGA;EACE,SAhDY;;;AAmDd;EACE,SCzDc",
+  "sourcesContent": [
+    "@import \\"another/variables\\"\\n@import \\"./file.css\\"\\n\\n$font-stack:    Helvetica, sans-serif\\n$primary-color: #333\\n$pi:            '\\\\e0C6'\\n\\nbody\\n  font: 100% $font-stack\\n  color: $primary-color\\n\\nnav\\n  ul\\n    margin: 0\\n    padding: 0\\n    list-style: none\\n\\n  li\\n    display: inline-block\\n\\n  a\\n    display: block\\n    padding: 6px 12px\\n    text-decoration: none\\n\\n=border-radius($radius)\\n  -webkit-border-radius: $radius\\n  -moz-border-radius:    $radius\\n  -ms-border-radius:     $radius\\n  border-radius:         $radius\\n\\n.box\\n  +border-radius(10px)\\n\\n.message\\n  border: 1px solid #ccc\\n  padding: 10px\\n  color: #333\\n\\n.success\\n  @extend .message\\n  border-color: green\\n\\n.error\\n  @extend .message\\n  border-color: red\\n\\n.warning\\n  @extend .message\\n  border-color: yellow\\n\\n.foo\\n  &:before\\n    content: $pi\\n\\n.bar\\n  &:before\\n    content: $n-ary-summation\\n\\n",
+    "$n-ary-summation: '\\\\2211'\\n"
+  ]
+}
+`;
+
+exports[`sourceMap option > should generate source maps when value is not specified and the \"devtool\" option has \"source-map\" value ('sass-embedded', 'modern-compiler' API, 'sass' syntax) 3`] = `
+[]
+`;
+
+exports[`sourceMap option > should generate source maps when value is not specified and the \"devtool\" option has \"source-map\" value ('sass-embedded', 'modern-compiler' API, 'sass' syntax) 4`] = `
+[]
+`;
+
+exports[`sourceMap option > should generate source maps when value is not specified and the \"devtool\" option has \"source-map\" value ('sass-embedded', 'modern-compiler' API, 'scss' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sourceMap option > should generate source maps when value is not specified and the \"devtool\" option has \"source-map\" value ('sass-embedded', 'modern-compiler' API, 'scss' syntax) 2`] = `
+{
+  "version": 3,
+  "sourceRoot": "",
+  "sources": [
+    "test/scss/language.scss",
+    "test/scss/another/_variables.scss"
+  ],
+  "names": [],
+  "mappings": ";AACQ;AAMR;EACE;EACA,OALc;;;AASd;EACE;EACA;EACA;;AAGF;EAAK;;AAEL;EACE;EACA;EACA;;;AAWJ;EANE,uBAM4B;EALzB,oBAKyB;EAJxB,mBAIwB;EAHpB,eAGoB;;;AAG5B;EACE,SAlCY;;;AAuCd;EACE,SC7Cc",
+  "sourcesContent": [
+    "@import \\"another/variables\\";\\n@import \\"./file.css\\";\\n\\n$font-stack:    Helvetica, sans-serif;\\n$primary-color: #333;\\n$pi:            '\\\\e0C6';\\n\\nbody {\\n  font: 100% $font-stack;\\n  color: $primary-color;\\n}\\n\\nnav {\\n  ul {\\n    margin: 0;\\n    padding: 0;\\n    list-style: none;\\n  }\\n\\n  li { display: inline-block; }\\n\\n  a {\\n    display: block;\\n    padding: 6px 12px;\\n    text-decoration: none;\\n  }\\n}\\n\\n@mixin border-radius($radius) {\\n  -webkit-border-radius: $radius;\\n     -moz-border-radius: $radius;\\n      -ms-border-radius: $radius;\\n          border-radius: $radius;\\n}\\n\\n.box { @include border-radius(10px); }\\n\\n.foo {\\n  &:before {\\n    content: $pi;\\n  }\\n}\\n\\n.bar {\\n  &:before {\\n    content: $n-ary-summation;\\n  }\\n}\\n",
+    "$n-ary-summation: '\\\\2211'\\n"
+  ]
+}
+`;
+
+exports[`sourceMap option > should generate source maps when value is not specified and the \"devtool\" option has \"source-map\" value ('sass-embedded', 'modern-compiler' API, 'scss' syntax) 3`] = `
+[]
+`;
+
+exports[`sourceMap option > should generate source maps when value is not specified and the \"devtool\" option has \"source-map\" value ('sass-embedded', 'modern-compiler' API, 'scss' syntax) 4`] = `
+[]
+`;
+
+exports[`sourceMap option > should generate source maps with absolute URLs ('dart-sass', 'modern' API, 'sass' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\n.module {\\n  background: hotpink;\\n}\\n\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.message, .warning, .error, .success {\\n  border: 1px solid #ccc;\\n  padding: 10px;\\n  color: #333;\\n}\\n\\n.success {\\n  border-color: green;\\n}\\n\\n.error {\\n  border-color: red;\\n}\\n\\n.warning {\\n  border-color: yellow;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sourceMap option > should generate source maps with absolute URLs ('dart-sass', 'modern' API, 'sass' syntax) 2`] = `
+{
+  "version": 3,
+  "sourceRoot": "",
+  "sources": [
+    "test/sass/language-source-maps.sass",
+    "test/node_modules/module/module.scss",
+    "test/sass/another/variables.sass"
+  ],
+  "names": [],
+  "mappings": ";AACQ;ACDR;EACI;;;ADOJ;EACE;EACA,OALc;;;AAQd;EACE;EACA;EACA;;AAEF;EACE;;AAEF;EACE;EACA;EACA;;;AAQJ;EALE,uBAMe;EALf,oBAKe;EAJf,mBAIe;EAHf,eAGe;;;AAEjB;EACE;EACA;EACA;;;AAEF;EAEE;;;AAEF;EAEE;;;AAEF;EAEE;;;AAGA;EACE,SAhDY;;;AAmDd;EACE,SE1Dc",
+  "sourcesContent": [
+    "@import \\"another/variables\\"\\n@import \\"./file.css\\"\\n@import \\"module\\"\\n\\n$font-stack:    Helvetica, sans-serif\\n$primary-color: #333\\n$pi:            '\\\\e0C6'\\n\\nbody\\n  font: 100% $font-stack\\n  color: $primary-color\\n\\nnav\\n  ul\\n    margin: 0\\n    padding: 0\\n    list-style: none\\n\\n  li\\n    display: inline-block\\n\\n  a\\n    display: block\\n    padding: 6px 12px\\n    text-decoration: none\\n\\n=border-radius($radius)\\n  -webkit-border-radius: $radius\\n  -moz-border-radius:    $radius\\n  -ms-border-radius:     $radius\\n  border-radius:         $radius\\n\\n.box\\n  +border-radius(10px)\\n\\n.message\\n  border: 1px solid #ccc\\n  padding: 10px\\n  color: #333\\n\\n.success\\n  @extend .message\\n  border-color: green\\n\\n.error\\n  @extend .message\\n  border-color: red\\n\\n.warning\\n  @extend .message\\n  border-color: yellow\\n\\n.foo\\n  &:before\\n    content: $pi\\n\\n.bar\\n  &:before\\n    content: $n-ary-summation\\n\\n",
+    ".module {\\n    background: hotpink;\\n}\\n",
+    "$n-ary-summation: '\\\\2211'\\n"
+  ]
+}
+`;
+
+exports[`sourceMap option > should generate source maps with absolute URLs ('dart-sass', 'modern' API, 'sass' syntax) 3`] = `
+[]
+`;
+
+exports[`sourceMap option > should generate source maps with absolute URLs ('dart-sass', 'modern' API, 'sass' syntax) 4`] = `
+[]
+`;
+
+exports[`sourceMap option > should generate source maps with absolute URLs ('dart-sass', 'modern' API, 'scss' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\n.module {\\n  background: hotpink;\\n}\\n\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sourceMap option > should generate source maps with absolute URLs ('dart-sass', 'modern' API, 'scss' syntax) 2`] = `
+{
+  "version": 3,
+  "sourceRoot": "",
+  "sources": [
+    "test/scss/language-source-maps.scss",
+    "test/node_modules/module/module.scss",
+    "test/scss/another/_variables.scss"
+  ],
+  "names": [],
+  "mappings": ";AACQ;ACDR;EACI;;;ADOJ;EACE;EACA,OALc;;;AASd;EACE;EACA;EACA;;AAGF;EAAK;;AAEL;EACE;EACA;EACA;;;AAWJ;EANE,uBAM4B;EALzB,oBAKyB;EAJxB,mBAIwB;EAHpB,eAGoB;;;AAG5B;EACE,SAlCY;;;AAuCd;EACE,SE9Cc",
+  "sourcesContent": [
+    "@import \\"another/variables\\";\\n@import \\"./file.css\\";\\n@import 'module';\\n\\n$font-stack:    Helvetica, sans-serif;\\n$primary-color: #333;\\n$pi:            '\\\\e0C6';\\n\\nbody {\\n  font: 100% $font-stack;\\n  color: $primary-color;\\n}\\n\\nnav {\\n  ul {\\n    margin: 0;\\n    padding: 0;\\n    list-style: none;\\n  }\\n\\n  li { display: inline-block; }\\n\\n  a {\\n    display: block;\\n    padding: 6px 12px;\\n    text-decoration: none;\\n  }\\n}\\n\\n@mixin border-radius($radius) {\\n  -webkit-border-radius: $radius;\\n     -moz-border-radius: $radius;\\n      -ms-border-radius: $radius;\\n          border-radius: $radius;\\n}\\n\\n.box { @include border-radius(10px); }\\n\\n.foo {\\n  &:before {\\n    content: $pi;\\n  }\\n}\\n\\n.bar {\\n  &:before {\\n    content: $n-ary-summation;\\n  }\\n}\\n",
+    ".module {\\n    background: hotpink;\\n}\\n",
+    "$n-ary-summation: '\\\\2211'\\n"
+  ]
+}
+`;
+
+exports[`sourceMap option > should generate source maps with absolute URLs ('dart-sass', 'modern' API, 'scss' syntax) 3`] = `
+[]
+`;
+
+exports[`sourceMap option > should generate source maps with absolute URLs ('dart-sass', 'modern' API, 'scss' syntax) 4`] = `
+[]
+`;
+
+exports[`sourceMap option > should generate source maps with absolute URLs ('dart-sass', 'modern-compiler' API, 'sass' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\n.module {\\n  background: hotpink;\\n}\\n\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.message, .warning, .error, .success {\\n  border: 1px solid #ccc;\\n  padding: 10px;\\n  color: #333;\\n}\\n\\n.success {\\n  border-color: green;\\n}\\n\\n.error {\\n  border-color: red;\\n}\\n\\n.warning {\\n  border-color: yellow;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sourceMap option > should generate source maps with absolute URLs ('dart-sass', 'modern-compiler' API, 'sass' syntax) 2`] = `
+{
+  "version": 3,
+  "sourceRoot": "",
+  "sources": [
+    "test/sass/language-source-maps.sass",
+    "test/node_modules/module/module.scss",
+    "test/sass/another/variables.sass"
+  ],
+  "names": [],
+  "mappings": ";AACQ;ACDR;EACI;;;ADOJ;EACE;EACA,OALc;;;AAQd;EACE;EACA;EACA;;AAEF;EACE;;AAEF;EACE;EACA;EACA;;;AAQJ;EALE,uBAMe;EALf,oBAKe;EAJf,mBAIe;EAHf,eAGe;;;AAEjB;EACE;EACA;EACA;;;AAEF;EAEE;;;AAEF;EAEE;;;AAEF;EAEE;;;AAGA;EACE,SAhDY;;;AAmDd;EACE,SE1Dc",
+  "sourcesContent": [
+    "@import \\"another/variables\\"\\n@import \\"./file.css\\"\\n@import \\"module\\"\\n\\n$font-stack:    Helvetica, sans-serif\\n$primary-color: #333\\n$pi:            '\\\\e0C6'\\n\\nbody\\n  font: 100% $font-stack\\n  color: $primary-color\\n\\nnav\\n  ul\\n    margin: 0\\n    padding: 0\\n    list-style: none\\n\\n  li\\n    display: inline-block\\n\\n  a\\n    display: block\\n    padding: 6px 12px\\n    text-decoration: none\\n\\n=border-radius($radius)\\n  -webkit-border-radius: $radius\\n  -moz-border-radius:    $radius\\n  -ms-border-radius:     $radius\\n  border-radius:         $radius\\n\\n.box\\n  +border-radius(10px)\\n\\n.message\\n  border: 1px solid #ccc\\n  padding: 10px\\n  color: #333\\n\\n.success\\n  @extend .message\\n  border-color: green\\n\\n.error\\n  @extend .message\\n  border-color: red\\n\\n.warning\\n  @extend .message\\n  border-color: yellow\\n\\n.foo\\n  &:before\\n    content: $pi\\n\\n.bar\\n  &:before\\n    content: $n-ary-summation\\n\\n",
+    ".module {\\n    background: hotpink;\\n}\\n",
+    "$n-ary-summation: '\\\\2211'\\n"
+  ]
+}
+`;
+
+exports[`sourceMap option > should generate source maps with absolute URLs ('dart-sass', 'modern-compiler' API, 'sass' syntax) 3`] = `
+[]
+`;
+
+exports[`sourceMap option > should generate source maps with absolute URLs ('dart-sass', 'modern-compiler' API, 'sass' syntax) 4`] = `
+[]
+`;
+
+exports[`sourceMap option > should generate source maps with absolute URLs ('dart-sass', 'modern-compiler' API, 'scss' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\n.module {\\n  background: hotpink;\\n}\\n\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sourceMap option > should generate source maps with absolute URLs ('dart-sass', 'modern-compiler' API, 'scss' syntax) 2`] = `
+{
+  "version": 3,
+  "sourceRoot": "",
+  "sources": [
+    "test/scss/language-source-maps.scss",
+    "test/node_modules/module/module.scss",
+    "test/scss/another/_variables.scss"
+  ],
+  "names": [],
+  "mappings": ";AACQ;ACDR;EACI;;;ADOJ;EACE;EACA,OALc;;;AASd;EACE;EACA;EACA;;AAGF;EAAK;;AAEL;EACE;EACA;EACA;;;AAWJ;EANE,uBAM4B;EALzB,oBAKyB;EAJxB,mBAIwB;EAHpB,eAGoB;;;AAG5B;EACE,SAlCY;;;AAuCd;EACE,SE9Cc",
+  "sourcesContent": [
+    "@import \\"another/variables\\";\\n@import \\"./file.css\\";\\n@import 'module';\\n\\n$font-stack:    Helvetica, sans-serif;\\n$primary-color: #333;\\n$pi:            '\\\\e0C6';\\n\\nbody {\\n  font: 100% $font-stack;\\n  color: $primary-color;\\n}\\n\\nnav {\\n  ul {\\n    margin: 0;\\n    padding: 0;\\n    list-style: none;\\n  }\\n\\n  li { display: inline-block; }\\n\\n  a {\\n    display: block;\\n    padding: 6px 12px;\\n    text-decoration: none;\\n  }\\n}\\n\\n@mixin border-radius($radius) {\\n  -webkit-border-radius: $radius;\\n     -moz-border-radius: $radius;\\n      -ms-border-radius: $radius;\\n          border-radius: $radius;\\n}\\n\\n.box { @include border-radius(10px); }\\n\\n.foo {\\n  &:before {\\n    content: $pi;\\n  }\\n}\\n\\n.bar {\\n  &:before {\\n    content: $n-ary-summation;\\n  }\\n}\\n",
+    ".module {\\n    background: hotpink;\\n}\\n",
+    "$n-ary-summation: '\\\\2211'\\n"
+  ]
+}
+`;
+
+exports[`sourceMap option > should generate source maps with absolute URLs ('dart-sass', 'modern-compiler' API, 'scss' syntax) 3`] = `
+[]
+`;
+
+exports[`sourceMap option > should generate source maps with absolute URLs ('dart-sass', 'modern-compiler' API, 'scss' syntax) 4`] = `
+[]
+`;
+
+exports[`sourceMap option > should generate source maps with absolute URLs ('sass-embedded', 'modern' API, 'sass' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\n.module {\\n  background: hotpink;\\n}\\n\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.message, .warning, .error, .success {\\n  border: 1px solid #ccc;\\n  padding: 10px;\\n  color: #333;\\n}\\n\\n.success {\\n  border-color: green;\\n}\\n\\n.error {\\n  border-color: red;\\n}\\n\\n.warning {\\n  border-color: yellow;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sourceMap option > should generate source maps with absolute URLs ('sass-embedded', 'modern' API, 'sass' syntax) 2`] = `
+{
+  "version": 3,
+  "sourceRoot": "",
+  "sources": [
+    "test/sass/language-source-maps.sass",
+    "test/node_modules/module/module.scss",
+    "test/sass/another/variables.sass"
+  ],
+  "names": [],
+  "mappings": ";AACQ;ACDR;EACI;;;ADOJ;EACE;EACA,OALc;;;AAQd;EACE;EACA;EACA;;AAEF;EACE;;AAEF;EACE;EACA;EACA;;;AAQJ;EALE,uBAMe;EALf,oBAKe;EAJf,mBAIe;EAHf,eAGe;;;AAEjB;EACE;EACA;EACA;;;AAEF;EAEE;;;AAEF;EAEE;;;AAEF;EAEE;;;AAGA;EACE,SAhDY;;;AAmDd;EACE,SE1Dc",
+  "sourcesContent": [
+    "@import \\"another/variables\\"\\n@import \\"./file.css\\"\\n@import \\"module\\"\\n\\n$font-stack:    Helvetica, sans-serif\\n$primary-color: #333\\n$pi:            '\\\\e0C6'\\n\\nbody\\n  font: 100% $font-stack\\n  color: $primary-color\\n\\nnav\\n  ul\\n    margin: 0\\n    padding: 0\\n    list-style: none\\n\\n  li\\n    display: inline-block\\n\\n  a\\n    display: block\\n    padding: 6px 12px\\n    text-decoration: none\\n\\n=border-radius($radius)\\n  -webkit-border-radius: $radius\\n  -moz-border-radius:    $radius\\n  -ms-border-radius:     $radius\\n  border-radius:         $radius\\n\\n.box\\n  +border-radius(10px)\\n\\n.message\\n  border: 1px solid #ccc\\n  padding: 10px\\n  color: #333\\n\\n.success\\n  @extend .message\\n  border-color: green\\n\\n.error\\n  @extend .message\\n  border-color: red\\n\\n.warning\\n  @extend .message\\n  border-color: yellow\\n\\n.foo\\n  &:before\\n    content: $pi\\n\\n.bar\\n  &:before\\n    content: $n-ary-summation\\n\\n",
+    ".module {\\n    background: hotpink;\\n}\\n",
+    "$n-ary-summation: '\\\\2211'\\n"
+  ]
+}
+`;
+
+exports[`sourceMap option > should generate source maps with absolute URLs ('sass-embedded', 'modern' API, 'sass' syntax) 3`] = `
+[]
+`;
+
+exports[`sourceMap option > should generate source maps with absolute URLs ('sass-embedded', 'modern' API, 'sass' syntax) 4`] = `
+[]
+`;
+
+exports[`sourceMap option > should generate source maps with absolute URLs ('sass-embedded', 'modern' API, 'scss' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\n.module {\\n  background: hotpink;\\n}\\n\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sourceMap option > should generate source maps with absolute URLs ('sass-embedded', 'modern' API, 'scss' syntax) 2`] = `
+{
+  "version": 3,
+  "sourceRoot": "",
+  "sources": [
+    "test/scss/language-source-maps.scss",
+    "test/node_modules/module/module.scss",
+    "test/scss/another/_variables.scss"
+  ],
+  "names": [],
+  "mappings": ";AACQ;ACDR;EACI;;;ADOJ;EACE;EACA,OALc;;;AASd;EACE;EACA;EACA;;AAGF;EAAK;;AAEL;EACE;EACA;EACA;;;AAWJ;EANE,uBAM4B;EALzB,oBAKyB;EAJxB,mBAIwB;EAHpB,eAGoB;;;AAG5B;EACE,SAlCY;;;AAuCd;EACE,SE9Cc",
+  "sourcesContent": [
+    "@import \\"another/variables\\";\\n@import \\"./file.css\\";\\n@import 'module';\\n\\n$font-stack:    Helvetica, sans-serif;\\n$primary-color: #333;\\n$pi:            '\\\\e0C6';\\n\\nbody {\\n  font: 100% $font-stack;\\n  color: $primary-color;\\n}\\n\\nnav {\\n  ul {\\n    margin: 0;\\n    padding: 0;\\n    list-style: none;\\n  }\\n\\n  li { display: inline-block; }\\n\\n  a {\\n    display: block;\\n    padding: 6px 12px;\\n    text-decoration: none;\\n  }\\n}\\n\\n@mixin border-radius($radius) {\\n  -webkit-border-radius: $radius;\\n     -moz-border-radius: $radius;\\n      -ms-border-radius: $radius;\\n          border-radius: $radius;\\n}\\n\\n.box { @include border-radius(10px); }\\n\\n.foo {\\n  &:before {\\n    content: $pi;\\n  }\\n}\\n\\n.bar {\\n  &:before {\\n    content: $n-ary-summation;\\n  }\\n}\\n",
+    ".module {\\n    background: hotpink;\\n}\\n",
+    "$n-ary-summation: '\\\\2211'\\n"
+  ]
+}
+`;
+
+exports[`sourceMap option > should generate source maps with absolute URLs ('sass-embedded', 'modern' API, 'scss' syntax) 3`] = `
+[]
+`;
+
+exports[`sourceMap option > should generate source maps with absolute URLs ('sass-embedded', 'modern' API, 'scss' syntax) 4`] = `
+[]
+`;
+
+exports[`sourceMap option > should generate source maps with absolute URLs ('sass-embedded', 'modern-compiler' API, 'sass' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\n.module {\\n  background: hotpink;\\n}\\n\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.message, .warning, .error, .success {\\n  border: 1px solid #ccc;\\n  padding: 10px;\\n  color: #333;\\n}\\n\\n.success {\\n  border-color: green;\\n}\\n\\n.error {\\n  border-color: red;\\n}\\n\\n.warning {\\n  border-color: yellow;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sourceMap option > should generate source maps with absolute URLs ('sass-embedded', 'modern-compiler' API, 'sass' syntax) 2`] = `
+{
+  "version": 3,
+  "sourceRoot": "",
+  "sources": [
+    "test/sass/language-source-maps.sass",
+    "test/node_modules/module/module.scss",
+    "test/sass/another/variables.sass"
+  ],
+  "names": [],
+  "mappings": ";AACQ;ACDR;EACI;;;ADOJ;EACE;EACA,OALc;;;AAQd;EACE;EACA;EACA;;AAEF;EACE;;AAEF;EACE;EACA;EACA;;;AAQJ;EALE,uBAMe;EALf,oBAKe;EAJf,mBAIe;EAHf,eAGe;;;AAEjB;EACE;EACA;EACA;;;AAEF;EAEE;;;AAEF;EAEE;;;AAEF;EAEE;;;AAGA;EACE,SAhDY;;;AAmDd;EACE,SE1Dc",
+  "sourcesContent": [
+    "@import \\"another/variables\\"\\n@import \\"./file.css\\"\\n@import \\"module\\"\\n\\n$font-stack:    Helvetica, sans-serif\\n$primary-color: #333\\n$pi:            '\\\\e0C6'\\n\\nbody\\n  font: 100% $font-stack\\n  color: $primary-color\\n\\nnav\\n  ul\\n    margin: 0\\n    padding: 0\\n    list-style: none\\n\\n  li\\n    display: inline-block\\n\\n  a\\n    display: block\\n    padding: 6px 12px\\n    text-decoration: none\\n\\n=border-radius($radius)\\n  -webkit-border-radius: $radius\\n  -moz-border-radius:    $radius\\n  -ms-border-radius:     $radius\\n  border-radius:         $radius\\n\\n.box\\n  +border-radius(10px)\\n\\n.message\\n  border: 1px solid #ccc\\n  padding: 10px\\n  color: #333\\n\\n.success\\n  @extend .message\\n  border-color: green\\n\\n.error\\n  @extend .message\\n  border-color: red\\n\\n.warning\\n  @extend .message\\n  border-color: yellow\\n\\n.foo\\n  &:before\\n    content: $pi\\n\\n.bar\\n  &:before\\n    content: $n-ary-summation\\n\\n",
+    ".module {\\n    background: hotpink;\\n}\\n",
+    "$n-ary-summation: '\\\\2211'\\n"
+  ]
+}
+`;
+
+exports[`sourceMap option > should generate source maps with absolute URLs ('sass-embedded', 'modern-compiler' API, 'sass' syntax) 3`] = `
+[]
+`;
+
+exports[`sourceMap option > should generate source maps with absolute URLs ('sass-embedded', 'modern-compiler' API, 'sass' syntax) 4`] = `
+[]
+`;
+
+exports[`sourceMap option > should generate source maps with absolute URLs ('sass-embedded', 'modern-compiler' API, 'scss' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\n.module {\\n  background: hotpink;\\n}\\n\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sourceMap option > should generate source maps with absolute URLs ('sass-embedded', 'modern-compiler' API, 'scss' syntax) 2`] = `
+{
+  "version": 3,
+  "sourceRoot": "",
+  "sources": [
+    "test/scss/language-source-maps.scss",
+    "test/node_modules/module/module.scss",
+    "test/scss/another/_variables.scss"
+  ],
+  "names": [],
+  "mappings": ";AACQ;ACDR;EACI;;;ADOJ;EACE;EACA,OALc;;;AASd;EACE;EACA;EACA;;AAGF;EAAK;;AAEL;EACE;EACA;EACA;;;AAWJ;EANE,uBAM4B;EALzB,oBAKyB;EAJxB,mBAIwB;EAHpB,eAGoB;;;AAG5B;EACE,SAlCY;;;AAuCd;EACE,SE9Cc",
+  "sourcesContent": [
+    "@import \\"another/variables\\";\\n@import \\"./file.css\\";\\n@import 'module';\\n\\n$font-stack:    Helvetica, sans-serif;\\n$primary-color: #333;\\n$pi:            '\\\\e0C6';\\n\\nbody {\\n  font: 100% $font-stack;\\n  color: $primary-color;\\n}\\n\\nnav {\\n  ul {\\n    margin: 0;\\n    padding: 0;\\n    list-style: none;\\n  }\\n\\n  li { display: inline-block; }\\n\\n  a {\\n    display: block;\\n    padding: 6px 12px;\\n    text-decoration: none;\\n  }\\n}\\n\\n@mixin border-radius($radius) {\\n  -webkit-border-radius: $radius;\\n     -moz-border-radius: $radius;\\n      -ms-border-radius: $radius;\\n          border-radius: $radius;\\n}\\n\\n.box { @include border-radius(10px); }\\n\\n.foo {\\n  &:before {\\n    content: $pi;\\n  }\\n}\\n\\n.bar {\\n  &:before {\\n    content: $n-ary-summation;\\n  }\\n}\\n",
+    ".module {\\n    background: hotpink;\\n}\\n",
+    "$n-ary-summation: '\\\\2211'\\n"
+  ]
+}
+`;
+
+exports[`sourceMap option > should generate source maps with absolute URLs ('sass-embedded', 'modern-compiler' API, 'scss' syntax) 3`] = `
+[]
+`;
+
+exports[`sourceMap option > should generate source maps with absolute URLs ('sass-embedded', 'modern-compiler' API, 'scss' syntax) 4`] = `
+[]
+`;
+
+exports[`sourceMap option > should generate sourcemap with \"asset/resource\" ('dart-sass', 'modern' API, 'sass' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.message, .warning, .error, .success {\\n  border: 1px solid #ccc;\\n  padding: 10px;\\n  color: #333;\\n}\\n\\n.success {\\n  border-color: green;\\n}\\n\\n.error {\\n  border-color: red;\\n}\\n\\n.warning {\\n  border-color: yellow;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}\\n/*# sourceMappingURL=language.css.map*/"
+`;
+
+exports[`sourceMap option > should generate sourcemap with \"asset/resource\" ('dart-sass', 'modern' API, 'sass' syntax) 2`] = `
+{
+  "version": 3,
+  "sourceRoot": "",
+  "sources": [
+    "webpack://sassLoaderExport/./sass/language.sass",
+    "webpack://sassLoaderExport/./sass/another/variables.sass"
+  ],
+  "names": [],
+  "mappings": ";AACQ;AAMR;EACE;EACA,OALc;;;AAQd;EACE;EACA;EACA;;AAEF;EACE;;AAEF;EACE;EACA;EACA;;;AAQJ;EALE,uBAMe;EALf,oBAKe;EAJf,mBAIe;EAHf,eAGe;;;AAEjB;EACE;EACA;EACA;;;AAEF;EAEE;;;AAEF;EAEE;;;AAEF;EAEE;;;AAGA;EACE,SAhDY;;;AAmDd;EACE,SCzDc",
+  "sourcesContent": [
+    "@import \\"another/variables\\"\\n@import \\"./file.css\\"\\n\\n$font-stack:    Helvetica, sans-serif\\n$primary-color: #333\\n$pi:            '\\\\e0C6'\\n\\nbody\\n  font: 100% $font-stack\\n  color: $primary-color\\n\\nnav\\n  ul\\n    margin: 0\\n    padding: 0\\n    list-style: none\\n\\n  li\\n    display: inline-block\\n\\n  a\\n    display: block\\n    padding: 6px 12px\\n    text-decoration: none\\n\\n=border-radius($radius)\\n  -webkit-border-radius: $radius\\n  -moz-border-radius:    $radius\\n  -ms-border-radius:     $radius\\n  border-radius:         $radius\\n\\n.box\\n  +border-radius(10px)\\n\\n.message\\n  border: 1px solid #ccc\\n  padding: 10px\\n  color: #333\\n\\n.success\\n  @extend .message\\n  border-color: green\\n\\n.error\\n  @extend .message\\n  border-color: red\\n\\n.warning\\n  @extend .message\\n  border-color: yellow\\n\\n.foo\\n  &:before\\n    content: $pi\\n\\n.bar\\n  &:before\\n    content: $n-ary-summation\\n\\n",
+    "$n-ary-summation: '\\\\2211'\\n"
+  ],
+  "file": "static/language.css"
+}
+`;
+
+exports[`sourceMap option > should generate sourcemap with \"asset/resource\" ('dart-sass', 'modern' API, 'sass' syntax) 3`] = `
+[]
+`;
+
+exports[`sourceMap option > should generate sourcemap with \"asset/resource\" ('dart-sass', 'modern' API, 'sass' syntax) 4`] = `
+[]
+`;
+
+exports[`sourceMap option > should generate sourcemap with \"asset/resource\" ('dart-sass', 'modern' API, 'scss' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}\\n/*# sourceMappingURL=language.css.map*/"
+`;
+
+exports[`sourceMap option > should generate sourcemap with \"asset/resource\" ('dart-sass', 'modern' API, 'scss' syntax) 2`] = `
+{
+  "version": 3,
+  "sourceRoot": "",
+  "sources": [
+    "webpack://sassLoaderExport/./scss/language.scss",
+    "webpack://sassLoaderExport/./scss/another/_variables.scss"
+  ],
+  "names": [],
+  "mappings": ";AACQ;AAMR;EACE;EACA,OALc;;;AASd;EACE;EACA;EACA;;AAGF;EAAK;;AAEL;EACE;EACA;EACA;;;AAWJ;EANE,uBAM4B;EALzB,oBAKyB;EAJxB,mBAIwB;EAHpB,eAGoB;;;AAG5B;EACE,SAlCY;;;AAuCd;EACE,SC7Cc",
+  "sourcesContent": [
+    "@import \\"another/variables\\";\\n@import \\"./file.css\\";\\n\\n$font-stack:    Helvetica, sans-serif;\\n$primary-color: #333;\\n$pi:            '\\\\e0C6';\\n\\nbody {\\n  font: 100% $font-stack;\\n  color: $primary-color;\\n}\\n\\nnav {\\n  ul {\\n    margin: 0;\\n    padding: 0;\\n    list-style: none;\\n  }\\n\\n  li { display: inline-block; }\\n\\n  a {\\n    display: block;\\n    padding: 6px 12px;\\n    text-decoration: none;\\n  }\\n}\\n\\n@mixin border-radius($radius) {\\n  -webkit-border-radius: $radius;\\n     -moz-border-radius: $radius;\\n      -ms-border-radius: $radius;\\n          border-radius: $radius;\\n}\\n\\n.box { @include border-radius(10px); }\\n\\n.foo {\\n  &:before {\\n    content: $pi;\\n  }\\n}\\n\\n.bar {\\n  &:before {\\n    content: $n-ary-summation;\\n  }\\n}\\n",
+    "$n-ary-summation: '\\\\2211'\\n"
+  ],
+  "file": "static/language.css"
+}
+`;
+
+exports[`sourceMap option > should generate sourcemap with \"asset/resource\" ('dart-sass', 'modern' API, 'scss' syntax) 3`] = `
+[]
+`;
+
+exports[`sourceMap option > should generate sourcemap with \"asset/resource\" ('dart-sass', 'modern' API, 'scss' syntax) 4`] = `
+[]
+`;
+
+exports[`sourceMap option > should generate sourcemap with \"asset/resource\" ('dart-sass', 'modern-compiler' API, 'sass' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.message, .warning, .error, .success {\\n  border: 1px solid #ccc;\\n  padding: 10px;\\n  color: #333;\\n}\\n\\n.success {\\n  border-color: green;\\n}\\n\\n.error {\\n  border-color: red;\\n}\\n\\n.warning {\\n  border-color: yellow;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}\\n/*# sourceMappingURL=language.css.map*/"
+`;
+
+exports[`sourceMap option > should generate sourcemap with \"asset/resource\" ('dart-sass', 'modern-compiler' API, 'sass' syntax) 2`] = `
+{
+  "version": 3,
+  "sourceRoot": "",
+  "sources": [
+    "webpack://sassLoaderExport/./sass/language.sass",
+    "webpack://sassLoaderExport/./sass/another/variables.sass"
+  ],
+  "names": [],
+  "mappings": ";AACQ;AAMR;EACE;EACA,OALc;;;AAQd;EACE;EACA;EACA;;AAEF;EACE;;AAEF;EACE;EACA;EACA;;;AAQJ;EALE,uBAMe;EALf,oBAKe;EAJf,mBAIe;EAHf,eAGe;;;AAEjB;EACE;EACA;EACA;;;AAEF;EAEE;;;AAEF;EAEE;;;AAEF;EAEE;;;AAGA;EACE,SAhDY;;;AAmDd;EACE,SCzDc",
+  "sourcesContent": [
+    "@import \\"another/variables\\"\\n@import \\"./file.css\\"\\n\\n$font-stack:    Helvetica, sans-serif\\n$primary-color: #333\\n$pi:            '\\\\e0C6'\\n\\nbody\\n  font: 100% $font-stack\\n  color: $primary-color\\n\\nnav\\n  ul\\n    margin: 0\\n    padding: 0\\n    list-style: none\\n\\n  li\\n    display: inline-block\\n\\n  a\\n    display: block\\n    padding: 6px 12px\\n    text-decoration: none\\n\\n=border-radius($radius)\\n  -webkit-border-radius: $radius\\n  -moz-border-radius:    $radius\\n  -ms-border-radius:     $radius\\n  border-radius:         $radius\\n\\n.box\\n  +border-radius(10px)\\n\\n.message\\n  border: 1px solid #ccc\\n  padding: 10px\\n  color: #333\\n\\n.success\\n  @extend .message\\n  border-color: green\\n\\n.error\\n  @extend .message\\n  border-color: red\\n\\n.warning\\n  @extend .message\\n  border-color: yellow\\n\\n.foo\\n  &:before\\n    content: $pi\\n\\n.bar\\n  &:before\\n    content: $n-ary-summation\\n\\n",
+    "$n-ary-summation: '\\\\2211'\\n"
+  ],
+  "file": "static/language.css"
+}
+`;
+
+exports[`sourceMap option > should generate sourcemap with \"asset/resource\" ('dart-sass', 'modern-compiler' API, 'sass' syntax) 3`] = `
+[]
+`;
+
+exports[`sourceMap option > should generate sourcemap with \"asset/resource\" ('dart-sass', 'modern-compiler' API, 'sass' syntax) 4`] = `
+[]
+`;
+
+exports[`sourceMap option > should generate sourcemap with \"asset/resource\" ('dart-sass', 'modern-compiler' API, 'scss' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}\\n/*# sourceMappingURL=language.css.map*/"
+`;
+
+exports[`sourceMap option > should generate sourcemap with \"asset/resource\" ('dart-sass', 'modern-compiler' API, 'scss' syntax) 2`] = `
+{
+  "version": 3,
+  "sourceRoot": "",
+  "sources": [
+    "webpack://sassLoaderExport/./scss/language.scss",
+    "webpack://sassLoaderExport/./scss/another/_variables.scss"
+  ],
+  "names": [],
+  "mappings": ";AACQ;AAMR;EACE;EACA,OALc;;;AASd;EACE;EACA;EACA;;AAGF;EAAK;;AAEL;EACE;EACA;EACA;;;AAWJ;EANE,uBAM4B;EALzB,oBAKyB;EAJxB,mBAIwB;EAHpB,eAGoB;;;AAG5B;EACE,SAlCY;;;AAuCd;EACE,SC7Cc",
+  "sourcesContent": [
+    "@import \\"another/variables\\";\\n@import \\"./file.css\\";\\n\\n$font-stack:    Helvetica, sans-serif;\\n$primary-color: #333;\\n$pi:            '\\\\e0C6';\\n\\nbody {\\n  font: 100% $font-stack;\\n  color: $primary-color;\\n}\\n\\nnav {\\n  ul {\\n    margin: 0;\\n    padding: 0;\\n    list-style: none;\\n  }\\n\\n  li { display: inline-block; }\\n\\n  a {\\n    display: block;\\n    padding: 6px 12px;\\n    text-decoration: none;\\n  }\\n}\\n\\n@mixin border-radius($radius) {\\n  -webkit-border-radius: $radius;\\n     -moz-border-radius: $radius;\\n      -ms-border-radius: $radius;\\n          border-radius: $radius;\\n}\\n\\n.box { @include border-radius(10px); }\\n\\n.foo {\\n  &:before {\\n    content: $pi;\\n  }\\n}\\n\\n.bar {\\n  &:before {\\n    content: $n-ary-summation;\\n  }\\n}\\n",
+    "$n-ary-summation: '\\\\2211'\\n"
+  ],
+  "file": "static/language.css"
+}
+`;
+
+exports[`sourceMap option > should generate sourcemap with \"asset/resource\" ('dart-sass', 'modern-compiler' API, 'scss' syntax) 3`] = `
+[]
+`;
+
+exports[`sourceMap option > should generate sourcemap with \"asset/resource\" ('dart-sass', 'modern-compiler' API, 'scss' syntax) 4`] = `
+[]
+`;
+
+exports[`sourceMap option > should generate sourcemap with \"asset/resource\" ('sass-embedded', 'modern' API, 'sass' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.message, .warning, .error, .success {\\n  border: 1px solid #ccc;\\n  padding: 10px;\\n  color: #333;\\n}\\n\\n.success {\\n  border-color: green;\\n}\\n\\n.error {\\n  border-color: red;\\n}\\n\\n.warning {\\n  border-color: yellow;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}\\n/*# sourceMappingURL=language.css.map*/"
+`;
+
+exports[`sourceMap option > should generate sourcemap with \"asset/resource\" ('sass-embedded', 'modern' API, 'sass' syntax) 2`] = `
+{
+  "version": 3,
+  "sourceRoot": "",
+  "sources": [
+    "webpack://sassLoaderExport/./sass/language.sass",
+    "webpack://sassLoaderExport/./sass/another/variables.sass"
+  ],
+  "names": [],
+  "mappings": ";AACQ;AAMR;EACE;EACA,OALc;;;AAQd;EACE;EACA;EACA;;AAEF;EACE;;AAEF;EACE;EACA;EACA;;;AAQJ;EALE,uBAMe;EALf,oBAKe;EAJf,mBAIe;EAHf,eAGe;;;AAEjB;EACE;EACA;EACA;;;AAEF;EAEE;;;AAEF;EAEE;;;AAEF;EAEE;;;AAGA;EACE,SAhDY;;;AAmDd;EACE,SCzDc",
+  "sourcesContent": [
+    "@import \\"another/variables\\"\\n@import \\"./file.css\\"\\n\\n$font-stack:    Helvetica, sans-serif\\n$primary-color: #333\\n$pi:            '\\\\e0C6'\\n\\nbody\\n  font: 100% $font-stack\\n  color: $primary-color\\n\\nnav\\n  ul\\n    margin: 0\\n    padding: 0\\n    list-style: none\\n\\n  li\\n    display: inline-block\\n\\n  a\\n    display: block\\n    padding: 6px 12px\\n    text-decoration: none\\n\\n=border-radius($radius)\\n  -webkit-border-radius: $radius\\n  -moz-border-radius:    $radius\\n  -ms-border-radius:     $radius\\n  border-radius:         $radius\\n\\n.box\\n  +border-radius(10px)\\n\\n.message\\n  border: 1px solid #ccc\\n  padding: 10px\\n  color: #333\\n\\n.success\\n  @extend .message\\n  border-color: green\\n\\n.error\\n  @extend .message\\n  border-color: red\\n\\n.warning\\n  @extend .message\\n  border-color: yellow\\n\\n.foo\\n  &:before\\n    content: $pi\\n\\n.bar\\n  &:before\\n    content: $n-ary-summation\\n\\n",
+    "$n-ary-summation: '\\\\2211'\\n"
+  ],
+  "file": "static/language.css"
+}
+`;
+
+exports[`sourceMap option > should generate sourcemap with \"asset/resource\" ('sass-embedded', 'modern' API, 'sass' syntax) 3`] = `
+[]
+`;
+
+exports[`sourceMap option > should generate sourcemap with \"asset/resource\" ('sass-embedded', 'modern' API, 'sass' syntax) 4`] = `
+[]
+`;
+
+exports[`sourceMap option > should generate sourcemap with \"asset/resource\" ('sass-embedded', 'modern' API, 'scss' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}\\n/*# sourceMappingURL=language.css.map*/"
+`;
+
+exports[`sourceMap option > should generate sourcemap with \"asset/resource\" ('sass-embedded', 'modern' API, 'scss' syntax) 2`] = `
+{
+  "version": 3,
+  "sourceRoot": "",
+  "sources": [
+    "webpack://sassLoaderExport/./scss/language.scss",
+    "webpack://sassLoaderExport/./scss/another/_variables.scss"
+  ],
+  "names": [],
+  "mappings": ";AACQ;AAMR;EACE;EACA,OALc;;;AASd;EACE;EACA;EACA;;AAGF;EAAK;;AAEL;EACE;EACA;EACA;;;AAWJ;EANE,uBAM4B;EALzB,oBAKyB;EAJxB,mBAIwB;EAHpB,eAGoB;;;AAG5B;EACE,SAlCY;;;AAuCd;EACE,SC7Cc",
+  "sourcesContent": [
+    "@import \\"another/variables\\";\\n@import \\"./file.css\\";\\n\\n$font-stack:    Helvetica, sans-serif;\\n$primary-color: #333;\\n$pi:            '\\\\e0C6';\\n\\nbody {\\n  font: 100% $font-stack;\\n  color: $primary-color;\\n}\\n\\nnav {\\n  ul {\\n    margin: 0;\\n    padding: 0;\\n    list-style: none;\\n  }\\n\\n  li { display: inline-block; }\\n\\n  a {\\n    display: block;\\n    padding: 6px 12px;\\n    text-decoration: none;\\n  }\\n}\\n\\n@mixin border-radius($radius) {\\n  -webkit-border-radius: $radius;\\n     -moz-border-radius: $radius;\\n      -ms-border-radius: $radius;\\n          border-radius: $radius;\\n}\\n\\n.box { @include border-radius(10px); }\\n\\n.foo {\\n  &:before {\\n    content: $pi;\\n  }\\n}\\n\\n.bar {\\n  &:before {\\n    content: $n-ary-summation;\\n  }\\n}\\n",
+    "$n-ary-summation: '\\\\2211'\\n"
+  ],
+  "file": "static/language.css"
+}
+`;
+
+exports[`sourceMap option > should generate sourcemap with \"asset/resource\" ('sass-embedded', 'modern' API, 'scss' syntax) 3`] = `
+[]
+`;
+
+exports[`sourceMap option > should generate sourcemap with \"asset/resource\" ('sass-embedded', 'modern' API, 'scss' syntax) 4`] = `
+[]
+`;
+
+exports[`sourceMap option > should generate sourcemap with \"asset/resource\" ('sass-embedded', 'modern-compiler' API, 'sass' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.message, .warning, .error, .success {\\n  border: 1px solid #ccc;\\n  padding: 10px;\\n  color: #333;\\n}\\n\\n.success {\\n  border-color: green;\\n}\\n\\n.error {\\n  border-color: red;\\n}\\n\\n.warning {\\n  border-color: yellow;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}\\n/*# sourceMappingURL=language.css.map*/"
+`;
+
+exports[`sourceMap option > should generate sourcemap with \"asset/resource\" ('sass-embedded', 'modern-compiler' API, 'sass' syntax) 2`] = `
+{
+  "version": 3,
+  "sourceRoot": "",
+  "sources": [
+    "webpack://sassLoaderExport/./sass/language.sass",
+    "webpack://sassLoaderExport/./sass/another/variables.sass"
+  ],
+  "names": [],
+  "mappings": ";AACQ;AAMR;EACE;EACA,OALc;;;AAQd;EACE;EACA;EACA;;AAEF;EACE;;AAEF;EACE;EACA;EACA;;;AAQJ;EALE,uBAMe;EALf,oBAKe;EAJf,mBAIe;EAHf,eAGe;;;AAEjB;EACE;EACA;EACA;;;AAEF;EAEE;;;AAEF;EAEE;;;AAEF;EAEE;;;AAGA;EACE,SAhDY;;;AAmDd;EACE,SCzDc",
+  "sourcesContent": [
+    "@import \\"another/variables\\"\\n@import \\"./file.css\\"\\n\\n$font-stack:    Helvetica, sans-serif\\n$primary-color: #333\\n$pi:            '\\\\e0C6'\\n\\nbody\\n  font: 100% $font-stack\\n  color: $primary-color\\n\\nnav\\n  ul\\n    margin: 0\\n    padding: 0\\n    list-style: none\\n\\n  li\\n    display: inline-block\\n\\n  a\\n    display: block\\n    padding: 6px 12px\\n    text-decoration: none\\n\\n=border-radius($radius)\\n  -webkit-border-radius: $radius\\n  -moz-border-radius:    $radius\\n  -ms-border-radius:     $radius\\n  border-radius:         $radius\\n\\n.box\\n  +border-radius(10px)\\n\\n.message\\n  border: 1px solid #ccc\\n  padding: 10px\\n  color: #333\\n\\n.success\\n  @extend .message\\n  border-color: green\\n\\n.error\\n  @extend .message\\n  border-color: red\\n\\n.warning\\n  @extend .message\\n  border-color: yellow\\n\\n.foo\\n  &:before\\n    content: $pi\\n\\n.bar\\n  &:before\\n    content: $n-ary-summation\\n\\n",
+    "$n-ary-summation: '\\\\2211'\\n"
+  ],
+  "file": "static/language.css"
+}
+`;
+
+exports[`sourceMap option > should generate sourcemap with \"asset/resource\" ('sass-embedded', 'modern-compiler' API, 'sass' syntax) 3`] = `
+[]
+`;
+
+exports[`sourceMap option > should generate sourcemap with \"asset/resource\" ('sass-embedded', 'modern-compiler' API, 'sass' syntax) 4`] = `
+[]
+`;
+
+exports[`sourceMap option > should generate sourcemap with \"asset/resource\" ('sass-embedded', 'modern-compiler' API, 'scss' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}\\n/*# sourceMappingURL=language.css.map*/"
+`;
+
+exports[`sourceMap option > should generate sourcemap with \"asset/resource\" ('sass-embedded', 'modern-compiler' API, 'scss' syntax) 2`] = `
+{
+  "version": 3,
+  "sourceRoot": "",
+  "sources": [
+    "webpack://sassLoaderExport/./scss/language.scss",
+    "webpack://sassLoaderExport/./scss/another/_variables.scss"
+  ],
+  "names": [],
+  "mappings": ";AACQ;AAMR;EACE;EACA,OALc;;;AASd;EACE;EACA;EACA;;AAGF;EAAK;;AAEL;EACE;EACA;EACA;;;AAWJ;EANE,uBAM4B;EALzB,oBAKyB;EAJxB,mBAIwB;EAHpB,eAGoB;;;AAG5B;EACE,SAlCY;;;AAuCd;EACE,SC7Cc",
+  "sourcesContent": [
+    "@import \\"another/variables\\";\\n@import \\"./file.css\\";\\n\\n$font-stack:    Helvetica, sans-serif;\\n$primary-color: #333;\\n$pi:            '\\\\e0C6';\\n\\nbody {\\n  font: 100% $font-stack;\\n  color: $primary-color;\\n}\\n\\nnav {\\n  ul {\\n    margin: 0;\\n    padding: 0;\\n    list-style: none;\\n  }\\n\\n  li { display: inline-block; }\\n\\n  a {\\n    display: block;\\n    padding: 6px 12px;\\n    text-decoration: none;\\n  }\\n}\\n\\n@mixin border-radius($radius) {\\n  -webkit-border-radius: $radius;\\n     -moz-border-radius: $radius;\\n      -ms-border-radius: $radius;\\n          border-radius: $radius;\\n}\\n\\n.box { @include border-radius(10px); }\\n\\n.foo {\\n  &:before {\\n    content: $pi;\\n  }\\n}\\n\\n.bar {\\n  &:before {\\n    content: $n-ary-summation;\\n  }\\n}\\n",
+    "$n-ary-summation: '\\\\2211'\\n"
+  ],
+  "file": "static/language.css"
+}
+`;
+
+exports[`sourceMap option > should generate sourcemap with \"asset/resource\" ('sass-embedded', 'modern-compiler' API, 'scss' syntax) 3`] = `
+[]
+`;
+
+exports[`sourceMap option > should generate sourcemap with \"asset/resource\" ('sass-embedded', 'modern-compiler' API, 'scss' syntax) 4`] = `
+[]
+`;
+
+exports[`sourceMap option > should not generate source maps when value has \"false\" value and the \"devtool\" option has \"false\" value ('dart-sass', 'modern' API, 'sass' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.message, .warning, .error, .success {\\n  border: 1px solid #ccc;\\n  padding: 10px;\\n  color: #333;\\n}\\n\\n.success {\\n  border-color: green;\\n}\\n\\n.error {\\n  border-color: red;\\n}\\n\\n.warning {\\n  border-color: yellow;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sourceMap option > should not generate source maps when value has \"false\" value and the \"devtool\" option has \"false\" value ('dart-sass', 'modern' API, 'sass' syntax) 2`] = `
+undefined
+`;
+
+exports[`sourceMap option > should not generate source maps when value has \"false\" value and the \"devtool\" option has \"false\" value ('dart-sass', 'modern' API, 'sass' syntax) 3`] = `
+[]
+`;
+
+exports[`sourceMap option > should not generate source maps when value has \"false\" value and the \"devtool\" option has \"false\" value ('dart-sass', 'modern' API, 'sass' syntax) 4`] = `
+[]
+`;
+
+exports[`sourceMap option > should not generate source maps when value has \"false\" value and the \"devtool\" option has \"false\" value ('dart-sass', 'modern' API, 'scss' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sourceMap option > should not generate source maps when value has \"false\" value and the \"devtool\" option has \"false\" value ('dart-sass', 'modern' API, 'scss' syntax) 2`] = `
+undefined
+`;
+
+exports[`sourceMap option > should not generate source maps when value has \"false\" value and the \"devtool\" option has \"false\" value ('dart-sass', 'modern' API, 'scss' syntax) 3`] = `
+[]
+`;
+
+exports[`sourceMap option > should not generate source maps when value has \"false\" value and the \"devtool\" option has \"false\" value ('dart-sass', 'modern' API, 'scss' syntax) 4`] = `
+[]
+`;
+
+exports[`sourceMap option > should not generate source maps when value has \"false\" value and the \"devtool\" option has \"false\" value ('dart-sass', 'modern-compiler' API, 'sass' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.message, .warning, .error, .success {\\n  border: 1px solid #ccc;\\n  padding: 10px;\\n  color: #333;\\n}\\n\\n.success {\\n  border-color: green;\\n}\\n\\n.error {\\n  border-color: red;\\n}\\n\\n.warning {\\n  border-color: yellow;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sourceMap option > should not generate source maps when value has \"false\" value and the \"devtool\" option has \"false\" value ('dart-sass', 'modern-compiler' API, 'sass' syntax) 2`] = `
+undefined
+`;
+
+exports[`sourceMap option > should not generate source maps when value has \"false\" value and the \"devtool\" option has \"false\" value ('dart-sass', 'modern-compiler' API, 'sass' syntax) 3`] = `
+[]
+`;
+
+exports[`sourceMap option > should not generate source maps when value has \"false\" value and the \"devtool\" option has \"false\" value ('dart-sass', 'modern-compiler' API, 'sass' syntax) 4`] = `
+[]
+`;
+
+exports[`sourceMap option > should not generate source maps when value has \"false\" value and the \"devtool\" option has \"false\" value ('dart-sass', 'modern-compiler' API, 'scss' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sourceMap option > should not generate source maps when value has \"false\" value and the \"devtool\" option has \"false\" value ('dart-sass', 'modern-compiler' API, 'scss' syntax) 2`] = `
+undefined
+`;
+
+exports[`sourceMap option > should not generate source maps when value has \"false\" value and the \"devtool\" option has \"false\" value ('dart-sass', 'modern-compiler' API, 'scss' syntax) 3`] = `
+[]
+`;
+
+exports[`sourceMap option > should not generate source maps when value has \"false\" value and the \"devtool\" option has \"false\" value ('dart-sass', 'modern-compiler' API, 'scss' syntax) 4`] = `
+[]
+`;
+
+exports[`sourceMap option > should not generate source maps when value has \"false\" value and the \"devtool\" option has \"false\" value ('sass-embedded', 'modern' API, 'sass' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.message, .warning, .error, .success {\\n  border: 1px solid #ccc;\\n  padding: 10px;\\n  color: #333;\\n}\\n\\n.success {\\n  border-color: green;\\n}\\n\\n.error {\\n  border-color: red;\\n}\\n\\n.warning {\\n  border-color: yellow;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sourceMap option > should not generate source maps when value has \"false\" value and the \"devtool\" option has \"false\" value ('sass-embedded', 'modern' API, 'sass' syntax) 2`] = `
+undefined
+`;
+
+exports[`sourceMap option > should not generate source maps when value has \"false\" value and the \"devtool\" option has \"false\" value ('sass-embedded', 'modern' API, 'sass' syntax) 3`] = `
+[]
+`;
+
+exports[`sourceMap option > should not generate source maps when value has \"false\" value and the \"devtool\" option has \"false\" value ('sass-embedded', 'modern' API, 'sass' syntax) 4`] = `
+[]
+`;
+
+exports[`sourceMap option > should not generate source maps when value has \"false\" value and the \"devtool\" option has \"false\" value ('sass-embedded', 'modern' API, 'scss' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sourceMap option > should not generate source maps when value has \"false\" value and the \"devtool\" option has \"false\" value ('sass-embedded', 'modern' API, 'scss' syntax) 2`] = `
+undefined
+`;
+
+exports[`sourceMap option > should not generate source maps when value has \"false\" value and the \"devtool\" option has \"false\" value ('sass-embedded', 'modern' API, 'scss' syntax) 3`] = `
+[]
+`;
+
+exports[`sourceMap option > should not generate source maps when value has \"false\" value and the \"devtool\" option has \"false\" value ('sass-embedded', 'modern' API, 'scss' syntax) 4`] = `
+[]
+`;
+
+exports[`sourceMap option > should not generate source maps when value has \"false\" value and the \"devtool\" option has \"false\" value ('sass-embedded', 'modern-compiler' API, 'sass' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.message, .warning, .error, .success {\\n  border: 1px solid #ccc;\\n  padding: 10px;\\n  color: #333;\\n}\\n\\n.success {\\n  border-color: green;\\n}\\n\\n.error {\\n  border-color: red;\\n}\\n\\n.warning {\\n  border-color: yellow;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sourceMap option > should not generate source maps when value has \"false\" value and the \"devtool\" option has \"false\" value ('sass-embedded', 'modern-compiler' API, 'sass' syntax) 2`] = `
+undefined
+`;
+
+exports[`sourceMap option > should not generate source maps when value has \"false\" value and the \"devtool\" option has \"false\" value ('sass-embedded', 'modern-compiler' API, 'sass' syntax) 3`] = `
+[]
+`;
+
+exports[`sourceMap option > should not generate source maps when value has \"false\" value and the \"devtool\" option has \"false\" value ('sass-embedded', 'modern-compiler' API, 'sass' syntax) 4`] = `
+[]
+`;
+
+exports[`sourceMap option > should not generate source maps when value has \"false\" value and the \"devtool\" option has \"false\" value ('sass-embedded', 'modern-compiler' API, 'scss' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sourceMap option > should not generate source maps when value has \"false\" value and the \"devtool\" option has \"false\" value ('sass-embedded', 'modern-compiler' API, 'scss' syntax) 2`] = `
+undefined
+`;
+
+exports[`sourceMap option > should not generate source maps when value has \"false\" value and the \"devtool\" option has \"false\" value ('sass-embedded', 'modern-compiler' API, 'scss' syntax) 3`] = `
+[]
+`;
+
+exports[`sourceMap option > should not generate source maps when value has \"false\" value and the \"devtool\" option has \"false\" value ('sass-embedded', 'modern-compiler' API, 'scss' syntax) 4`] = `
+[]
+`;
+
+exports[`sourceMap option > should not generate source maps when value has \"false\" value and the \"devtool\" option has \"source-map\" value ('dart-sass', 'modern' API, 'sass' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.message, .warning, .error, .success {\\n  border: 1px solid #ccc;\\n  padding: 10px;\\n  color: #333;\\n}\\n\\n.success {\\n  border-color: green;\\n}\\n\\n.error {\\n  border-color: red;\\n}\\n\\n.warning {\\n  border-color: yellow;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sourceMap option > should not generate source maps when value has \"false\" value and the \"devtool\" option has \"source-map\" value ('dart-sass', 'modern' API, 'sass' syntax) 2`] = `
+undefined
+`;
+
+exports[`sourceMap option > should not generate source maps when value has \"false\" value and the \"devtool\" option has \"source-map\" value ('dart-sass', 'modern' API, 'sass' syntax) 3`] = `
+[]
+`;
+
+exports[`sourceMap option > should not generate source maps when value has \"false\" value and the \"devtool\" option has \"source-map\" value ('dart-sass', 'modern' API, 'sass' syntax) 4`] = `
+[]
+`;
+
+exports[`sourceMap option > should not generate source maps when value has \"false\" value and the \"devtool\" option has \"source-map\" value ('dart-sass', 'modern' API, 'scss' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sourceMap option > should not generate source maps when value has \"false\" value and the \"devtool\" option has \"source-map\" value ('dart-sass', 'modern' API, 'scss' syntax) 2`] = `
+undefined
+`;
+
+exports[`sourceMap option > should not generate source maps when value has \"false\" value and the \"devtool\" option has \"source-map\" value ('dart-sass', 'modern' API, 'scss' syntax) 3`] = `
+[]
+`;
+
+exports[`sourceMap option > should not generate source maps when value has \"false\" value and the \"devtool\" option has \"source-map\" value ('dart-sass', 'modern' API, 'scss' syntax) 4`] = `
+[]
+`;
+
+exports[`sourceMap option > should not generate source maps when value has \"false\" value and the \"devtool\" option has \"source-map\" value ('dart-sass', 'modern-compiler' API, 'sass' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.message, .warning, .error, .success {\\n  border: 1px solid #ccc;\\n  padding: 10px;\\n  color: #333;\\n}\\n\\n.success {\\n  border-color: green;\\n}\\n\\n.error {\\n  border-color: red;\\n}\\n\\n.warning {\\n  border-color: yellow;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sourceMap option > should not generate source maps when value has \"false\" value and the \"devtool\" option has \"source-map\" value ('dart-sass', 'modern-compiler' API, 'sass' syntax) 2`] = `
+undefined
+`;
+
+exports[`sourceMap option > should not generate source maps when value has \"false\" value and the \"devtool\" option has \"source-map\" value ('dart-sass', 'modern-compiler' API, 'sass' syntax) 3`] = `
+[]
+`;
+
+exports[`sourceMap option > should not generate source maps when value has \"false\" value and the \"devtool\" option has \"source-map\" value ('dart-sass', 'modern-compiler' API, 'sass' syntax) 4`] = `
+[]
+`;
+
+exports[`sourceMap option > should not generate source maps when value has \"false\" value and the \"devtool\" option has \"source-map\" value ('dart-sass', 'modern-compiler' API, 'scss' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sourceMap option > should not generate source maps when value has \"false\" value and the \"devtool\" option has \"source-map\" value ('dart-sass', 'modern-compiler' API, 'scss' syntax) 2`] = `
+undefined
+`;
+
+exports[`sourceMap option > should not generate source maps when value has \"false\" value and the \"devtool\" option has \"source-map\" value ('dart-sass', 'modern-compiler' API, 'scss' syntax) 3`] = `
+[]
+`;
+
+exports[`sourceMap option > should not generate source maps when value has \"false\" value and the \"devtool\" option has \"source-map\" value ('dart-sass', 'modern-compiler' API, 'scss' syntax) 4`] = `
+[]
+`;
+
+exports[`sourceMap option > should not generate source maps when value has \"false\" value and the \"devtool\" option has \"source-map\" value ('sass-embedded', 'modern' API, 'sass' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.message, .warning, .error, .success {\\n  border: 1px solid #ccc;\\n  padding: 10px;\\n  color: #333;\\n}\\n\\n.success {\\n  border-color: green;\\n}\\n\\n.error {\\n  border-color: red;\\n}\\n\\n.warning {\\n  border-color: yellow;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sourceMap option > should not generate source maps when value has \"false\" value and the \"devtool\" option has \"source-map\" value ('sass-embedded', 'modern' API, 'sass' syntax) 2`] = `
+undefined
+`;
+
+exports[`sourceMap option > should not generate source maps when value has \"false\" value and the \"devtool\" option has \"source-map\" value ('sass-embedded', 'modern' API, 'sass' syntax) 3`] = `
+[]
+`;
+
+exports[`sourceMap option > should not generate source maps when value has \"false\" value and the \"devtool\" option has \"source-map\" value ('sass-embedded', 'modern' API, 'sass' syntax) 4`] = `
+[]
+`;
+
+exports[`sourceMap option > should not generate source maps when value has \"false\" value and the \"devtool\" option has \"source-map\" value ('sass-embedded', 'modern' API, 'scss' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sourceMap option > should not generate source maps when value has \"false\" value and the \"devtool\" option has \"source-map\" value ('sass-embedded', 'modern' API, 'scss' syntax) 2`] = `
+undefined
+`;
+
+exports[`sourceMap option > should not generate source maps when value has \"false\" value and the \"devtool\" option has \"source-map\" value ('sass-embedded', 'modern' API, 'scss' syntax) 3`] = `
+[]
+`;
+
+exports[`sourceMap option > should not generate source maps when value has \"false\" value and the \"devtool\" option has \"source-map\" value ('sass-embedded', 'modern' API, 'scss' syntax) 4`] = `
+[]
+`;
+
+exports[`sourceMap option > should not generate source maps when value has \"false\" value and the \"devtool\" option has \"source-map\" value ('sass-embedded', 'modern-compiler' API, 'sass' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.message, .warning, .error, .success {\\n  border: 1px solid #ccc;\\n  padding: 10px;\\n  color: #333;\\n}\\n\\n.success {\\n  border-color: green;\\n}\\n\\n.error {\\n  border-color: red;\\n}\\n\\n.warning {\\n  border-color: yellow;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sourceMap option > should not generate source maps when value has \"false\" value and the \"devtool\" option has \"source-map\" value ('sass-embedded', 'modern-compiler' API, 'sass' syntax) 2`] = `
+undefined
+`;
+
+exports[`sourceMap option > should not generate source maps when value has \"false\" value and the \"devtool\" option has \"source-map\" value ('sass-embedded', 'modern-compiler' API, 'sass' syntax) 3`] = `
+[]
+`;
+
+exports[`sourceMap option > should not generate source maps when value has \"false\" value and the \"devtool\" option has \"source-map\" value ('sass-embedded', 'modern-compiler' API, 'sass' syntax) 4`] = `
+[]
+`;
+
+exports[`sourceMap option > should not generate source maps when value has \"false\" value and the \"devtool\" option has \"source-map\" value ('sass-embedded', 'modern-compiler' API, 'scss' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sourceMap option > should not generate source maps when value has \"false\" value and the \"devtool\" option has \"source-map\" value ('sass-embedded', 'modern-compiler' API, 'scss' syntax) 2`] = `
+undefined
+`;
+
+exports[`sourceMap option > should not generate source maps when value has \"false\" value and the \"devtool\" option has \"source-map\" value ('sass-embedded', 'modern-compiler' API, 'scss' syntax) 3`] = `
+[]
+`;
+
+exports[`sourceMap option > should not generate source maps when value has \"false\" value and the \"devtool\" option has \"source-map\" value ('sass-embedded', 'modern-compiler' API, 'scss' syntax) 4`] = `
+[]
+`;
+
+exports[`sourceMap option > should not generate source maps when value is not specified and the \"devtool\" option has \"false\" value ('dart-sass', 'modern' API, 'sass' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.message, .warning, .error, .success {\\n  border: 1px solid #ccc;\\n  padding: 10px;\\n  color: #333;\\n}\\n\\n.success {\\n  border-color: green;\\n}\\n\\n.error {\\n  border-color: red;\\n}\\n\\n.warning {\\n  border-color: yellow;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sourceMap option > should not generate source maps when value is not specified and the \"devtool\" option has \"false\" value ('dart-sass', 'modern' API, 'sass' syntax) 2`] = `
+undefined
+`;
+
+exports[`sourceMap option > should not generate source maps when value is not specified and the \"devtool\" option has \"false\" value ('dart-sass', 'modern' API, 'sass' syntax) 3`] = `
+[]
+`;
+
+exports[`sourceMap option > should not generate source maps when value is not specified and the \"devtool\" option has \"false\" value ('dart-sass', 'modern' API, 'sass' syntax) 4`] = `
+[]
+`;
+
+exports[`sourceMap option > should not generate source maps when value is not specified and the \"devtool\" option has \"false\" value ('dart-sass', 'modern' API, 'scss' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sourceMap option > should not generate source maps when value is not specified and the \"devtool\" option has \"false\" value ('dart-sass', 'modern' API, 'scss' syntax) 2`] = `
+undefined
+`;
+
+exports[`sourceMap option > should not generate source maps when value is not specified and the \"devtool\" option has \"false\" value ('dart-sass', 'modern' API, 'scss' syntax) 3`] = `
+[]
+`;
+
+exports[`sourceMap option > should not generate source maps when value is not specified and the \"devtool\" option has \"false\" value ('dart-sass', 'modern' API, 'scss' syntax) 4`] = `
+[]
+`;
+
+exports[`sourceMap option > should not generate source maps when value is not specified and the \"devtool\" option has \"false\" value ('dart-sass', 'modern-compiler' API, 'sass' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.message, .warning, .error, .success {\\n  border: 1px solid #ccc;\\n  padding: 10px;\\n  color: #333;\\n}\\n\\n.success {\\n  border-color: green;\\n}\\n\\n.error {\\n  border-color: red;\\n}\\n\\n.warning {\\n  border-color: yellow;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sourceMap option > should not generate source maps when value is not specified and the \"devtool\" option has \"false\" value ('dart-sass', 'modern-compiler' API, 'sass' syntax) 2`] = `
+undefined
+`;
+
+exports[`sourceMap option > should not generate source maps when value is not specified and the \"devtool\" option has \"false\" value ('dart-sass', 'modern-compiler' API, 'sass' syntax) 3`] = `
+[]
+`;
+
+exports[`sourceMap option > should not generate source maps when value is not specified and the \"devtool\" option has \"false\" value ('dart-sass', 'modern-compiler' API, 'sass' syntax) 4`] = `
+[]
+`;
+
+exports[`sourceMap option > should not generate source maps when value is not specified and the \"devtool\" option has \"false\" value ('dart-sass', 'modern-compiler' API, 'scss' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sourceMap option > should not generate source maps when value is not specified and the \"devtool\" option has \"false\" value ('dart-sass', 'modern-compiler' API, 'scss' syntax) 2`] = `
+undefined
+`;
+
+exports[`sourceMap option > should not generate source maps when value is not specified and the \"devtool\" option has \"false\" value ('dart-sass', 'modern-compiler' API, 'scss' syntax) 3`] = `
+[]
+`;
+
+exports[`sourceMap option > should not generate source maps when value is not specified and the \"devtool\" option has \"false\" value ('dart-sass', 'modern-compiler' API, 'scss' syntax) 4`] = `
+[]
+`;
+
+exports[`sourceMap option > should not generate source maps when value is not specified and the \"devtool\" option has \"false\" value ('sass-embedded', 'modern' API, 'sass' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.message, .warning, .error, .success {\\n  border: 1px solid #ccc;\\n  padding: 10px;\\n  color: #333;\\n}\\n\\n.success {\\n  border-color: green;\\n}\\n\\n.error {\\n  border-color: red;\\n}\\n\\n.warning {\\n  border-color: yellow;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sourceMap option > should not generate source maps when value is not specified and the \"devtool\" option has \"false\" value ('sass-embedded', 'modern' API, 'sass' syntax) 2`] = `
+undefined
+`;
+
+exports[`sourceMap option > should not generate source maps when value is not specified and the \"devtool\" option has \"false\" value ('sass-embedded', 'modern' API, 'sass' syntax) 3`] = `
+[]
+`;
+
+exports[`sourceMap option > should not generate source maps when value is not specified and the \"devtool\" option has \"false\" value ('sass-embedded', 'modern' API, 'sass' syntax) 4`] = `
+[]
+`;
+
+exports[`sourceMap option > should not generate source maps when value is not specified and the \"devtool\" option has \"false\" value ('sass-embedded', 'modern' API, 'scss' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sourceMap option > should not generate source maps when value is not specified and the \"devtool\" option has \"false\" value ('sass-embedded', 'modern' API, 'scss' syntax) 2`] = `
+undefined
+`;
+
+exports[`sourceMap option > should not generate source maps when value is not specified and the \"devtool\" option has \"false\" value ('sass-embedded', 'modern' API, 'scss' syntax) 3`] = `
+[]
+`;
+
+exports[`sourceMap option > should not generate source maps when value is not specified and the \"devtool\" option has \"false\" value ('sass-embedded', 'modern' API, 'scss' syntax) 4`] = `
+[]
+`;
+
+exports[`sourceMap option > should not generate source maps when value is not specified and the \"devtool\" option has \"false\" value ('sass-embedded', 'modern-compiler' API, 'sass' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.message, .warning, .error, .success {\\n  border: 1px solid #ccc;\\n  padding: 10px;\\n  color: #333;\\n}\\n\\n.success {\\n  border-color: green;\\n}\\n\\n.error {\\n  border-color: red;\\n}\\n\\n.warning {\\n  border-color: yellow;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sourceMap option > should not generate source maps when value is not specified and the \"devtool\" option has \"false\" value ('sass-embedded', 'modern-compiler' API, 'sass' syntax) 2`] = `
+undefined
+`;
+
+exports[`sourceMap option > should not generate source maps when value is not specified and the \"devtool\" option has \"false\" value ('sass-embedded', 'modern-compiler' API, 'sass' syntax) 3`] = `
+[]
+`;
+
+exports[`sourceMap option > should not generate source maps when value is not specified and the \"devtool\" option has \"false\" value ('sass-embedded', 'modern-compiler' API, 'sass' syntax) 4`] = `
+[]
+`;
+
+exports[`sourceMap option > should not generate source maps when value is not specified and the \"devtool\" option has \"false\" value ('sass-embedded', 'modern-compiler' API, 'scss' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sourceMap option > should not generate source maps when value is not specified and the \"devtool\" option has \"false\" value ('sass-embedded', 'modern-compiler' API, 'scss' syntax) 2`] = `
+undefined
+`;
+
+exports[`sourceMap option > should not generate source maps when value is not specified and the \"devtool\" option has \"false\" value ('sass-embedded', 'modern-compiler' API, 'scss' syntax) 3`] = `
+[]
+`;
+
+exports[`sourceMap option > should not generate source maps when value is not specified and the \"devtool\" option has \"false\" value ('sass-embedded', 'modern-compiler' API, 'scss' syntax) 4`] = `
+[]
+`;

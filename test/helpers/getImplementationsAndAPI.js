@@ -1,6 +1,9 @@
-import dartSass from "sass";
+import { createRequire } from "node:module";
 
-import * as SassEmbedded from "sass-embedded";
+const require = createRequire(import.meta.url);
+
+const dartSass = require("sass");
+const SassEmbedded = require("sass-embedded");
 
 /** @typedef {import("../../src/index.js").EXPECTED_ANY} EXPECTED_ANY */
 

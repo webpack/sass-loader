@@ -1,10 +1,19 @@
+import assert from "node:assert";
+import { createRequire } from "node:module";
 import path from "node:path";
+import { describe, it } from "node:test";
 import { fileURLToPath } from "node:url";
 
 import enhanced from "enhanced-resolve";
-import sass from "sass";
 
-import { getWebpackResolver } from "../src/utils";
+import { getWebpackResolver } from "../src/utils.js";
+
+const require = createRequire(import.meta.url);
+
+const sass = require("sass");
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 /**
  * Because `getWebpackResolver` is a public function that can be imported by
@@ -16,17 +25,18 @@ describe("getWebpackResolver", () => {
     getWebpackResolver(enhanced.create, sass, ...options)(__filename, request);
 
   it("should resolve .scss from node_modules", async () => {
-    expect(await resolve("scss/style")).toMatch(/style\.scss$/);
+    assert.match(await resolve("scss/style"), /style\.scss$/);
   });
 
   it("should resolve from passed `includePaths`", async () => {
-    expect(await resolve("empty", [path.resolve(__dirname, "./scss")])).toMatch(
+    assert.match(
+      await resolve("empty", [path.resolve(__dirname, "./scss")]),
       /empty\.scss$/,
     );
   });
 
   it("should reject when file cannot be resolved", async () => {
-    await expect(resolve("foo/bar/baz")).rejects.toEqual(new Error("Next"));
+    await assert.rejects(resolve("foo/bar/baz"), new Error("Next"));
   });
 
   if (process.platform !== "win32") {
@@ -38,10 +48,11 @@ describe("getWebpackResolver", () => {
     it("should convert an invalid file URL with an erroneous hostname to a relative path", async () => {
       const invalidFileURL = "file://scss/empty";
 
-      expect(() => fileURLToPath(invalidFileURL)).toThrow(
+      assert.throws(
+        () => fileURLToPath(invalidFileURL),
         /File URL host must be/,
       );
-      expect(await resolve(invalidFileURL)).toMatch(/empty\.scss$/);
+      assert.match(await resolve(invalidFileURL), /empty\.scss$/);
     });
   }
 });

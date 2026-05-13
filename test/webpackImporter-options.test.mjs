@@ -1,3 +1,6 @@
+import assert from "node:assert";
+import { describe, it } from "node:test";
+
 import {
   close,
   compile,
@@ -8,7 +11,7 @@ import {
   getImplementationsAndAPI,
   getTestId,
   getWarnings,
-} from "./helpers";
+} from "./helpers/index.js";
 
 const implementations = getImplementationsAndAPI();
 const syntaxStyles = ["scss", "sass"];
@@ -18,7 +21,7 @@ describe("webpackImporter option", () => {
     for (const syntax of syntaxStyles) {
       const { name: implementationName, api, implementation } = item;
 
-      it(`not specify ('${implementationName}', '${api}' API, '${syntax}' syntax)`, async () => {
+      it(`not specify ('${implementationName}', '${api}' API, '${syntax}' syntax)`, async (t) => {
         const testId = getTestId("language", syntax);
         const options = {
           implementation,
@@ -29,15 +32,15 @@ describe("webpackImporter option", () => {
         const codeFromBundle = getCodeFromBundle(stats, compiler);
         const codeFromSass = await getCodeFromSass(testId, options);
 
-        expect(codeFromBundle.css).toBe(codeFromSass.css);
-        expect(codeFromBundle.css).toMatchSnapshot("css");
-        expect(getWarnings(stats)).toMatchSnapshot("warnings");
-        expect(getErrors(stats)).toMatchSnapshot("errors");
+        assert.strictEqual(codeFromBundle.css, codeFromSass.css);
+        t.assert.snapshot(codeFromBundle.css);
+        t.assert.snapshot(getWarnings(stats));
+        t.assert.snapshot(getErrors(stats));
 
         await close(compiler);
       });
 
-      it(`false ('${implementationName}', '${api}' API, '${syntax}' syntax)`, async () => {
+      it(`false ('${implementationName}', '${api}' API, '${syntax}' syntax)`, async (t) => {
         const testId = getTestId("language", syntax);
         const options = {
           implementation,
@@ -49,15 +52,15 @@ describe("webpackImporter option", () => {
         const codeFromBundle = getCodeFromBundle(stats, compiler);
         const codeFromSass = await getCodeFromSass(testId, options);
 
-        expect(codeFromBundle.css).toBe(codeFromSass.css);
-        expect(codeFromBundle.css).toMatchSnapshot("css");
-        expect(getWarnings(stats)).toMatchSnapshot("warnings");
-        expect(getErrors(stats)).toMatchSnapshot("errors");
+        assert.strictEqual(codeFromBundle.css, codeFromSass.css);
+        t.assert.snapshot(codeFromBundle.css);
+        t.assert.snapshot(getWarnings(stats));
+        t.assert.snapshot(getErrors(stats));
 
         await close(compiler);
       });
 
-      it(`true ('${implementationName}', '${api}' API, '${syntax}' syntax)`, async () => {
+      it(`true ('${implementationName}', '${api}' API, '${syntax}' syntax)`, async (t) => {
         const testId = getTestId("language", syntax);
         const options = {
           implementation,
@@ -69,10 +72,10 @@ describe("webpackImporter option", () => {
         const codeFromBundle = getCodeFromBundle(stats, compiler);
         const codeFromSass = await getCodeFromSass(testId, options);
 
-        expect(codeFromBundle.css).toBe(codeFromSass.css);
-        expect(codeFromBundle.css).toMatchSnapshot("css");
-        expect(getWarnings(stats)).toMatchSnapshot("warnings");
-        expect(getErrors(stats)).toMatchSnapshot("errors");
+        assert.strictEqual(codeFromBundle.css, codeFromSass.css);
+        t.assert.snapshot(codeFromBundle.css);
+        t.assert.snapshot(getWarnings(stats));
+        t.assert.snapshot(getErrors(stats));
 
         await close(compiler);
       });
