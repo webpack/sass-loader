@@ -1,4 +1,4 @@
-import assert from "node:assert/strict";
+import assert from "node:assert";
 import { describe, it } from "node:test";
 
 import {
@@ -21,11 +21,6 @@ describe("webpackImporter option", () => {
     for (const syntax of syntaxStyles) {
       const { name: implementationName, api, implementation } = item;
 
-      // TODO fix me https://github.com/webpack/sass-loader/issues/774
-      if (api === "modern" || api === "modern-compiler") {
-        continue;
-      }
-
       it(`not specify ('${implementationName}', '${api}' API, '${syntax}' syntax)`, async (t) => {
         const testId = getTestId("language", syntax);
         const options = {
@@ -37,7 +32,7 @@ describe("webpackImporter option", () => {
         const codeFromBundle = getCodeFromBundle(stats, compiler);
         const codeFromSass = await getCodeFromSass(testId, options);
 
-        assert.equal(codeFromBundle.css, codeFromSass.css);
+        assert.strictEqual(codeFromBundle.css, codeFromSass.css);
         t.assert.snapshot(codeFromBundle.css);
         t.assert.snapshot(getWarnings(stats));
         t.assert.snapshot(getErrors(stats));
@@ -57,7 +52,7 @@ describe("webpackImporter option", () => {
         const codeFromBundle = getCodeFromBundle(stats, compiler);
         const codeFromSass = await getCodeFromSass(testId, options);
 
-        assert.equal(codeFromBundle.css, codeFromSass.css);
+        assert.strictEqual(codeFromBundle.css, codeFromSass.css);
         t.assert.snapshot(codeFromBundle.css);
         t.assert.snapshot(getWarnings(stats));
         t.assert.snapshot(getErrors(stats));
@@ -77,7 +72,7 @@ describe("webpackImporter option", () => {
         const codeFromBundle = getCodeFromBundle(stats, compiler);
         const codeFromSass = await getCodeFromSass(testId, options);
 
-        assert.equal(codeFromBundle.css, codeFromSass.css);
+        assert.strictEqual(codeFromBundle.css, codeFromSass.css);
         t.assert.snapshot(codeFromBundle.css);
         t.assert.snapshot(getWarnings(stats));
         t.assert.snapshot(getErrors(stats));

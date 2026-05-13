@@ -1,27 +1,3 @@
-exports[`additionalData option > should use same EOL on all os ('dart-sass', 'legacy' API, 'sass' syntax) 1`] = `
-"a {\\n  color: hotpink;\\n}\\n\\nbody {\\n  color: hotpink;\\n}"
-`;
-
-exports[`additionalData option > should use same EOL on all os ('dart-sass', 'legacy' API, 'sass' syntax) 2`] = `
-[]
-`;
-
-exports[`additionalData option > should use same EOL on all os ('dart-sass', 'legacy' API, 'sass' syntax) 3`] = `
-[]
-`;
-
-exports[`additionalData option > should use same EOL on all os ('dart-sass', 'legacy' API, 'scss' syntax) 1`] = `
-"a {\\n  color: red;\\n}\\n\\nbody {\\n  color: hotpink;\\n}"
-`;
-
-exports[`additionalData option > should use same EOL on all os ('dart-sass', 'legacy' API, 'scss' syntax) 2`] = `
-[]
-`;
-
-exports[`additionalData option > should use same EOL on all os ('dart-sass', 'legacy' API, 'scss' syntax) 3`] = `
-[]
-`;
-
 exports[`additionalData option > should use same EOL on all os ('dart-sass', 'modern' API, 'sass' syntax) 1`] = `
 "a {\\n  color: hotpink;\\n}\\n\\nbody {\\n  color: hotpink;\\n}"
 `;
@@ -67,30 +43,6 @@ exports[`additionalData option > should use same EOL on all os ('dart-sass', 'mo
 `;
 
 exports[`additionalData option > should use same EOL on all os ('dart-sass', 'modern-compiler' API, 'scss' syntax) 3`] = `
-[]
-`;
-
-exports[`additionalData option > should use same EOL on all os ('sass-embedded', 'legacy' API, 'sass' syntax) 1`] = `
-"a {\\n  color: hotpink;\\n}\\n\\nbody {\\n  color: hotpink;\\n}"
-`;
-
-exports[`additionalData option > should use same EOL on all os ('sass-embedded', 'legacy' API, 'sass' syntax) 2`] = `
-[]
-`;
-
-exports[`additionalData option > should use same EOL on all os ('sass-embedded', 'legacy' API, 'sass' syntax) 3`] = `
-[]
-`;
-
-exports[`additionalData option > should use same EOL on all os ('sass-embedded', 'legacy' API, 'scss' syntax) 1`] = `
-"a {\\n  color: red;\\n}\\n\\nbody {\\n  color: hotpink;\\n}"
-`;
-
-exports[`additionalData option > should use same EOL on all os ('sass-embedded', 'legacy' API, 'scss' syntax) 2`] = `
-[]
-`;
-
-exports[`additionalData option > should use same EOL on all os ('sass-embedded', 'legacy' API, 'scss' syntax) 3`] = `
 []
 `;
 
@@ -142,30 +94,6 @@ exports[`additionalData option > should use same EOL on all os ('sass-embedded',
 []
 `;
 
-exports[`additionalData option > should work as a function ('dart-sass', 'legacy' API, 'sass' syntax) 1`] = `
-"body {\\n  color: hotpink;\\n}"
-`;
-
-exports[`additionalData option > should work as a function ('dart-sass', 'legacy' API, 'sass' syntax) 2`] = `
-[]
-`;
-
-exports[`additionalData option > should work as a function ('dart-sass', 'legacy' API, 'sass' syntax) 3`] = `
-[]
-`;
-
-exports[`additionalData option > should work as a function ('dart-sass', 'legacy' API, 'scss' syntax) 1`] = `
-"body {\\n  color: hotpink;\\n}"
-`;
-
-exports[`additionalData option > should work as a function ('dart-sass', 'legacy' API, 'scss' syntax) 2`] = `
-[]
-`;
-
-exports[`additionalData option > should work as a function ('dart-sass', 'legacy' API, 'scss' syntax) 3`] = `
-[]
-`;
-
 exports[`additionalData option > should work as a function ('dart-sass', 'modern' API, 'sass' syntax) 1`] = `
 "body {\\n  color: hotpink;\\n}"
 `;
@@ -211,30 +139,6 @@ exports[`additionalData option > should work as a function ('dart-sass', 'modern
 `;
 
 exports[`additionalData option > should work as a function ('dart-sass', 'modern-compiler' API, 'scss' syntax) 3`] = `
-[]
-`;
-
-exports[`additionalData option > should work as a function ('sass-embedded', 'legacy' API, 'sass' syntax) 1`] = `
-"body {\\n  color: hotpink;\\n}"
-`;
-
-exports[`additionalData option > should work as a function ('sass-embedded', 'legacy' API, 'sass' syntax) 2`] = `
-[]
-`;
-
-exports[`additionalData option > should work as a function ('sass-embedded', 'legacy' API, 'sass' syntax) 3`] = `
-[]
-`;
-
-exports[`additionalData option > should work as a function ('sass-embedded', 'legacy' API, 'scss' syntax) 1`] = `
-"body {\\n  color: hotpink;\\n}"
-`;
-
-exports[`additionalData option > should work as a function ('sass-embedded', 'legacy' API, 'scss' syntax) 2`] = `
-[]
-`;
-
-exports[`additionalData option > should work as a function ('sass-embedded', 'legacy' API, 'scss' syntax) 3`] = `
 []
 `;
 
@@ -286,30 +190,6 @@ exports[`additionalData option > should work as a function ('sass-embedded', 'mo
 []
 `;
 
-exports[`additionalData option > should work as a string ('dart-sass', 'legacy' API, 'sass' syntax) 1`] = `
-"body {\\n  color: hotpink;\\n}"
-`;
-
-exports[`additionalData option > should work as a string ('dart-sass', 'legacy' API, 'sass' syntax) 2`] = `
-[]
-`;
-
-exports[`additionalData option > should work as a string ('dart-sass', 'legacy' API, 'sass' syntax) 3`] = `
-[]
-`;
-
-exports[`additionalData option > should work as a string ('dart-sass', 'legacy' API, 'scss' syntax) 1`] = `
-"body {\\n  color: hotpink;\\n}"
-`;
-
-exports[`additionalData option > should work as a string ('dart-sass', 'legacy' API, 'scss' syntax) 2`] = `
-[]
-`;
-
-exports[`additionalData option > should work as a string ('dart-sass', 'legacy' API, 'scss' syntax) 3`] = `
-[]
-`;
-
 exports[`additionalData option > should work as a string ('dart-sass', 'modern' API, 'sass' syntax) 1`] = `
 "body {\\n  color: hotpink;\\n}"
 `;
@@ -355,30 +235,6 @@ exports[`additionalData option > should work as a string ('dart-sass', 'modern-c
 `;
 
 exports[`additionalData option > should work as a string ('dart-sass', 'modern-compiler' API, 'scss' syntax) 3`] = `
-[]
-`;
-
-exports[`additionalData option > should work as a string ('sass-embedded', 'legacy' API, 'sass' syntax) 1`] = `
-"body {\\n  color: hotpink;\\n}"
-`;
-
-exports[`additionalData option > should work as a string ('sass-embedded', 'legacy' API, 'sass' syntax) 2`] = `
-[]
-`;
-
-exports[`additionalData option > should work as a string ('sass-embedded', 'legacy' API, 'sass' syntax) 3`] = `
-[]
-`;
-
-exports[`additionalData option > should work as a string ('sass-embedded', 'legacy' API, 'scss' syntax) 1`] = `
-"body {\\n  color: hotpink;\\n}"
-`;
-
-exports[`additionalData option > should work as a string ('sass-embedded', 'legacy' API, 'scss' syntax) 2`] = `
-[]
-`;
-
-exports[`additionalData option > should work as a string ('sass-embedded', 'legacy' API, 'scss' syntax) 3`] = `
 []
 `;
 
@@ -430,30 +286,6 @@ exports[`additionalData option > should work as a string ('sass-embedded', 'mode
 []
 `;
 
-exports[`additionalData option > should work as an async function ('dart-sass', 'legacy' API, 'sass' syntax) 1`] = `
-"body {\\n  color: hotpink;\\n}"
-`;
-
-exports[`additionalData option > should work as an async function ('dart-sass', 'legacy' API, 'sass' syntax) 2`] = `
-[]
-`;
-
-exports[`additionalData option > should work as an async function ('dart-sass', 'legacy' API, 'sass' syntax) 3`] = `
-[]
-`;
-
-exports[`additionalData option > should work as an async function ('dart-sass', 'legacy' API, 'scss' syntax) 1`] = `
-"body {\\n  color: hotpink;\\n}"
-`;
-
-exports[`additionalData option > should work as an async function ('dart-sass', 'legacy' API, 'scss' syntax) 2`] = `
-[]
-`;
-
-exports[`additionalData option > should work as an async function ('dart-sass', 'legacy' API, 'scss' syntax) 3`] = `
-[]
-`;
-
 exports[`additionalData option > should work as an async function ('dart-sass', 'modern' API, 'sass' syntax) 1`] = `
 "body {\\n  color: hotpink;\\n}"
 `;
@@ -499,30 +331,6 @@ exports[`additionalData option > should work as an async function ('dart-sass', 
 `;
 
 exports[`additionalData option > should work as an async function ('dart-sass', 'modern-compiler' API, 'scss' syntax) 3`] = `
-[]
-`;
-
-exports[`additionalData option > should work as an async function ('sass-embedded', 'legacy' API, 'sass' syntax) 1`] = `
-"body {\\n  color: hotpink;\\n}"
-`;
-
-exports[`additionalData option > should work as an async function ('sass-embedded', 'legacy' API, 'sass' syntax) 2`] = `
-[]
-`;
-
-exports[`additionalData option > should work as an async function ('sass-embedded', 'legacy' API, 'sass' syntax) 3`] = `
-[]
-`;
-
-exports[`additionalData option > should work as an async function ('sass-embedded', 'legacy' API, 'scss' syntax) 1`] = `
-"body {\\n  color: hotpink;\\n}"
-`;
-
-exports[`additionalData option > should work as an async function ('sass-embedded', 'legacy' API, 'scss' syntax) 2`] = `
-[]
-`;
-
-exports[`additionalData option > should work as an async function ('sass-embedded', 'legacy' API, 'scss' syntax) 3`] = `
 []
 `;
 

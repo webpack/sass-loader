@@ -1,4 +1,4 @@
-import assert from "node:assert/strict";
+import assert from "node:assert";
 import fs from "node:fs";
 import path from "node:path";
 import { describe, it } from "node:test";
@@ -26,26 +26,7 @@ describe("sourceMap option", () => {
     for (const syntax of syntaxStyles) {
       const { name: implementationName, api, implementation } = item;
 
-      const getSourceMap = (sourceMap) => {
-        if (
-          implementationName === "sass-embedded" &&
-          api === "legacy" &&
-          sourceMap &&
-          sourceMap.sourcesContent
-        ) {
-          sourceMap.mappings = "<dynamic mappings generation>";
-
-          sourceMap.sourcesContent = sourceMap.sourcesContent.map((code) => {
-            if (code.includes("sass-embedded-legacy-load-done")) {
-              return "<dynamic content generation>";
-            }
-
-            return code;
-          });
-        }
-
-        return sourceMap;
-      };
+      const getSourceMap = (sourceMap) => sourceMap;
 
       it(`should generate source maps when value is not specified and the "devtool" option has "source-map" value ('${implementationName}', '${api}' API, '${syntax}' syntax)`, async (t) => {
         const testId = getTestId("language", syntax);
@@ -59,9 +40,9 @@ describe("sourceMap option", () => {
 
         sourceMap.sourceRoot = "";
         sourceMap.sources = sourceMap.sources.map((source) => {
-          assert.equal(path.isAbsolute(source), true);
-          assert.equal(source, path.normalize(source));
-          assert.equal(
+          assert.strictEqual(path.isAbsolute(source), true);
+          assert.strictEqual(source, path.normalize(source));
+          assert.strictEqual(
             fs.existsSync(path.resolve(sourceMap.sourceRoot, source)),
             true,
           );
@@ -91,9 +72,9 @@ describe("sourceMap option", () => {
 
         sourceMap.sourceRoot = "";
         sourceMap.sources = sourceMap.sources.map((source) => {
-          assert.equal(path.isAbsolute(source), true);
-          assert.equal(source, path.normalize(source));
-          assert.equal(
+          assert.strictEqual(path.isAbsolute(source), true);
+          assert.strictEqual(source, path.normalize(source));
+          assert.strictEqual(
             fs.existsSync(path.resolve(sourceMap.sourceRoot, source)),
             true,
           );
@@ -123,9 +104,9 @@ describe("sourceMap option", () => {
 
         sourceMap.sourceRoot = "";
         sourceMap.sources = sourceMap.sources.map((source) => {
-          assert.equal(path.isAbsolute(source), true);
-          assert.equal(source, path.normalize(source));
-          assert.equal(
+          assert.strictEqual(path.isAbsolute(source), true);
+          assert.strictEqual(source, path.normalize(source));
+          assert.strictEqual(
             fs.existsSync(path.resolve(sourceMap.sourceRoot, source)),
             true,
           );
@@ -144,23 +125,14 @@ describe("sourceMap option", () => {
       });
 
       it(`should generate source maps when value has "false" value, but the "sassOptions.sourceMap" has the "true" value ('${implementationName}', '${api}' API, '${syntax}' syntax)`, async (t) => {
-        const isLegacyAPI = api === "legacy";
         const testId = getTestId("language", syntax);
         const options = {
           implementation,
           api,
           sourceMap: false,
-          sassOptions: !isLegacyAPI
-            ? {
-                sourceMap: true,
-              }
-            : {
-                sourceMap: true,
-                outFile: path.join(__dirname, "style.css.map"),
-                sourceMapContents: true,
-                omitSourceMapUrl: true,
-                sourceMapEmbed: false,
-              },
+          sassOptions: {
+            sourceMap: true,
+          },
         };
         const compiler = getCompiler(testId, {
           devtool: false,
@@ -171,18 +143,12 @@ describe("sourceMap option", () => {
 
         sourceMap.sourceRoot = "";
         sourceMap.sources = sourceMap.sources.map((source) => {
-          let normalizedSource = source;
+          const normalizedSource = url.fileURLToPath(source);
 
-          if (api === "modern" || api === "modern-compiler") {
-            normalizedSource = url.fileURLToPath(normalizedSource);
+          assert.match(source, /^file:/);
+          assert.strictEqual(path.isAbsolute(normalizedSource), true);
 
-            assert.match(source, /^file:/);
-            assert.equal(path.isAbsolute(normalizedSource), true);
-          } else {
-            assert.equal(path.isAbsolute(source), false);
-          }
-
-          assert.equal(
+          assert.strictEqual(
             fs.existsSync(
               path.resolve(__dirname, path.normalize(normalizedSource)),
             ),
@@ -315,9 +281,9 @@ describe("sourceMap option", () => {
 
         sourceMap.sourceRoot = "";
         sourceMap.sources = sourceMap.sources.map((source) => {
-          assert.equal(path.isAbsolute(source), true);
-          assert.equal(source, path.normalize(source));
-          assert.equal(
+          assert.strictEqual(path.isAbsolute(source), true);
+          assert.strictEqual(source, path.normalize(source));
+          assert.strictEqual(
             fs.existsSync(path.resolve(sourceMap.sourceRoot, source)),
             true,
           );

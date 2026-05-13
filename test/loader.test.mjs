@@ -1,4 +1,4 @@
-import assert from "node:assert/strict";
+import assert from "node:assert";
 import path from "node:path";
 import { describe, it } from "node:test";
 import url from "node:url";
@@ -26,7 +26,6 @@ const syntaxStyles = ["scss", "sass"];
 describe("loader", () => {
   for (const item of implementations) {
     const { name: implementationName, api, implementation } = item;
-    const isModernAPI = api === "modern" || api === "modern-compiler";
 
     for (const syntax of syntaxStyles) {
       it(`should work ('${implementationName}', '${api}' API, '${syntax}' syntax)`, async (t) => {
@@ -41,7 +40,7 @@ describe("loader", () => {
         const codeFromBundle = getCodeFromBundle(stats, compiler);
         const codeFromSass = await getCodeFromSass(testId, options);
 
-        assert.equal(codeFromBundle.css, codeFromSass.css);
+        assert.strictEqual(codeFromBundle.css, codeFromSass.css);
         t.assert.snapshot(codeFromBundle.css);
         t.assert.snapshot(getWarnings(stats));
         t.assert.snapshot(getErrors(stats));
@@ -51,9 +50,9 @@ describe("loader", () => {
 
       it(`should work ('${implementationName}', '${api}' API, '${syntax}' syntax) and don't modify sass options`, async (t) => {
         const testId = getTestId("language", syntax);
-        const sassOptions = isModernAPI
-          ? { loadPaths: ["node_modules/foundation-sites/scss"] }
-          : { includePaths: ["node_modules/foundation-sites/scss"] };
+        const sassOptions = {
+          loadPaths: ["node_modules/foundation-sites/scss"],
+        };
         const options = {
           implementation,
           api,
@@ -64,17 +63,11 @@ describe("loader", () => {
         const codeFromBundle = getCodeFromBundle(stats, compiler);
         const codeFromSass = await getCodeFromSass(testId, options);
 
-        if (isModernAPI) {
-          assert.deepEqual(sassOptions, {
-            loadPaths: ["node_modules/foundation-sites/scss"],
-          });
-        } else {
-          assert.deepEqual(sassOptions, {
-            includePaths: ["node_modules/foundation-sites/scss"],
-          });
-        }
+        assert.deepStrictEqual(sassOptions, {
+          loadPaths: ["node_modules/foundation-sites/scss"],
+        });
 
-        assert.equal(codeFromBundle.css, codeFromSass.css);
+        assert.strictEqual(codeFromBundle.css, codeFromSass.css);
         t.assert.snapshot(codeFromBundle.css);
         t.assert.snapshot(getWarnings(stats));
         t.assert.snapshot(getErrors(stats));
@@ -105,7 +98,7 @@ describe("loader", () => {
         const codeFromBundle = getCodeFromBundle(stats, compiler);
         const codeFromSass = await getCodeFromSass(testId, options);
 
-        assert.equal(codeFromBundle.css, codeFromSass.css);
+        assert.strictEqual(codeFromBundle.css, codeFromSass.css);
         t.assert.snapshot(codeFromBundle.css);
         t.assert.snapshot(getWarnings(stats));
         t.assert.snapshot(getErrors(stats));
@@ -137,7 +130,7 @@ describe("loader", () => {
         const codeFromBundle = getCodeFromBundle(stats, compiler);
         const codeFromSass = await getCodeFromSass(testId, options);
 
-        assert.equal(codeFromBundle.css, codeFromSass.css);
+        assert.strictEqual(codeFromBundle.css, codeFromSass.css);
         t.assert.snapshot(codeFromBundle.css);
         t.assert.snapshot(getWarnings(stats));
         t.assert.snapshot(getErrors(stats));
@@ -156,7 +149,7 @@ describe("loader", () => {
         const codeFromBundle = getCodeFromBundle(stats, compiler);
         const codeFromSass = await getCodeFromSass(testId, options);
 
-        assert.equal(codeFromBundle.css, codeFromSass.css);
+        assert.strictEqual(codeFromBundle.css, codeFromSass.css);
         t.assert.snapshot(codeFromBundle.css);
         t.assert.snapshot(getWarnings(stats));
         t.assert.snapshot(getErrors(stats));
@@ -173,7 +166,7 @@ describe("loader", () => {
         const compiler = getCompiler(testId, { loader: { options } });
         const stats = await compile(compiler);
 
-        assert.equal(
+        assert.strictEqual(
           stats.compilation.fileDependencies.has(
             path.resolve(`./test/${syntax}/error.${syntax}`),
           ),
@@ -194,13 +187,13 @@ describe("loader", () => {
         const compiler = getCompiler(testId, { loader: { options } });
         const stats = await compile(compiler);
 
-        assert.equal(
+        assert.strictEqual(
           stats.compilation.fileDependencies.has(
             path.resolve(`./test/${syntax}/error-import.${syntax}`),
           ),
           true,
         );
-        assert.equal(
+        assert.strictEqual(
           stats.compilation.fileDependencies.has(
             path.resolve(`./test/${syntax}/error.${syntax}`),
           ),
@@ -221,7 +214,7 @@ describe("loader", () => {
         const compiler = getCompiler(testId, { loader: { options } });
         const stats = await compile(compiler);
 
-        assert.equal(
+        assert.strictEqual(
           stats.compilation.fileDependencies.has(
             path.resolve(`./test/${syntax}/error-file-not-found.${syntax}`),
           ),
@@ -242,7 +235,7 @@ describe("loader", () => {
         const compiler = getCompiler(testId, { loader: { options } });
         const stats = await compile(compiler);
 
-        assert.equal(
+        assert.strictEqual(
           stats.compilation.fileDependencies.has(
             path.resolve(`./test/${syntax}/error-file-not-found-2.${syntax}`),
           ),
@@ -265,7 +258,7 @@ describe("loader", () => {
         const codeFromBundle = getCodeFromBundle(stats, compiler);
         const codeFromSass = await getCodeFromSass(testId, options);
 
-        assert.equal(codeFromBundle.css, codeFromSass.css);
+        assert.strictEqual(codeFromBundle.css, codeFromSass.css);
         t.assert.snapshot(codeFromBundle.css);
         t.assert.snapshot(getWarnings(stats));
         t.assert.snapshot(getErrors(stats));
@@ -285,7 +278,7 @@ describe("loader", () => {
         const codeFromBundle = getCodeFromBundle(stats, compiler);
         const codeFromSass = await getCodeFromSass(testId, options);
 
-        assert.equal(codeFromBundle.css, codeFromSass.css);
+        assert.strictEqual(codeFromBundle.css, codeFromSass.css);
         t.assert.snapshot(codeFromBundle.css);
         t.assert.snapshot(getWarnings(stats));
         t.assert.snapshot(getErrors(stats));
@@ -305,7 +298,7 @@ describe("loader", () => {
         const codeFromBundle = getCodeFromBundle(stats, compiler);
         const codeFromSass = await getCodeFromSass(testId, options);
 
-        assert.equal(codeFromBundle.css, codeFromSass.css);
+        assert.strictEqual(codeFromBundle.css, codeFromSass.css);
         t.assert.snapshot(codeFromBundle.css);
         t.assert.snapshot(getWarnings(stats));
         t.assert.snapshot(getErrors(stats));
@@ -324,7 +317,7 @@ describe("loader", () => {
         const codeFromBundle = getCodeFromBundle(stats, compiler);
         const codeFromSass = await getCodeFromSass(testId, options);
 
-        assert.equal(codeFromBundle.css, codeFromSass.css);
+        assert.strictEqual(codeFromBundle.css, codeFromSass.css);
         t.assert.snapshot(codeFromBundle.css);
         t.assert.snapshot(getWarnings(stats));
         t.assert.snapshot(getErrors(stats));
@@ -343,7 +336,7 @@ describe("loader", () => {
         const codeFromBundle = getCodeFromBundle(stats, compiler);
         const codeFromSass = await getCodeFromSass(testId, options);
 
-        assert.equal(codeFromBundle.css, codeFromSass.css);
+        assert.strictEqual(codeFromBundle.css, codeFromSass.css);
         t.assert.snapshot(codeFromBundle.css);
         t.assert.snapshot(getWarnings(stats));
         t.assert.snapshot(getErrors(stats));
@@ -362,7 +355,7 @@ describe("loader", () => {
         const codeFromBundle = getCodeFromBundle(stats, compiler);
         const codeFromSass = await getCodeFromSass(testId, options);
 
-        assert.equal(codeFromBundle.css, codeFromSass.css);
+        assert.strictEqual(codeFromBundle.css, codeFromSass.css);
         t.assert.snapshot(codeFromBundle.css);
         t.assert.snapshot(getWarnings(stats));
         t.assert.snapshot(getErrors(stats));
@@ -381,7 +374,7 @@ describe("loader", () => {
         const codeFromBundle = getCodeFromBundle(stats, compiler);
         const codeFromSass = await getCodeFromSass(testId, options);
 
-        assert.equal(codeFromBundle.css, codeFromSass.css);
+        assert.strictEqual(codeFromBundle.css, codeFromSass.css);
         t.assert.snapshot(codeFromBundle.css);
         t.assert.snapshot(getWarnings(stats));
         t.assert.snapshot(getErrors(stats));
@@ -403,7 +396,7 @@ describe("loader", () => {
         const codeFromBundle = getCodeFromBundle(stats, compiler);
         const codeFromSass = await getCodeFromSass(testId, options);
 
-        assert.equal(codeFromBundle.css, codeFromSass.css);
+        assert.strictEqual(codeFromBundle.css, codeFromSass.css);
         t.assert.snapshot(codeFromBundle.css);
         t.assert.snapshot(getWarnings(stats));
         t.assert.snapshot(getErrors(stats));
@@ -426,7 +419,7 @@ describe("loader", () => {
         const codeFromBundle = getCodeFromBundle(stats, compiler);
         const codeFromSass = await getCodeFromSass(testId, options);
 
-        assert.equal(codeFromBundle.css, codeFromSass.css);
+        assert.strictEqual(codeFromBundle.css, codeFromSass.css);
         t.assert.snapshot(codeFromBundle.css);
         t.assert.snapshot(getWarnings(stats));
         t.assert.snapshot(getErrors(stats));
@@ -445,7 +438,7 @@ describe("loader", () => {
         const codeFromBundle = getCodeFromBundle(stats, compiler);
         const codeFromSass = await getCodeFromSass(testId, options);
 
-        assert.equal(codeFromBundle.css, codeFromSass.css);
+        assert.strictEqual(codeFromBundle.css, codeFromSass.css);
         t.assert.snapshot(codeFromBundle.css);
         t.assert.snapshot(getWarnings(stats));
         t.assert.snapshot(getErrors(stats));
@@ -464,7 +457,7 @@ describe("loader", () => {
         const codeFromBundle = getCodeFromBundle(stats, compiler);
         const codeFromSass = await getCodeFromSass(testId, options);
 
-        assert.equal(codeFromBundle.css, codeFromSass.css);
+        assert.strictEqual(codeFromBundle.css, codeFromSass.css);
         t.assert.snapshot(codeFromBundle.css);
         t.assert.snapshot(getWarnings(stats));
         t.assert.snapshot(getErrors(stats));
@@ -483,7 +476,7 @@ describe("loader", () => {
         const codeFromBundle = getCodeFromBundle(stats, compiler);
         const codeFromSass = await getCodeFromSass(testId, options);
 
-        assert.equal(codeFromBundle.css, codeFromSass.css);
+        assert.strictEqual(codeFromBundle.css, codeFromSass.css);
         t.assert.snapshot(codeFromBundle.css);
         t.assert.snapshot(getWarnings(stats));
         t.assert.snapshot(getErrors(stats));
@@ -504,7 +497,7 @@ describe("loader", () => {
         const codeFromBundle = getCodeFromBundle(stats, compiler);
         const codeFromSass = await getCodeFromSass(testId, options);
 
-        assert.equal(codeFromBundle.css, codeFromSass.css);
+        assert.strictEqual(codeFromBundle.css, codeFromSass.css);
         t.assert.snapshot(codeFromBundle.css);
         t.assert.snapshot(getWarnings(stats));
         t.assert.snapshot(getErrors(stats));
@@ -525,7 +518,7 @@ describe("loader", () => {
         const codeFromBundle = getCodeFromBundle(stats, compiler);
         const codeFromSass = await getCodeFromSass(testId, options);
 
-        assert.equal(codeFromBundle.css, codeFromSass.css);
+        assert.strictEqual(codeFromBundle.css, codeFromSass.css);
         t.assert.snapshot(codeFromBundle.css);
         t.assert.snapshot(getWarnings(stats));
         t.assert.snapshot(getErrors(stats));
@@ -549,7 +542,7 @@ describe("loader", () => {
         const codeFromBundle = getCodeFromBundle(stats, compiler);
         const codeFromSass = await getCodeFromSass(testId, options);
 
-        assert.equal(codeFromBundle.css, codeFromSass.css);
+        assert.strictEqual(codeFromBundle.css, codeFromSass.css);
         t.assert.snapshot(codeFromBundle.css);
         t.assert.snapshot(getWarnings(stats));
         t.assert.snapshot(getErrors(stats));
@@ -568,7 +561,7 @@ describe("loader", () => {
         const codeFromBundle = getCodeFromBundle(stats, compiler);
         const codeFromSass = await getCodeFromSass(testId, options);
 
-        assert.equal(codeFromBundle.css, codeFromSass.css);
+        assert.strictEqual(codeFromBundle.css, codeFromSass.css);
         t.assert.snapshot(codeFromBundle.css);
         t.assert.snapshot(getWarnings(stats));
         t.assert.snapshot(getErrors(stats));
@@ -589,7 +582,7 @@ describe("loader", () => {
         const codeFromBundle = getCodeFromBundle(stats, compiler);
         const codeFromSass = await getCodeFromSass(testId, options);
 
-        assert.equal(codeFromBundle.css, codeFromSass.css);
+        assert.strictEqual(codeFromBundle.css, codeFromSass.css);
         t.assert.snapshot(codeFromBundle.css);
         t.assert.snapshot(getWarnings(stats));
         t.assert.snapshot(getErrors(stats));
@@ -610,7 +603,7 @@ describe("loader", () => {
         const codeFromBundle = getCodeFromBundle(stats, compiler);
         const codeFromSass = await getCodeFromSass(testId, options);
 
-        assert.equal(codeFromBundle.css, codeFromSass.css);
+        assert.strictEqual(codeFromBundle.css, codeFromSass.css);
         t.assert.snapshot(codeFromBundle.css);
         t.assert.snapshot(getWarnings(stats));
         t.assert.snapshot(getErrors(stats));
@@ -632,7 +625,7 @@ describe("loader", () => {
         const codeFromBundle = getCodeFromBundle(stats, compiler);
         const codeFromSass = await getCodeFromSass(testId, options);
 
-        assert.equal(codeFromBundle.css, codeFromSass.css);
+        assert.strictEqual(codeFromBundle.css, codeFromSass.css);
         t.assert.snapshot(codeFromBundle.css);
         t.assert.snapshot(getWarnings(stats));
         t.assert.snapshot(getErrors(stats));
@@ -648,16 +641,14 @@ describe("loader", () => {
         const options = {
           implementation,
           api,
-          sassOptions: isModernAPI
-            ? { loadPaths: ["node_modules/foundation-sites/scss"] }
-            : { includePaths: ["node_modules/foundation-sites/scss"] },
+          sassOptions: { loadPaths: ["node_modules/foundation-sites/scss"] },
         };
         const compiler = getCompiler(testId, { loader: { options } });
         const stats = await compile(compiler);
         const codeFromBundle = getCodeFromBundle(stats, compiler);
         const codeFromSass = await getCodeFromSass(testId, options);
 
-        assert.equal(codeFromBundle.css, codeFromSass.css);
+        assert.strictEqual(codeFromBundle.css, codeFromSass.css);
         t.assert.snapshot(codeFromBundle.css);
         t.assert.snapshot(getWarnings(stats));
         t.assert.snapshot(getErrors(stats));
@@ -676,7 +667,7 @@ describe("loader", () => {
         const codeFromBundle = getCodeFromBundle(stats, compiler);
         const codeFromSass = await getCodeFromSass(testId, options);
 
-        assert.equal(codeFromBundle.css, codeFromSass.css);
+        assert.strictEqual(codeFromBundle.css, codeFromSass.css);
         t.assert.snapshot(codeFromBundle.css);
         t.assert.snapshot(getWarnings(stats));
         t.assert.snapshot(getErrors(stats));
@@ -725,7 +716,7 @@ describe("loader", () => {
         const codeFromBundle = getCodeFromBundle(stats, compiler);
         const codeFromSass = await getCodeFromSass(testId, options, { syntax });
 
-        assert.equal(codeFromBundle.css, codeFromSass.css);
+        assert.strictEqual(codeFromBundle.css, codeFromSass.css);
         t.assert.snapshot(codeFromBundle.css);
         t.assert.snapshot(getWarnings(stats));
         t.assert.snapshot(getErrors(stats));
@@ -745,7 +736,7 @@ describe("loader", () => {
         const codeFromBundle = getCodeFromBundle(stats, compiler);
         const codeFromSass = await getCodeFromSass(testId, options);
 
-        assert.equal(codeFromBundle.css, codeFromSass.css);
+        assert.strictEqual(codeFromBundle.css, codeFromSass.css);
         t.assert.snapshot(codeFromBundle.css);
         t.assert.snapshot(getWarnings(stats));
         t.assert.snapshot(getErrors(stats));
@@ -764,7 +755,7 @@ describe("loader", () => {
         const codeFromBundle = getCodeFromBundle(stats, compiler);
         const codeFromSass = await getCodeFromSass(testId, options);
 
-        assert.equal(codeFromBundle.css, codeFromSass.css);
+        assert.strictEqual(codeFromBundle.css, codeFromSass.css);
         t.assert.snapshot(codeFromBundle.css);
         t.assert.snapshot(getWarnings(stats));
         t.assert.snapshot(getErrors(stats));
@@ -783,7 +774,7 @@ describe("loader", () => {
         const codeFromBundle = getCodeFromBundle(stats, compiler);
         const codeFromSass = await getCodeFromSass(testId, options);
 
-        assert.equal(codeFromBundle.css, codeFromSass.css);
+        assert.strictEqual(codeFromBundle.css, codeFromSass.css);
         t.assert.snapshot(codeFromBundle.css);
         t.assert.snapshot(getWarnings(stats));
         t.assert.snapshot(getErrors(stats));
@@ -802,7 +793,7 @@ describe("loader", () => {
         const codeFromBundle = getCodeFromBundle(stats, compiler);
         const codeFromSass = await getCodeFromSass(testId, options);
 
-        assert.equal(codeFromBundle.css, codeFromSass.css);
+        assert.strictEqual(codeFromBundle.css, codeFromSass.css);
         t.assert.snapshot(codeFromBundle.css);
         t.assert.snapshot(getWarnings(stats));
         t.assert.snapshot(getErrors(stats));
@@ -821,7 +812,7 @@ describe("loader", () => {
         const codeFromBundle = getCodeFromBundle(stats, compiler);
         const codeFromSass = await getCodeFromSass(testId, options);
 
-        assert.equal(codeFromBundle.css, codeFromSass.css);
+        assert.strictEqual(codeFromBundle.css, codeFromSass.css);
         t.assert.snapshot(getWarnings(stats));
         t.assert.snapshot(getErrors(stats));
 
@@ -839,7 +830,7 @@ describe("loader", () => {
         const codeFromBundle = getCodeFromBundle(stats, compiler);
         const codeFromSass = await getCodeFromSass(testId, options);
 
-        assert.equal(codeFromBundle.css, codeFromSass.css);
+        assert.strictEqual(codeFromBundle.css, codeFromSass.css);
         t.assert.snapshot(codeFromBundle.css);
         t.assert.snapshot(getWarnings(stats));
         t.assert.snapshot(getErrors(stats));
@@ -858,7 +849,7 @@ describe("loader", () => {
         const codeFromBundle = getCodeFromBundle(stats, compiler);
         const codeFromSass = await getCodeFromSass(testId, options);
 
-        assert.equal(codeFromBundle.css, codeFromSass.css);
+        assert.strictEqual(codeFromBundle.css, codeFromSass.css);
         t.assert.snapshot(getWarnings(stats));
         t.assert.snapshot(getErrors(stats));
 
@@ -870,16 +861,14 @@ describe("loader", () => {
         const options = {
           implementation,
           api,
-          sassOptions: isModernAPI
-            ? { loadPaths: ["node_modules/foundation-sites/scss"] }
-            : { includePaths: ["node_modules/foundation-sites/scss"] },
+          sassOptions: { loadPaths: ["node_modules/foundation-sites/scss"] },
         };
         const compiler = getCompiler(testId, { loader: { options } });
         const stats = await compile(compiler);
         const codeFromBundle = getCodeFromBundle(stats, compiler);
         const codeFromSass = await getCodeFromSass(testId, options);
 
-        assert.equal(codeFromBundle.css, codeFromSass.css);
+        assert.strictEqual(codeFromBundle.css, codeFromSass.css);
         t.assert.snapshot(codeFromBundle.css);
         t.assert.snapshot(getWarnings(stats));
         t.assert.snapshot(getErrors(stats));
@@ -895,16 +884,14 @@ describe("loader", () => {
         const options = {
           implementation,
           api,
-          sassOptions: isModernAPI
-            ? { loadPaths: ["node_modules/foundation-sites/scss"] }
-            : { includePaths: ["node_modules/foundation-sites/scss"] },
+          sassOptions: { loadPaths: ["node_modules/foundation-sites/scss"] },
         };
         const compiler = getCompiler(testId, { loader: { options } });
         const stats = await compile(compiler);
         const codeFromBundle = getCodeFromBundle(stats, compiler);
         const codeFromSass = await getCodeFromSass(testId, options);
 
-        assert.equal(codeFromBundle.css, codeFromSass.css);
+        assert.strictEqual(codeFromBundle.css, codeFromSass.css);
         t.assert.snapshot(codeFromBundle.css);
         t.assert.snapshot(getWarnings(stats));
         t.assert.snapshot(getErrors(stats));
@@ -926,12 +913,10 @@ describe("loader", () => {
         const codeFromBundle = getCodeFromBundle(stats, compiler);
         const codeFromSass = await getCodeFromSass(testId, {
           ...options,
-          sassOptions: isModernAPI
-            ? { style: "compressed" }
-            : { outputStyle: "compressed" },
+          sassOptions: { style: "compressed" },
         });
 
-        assert.equal(codeFromBundle.css, codeFromSass.css);
+        assert.strictEqual(codeFromBundle.css, codeFromSass.css);
         t.assert.snapshot(codeFromBundle.css);
         t.assert.snapshot(getWarnings(stats));
         t.assert.snapshot(getErrors(stats));
@@ -942,21 +927,13 @@ describe("loader", () => {
       it(`should watch firstly in the "includePaths" values ('${implementationName}', '${api}' API, '${syntax}' syntax)`, async (t) => {
         const testId = getTestId("prefer-include-paths", syntax);
         const options = {
-          sassOptions: isModernAPI
-            ? {
-                loadPaths: [
-                  path.resolve(
-                    `./test/node_modules/package-with-style-field-and-css/${syntax}`,
-                  ),
-                ],
-              }
-            : {
-                includePaths: [
-                  path.resolve(
-                    `./test/node_modules/package-with-style-field-and-css/${syntax}`,
-                  ),
-                ],
-              },
+          sassOptions: {
+            loadPaths: [
+              path.resolve(
+                `./test/node_modules/package-with-style-field-and-css/${syntax}`,
+              ),
+            ],
+          },
           implementation,
           api,
         };
@@ -965,7 +942,7 @@ describe("loader", () => {
         const codeFromBundle = getCodeFromBundle(stats, compiler);
         const codeFromSass = await getCodeFromSass(testId, options);
 
-        assert.equal(codeFromBundle.css, codeFromSass.css);
+        assert.strictEqual(codeFromBundle.css, codeFromSass.css);
         t.assert.snapshot(codeFromBundle.css);
         t.assert.snapshot(getWarnings(stats));
         t.assert.snapshot(getErrors(stats));
@@ -987,7 +964,7 @@ describe("loader", () => {
         const codeFromBundle = getCodeFromBundle(stats, compiler);
         const codeFromSass = await getCodeFromSass(testId, options);
 
-        assert.equal(codeFromBundle.css, codeFromSass.css);
+        assert.strictEqual(codeFromBundle.css, codeFromSass.css);
         t.assert.snapshot(codeFromBundle.css);
         t.assert.snapshot(getWarnings(stats));
         t.assert.snapshot(getErrors(stats));
@@ -1006,7 +983,7 @@ describe("loader", () => {
         const codeFromBundle = getCodeFromBundle(stats, compiler);
         const codeFromSass = await getCodeFromSass(testId, options);
 
-        assert.equal(codeFromBundle.css, codeFromSass.css);
+        assert.strictEqual(codeFromBundle.css, codeFromSass.css);
         t.assert.snapshot(codeFromBundle.css);
         t.assert.snapshot(getWarnings(stats));
         t.assert.snapshot(getErrors(stats));
@@ -1038,7 +1015,7 @@ describe("loader", () => {
         const codeFromBundle = getCodeFromBundle(stats, compiler);
         const codeFromSass = await getCodeFromSass(testId, options);
 
-        assert.equal(codeFromBundle.css, codeFromSass.css);
+        assert.strictEqual(codeFromBundle.css, codeFromSass.css);
         t.assert.snapshot(codeFromBundle.css);
         t.assert.snapshot(getWarnings(stats));
         t.assert.snapshot(getErrors(stats));
@@ -1047,50 +1024,6 @@ describe("loader", () => {
 
         delete process.env.SASS_PATH;
       });
-
-      // Modern API doesn't support resolving from `process.cwd()`
-      if (!isModernAPI) {
-        it(`should respect resolving from "process.cwd()" ('${implementationName}', '${api}' API, '${syntax}' syntax)`, async (t) => {
-          const testId = getTestId("process-cwd", syntax);
-          const options = {
-            implementation,
-            api,
-          };
-          const compiler = getCompiler(testId, { loader: { options } });
-          const stats = await compile(compiler);
-          const codeFromBundle = getCodeFromBundle(stats, compiler);
-          const codeFromSass = await getCodeFromSass(testId, options);
-
-          assert.equal(codeFromBundle.css, codeFromSass.css);
-          t.assert.snapshot(codeFromBundle.css);
-          t.assert.snapshot(getWarnings(stats));
-          t.assert.snapshot(getErrors(stats));
-
-          await close(compiler);
-        });
-
-        it(`should respect resolving directory with the "index" file from "process.cwd()"  ('${implementationName}', '${api}' API, '${syntax}' syntax)`, async (t) => {
-          const testId = getTestId(
-            "process-cwd-with-index-file-inside-directory",
-            syntax,
-          );
-          const options = {
-            implementation,
-            api,
-          };
-          const compiler = getCompiler(testId, { loader: { options } });
-          const stats = await compile(compiler);
-          const codeFromBundle = getCodeFromBundle(stats, compiler);
-          const codeFromSass = await getCodeFromSass(testId, options);
-
-          assert.equal(codeFromBundle.css, codeFromSass.css);
-          t.assert.snapshot(codeFromBundle.css);
-          t.assert.snapshot(getWarnings(stats));
-          t.assert.snapshot(getErrors(stats));
-
-          await close(compiler);
-        });
-      }
 
       it(`should work with a package with "sass" and "exports" fields ('${implementationName}', '${api}' API, '${syntax}' syntax)`, async (t) => {
         const testId = getTestId("import-package-with-exports", syntax);
@@ -1103,7 +1036,7 @@ describe("loader", () => {
         const codeFromBundle = getCodeFromBundle(stats, compiler);
         const codeFromSass = await getCodeFromSass(testId, options);
 
-        assert.equal(codeFromBundle.css, codeFromSass.css);
+        assert.strictEqual(codeFromBundle.css, codeFromSass.css);
         t.assert.snapshot(codeFromBundle.css);
         t.assert.snapshot(getWarnings(stats));
         t.assert.snapshot(getErrors(stats));
@@ -1132,7 +1065,7 @@ describe("loader", () => {
           packageExportsCustomConditionTestVariant: 1,
         });
 
-        assert.equal(codeFromBundle.css, codeFromSass.css);
+        assert.strictEqual(codeFromBundle.css, codeFromSass.css);
         t.assert.snapshot(codeFromBundle.css);
         t.assert.snapshot(getWarnings(stats));
         t.assert.snapshot(getErrors(stats));
@@ -1161,7 +1094,7 @@ describe("loader", () => {
           packageExportsCustomConditionTestVariant: 2,
         });
 
-        assert.equal(codeFromBundle.css, codeFromSass.css);
+        assert.strictEqual(codeFromBundle.css, codeFromSass.css);
         t.assert.snapshot(codeFromBundle.css);
         t.assert.snapshot(getWarnings(stats));
         t.assert.snapshot(getErrors(stats));
@@ -1169,51 +1102,8 @@ describe("loader", () => {
         await close(compiler);
       });
 
-      if (!isModernAPI) {
-        it(`should support resolving using the "file" schema ('${implementationName}', '${api}' API, '${syntax}' syntax)`, async (t) => {
-          const testId = getTestId("import-file-scheme", syntax);
-          const options = {
-            implementation,
-            api,
-          };
-          const compiler = getCompiler(testId, {
-            loader: { options },
-            resolve: {
-              alias: {
-                "/language": path.resolve(
-                  "./test",
-                  syntax,
-                  `language.${syntax}`,
-                ),
-              },
-            },
-          });
-          const stats = await compile(compiler);
-          const codeFromBundle = getCodeFromBundle(stats, compiler);
-          const codeFromSass = await getCodeFromSass(testId, options, {
-            syntax,
-          });
-
-          assert.equal(codeFromBundle.css, codeFromSass.css);
-          t.assert.snapshot(codeFromBundle.css);
-          t.assert.snapshot(getWarnings(stats));
-          t.assert.snapshot(getErrors(stats));
-
-          await close(compiler);
-        });
-      }
-
       it(`should resolve server-relative URLs ('${implementationName}', '${api}' API, '${syntax}' syntax)`, async (t) => {
-        //
-        const testId = getTestId(
-          // legacy sass-embedded API doesn't support absolute paths
-          process.platform === "win32" &&
-            implementationName === "sass-embedded" &&
-            !isModernAPI
-            ? "import-absolute-path-windows"
-            : "import-absolute-path",
-          syntax,
-        );
+        const testId = getTestId("import-absolute-path", syntax);
         const options = {
           implementation,
           api,
@@ -1223,7 +1113,7 @@ describe("loader", () => {
         const codeFromBundle = getCodeFromBundle(stats, compiler);
         const codeFromSass = await getCodeFromSass(testId, options);
 
-        assert.equal(codeFromBundle.css, codeFromSass.css);
+        assert.strictEqual(codeFromBundle.css, codeFromSass.css);
         t.assert.snapshot(codeFromBundle.css);
         t.assert.snapshot(getWarnings(stats));
         t.assert.snapshot(getErrors(stats));
@@ -1256,7 +1146,7 @@ describe("loader", () => {
         const codeFromBundle = getCodeFromBundle(stats, compiler);
         const codeFromSass = await getCodeFromSass(testId, options);
 
-        assert.equal(codeFromBundle.css, codeFromSass.css);
+        assert.strictEqual(codeFromBundle.css, codeFromSass.css);
         t.assert.snapshot(codeFromBundle.css);
         t.assert.snapshot(getWarnings(stats));
         t.assert.snapshot(getErrors(stats));
@@ -1290,7 +1180,7 @@ describe("loader", () => {
         const codeFromBundle = getCodeFromBundle(stats, compiler);
         const codeFromSass = await getCodeFromSass(testId, options);
 
-        assert.equal(codeFromBundle.css, codeFromSass.css);
+        assert.strictEqual(codeFromBundle.css, codeFromSass.css);
         t.assert.snapshot(codeFromBundle.css);
         t.assert.snapshot(getWarnings(stats));
         t.assert.snapshot(getErrors(stats));
@@ -1318,7 +1208,7 @@ describe("loader", () => {
         const codeFromBundle = getCodeFromBundle(stats, compiler);
         const codeFromSass = await getCodeFromSass(testId, options);
 
-        assert.equal(codeFromBundle.css, codeFromSass.css);
+        assert.strictEqual(codeFromBundle.css, codeFromSass.css);
         t.assert.snapshot(codeFromBundle.css);
         t.assert.snapshot(getWarnings(stats));
         t.assert.snapshot(getErrors(stats));
@@ -1359,20 +1249,16 @@ describe("loader", () => {
         const options = {
           implementation,
           api,
-          sassOptions: isModernAPI
-            ? { loadPaths: [path.resolve(__dirname, "outside", "my-pkg-path")] }
-            : {
-                includePaths: [
-                  path.resolve(__dirname, "outside", "my-pkg-path"),
-                ],
-              },
+          sassOptions: {
+            loadPaths: [path.resolve(__dirname, "outside", "my-pkg-path")],
+          },
         };
         const compiler = getCompiler(testId, { loader: { options } });
         const stats = await compile(compiler);
         const codeFromBundle = getCodeFromBundle(stats, compiler);
         const codeFromSass = await getCodeFromSass(testId, options);
 
-        assert.equal(codeFromBundle.css, codeFromSass.css);
+        assert.strictEqual(codeFromBundle.css, codeFromSass.css);
         t.assert.snapshot(codeFromBundle.css);
         t.assert.snapshot(getWarnings(stats));
         t.assert.snapshot(getErrors(stats));
@@ -1397,7 +1283,7 @@ describe("loader", () => {
           const codeFromBundle = getCodeFromBundle(stats, compiler);
           const codeFromSass = await getCodeFromSass(testId, options);
 
-          assert.equal(codeFromBundle.css, codeFromSass.css);
+          assert.strictEqual(codeFromBundle.css, codeFromSass.css);
           t.assert.snapshot(codeFromBundle.css);
           t.assert.snapshot(getWarnings(stats));
           t.assert.snapshot(getErrors(stats));
@@ -1416,7 +1302,7 @@ describe("loader", () => {
           const codeFromBundle = getCodeFromBundle(stats, compiler);
           const codeFromSass = await getCodeFromSass(testId, options);
 
-          assert.equal(codeFromBundle.css, codeFromSass.css);
+          assert.strictEqual(codeFromBundle.css, codeFromSass.css);
           t.assert.snapshot(codeFromBundle.css);
           t.assert.snapshot(getWarnings(stats));
           t.assert.snapshot(getErrors(stats));
@@ -1436,7 +1322,7 @@ describe("loader", () => {
           const codeFromBundle = getCodeFromBundle(stats, compiler);
           const codeFromSass = await getCodeFromSass(testId, options);
 
-          assert.equal(codeFromBundle.css, codeFromSass.css);
+          assert.strictEqual(codeFromBundle.css, codeFromSass.css);
           t.assert.snapshot(codeFromBundle.css);
           t.assert.snapshot(getWarnings(stats));
           t.assert.snapshot(getErrors(stats));
@@ -1453,13 +1339,13 @@ describe("loader", () => {
           const compiler = getCompiler(testId, { loader: { options } });
           const stats = await compile(compiler);
 
-          assert.equal(
+          assert.strictEqual(
             stats.compilation.fileDependencies.has(
               path.resolve(`./test/${syntax}/error-use.${syntax}`),
             ),
             true,
           );
-          assert.equal(
+          assert.strictEqual(
             stats.compilation.fileDependencies.has(
               path.resolve(`./test/${syntax}/error.${syntax}`),
             ),
@@ -1480,7 +1366,7 @@ describe("loader", () => {
           const compiler = getCompiler(testId, { loader: { options } });
           const stats = await compile(compiler);
 
-          assert.equal(
+          assert.strictEqual(
             stats.compilation.fileDependencies.has(
               path.resolve(
                 `./test/${syntax}/error-file-not-found-use.${syntax}`,
@@ -1503,7 +1389,7 @@ describe("loader", () => {
           const compiler = getCompiler(testId, { loader: { options } });
           const stats = await compile(compiler);
 
-          assert.equal(
+          assert.strictEqual(
             stats.compilation.fileDependencies.has(
               path.resolve(
                 `./test/${syntax}/error-file-not-found-use-2.${syntax}`,
@@ -1528,7 +1414,7 @@ describe("loader", () => {
           const codeFromBundle = getCodeFromBundle(stats, compiler);
           const codeFromSass = await getCodeFromSass(testId, options);
 
-          assert.equal(codeFromBundle.css, codeFromSass.css);
+          assert.strictEqual(codeFromBundle.css, codeFromSass.css);
           t.assert.snapshot(codeFromBundle.css);
           t.assert.snapshot(getWarnings(stats));
           t.assert.snapshot(getErrors(stats));
@@ -1547,7 +1433,7 @@ describe("loader", () => {
           const codeFromBundle = getCodeFromBundle(stats, compiler);
           const codeFromSass = await getCodeFromSass(testId, options);
 
-          assert.equal(codeFromBundle.css, codeFromSass.css);
+          assert.strictEqual(codeFromBundle.css, codeFromSass.css);
           t.assert.snapshot(codeFromBundle.css);
           t.assert.snapshot(getWarnings(stats));
           t.assert.snapshot(getErrors(stats));
@@ -1566,7 +1452,7 @@ describe("loader", () => {
           const codeFromBundle = getCodeFromBundle(stats, compiler);
           const codeFromSass = await getCodeFromSass(testId, options);
 
-          assert.equal(codeFromBundle.css, codeFromSass.css);
+          assert.strictEqual(codeFromBundle.css, codeFromSass.css);
           t.assert.snapshot(codeFromBundle.css);
           t.assert.snapshot(getWarnings(stats));
           t.assert.snapshot(getErrors(stats));
@@ -1585,7 +1471,7 @@ describe("loader", () => {
           const codeFromBundle = getCodeFromBundle(stats, compiler);
           const codeFromSass = await getCodeFromSass(testId, options);
 
-          assert.equal(codeFromBundle.css, codeFromSass.css);
+          assert.strictEqual(codeFromBundle.css, codeFromSass.css);
           t.assert.snapshot(codeFromBundle.css);
           t.assert.snapshot(getWarnings(stats));
           t.assert.snapshot(getErrors(stats));
@@ -1604,7 +1490,7 @@ describe("loader", () => {
           const codeFromBundle = getCodeFromBundle(stats, compiler);
           const codeFromSass = await getCodeFromSass(testId, options);
 
-          assert.equal(codeFromBundle.css, codeFromSass.css);
+          assert.strictEqual(codeFromBundle.css, codeFromSass.css);
           t.assert.snapshot(codeFromBundle.css);
           t.assert.snapshot(getWarnings(stats));
           t.assert.snapshot(getErrors(stats));
@@ -1623,7 +1509,7 @@ describe("loader", () => {
           const codeFromBundle = getCodeFromBundle(stats, compiler);
           const codeFromSass = await getCodeFromSass(testId, options);
 
-          assert.equal(codeFromBundle.css, codeFromSass.css);
+          assert.strictEqual(codeFromBundle.css, codeFromSass.css);
           t.assert.snapshot(codeFromBundle.css);
           t.assert.snapshot(getWarnings(stats));
           t.assert.snapshot(getErrors(stats));
@@ -1645,7 +1531,7 @@ describe("loader", () => {
           const codeFromBundle = getCodeFromBundle(stats, compiler);
           const codeFromSass = await getCodeFromSass(testId, options);
 
-          assert.equal(codeFromBundle.css, codeFromSass.css);
+          assert.strictEqual(codeFromBundle.css, codeFromSass.css);
           t.assert.snapshot(codeFromBundle.css);
           t.assert.snapshot(getWarnings(stats));
           t.assert.snapshot(getErrors(stats));
@@ -1664,7 +1550,7 @@ describe("loader", () => {
           const codeFromBundle = getCodeFromBundle(stats, compiler);
           const codeFromSass = await getCodeFromSass(testId, options);
 
-          assert.equal(codeFromBundle.css, codeFromSass.css);
+          assert.strictEqual(codeFromBundle.css, codeFromSass.css);
           t.assert.snapshot(codeFromBundle.css);
           t.assert.snapshot(getWarnings(stats));
           t.assert.snapshot(getErrors(stats));
@@ -1683,7 +1569,7 @@ describe("loader", () => {
           const codeFromBundle = getCodeFromBundle(stats, compiler);
           const codeFromSass = await getCodeFromSass(testId, options);
 
-          assert.equal(codeFromBundle.css, codeFromSass.css);
+          assert.strictEqual(codeFromBundle.css, codeFromSass.css);
           t.assert.snapshot(codeFromBundle.css);
           t.assert.snapshot(getWarnings(stats));
           t.assert.snapshot(getErrors(stats));
@@ -1702,7 +1588,7 @@ describe("loader", () => {
           const codeFromBundle = getCodeFromBundle(stats, compiler);
           const codeFromSass = await getCodeFromSass(testId, options);
 
-          assert.equal(codeFromBundle.css, codeFromSass.css);
+          assert.strictEqual(codeFromBundle.css, codeFromSass.css);
           t.assert.snapshot(codeFromBundle.css);
           t.assert.snapshot(getWarnings(stats));
           t.assert.snapshot(getErrors(stats));
@@ -1723,7 +1609,7 @@ describe("loader", () => {
           const codeFromBundle = getCodeFromBundle(stats, compiler);
           const codeFromSass = await getCodeFromSass(testId, options);
 
-          assert.equal(codeFromBundle.css, codeFromSass.css);
+          assert.strictEqual(codeFromBundle.css, codeFromSass.css);
           t.assert.snapshot(codeFromBundle.css);
           t.assert.snapshot(getWarnings(stats));
           t.assert.snapshot(getErrors(stats));
@@ -1744,7 +1630,7 @@ describe("loader", () => {
           const codeFromBundle = getCodeFromBundle(stats, compiler);
           const codeFromSass = await getCodeFromSass(testId, options);
 
-          assert.equal(codeFromBundle.css, codeFromSass.css);
+          assert.strictEqual(codeFromBundle.css, codeFromSass.css);
           t.assert.snapshot(codeFromBundle.css);
           t.assert.snapshot(getWarnings(stats));
           t.assert.snapshot(getErrors(stats));
@@ -1768,7 +1654,7 @@ describe("loader", () => {
           const codeFromBundle = getCodeFromBundle(stats, compiler);
           const codeFromSass = await getCodeFromSass(testId, options);
 
-          assert.equal(codeFromBundle.css, codeFromSass.css);
+          assert.strictEqual(codeFromBundle.css, codeFromSass.css);
           t.assert.snapshot(codeFromBundle.css);
           t.assert.snapshot(getWarnings(stats));
           t.assert.snapshot(getErrors(stats));
@@ -1787,7 +1673,7 @@ describe("loader", () => {
           const codeFromBundle = getCodeFromBundle(stats, compiler);
           const codeFromSass = await getCodeFromSass(testId, options);
 
-          assert.equal(codeFromBundle.css, codeFromSass.css);
+          assert.strictEqual(codeFromBundle.css, codeFromSass.css);
           t.assert.snapshot(codeFromBundle.css);
           t.assert.snapshot(getWarnings(stats));
           t.assert.snapshot(getErrors(stats));
@@ -1808,7 +1694,7 @@ describe("loader", () => {
           const codeFromBundle = getCodeFromBundle(stats, compiler);
           const codeFromSass = await getCodeFromSass(testId, options);
 
-          assert.equal(codeFromBundle.css, codeFromSass.css);
+          assert.strictEqual(codeFromBundle.css, codeFromSass.css);
           t.assert.snapshot(codeFromBundle.css);
           t.assert.snapshot(getWarnings(stats));
           t.assert.snapshot(getErrors(stats));
@@ -1829,7 +1715,7 @@ describe("loader", () => {
           const codeFromBundle = getCodeFromBundle(stats, compiler);
           const codeFromSass = await getCodeFromSass(testId, options);
 
-          assert.equal(codeFromBundle.css, codeFromSass.css);
+          assert.strictEqual(codeFromBundle.css, codeFromSass.css);
           t.assert.snapshot(codeFromBundle.css);
           t.assert.snapshot(getWarnings(stats));
           t.assert.snapshot(getErrors(stats));
@@ -1848,7 +1734,7 @@ describe("loader", () => {
           const codeFromBundle = getCodeFromBundle(stats, compiler);
           const codeFromSass = await getCodeFromSass(testId, options);
 
-          assert.equal(codeFromBundle.css, codeFromSass.css);
+          assert.strictEqual(codeFromBundle.css, codeFromSass.css);
           t.assert.snapshot(codeFromBundle.css);
           t.assert.snapshot(getWarnings(stats));
           t.assert.snapshot(getErrors(stats));
@@ -1899,7 +1785,7 @@ describe("loader", () => {
             syntax,
           });
 
-          assert.equal(codeFromBundle.css, codeFromSass.css);
+          assert.strictEqual(codeFromBundle.css, codeFromSass.css);
           t.assert.snapshot(codeFromBundle.css);
           t.assert.snapshot(getWarnings(stats));
           t.assert.snapshot(getErrors(stats));
@@ -1918,7 +1804,7 @@ describe("loader", () => {
           const codeFromBundle = getCodeFromBundle(stats, compiler);
           const codeFromSass = await getCodeFromSass(testId, options);
 
-          assert.equal(codeFromBundle.css, codeFromSass.css);
+          assert.strictEqual(codeFromBundle.css, codeFromSass.css);
           t.assert.snapshot(codeFromBundle.css);
           t.assert.snapshot(getWarnings(stats));
           t.assert.snapshot(getErrors(stats));
@@ -1937,7 +1823,7 @@ describe("loader", () => {
           const codeFromBundle = getCodeFromBundle(stats, compiler);
           const codeFromSass = await getCodeFromSass(testId, options);
 
-          assert.equal(codeFromBundle.css, codeFromSass.css);
+          assert.strictEqual(codeFromBundle.css, codeFromSass.css);
           t.assert.snapshot(codeFromBundle.css);
           t.assert.snapshot(getWarnings(stats));
           t.assert.snapshot(getErrors(stats));
@@ -1956,7 +1842,7 @@ describe("loader", () => {
           const codeFromBundle = getCodeFromBundle(stats, compiler);
           const codeFromSass = await getCodeFromSass(testId, options);
 
-          assert.equal(codeFromBundle.css, codeFromSass.css);
+          assert.strictEqual(codeFromBundle.css, codeFromSass.css);
           t.assert.snapshot(codeFromBundle.css);
           t.assert.snapshot(getWarnings(stats));
           t.assert.snapshot(getErrors(stats));
@@ -1975,7 +1861,7 @@ describe("loader", () => {
           const codeFromBundle = getCodeFromBundle(stats, compiler);
           const codeFromSass = await getCodeFromSass(testId, options);
 
-          assert.equal(codeFromBundle.css, codeFromSass.css);
+          assert.strictEqual(codeFromBundle.css, codeFromSass.css);
           t.assert.snapshot(codeFromBundle.css);
           t.assert.snapshot(getWarnings(stats));
           t.assert.snapshot(getErrors(stats));
@@ -1994,7 +1880,7 @@ describe("loader", () => {
           const codeFromBundle = getCodeFromBundle(stats, compiler);
           const codeFromSass = await getCodeFromSass(testId, options);
 
-          assert.equal(codeFromBundle.css, codeFromSass.css);
+          assert.strictEqual(codeFromBundle.css, codeFromSass.css);
           t.assert.snapshot(codeFromBundle.css);
           t.assert.snapshot(getWarnings(stats));
           t.assert.snapshot(getErrors(stats));
@@ -2013,7 +1899,7 @@ describe("loader", () => {
           const codeFromBundle = getCodeFromBundle(stats, compiler);
           const codeFromSass = await getCodeFromSass(testId, options);
 
-          assert.equal(codeFromBundle.css, codeFromSass.css);
+          assert.strictEqual(codeFromBundle.css, codeFromSass.css);
           t.assert.snapshot(codeFromBundle.css);
           // Deprecations are different on windows/macos and linux, and we don't need them to test here
           // t.assert.snapshot(getWarnings(stats, true));
@@ -2033,7 +1919,7 @@ describe("loader", () => {
           const codeFromBundle = getCodeFromBundle(stats, compiler);
           const codeFromSass = await getCodeFromSass(testId, options);
 
-          assert.equal(codeFromBundle.css, codeFromSass.css);
+          assert.strictEqual(codeFromBundle.css, codeFromSass.css);
           t.assert.snapshot(getWarnings(stats));
           t.assert.snapshot(getErrors(stats));
 
@@ -2045,16 +1931,14 @@ describe("loader", () => {
           const options = {
             implementation,
             api,
-            sassOptions: isModernAPI
-              ? { loadPaths: ["node_modules"] }
-              : { includePaths: ["node_modules"] },
+            sassOptions: { loadPaths: ["node_modules"] },
           };
           const compiler = getCompiler(testId, { loader: { options } });
           const stats = await compile(compiler);
           const codeFromBundle = getCodeFromBundle(stats, compiler);
           const codeFromSass = await getCodeFromSass(testId, options);
 
-          assert.equal(codeFromBundle.css, codeFromSass.css);
+          assert.strictEqual(codeFromBundle.css, codeFromSass.css);
           t.assert.snapshot(codeFromBundle.css);
           t.assert.snapshot(getWarnings(stats));
           t.assert.snapshot(getErrors(stats));
@@ -2073,7 +1957,7 @@ describe("loader", () => {
           const codeFromBundle = getCodeFromBundle(stats, compiler);
           const codeFromSass = await getCodeFromSass(testId, options);
 
-          assert.equal(codeFromBundle.css, codeFromSass.css);
+          assert.strictEqual(codeFromBundle.css, codeFromSass.css);
           t.assert.snapshot(codeFromBundle.css);
           t.assert.snapshot(getWarnings(stats));
           t.assert.snapshot(getErrors(stats));
@@ -2086,16 +1970,14 @@ describe("loader", () => {
           const options = {
             implementation,
             api,
-            sassOptions: isModernAPI
-              ? { loadPaths: ["node_modules"] }
-              : { includePaths: ["node_modules"] },
+            sassOptions: { loadPaths: ["node_modules"] },
           };
           const compiler = getCompiler(testId, { loader: { options } });
           const stats = await compile(compiler);
           const codeFromBundle = getCodeFromBundle(stats, compiler);
           const codeFromSass = await getCodeFromSass(testId, options);
 
-          assert.equal(codeFromBundle.css, codeFromSass.css);
+          assert.strictEqual(codeFromBundle.css, codeFromSass.css);
           t.assert.snapshot(codeFromBundle.css);
           t.assert.snapshot(getWarnings(stats));
           t.assert.snapshot(getErrors(stats));
@@ -2114,7 +1996,7 @@ describe("loader", () => {
           const codeFromBundle = getCodeFromBundle(stats, compiler);
           const codeFromSass = await getCodeFromSass(testId, options);
 
-          assert.equal(codeFromBundle.css, codeFromSass.css);
+          assert.strictEqual(codeFromBundle.css, codeFromSass.css);
           t.assert.snapshot(codeFromBundle.css);
           t.assert.snapshot(getWarnings(stats));
           t.assert.snapshot(getErrors(stats));
@@ -2133,7 +2015,7 @@ describe("loader", () => {
           const codeFromBundle = getCodeFromBundle(stats, compiler);
           const codeFromSass = await getCodeFromSass(testId, options);
 
-          assert.equal(codeFromBundle.css, codeFromSass.css);
+          assert.strictEqual(codeFromBundle.css, codeFromSass.css);
           t.assert.snapshot(codeFromBundle.css);
           t.assert.snapshot(getWarnings(stats));
           t.assert.snapshot(getErrors(stats));
@@ -2152,7 +2034,7 @@ describe("loader", () => {
           const codeFromBundle = getCodeFromBundle(stats, compiler);
           const codeFromSass = await getCodeFromSass(testId, options);
 
-          assert.equal(codeFromBundle.css, codeFromSass.css);
+          assert.strictEqual(codeFromBundle.css, codeFromSass.css);
           t.assert.snapshot(codeFromBundle.css);
           t.assert.snapshot(getWarnings(stats));
           t.assert.snapshot(getErrors(stats));
@@ -2186,7 +2068,7 @@ describe("loader", () => {
           const codeFromBundle = getCodeFromBundle(stats, compiler);
           const codeFromSass = await getCodeFromSass(testId, options);
 
-          assert.equal(codeFromBundle.css, codeFromSass.css);
+          assert.strictEqual(codeFromBundle.css, codeFromSass.css);
           t.assert.snapshot(codeFromBundle.css);
           t.assert.snapshot(getWarnings(stats));
           t.assert.snapshot(getErrors(stats));
@@ -2205,7 +2087,7 @@ describe("loader", () => {
           const codeFromBundle = getCodeFromBundle(stats, compiler);
           const codeFromSass = await getCodeFromSass(testId, options);
 
-          assert.equal(codeFromBundle.css, codeFromSass.css);
+          assert.strictEqual(codeFromBundle.css, codeFromSass.css);
           t.assert.snapshot(codeFromBundle.css);
           t.assert.snapshot(getWarnings(stats, true));
           t.assert.snapshot(getErrors(stats));
@@ -2255,7 +2137,7 @@ describe("loader", () => {
             }
           }
 
-          assert.equal(codeFromBundle.css, codeFromSass.css);
+          assert.strictEqual(codeFromBundle.css, codeFromSass.css);
           t.assert.snapshot(codeFromBundle.css);
           t.assert.snapshot(getWarnings(stats));
           t.assert.snapshot(getErrors(stats));
@@ -2286,7 +2168,7 @@ describe("loader", () => {
           const codeFromBundle = getCodeFromBundle(stats, compiler);
           const codeFromSass = await getCodeFromSass(testId, options);
 
-          assert.equal(codeFromBundle.css, codeFromSass.css);
+          assert.strictEqual(codeFromBundle.css, codeFromSass.css);
           t.assert.snapshot(codeFromBundle.css);
           t.assert.snapshot(getWarnings(stats));
           t.assert.snapshot(getErrors(stats));
@@ -2306,7 +2188,7 @@ describe("loader", () => {
           const codeFromBundle = getCodeFromBundle(stats, compiler);
           const codeFromSass = await getCodeFromSass(testId, options);
 
-          assert.equal(codeFromBundle.css, codeFromSass.css);
+          assert.strictEqual(codeFromBundle.css, codeFromSass.css);
           t.assert.snapshot(codeFromBundle.css);
           t.assert.snapshot(getWarnings(stats));
           t.assert.snapshot(getErrors(stats));

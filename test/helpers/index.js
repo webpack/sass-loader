@@ -1,4 +1,3 @@
-export { default as customImporter } from "./customImporter.js";
 export { default as close } from "./close.js";
 export { default as customFunctions } from "./customFunctions.js";
 export { default as compile } from "./compiler.js";

@@ -10,7 +10,6 @@ const {
   getModernWebpackImporter,
   getSassImplementation,
   getSassOptions,
-  getWebpackImporter,
   normalizeSourceMap,
 } = require("./utils");
 
@@ -38,15 +37,12 @@ async function loader(content) {
 
   const useSourceMap =
     typeof options.sourceMap === "boolean" ? options.sourceMap : this.sourceMap;
-  // Use `modern` for `dart-sass` and `sass-embedded` by default
-  const apiType = typeof options.api === "undefined" ? "modern" : options.api;
   const sassOptions = await getSassOptions(
     this,
     options,
     content,
     implementation,
     useSourceMap,
-    apiType,
   );
 
   const shouldUseWebpackImporter =
@@ -55,26 +51,16 @@ async function loader(content) {
       : true;
 
   if (shouldUseWebpackImporter) {
-    const isModernAPI = apiType === "modern" || apiType === "modern-compiler";
-
-    if (!isModernAPI) {
-      const { includePaths } = sassOptions;
-
-      sassOptions.importer.push(
-        getWebpackImporter(this, implementation, includePaths),
-      );
-    } else {
-      sassOptions.importers.push(
-        // No need to pass `loadPaths`, because modern API handle them itself
-        getModernWebpackImporter(this, implementation, []),
-      );
-    }
+    sassOptions.importers.push(
+      // No need to pass `loadPaths`, because modern API handle them itself
+      getModernWebpackImporter(this, implementation, []),
+    );
   }
 
   let compile;
 
   try {
-    compile = getCompileFn(this, implementation, apiType);
+    compile = getCompileFn(this, implementation, options.api);
   } catch (error) {
     callback(error);
     return;
@@ -85,15 +71,9 @@ async function loader(content) {
   try {
     result = await compile(sassOptions);
   } catch (error) {
-    // There are situations when the `file`/`span.url` property do not exist
-    // Modern API
+    // There are situations when the `span.url` property does not exist
     if (error.span && typeof error.span.url !== "undefined") {
       this.addDependency(url.fileURLToPath(error.span.url));
-    }
-    // Legacy API
-    else if (typeof error.file !== "undefined") {
-      // `sass` returns POSIX paths
-      this.addDependency(path.normalize(error.file));
     }
 
     callback(errorFactory(error));
@@ -101,35 +81,18 @@ async function loader(content) {
     return;
   }
 
-  let map =
-    // Modern API, then legacy API
-    result.sourceMap || (result.map ? JSON.parse(result.map) : null);
+  let map = result.sourceMap || null;
 
   // Modify source paths only for webpack, otherwise we do nothing
   if (map && useSourceMap) {
     map = normalizeSourceMap(map, this.rootContext);
   }
 
-  // Modern API
   if (typeof result.loadedUrls !== "undefined") {
     for (const includedFile of result.loadedUrls.filter(
       (loadedUrl) => loadedUrl.protocol === "file:",
     )) {
       const normalizedIncludedFile = url.fileURLToPath(includedFile);
-
-      // Custom `importer` can return only `contents` so includedFile will be relative
-      if (path.isAbsolute(normalizedIncludedFile)) {
-        this.addDependency(normalizedIncludedFile);
-      }
-    }
-  }
-  // Legacy API
-  else if (
-    typeof result.stats !== "undefined" &&
-    typeof result.stats.includedFiles !== "undefined"
-  ) {
-    for (const includedFile of result.stats.includedFiles) {
-      const normalizedIncludedFile = path.normalize(includedFile);
 
       // Custom `importer` can return only `contents` so includedFile will be relative
       if (path.isAbsolute(normalizedIncludedFile)) {

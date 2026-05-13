@@ -1,4 +1,4 @@
-import assert from "node:assert/strict";
+import assert from "node:assert";
 import { createRequire } from "node:module";
 import { describe, it } from "node:test";
 
@@ -43,8 +43,8 @@ describe("validate options", () => {
       failure: ["string"],
     },
     api: {
-      success: ["legacy", "modern", "modern-compiler"],
-      failure: ["string", true],
+      success: ["auto", "modern", "modern-compiler"],
+      failure: ["legacy", "string", true],
     },
     unknown: {
       success: [],
@@ -82,13 +82,13 @@ describe("validate options", () => {
         stats = await compile(compiler);
       } finally {
         if (type === "success") {
-          assert.equal(stats.hasErrors(), false);
+          assert.strictEqual(stats.hasErrors(), false);
         } else if (type === "failure") {
           const {
             compilation: { errors },
           } = stats;
 
-          assert.equal(errors.length, 1);
+          assert.strictEqual(errors.length, 1);
           t.assert.snapshot(
             ((fn) => {
               try {

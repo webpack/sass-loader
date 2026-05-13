@@ -1,4 +1,4 @@
-import assert from "node:assert/strict";
+import assert from "node:assert";
 import { describe, it } from "node:test";
 
 import {
@@ -35,7 +35,7 @@ describe("additionalData option", () => {
         const codeFromBundle = getCodeFromBundle(stats, compiler);
         const codeFromSass = await getCodeFromSass(testId, options);
 
-        assert.equal(codeFromBundle.css, codeFromSass.css);
+        assert.strictEqual(codeFromBundle.css, codeFromSass.css);
         t.assert.snapshot(codeFromBundle.css);
         t.assert.snapshot(getWarnings(stats));
         t.assert.snapshot(getErrors(stats));
@@ -49,8 +49,8 @@ describe("additionalData option", () => {
           implementation,
           api,
           additionalData: (content, loaderContext) => {
-            assert.notEqual(loaderContext, undefined);
-            assert.notEqual(content, undefined);
+            assert.notStrictEqual(loaderContext, undefined);
+            assert.notStrictEqual(content, undefined);
 
             return `$prepended-data: hotpink${
               syntax === "sass" ? "\n" : ";\n"
@@ -62,7 +62,7 @@ describe("additionalData option", () => {
         const codeFromBundle = getCodeFromBundle(stats, compiler);
         const codeFromSass = await getCodeFromSass(testId, options);
 
-        assert.equal(codeFromBundle.css, codeFromSass.css);
+        assert.strictEqual(codeFromBundle.css, codeFromSass.css);
         t.assert.snapshot(codeFromBundle.css);
         t.assert.snapshot(getWarnings(stats));
         t.assert.snapshot(getErrors(stats));
@@ -76,8 +76,8 @@ describe("additionalData option", () => {
           implementation,
           api,
           additionalData: async (content, loaderContext) => {
-            assert.notEqual(loaderContext, undefined);
-            assert.notEqual(content, undefined);
+            assert.notStrictEqual(loaderContext, undefined);
+            assert.notStrictEqual(content, undefined);
 
             return `$prepended-data: hotpink${
               syntax === "sass" ? "\n" : ";\n"
@@ -89,7 +89,7 @@ describe("additionalData option", () => {
         const codeFromBundle = getCodeFromBundle(stats, compiler);
         const codeFromSass = await getCodeFromSass(testId, options);
 
-        assert.equal(codeFromBundle.css, codeFromSass.css);
+        assert.strictEqual(codeFromBundle.css, codeFromSass.css);
         t.assert.snapshot(codeFromBundle.css);
         t.assert.snapshot(getWarnings(stats));
         t.assert.snapshot(getErrors(stats));

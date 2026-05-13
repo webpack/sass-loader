@@ -8,15 +8,10 @@ const SassEmbedded = require("sass-embedded");
 /** @typedef {import("../../src/index.js").EXPECTED_ANY} EXPECTED_ANY */
 
 /**
- * @returns {{ name: string, implementation: EXPECTED_ANY, api: "legacy" | "modern" | "modern-compile" }} implementations
+ * @returns {{ name: string, implementation: EXPECTED_ANY, api: "modern" | "modern-compile" }} implementations
  */
 export default function getImplementationsAndAPI() {
   return [
-    {
-      name: dartSass.info.split("\t")[0],
-      implementation: dartSass,
-      api: "legacy",
-    },
     {
       name: dartSass.info.split("\t")[0],
       implementation: dartSass,
@@ -26,11 +21,6 @@ export default function getImplementationsAndAPI() {
       name: dartSass.info.split("\t")[0],
       implementation: dartSass,
       api: "modern-compiler",
-    },
-    {
-      name: SassEmbedded.info.split("\t")[0],
-      implementation: SassEmbedded,
-      api: "legacy",
     },
     {
       name: SassEmbedded.info.split("\t")[0],

@@ -1,4 +1,4 @@
-import assert from "node:assert/strict";
+import assert from "node:assert";
 import path from "node:path";
 import { describe, it } from "node:test";
 import url from "node:url";
@@ -53,7 +53,7 @@ describe("loader", () => {
           }
         }
 
-        assert.equal(codeFromBundle.css, codeFromSass.css);
+        assert.strictEqual(codeFromBundle.css, codeFromSass.css);
         t.assert.snapshot(codeFromBundle.css);
         t.assert.snapshot(getWarnings(stats));
         t.assert.snapshot(getErrors(stats));
@@ -90,7 +90,7 @@ describe("loader", () => {
           }
         }
 
-        assert.equal(codeFromBundle.css, codeFromSass.css);
+        assert.strictEqual(codeFromBundle.css, codeFromSass.css);
         t.assert.snapshot(codeFromBundle.css);
         t.assert.snapshot(getWarnings(stats));
         t.assert.snapshot(getErrors(stats));
@@ -127,7 +127,7 @@ describe("loader", () => {
           }
         }
 
-        assert.equal(codeFromBundle.css, codeFromSass.css);
+        assert.strictEqual(codeFromBundle.css, codeFromSass.css);
         t.assert.snapshot(codeFromBundle.css);
         t.assert.snapshot(getWarnings(stats));
         t.assert.snapshot(getErrors(stats));

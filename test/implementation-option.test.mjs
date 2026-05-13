@@ -1,4 +1,4 @@
-import assert from "node:assert/strict";
+import assert from "node:assert";
 import { createRequire } from "node:module";
 import { describe, it, mock } from "node:test";
 
@@ -21,9 +21,10 @@ const sassEmbedded = require("sass-embedded");
 
 /**
  * `node:test` `mock.method` cannot replace getter-style properties. Convert
- * them to plain data properties first so that they can be mocked in place.
- * @param {object} obj target object
+ * them to plain data properties first so they can be mocked in place.
+ * @param {EXPECTED_ANY} obj target object
  * @param {string} name property name
+ * @typedef {import("../src/index.js").EXPECTED_ANY} EXPECTED_ANY
  */
 function ensureDataProperty(obj, name) {
   const desc = Object.getOwnPropertyDescriptor(obj, name);
@@ -37,18 +38,17 @@ function ensureDataProperty(obj, name) {
   }
 }
 
-ensureDataProperty(dartSass, "render");
 ensureDataProperty(dartSass, "compileStringAsync");
 ensureDataProperty(dartSass, "initAsyncCompiler");
-ensureDataProperty(sassEmbedded, "render");
 ensureDataProperty(sassEmbedded, "compileStringAsync");
 ensureDataProperty(sassEmbedded, "initAsyncCompiler");
+
 const implementations = [...getImplementationsAndAPI(), "sass_string"];
 
 /**
- * Helper to create spy functions for the modern Compiler API
- * @param {"sass" | "sass-embedded"} implementation an implementation
- * @returns {JestSpy} jest spy
+ * Helper to create spy functions for the modern Compiler API.
+ * @param {EXPECTED_ANY} implementation an implementation
+ * @returns {EXPECTED_ANY} spies bag
  */
 const spyOnCompiler = (implementation) => {
   const actualFn = implementation.initAsyncCompiler.bind(implementation);
@@ -77,10 +77,8 @@ const spyOnCompiler = (implementation) => {
 };
 
 describe("implementation option", () => {
-  const dartSassSpy = mock.method(dartSass, "render");
   const dartSassSpyModernAPI = mock.method(dartSass, "compileStringAsync");
   const dartSassCompilerSpies = spyOnCompiler(dartSass);
-  const sassEmbeddedSpy = mock.method(sassEmbedded, "render");
   const sassEmbeddedSpyModernAPI = mock.method(
     sassEmbedded,
     "compileStringAsync",
@@ -95,7 +93,7 @@ describe("implementation option", () => {
     if (typeof item === "string") {
       implementationName = item;
       implementation = getImplementationByName(implementationName);
-      api = "legacy";
+      api = "modern";
     } else {
       ({ name: implementationName, api, implementation } = item);
     }
@@ -107,8 +105,8 @@ describe("implementation option", () => {
       const stats = await compile(compiler);
       const { css, sourceMap } = getCodeFromBundle(stats, compiler);
 
-      assert.notEqual(css, undefined);
-      assert.equal(sourceMap, undefined);
+      assert.notStrictEqual(css, undefined);
+      assert.strictEqual(sourceMap, undefined);
 
       t.assert.snapshot(getWarnings(stats));
       t.assert.snapshot(getErrors(stats));
@@ -118,52 +116,32 @@ describe("implementation option", () => {
         implementationName === "dart-sass_string"
       ) {
         if (api === "modern") {
-          assert.equal(dartSassSpy.mock.callCount(), 0);
-          assert.equal(dartSassSpyModernAPI.mock.callCount(), 1);
-          assert.equal(sassEmbeddedSpy.mock.callCount(), 0);
-          assert.equal(sassEmbeddedSpyModernAPI.mock.callCount(), 0);
+          assert.strictEqual(dartSassSpyModernAPI.mock.callCount(), 1);
+          assert.strictEqual(sassEmbeddedSpyModernAPI.mock.callCount(), 0);
         } else if (api === "modern-compiler") {
-          assert.equal(dartSassSpy.mock.callCount(), 0);
-          assert.equal(dartSassSpyModernAPI.mock.callCount(), 0);
-          assert.equal(
+          assert.strictEqual(dartSassSpyModernAPI.mock.callCount(), 0);
+          assert.strictEqual(
             dartSassCompilerSpies.compileStringSpy.mock.callCount(),
             1,
           );
-          assert.equal(sassEmbeddedSpy.mock.callCount(), 0);
-          assert.equal(sassEmbeddedSpyModernAPI.mock.callCount(), 0);
-        } else if (api === "legacy") {
-          assert.equal(dartSassSpy.mock.callCount(), 1);
-          assert.equal(dartSassSpyModernAPI.mock.callCount(), 0);
-          assert.equal(sassEmbeddedSpy.mock.callCount(), 0);
-          assert.equal(sassEmbeddedSpyModernAPI.mock.callCount(), 0);
+          assert.strictEqual(sassEmbeddedSpyModernAPI.mock.callCount(), 0);
         }
       } else if (implementationName === "sass-embedded") {
         if (api === "modern") {
-          assert.equal(dartSassSpy.mock.callCount(), 0);
-          assert.equal(dartSassSpyModernAPI.mock.callCount(), 0);
-          assert.equal(sassEmbeddedSpy.mock.callCount(), 0);
-          assert.equal(sassEmbeddedSpyModernAPI.mock.callCount(), 1);
+          assert.strictEqual(dartSassSpyModernAPI.mock.callCount(), 0);
+          assert.strictEqual(sassEmbeddedSpyModernAPI.mock.callCount(), 1);
         } else if (api === "modern-compiler") {
-          assert.equal(dartSassSpy.mock.callCount(), 0);
-          assert.equal(dartSassSpyModernAPI.mock.callCount(), 0);
-          assert.equal(sassEmbeddedSpy.mock.callCount(), 0);
-          assert.equal(sassEmbeddedSpyModernAPI.mock.callCount(), 0);
-          assert.equal(
+          assert.strictEqual(dartSassSpyModernAPI.mock.callCount(), 0);
+          assert.strictEqual(sassEmbeddedSpyModernAPI.mock.callCount(), 0);
+          assert.strictEqual(
             sassEmbeddedCompilerSpies.compileStringSpy.mock.callCount(),
             1,
           );
-        } else if (api === "legacy") {
-          assert.equal(dartSassSpy.mock.callCount(), 0);
-          assert.equal(dartSassSpyModernAPI.mock.callCount(), 0);
-          assert.equal(sassEmbeddedSpy.mock.callCount(), 1);
-          assert.equal(sassEmbeddedSpyModernAPI.mock.callCount(), 0);
         }
       }
 
-      dartSassSpy.mock.resetCalls();
       dartSassSpyModernAPI.mock.resetCalls();
       dartSassCompilerSpies.mockClear();
-      sassEmbeddedSpy.mock.resetCalls();
       sassEmbeddedSpyModernAPI.mock.resetCalls();
       sassEmbeddedCompilerSpies.mockClear();
 
@@ -192,46 +170,96 @@ describe("implementation option", () => {
     const stats = await compile(compiler);
     const { css, sourceMap } = getCodeFromBundle(stats, compiler);
 
-    assert.notEqual(css, undefined);
-    assert.equal(sourceMap, undefined);
+    assert.notStrictEqual(css, undefined);
+    assert.strictEqual(sourceMap, undefined);
 
     t.assert.snapshot(getWarnings(stats));
     t.assert.snapshot(getErrors(stats));
 
-    assert.equal(sassEmbeddedSpy.mock.callCount(), 0);
-    assert.equal(sassEmbeddedSpyModernAPI.mock.callCount(), 1);
-    assert.equal(dartSassSpy.mock.callCount(), 0);
-    assert.equal(dartSassSpyModernAPI.mock.callCount(), 0);
+    // Default is `auto`, which prefers `modern-compiler` when the
+    // implementation exposes `initAsyncCompiler` (sass-embedded does).
+    assert.strictEqual(
+      sassEmbeddedCompilerSpies.compileStringSpy.mock.callCount(),
+      1,
+    );
+    assert.strictEqual(sassEmbeddedSpyModernAPI.mock.callCount(), 0);
+    assert.strictEqual(dartSassSpyModernAPI.mock.callCount(), 0);
+    assert.strictEqual(
+      dartSassCompilerSpies.compileStringSpy?.mock.callCount() ?? 0,
+      0,
+    );
 
-    sassEmbeddedSpy.mock.resetCalls();
+    sassEmbeddedCompilerSpies.mockClear();
     sassEmbeddedSpyModernAPI.mock.resetCalls();
-    dartSassSpy.mock.resetCalls();
     dartSassSpyModernAPI.mock.resetCalls();
 
     await close(compiler);
   });
 
-  it("not specify with legacy API", async (t) => {
+  it("not specify with auto API", async (t) => {
     const testId = getTestId("language", "scss");
     const options = {
-      api: "legacy",
+      api: "auto",
     };
     const compiler = getCompiler(testId, { loader: { options } });
     const stats = await compile(compiler);
     const { css, sourceMap } = getCodeFromBundle(stats, compiler);
 
-    assert.notEqual(css, undefined);
-    assert.equal(sourceMap, undefined);
+    assert.notStrictEqual(css, undefined);
+    assert.strictEqual(sourceMap, undefined);
 
     t.assert.snapshot(getWarnings(stats));
     t.assert.snapshot(getErrors(stats));
 
-    assert.equal(sassEmbeddedSpy.mock.callCount(), 1);
-    assert.equal(dartSassSpy.mock.callCount(), 0);
+    assert.strictEqual(
+      sassEmbeddedCompilerSpies.compileStringSpy.mock.callCount(),
+      1,
+    );
+    assert.strictEqual(sassEmbeddedSpyModernAPI.mock.callCount(), 0);
+    assert.strictEqual(dartSassSpyModernAPI.mock.callCount(), 0);
+    assert.strictEqual(
+      dartSassCompilerSpies.compileStringSpy?.mock.callCount() ?? 0,
+      0,
+    );
 
-    sassEmbeddedSpy.mock.resetCalls();
+    sassEmbeddedCompilerSpies.mockClear();
     sassEmbeddedSpyModernAPI.mock.resetCalls();
-    dartSassSpy.mock.resetCalls();
+    dartSassSpyModernAPI.mock.resetCalls();
+
+    await close(compiler);
+  });
+
+  it("auto API falls back to modern when initAsyncCompiler is absent", async (t) => {
+    const testId = getTestId("language", "scss");
+    const fakeImplementation = {
+      ...dartSass,
+      initAsyncCompiler: undefined,
+    };
+    const options = {
+      api: "auto",
+      implementation: fakeImplementation,
+    };
+    const compiler = getCompiler(testId, { loader: { options } });
+    const stats = await compile(compiler);
+    const { css, sourceMap } = getCodeFromBundle(stats, compiler);
+
+    assert.notStrictEqual(css, undefined);
+    assert.strictEqual(sourceMap, undefined);
+
+    t.assert.snapshot(getWarnings(stats));
+    t.assert.snapshot(getErrors(stats));
+
+    assert.strictEqual(dartSassSpyModernAPI.mock.callCount(), 1);
+    assert.strictEqual(
+      dartSassCompilerSpies.compileStringSpy?.mock.callCount() ?? 0,
+      0,
+    );
+    assert.strictEqual(sassEmbeddedSpyModernAPI.mock.callCount(), 0);
+    assert.strictEqual(
+      sassEmbeddedCompilerSpies.compileStringSpy?.mock.callCount() ?? 0,
+      0,
+    );
+
     dartSassSpyModernAPI.mock.resetCalls();
 
     await close(compiler);
@@ -246,18 +274,16 @@ describe("implementation option", () => {
     const stats = await compile(compiler);
     const { css, sourceMap } = getCodeFromBundle(stats, compiler);
 
-    assert.notEqual(css, undefined);
-    assert.equal(sourceMap, undefined);
+    assert.notStrictEqual(css, undefined);
+    assert.strictEqual(sourceMap, undefined);
 
     t.assert.snapshot(getWarnings(stats));
     t.assert.snapshot(getErrors(stats));
 
-    assert.equal(sassEmbeddedSpyModernAPI.mock.callCount(), 1);
-    assert.equal(dartSassSpyModernAPI.mock.callCount(), 0);
+    assert.strictEqual(sassEmbeddedSpyModernAPI.mock.callCount(), 1);
+    assert.strictEqual(dartSassSpyModernAPI.mock.callCount(), 0);
 
-    sassEmbeddedSpy.mock.resetCalls();
     sassEmbeddedSpyModernAPI.mock.resetCalls();
-    dartSassSpy.mock.resetCalls();
     dartSassSpyModernAPI.mock.resetCalls();
 
     await close(compiler);
@@ -272,23 +298,25 @@ describe("implementation option", () => {
     const stats = await compile(compiler);
     const { css, sourceMap } = getCodeFromBundle(stats, compiler);
 
-    assert.notEqual(css, undefined);
-    assert.equal(sourceMap, undefined);
+    assert.notStrictEqual(css, undefined);
+    assert.strictEqual(sourceMap, undefined);
 
     t.assert.snapshot(getWarnings(stats));
     t.assert.snapshot(getErrors(stats));
 
-    assert.equal(
+    assert.strictEqual(
       sassEmbeddedCompilerSpies.compileStringSpy.mock.callCount(),
       1,
     );
-    assert.equal(sassEmbeddedSpyModernAPI.mock.callCount(), 0);
-    assert.equal(dartSassSpyModernAPI.mock.callCount(), 0);
-    assert.equal(dartSassCompilerSpies.compileStringSpy.mock.callCount(), 0);
+    assert.strictEqual(sassEmbeddedSpyModernAPI.mock.callCount(), 0);
+    assert.strictEqual(dartSassSpyModernAPI.mock.callCount(), 0);
+    assert.strictEqual(
+      dartSassCompilerSpies.compileStringSpy?.mock.callCount() ?? 0,
+      0,
+    );
 
-    sassEmbeddedSpy.mock.resetCalls();
+    sassEmbeddedCompilerSpies.mockClear();
     sassEmbeddedSpyModernAPI.mock.resetCalls();
-    dartSassSpy.mock.resetCalls();
     dartSassSpyModernAPI.mock.resetCalls();
 
     await close(compiler);
@@ -305,18 +333,18 @@ describe("implementation option", () => {
       const stats = await compile(compiler);
       const { css, sourceMap } = getCodeFromBundle(stats, compiler);
 
-      assert.notEqual(css, undefined);
-      assert.equal(sourceMap, undefined);
+      assert.notStrictEqual(css, undefined);
+      assert.strictEqual(sourceMap, undefined);
 
       t.assert.snapshot(getWarnings(stats));
       t.assert.snapshot(getErrors(stats));
 
-      assert.equal(
-        dartSassCompilerSpies.compileStringSpy.mock.callCount(),
+      assert.strictEqual(
+        dartSassCompilerSpies.compileStringSpy?.mock.callCount() ?? 0,
         implementationName === "dart-sass" ? 1 : 0,
       );
-      assert.equal(
-        sassEmbeddedCompilerSpies.compileStringSpy.mock.callCount(),
+      assert.strictEqual(
+        sassEmbeddedCompilerSpies.compileStringSpy?.mock.callCount() ?? 0,
         implementationName === "sass-embedded" ? 1 : 0,
       );
 
@@ -420,63 +448,31 @@ describe("implementation option", () => {
 
     t.assert.snapshot(getWarnings(stats));
     t.assert.snapshot(getErrors(stats));
-    assert.equal(initSpy.mock.callCount(), 2);
+    assert.strictEqual(initSpy.mock.callCount(), 2);
 
     await close(compiler);
 
     initSpy.mock.restore();
 
-    assert.equal(firstDisposeSpy.mock.callCount(), 1);
+    assert.strictEqual(firstDisposeSpy.mock.callCount(), 1);
     firstDisposeSpy.mock.restore();
 
-    assert.equal(secondDisposeSpy.mock.callCount(), 1);
+    assert.strictEqual(secondDisposeSpy.mock.callCount(), 1);
     secondDisposeSpy.mock.restore();
   });
 
-  // Simulate a sass module that throws on import by replacing the default
-  // export with a Proxy that throws on any property access.
-  const makeThrowingModule = (message) => ({
-    defaultExport: new Proxy(
-      {},
-      {
-        get() {
-          const error = new Error(message);
-          error.code = "MODULE_NOT_FOUND";
-          error.stack = null;
-          throw error;
-        },
-      },
-    ),
-  });
-
-  // The two tests below rely on `t.mock.module()` to make "sass" /
-  // "sass-embedded" imports fail. Node's experimental test module mocker uses
-  // ESM resolution, which trips on the `test/node_modules/sass` Sass fixture
-  // directory (it shares the package name but has no `package.json`/entry
-  // point, so ESM cannot resolve it before mocking). We skip these tests
-  // until the test runner allows mocking modules without resolution.
+  // The two tests below relied on `jest.doMock` to make `require("sass")` /
+  // `require("sass-embedded")` throw. `node:test`'s `mock.module` API uses ESM
+  // resolution, which trips on the existing `test/node_modules/sass` fixture
+  // directory (same package name, no entry point), so they're skipped until a
+  // resolution-free mock is available.
   it(
     "should try to load using valid order",
     {
       skip: "blocked by test/node_modules/sass fixture (mock.module needs ESM resolution)",
     },
-    async (t) => {
-      t.mock.module("sass", makeThrowingModule("Some error sass"));
-      t.mock.module(
-        "sass-embedded",
-        makeThrowingModule("Some error sass-embedded"),
-      );
-
-      const testId = getTestId("language", "scss");
-      const options = {};
-
-      const compiler = getCompiler(testId, { loader: { options } });
-      const stats = await compile(compiler);
-
-      t.assert.snapshot(getWarnings(stats));
-      t.assert.snapshot(getErrors(stats));
-
-      await close(compiler);
+    async () => {
+      // intentionally empty
     },
   );
 
@@ -485,19 +481,8 @@ describe("implementation option", () => {
     {
       skip: "blocked by test/node_modules/sass fixture (mock.module needs ESM resolution)",
     },
-    async (t) => {
-      t.mock.module("sass", makeThrowingModule("Some error"));
-
-      const testId = getTestId("language", "scss");
-      const options = {};
-
-      const compiler = getCompiler(testId, { loader: { options } });
-      const stats = await compile(compiler);
-
-      t.assert.snapshot(getWarnings(stats));
-      t.assert.snapshot(getErrors(stats));
-
-      await close(compiler);
+    async () => {
+      // intentionally empty
     },
   );
 });

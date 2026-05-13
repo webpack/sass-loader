@@ -2,12 +2,16 @@ exports[`validate options > should throw an error on the \"additionalData\" opti
 "Invalid options object. Sass Loader has been initialized using an options object that does not match the API schema.\\n - options.additionalData should be one of these:\\n   string | function\\n   -> Prepends/Appends \`Sass\`/\`SCSS\` code before the actual entry file.\\n   -> Read more at https://github.com/webpack/sass-loader#additionaldata\\n   Details:\\n    * options.additionalData should be a string.\\n    * options.additionalData should be an instance of function."
 `;
 
+exports[`validate options > should throw an error on the \"api\" option with \"legacy\" value 1`] = `
+"Invalid options object. Sass Loader has been initialized using an options object that does not match the API schema.\\n - options.api should be one of these:\\n   \\"auto\\" | \\"modern\\" | \\"modern-compiler\\"\\n   -> Switch between \`auto\`, \`modern\` and \`modern-compiler\` API for \`sass\` (\`Dart Sass\`) and \`Sass Embedded\` implementations.\\n   -> Read more at https://github.com/webpack/sass-loader#sassoptions"
+`;
+
 exports[`validate options > should throw an error on the \"api\" option with \"string\" value 1`] = `
-"Invalid options object. Sass Loader has been initialized using an options object that does not match the API schema.\\n - options.api should be one of these:\\n   \\"legacy\\" | \\"modern\\" | \\"modern-compiler\\"\\n   -> Switch between old and modern API for \`sass\` (\`Dart Sass\`) and \`Sass Embedded\` implementations.\\n   -> Read more at https://github.com/webpack/sass-loader#sassoptions"
+"Invalid options object. Sass Loader has been initialized using an options object that does not match the API schema.\\n - options.api should be one of these:\\n   \\"auto\\" | \\"modern\\" | \\"modern-compiler\\"\\n   -> Switch between \`auto\`, \`modern\` and \`modern-compiler\` API for \`sass\` (\`Dart Sass\`) and \`Sass Embedded\` implementations.\\n   -> Read more at https://github.com/webpack/sass-loader#sassoptions"
 `;
 
 exports[`validate options > should throw an error on the \"api\" option with \"true\" value 1`] = `
-"Invalid options object. Sass Loader has been initialized using an options object that does not match the API schema.\\n - options.api should be one of these:\\n   \\"legacy\\" | \\"modern\\" | \\"modern-compiler\\"\\n   -> Switch between old and modern API for \`sass\` (\`Dart Sass\`) and \`Sass Embedded\` implementations.\\n   -> Read more at https://github.com/webpack/sass-loader#sassoptions"
+"Invalid options object. Sass Loader has been initialized using an options object that does not match the API schema.\\n - options.api should be one of these:\\n   \\"auto\\" | \\"modern\\" | \\"modern-compiler\\"\\n   -> Switch between \`auto\`, \`modern\` and \`modern-compiler\` API for \`sass\` (\`Dart Sass\`) and \`Sass Embedded\` implementations.\\n   -> Read more at https://github.com/webpack/sass-loader#sassoptions"
 `;
 
 exports[`validate options > should throw an error on the \"implementation\" option with \"() => {}\" value 1`] = `
