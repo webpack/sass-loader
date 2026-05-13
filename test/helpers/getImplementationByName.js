@@ -4,13 +4,16 @@ const require = createRequire(import.meta.url);
 
 /**
  * @param {"dart-sass" | "sass" | "sass-embedded"} implementationName implementation name
- * @returns {SassImplementation} a sass implementation
+ * @returns {Promise<SassImplementation>} a sass implementation
  */
-function getImplementationByName(implementationName) {
+async function getImplementationByName(implementationName) {
   if (implementationName === "dart-sass") {
     return require("sass");
   } else if (implementationName === "sass-embedded") {
-    return require("sass-embedded");
+    // Match the loader's `await import("sass-embedded")` so tests and loader
+    // hold the same module instance (CJS and ESM builds are cached
+    // separately).
+    return (await import("sass-embedded")).default;
   } else if (implementationName === "sass_string") {
     return require.resolve("sass");
   }

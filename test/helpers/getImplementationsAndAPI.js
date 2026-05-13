@@ -3,7 +3,10 @@ import { createRequire } from "node:module";
 const require = createRequire(import.meta.url);
 
 const dartSass = require("sass");
-const SassEmbedded = require("sass-embedded");
+
+// Match the loader's `await import("sass-embedded")` so tests and loader
+// hold the same module instance (CJS and ESM builds are cached separately).
+const SassEmbedded = (await import("sass-embedded")).default;
 
 /** @typedef {import("../../src/index.js").EXPECTED_ANY} EXPECTED_ANY */
 

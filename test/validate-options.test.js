@@ -81,7 +81,7 @@ describe("validate options", () => {
       const compiler = getCompiler(testId, {
         loader: {
           options: {
-            implementation: getImplementationByName("dart-sass"),
+            implementation: await getImplementationByName("dart-sass"),
             [key]: value,
           },
         },

@@ -12,13 +12,28 @@ import url from "node:url";
 /** @typedef {Record<string, EXPECTED_ANY>} LoaderOptions */
 
 /**
+ * @param {string} specifier import specifier
+ * @returns {Promise<Sass | SassEmbedded>} resolved module
+ */
+async function dynamicImport(specifier) {
+  const mod = await import(specifier);
+
+  // ESM imports of CJS files surface the module via `.default`; real
+  // ESM modules either set `.default` to the same shape (sass) or
+  // expose their members directly (sass-embedded sets __esModule on
+  // its CJS exports, so Node passes it through unwrapped). Falling
+  // back to the namespace handles both.
+  return mod.default ?? mod;
+}
+
+/**
  * @returns {Promise<Sass | SassEmbedded>} sass implementation
  */
 async function getDefaultSassImplementation() {
   try {
-    return await import("sass-embedded");
+    return await dynamicImport("sass-embedded");
   } catch {
-    return await import("sass");
+    return await dynamicImport("sass");
   }
 }
 
@@ -36,7 +51,7 @@ async function getSassImplementation(loaderContext, implementation) {
   }
 
   if (typeof resolvedImplementation === "string") {
-    resolvedImplementation = await import(resolvedImplementation);
+    resolvedImplementation = await dynamicImport(resolvedImplementation);
   }
 
   const { info } = resolvedImplementation;

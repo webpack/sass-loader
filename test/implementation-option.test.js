@@ -17,7 +17,12 @@ import {
 const require = createRequire(import.meta.url);
 
 const dartSass = require("sass");
-const sassEmbedded = require("sass-embedded");
+
+// Use dynamic ESM import for `sass-embedded` so the test holds the same
+// module instance the loader picks up via `await import(...)`. The CJS and
+// ESM builds in the `exports` field are loaded as separate instances by
+// Node, so a `require()`-based reference would mock a different copy.
+const sassEmbedded = (await import("sass-embedded")).default;
 
 /**
  * `node:test` `mock.method` cannot replace getter-style properties. Convert
@@ -43,7 +48,14 @@ ensureDataProperty(dartSass, "initAsyncCompiler");
 ensureDataProperty(sassEmbedded, "compileStringAsync");
 ensureDataProperty(sassEmbedded, "initAsyncCompiler");
 
-const implementations = [...getImplementationsAndAPI(), "sass_string"];
+const implementations = [
+  ...getImplementationsAndAPI(),
+  {
+    name: "sass_string",
+    implementation: await getImplementationByName("sass_string"),
+    api: "modern",
+  },
+];
 
 /**
  * Helper to create spy functions for the modern Compiler API.
@@ -86,17 +98,7 @@ describe("implementation option", () => {
   const sassEmbeddedCompilerSpies = spyOnCompiler(sassEmbedded);
 
   for (const item of implementations) {
-    let implementationName;
-    let implementation;
-    let api;
-
-    if (typeof item === "string") {
-      implementationName = item;
-      implementation = getImplementationByName(implementationName);
-      api = "modern";
-    } else {
-      ({ name: implementationName, api, implementation } = item);
-    }
+    const { name: implementationName, api, implementation } = item;
 
     it(`'${implementationName}', '${api}' API`, async (t) => {
       const testId = getTestId("language", "scss");
@@ -327,7 +329,7 @@ describe("implementation option", () => {
       const testId = getTestId("language", "scss");
       const options = {
         api: "modern-compiler",
-        implementation: getImplementationByName(implementationName),
+        implementation: await getImplementationByName(implementationName),
       };
       const compiler = getCompiler(testId, { loader: { options } });
       const stats = await compile(compiler);

@@ -4,7 +4,7 @@ exports[`loader > should emit good formatted warning ('dart-sass', 'modern' API,
 
 exports[`loader > should emit good formatted warning ('dart-sass', 'modern' API, 'sass' syntax) 2`] = `
 [
-  "ModuleWarning: Module Warning (from ../dist/cjs/index.js):\\nWarning on line 5, column 3 of file:///test/sass/broken.sass:5:3:\\nThis selector doesn't have any properties and won't be rendered.\\n\\n5 |    asdf\\n\\n\\ntest/sass/broken.sass 6:4  root stylesheet\\n"
+  "ModuleWarning: Module Warning (from ../src/index.js):\\nWarning on line 5, column 3 of file:///test/sass/broken.sass:5:3:\\nThis selector doesn't have any properties and won't be rendered.\\n\\n5 |    asdf\\n\\n\\ntest/sass/broken.sass 6:4  root stylesheet\\n"
 ]
 `;
 
@@ -22,7 +22,7 @@ exports[`loader > should emit good formatted warning ('dart-sass', 'modern-compi
 
 exports[`loader > should emit good formatted warning ('dart-sass', 'modern-compiler' API, 'sass' syntax) 2`] = `
 [
-  "ModuleWarning: Module Warning (from ../dist/cjs/index.js):\\nWarning on line 5, column 3 of file:///test/sass/broken.sass:5:3:\\nThis selector doesn't have any properties and won't be rendered.\\n\\n5 |    asdf\\n\\n\\ntest/sass/broken.sass 6:4  root stylesheet\\n"
+  "ModuleWarning: Module Warning (from ../src/index.js):\\nWarning on line 5, column 3 of file:///test/sass/broken.sass:5:3:\\nThis selector doesn't have any properties and won't be rendered.\\n\\n5 |    asdf\\n\\n\\ntest/sass/broken.sass 6:4  root stylesheet\\n"
 ]
 `;
 
@@ -40,7 +40,7 @@ exports[`loader > should emit good formatted warning ('sass-embedded', 'modern' 
 
 exports[`loader > should emit good formatted warning ('sass-embedded', 'modern' API, 'sass' syntax) 2`] = `
 [
-  "ModuleWarning: Module Warning (from ../dist/cjs/index.js):\\nWarning on line 5, column 3 of file:///test/sass/broken.sass:5:3:\\nThis selector doesn't have any properties and won't be rendered.\\n\\n5 |    asdf\\n\\n\\n../../../../test/sass/broken.sass 6:4  root stylesheet\\n"
+  "ModuleWarning: Module Warning (from ../src/index.js):\\nWarning on line 5, column 3 of file:///test/sass/broken.sass:5:3:\\nThis selector doesn't have any properties and won't be rendered.\\n\\n5 |    asdf\\n\\n\\n../../../../test/sass/broken.sass 6:4  root stylesheet\\n"
 ]
 `;
 
@@ -58,7 +58,7 @@ exports[`loader > should emit good formatted warning ('sass-embedded', 'modern-c
 
 exports[`loader > should emit good formatted warning ('sass-embedded', 'modern-compiler' API, 'sass' syntax) 2`] = `
 [
-  "ModuleWarning: Module Warning (from ../dist/cjs/index.js):\\nWarning on line 5, column 3 of file:///test/sass/broken.sass:5:3:\\nThis selector doesn't have any properties and won't be rendered.\\n\\n5 |    asdf\\n\\n\\n../../../../test/sass/broken.sass 6:4  root stylesheet\\n"
+  "ModuleWarning: Module Warning (from ../src/index.js):\\nWarning on line 5, column 3 of file:///test/sass/broken.sass:5:3:\\nThis selector doesn't have any properties and won't be rendered.\\n\\n5 |    asdf\\n\\n\\n../../../../test/sass/broken.sass 6:4  root stylesheet\\n"
 ]
 `;
 
@@ -76,7 +76,7 @@ exports[`loader > should emit warning by default ('dart-sass', 'modern' API, 'sa
 
 exports[`loader > should emit warning by default ('dart-sass', 'modern' API, 'sass' syntax) 2`] = `
 [
-  "ModuleWarning: Module Warning (from ../dist/cjs/index.js):\\nMy warning message"
+  "ModuleWarning: Module Warning (from ../src/index.js):\\nMy warning message"
 ]
 `;
 
@@ -103,7 +103,7 @@ exports[`loader > should emit warning by default ('dart-sass', 'modern' API, 'sc
 
 exports[`loader > should emit warning by default ('dart-sass', 'modern' API, 'scss' syntax) 2`] = `
 [
-  "ModuleWarning: Module Warning (from ../dist/cjs/index.js):\\nMy warning message"
+  "ModuleWarning: Module Warning (from ../src/index.js):\\nMy warning message"
 ]
 `;
 
@@ -130,7 +130,7 @@ exports[`loader > should emit warning by default ('dart-sass', 'modern-compiler'
 
 exports[`loader > should emit warning by default ('dart-sass', 'modern-compiler' API, 'sass' syntax) 2`] = `
 [
-  "ModuleWarning: Module Warning (from ../dist/cjs/index.js):\\nMy warning message"
+  "ModuleWarning: Module Warning (from ../src/index.js):\\nMy warning message"
 ]
 `;
 
@@ -157,7 +157,7 @@ exports[`loader > should emit warning by default ('dart-sass', 'modern-compiler'
 
 exports[`loader > should emit warning by default ('dart-sass', 'modern-compiler' API, 'scss' syntax) 2`] = `
 [
-  "ModuleWarning: Module Warning (from ../dist/cjs/index.js):\\nMy warning message"
+  "ModuleWarning: Module Warning (from ../src/index.js):\\nMy warning message"
 ]
 `;
 
@@ -184,7 +184,7 @@ exports[`loader > should emit warning by default ('sass-embedded', 'modern' API,
 
 exports[`loader > should emit warning by default ('sass-embedded', 'modern' API, 'sass' syntax) 2`] = `
 [
-  "ModuleWarning: Module Warning (from ../dist/cjs/index.js):\\nMy warning message"
+  "ModuleWarning: Module Warning (from ../src/index.js):\\nMy warning message"
 ]
 `;
 
@@ -211,7 +211,7 @@ exports[`loader > should emit warning by default ('sass-embedded', 'modern' API,
 
 exports[`loader > should emit warning by default ('sass-embedded', 'modern' API, 'scss' syntax) 2`] = `
 [
-  "ModuleWarning: Module Warning (from ../dist/cjs/index.js):\\nMy warning message"
+  "ModuleWarning: Module Warning (from ../src/index.js):\\nMy warning message"
 ]
 `;
 
@@ -238,7 +238,7 @@ exports[`loader > should emit warning by default ('sass-embedded', 'modern-compi
 
 exports[`loader > should emit warning by default ('sass-embedded', 'modern-compiler' API, 'sass' syntax) 2`] = `
 [
-  "ModuleWarning: Module Warning (from ../dist/cjs/index.js):\\nMy warning message"
+  "ModuleWarning: Module Warning (from ../src/index.js):\\nMy warning message"
 ]
 `;
 
@@ -265,7 +265,7 @@ exports[`loader > should emit warning by default ('sass-embedded', 'modern-compi
 
 exports[`loader > should emit warning by default ('sass-embedded', 'modern-compiler' API, 'scss' syntax) 2`] = `
 [
-  "ModuleWarning: Module Warning (from ../dist/cjs/index.js):\\nMy warning message"
+  "ModuleWarning: Module Warning (from ../src/index.js):\\nMy warning message"
 ]
 `;
 
@@ -292,7 +292,7 @@ exports[`loader > should emit warning when 'true' used ('dart-sass', 'modern' AP
 
 exports[`loader > should emit warning when 'true' used ('dart-sass', 'modern' API, 'sass' syntax) 2`] = `
 [
-  "ModuleWarning: Module Warning (from ../dist/cjs/index.js):\\nMy warning message"
+  "ModuleWarning: Module Warning (from ../src/index.js):\\nMy warning message"
 ]
 `;
 
@@ -319,7 +319,7 @@ exports[`loader > should emit warning when 'true' used ('dart-sass', 'modern' AP
 
 exports[`loader > should emit warning when 'true' used ('dart-sass', 'modern' API, 'scss' syntax) 2`] = `
 [
-  "ModuleWarning: Module Warning (from ../dist/cjs/index.js):\\nMy warning message"
+  "ModuleWarning: Module Warning (from ../src/index.js):\\nMy warning message"
 ]
 `;
 
@@ -346,7 +346,7 @@ exports[`loader > should emit warning when 'true' used ('dart-sass', 'modern-com
 
 exports[`loader > should emit warning when 'true' used ('dart-sass', 'modern-compiler' API, 'sass' syntax) 2`] = `
 [
-  "ModuleWarning: Module Warning (from ../dist/cjs/index.js):\\nMy warning message"
+  "ModuleWarning: Module Warning (from ../src/index.js):\\nMy warning message"
 ]
 `;
 
@@ -373,7 +373,7 @@ exports[`loader > should emit warning when 'true' used ('dart-sass', 'modern-com
 
 exports[`loader > should emit warning when 'true' used ('dart-sass', 'modern-compiler' API, 'scss' syntax) 2`] = `
 [
-  "ModuleWarning: Module Warning (from ../dist/cjs/index.js):\\nMy warning message"
+  "ModuleWarning: Module Warning (from ../src/index.js):\\nMy warning message"
 ]
 `;
 
@@ -400,7 +400,7 @@ exports[`loader > should emit warning when 'true' used ('sass-embedded', 'modern
 
 exports[`loader > should emit warning when 'true' used ('sass-embedded', 'modern' API, 'sass' syntax) 2`] = `
 [
-  "ModuleWarning: Module Warning (from ../dist/cjs/index.js):\\nMy warning message"
+  "ModuleWarning: Module Warning (from ../src/index.js):\\nMy warning message"
 ]
 `;
 
@@ -427,7 +427,7 @@ exports[`loader > should emit warning when 'true' used ('sass-embedded', 'modern
 
 exports[`loader > should emit warning when 'true' used ('sass-embedded', 'modern' API, 'scss' syntax) 2`] = `
 [
-  "ModuleWarning: Module Warning (from ../dist/cjs/index.js):\\nMy warning message"
+  "ModuleWarning: Module Warning (from ../src/index.js):\\nMy warning message"
 ]
 `;
 
@@ -454,7 +454,7 @@ exports[`loader > should emit warning when 'true' used ('sass-embedded', 'modern
 
 exports[`loader > should emit warning when 'true' used ('sass-embedded', 'modern-compiler' API, 'sass' syntax) 2`] = `
 [
-  "ModuleWarning: Module Warning (from ../dist/cjs/index.js):\\nMy warning message"
+  "ModuleWarning: Module Warning (from ../src/index.js):\\nMy warning message"
 ]
 `;
 
@@ -481,7 +481,7 @@ exports[`loader > should emit warning when 'true' used ('sass-embedded', 'modern
 
 exports[`loader > should emit warning when 'true' used ('sass-embedded', 'modern-compiler' API, 'scss' syntax) 2`] = `
 [
-  "ModuleWarning: Module Warning (from ../dist/cjs/index.js):\\nMy warning message"
+  "ModuleWarning: Module Warning (from ../src/index.js):\\nMy warning message"
 ]
 `;
 

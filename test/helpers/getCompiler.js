@@ -21,7 +21,7 @@ const module = (config) => ({
           loader: path.join(__dirname, "./testLoader.cjs"),
         },
         {
-          loader: path.join(__dirname, "../../dist/cjs/index.js"),
+          loader: path.join(__dirname, "../../src/index.js"),
           options: (config.loader && config.loader.options) || {},
         },
       ],

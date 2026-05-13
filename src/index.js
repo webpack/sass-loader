@@ -1,7 +1,7 @@
 import path from "node:path";
 import url from "node:url";
 
-import schema from "./options.js";
+import schema from "./options.json" with { type: "json" };
 import {
   errorFactory,
   getCompileFn,

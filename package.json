@@ -35,7 +35,7 @@
     "clean": "del-cli dist",
     "prebuild": "npm run clean",
     "build:esm": "babel src -d dist/esm --env-name esm --copy-files --no-copy-ignored",
-    "build:cjs": "babel src -d dist/cjs --env-name cjs --copy-files --no-copy-ignored && node -e \"require('fs').writeFileSync('dist/cjs/package.json','{\\\"type\\\":\\\"commonjs\\\"}\\n')\"",
+    "build:cjs": "babel src -d dist/cjs --env-name cjs --copy-files --no-copy-ignored && node -e \"const fs=require('fs');fs.writeFileSync('dist/cjs/package.json','{\\\"type\\\":\\\"commonjs\\\"}\\n');fs.appendFileSync('dist/cjs/index.js','module.exports = exports.default;\\nmodule.exports.default = exports.default;\\n')\"",
     "build": "npm-run-all -p \"build:*\"",
     "security": "npm audit --production",
     "lint": "npm-run-all -l -p \"lint:**\" && npm run fmt:check",
