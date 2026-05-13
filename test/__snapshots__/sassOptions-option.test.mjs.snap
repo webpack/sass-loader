@@ -1,0 +1,1391 @@
+exports[`sassOptions option > should ignore the \"data\" option ('dart-sass', 'modern' API, 'sass' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.message, .warning, .error, .success {\\n  border: 1px solid #ccc;\\n  padding: 10px;\\n  color: #333;\\n}\\n\\n.success {\\n  border-color: green;\\n}\\n\\n.error {\\n  border-color: red;\\n}\\n\\n.warning {\\n  border-color: yellow;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sassOptions option > should ignore the \"data\" option ('dart-sass', 'modern' API, 'sass' syntax) 2`] = `
+[]
+`;
+
+exports[`sassOptions option > should ignore the \"data\" option ('dart-sass', 'modern' API, 'sass' syntax) 3`] = `
+[]
+`;
+
+exports[`sassOptions option > should ignore the \"data\" option ('dart-sass', 'modern' API, 'scss' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sassOptions option > should ignore the \"data\" option ('dart-sass', 'modern' API, 'scss' syntax) 2`] = `
+[]
+`;
+
+exports[`sassOptions option > should ignore the \"data\" option ('dart-sass', 'modern' API, 'scss' syntax) 3`] = `
+[]
+`;
+
+exports[`sassOptions option > should ignore the \"data\" option ('dart-sass', 'modern-compiler' API, 'sass' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.message, .warning, .error, .success {\\n  border: 1px solid #ccc;\\n  padding: 10px;\\n  color: #333;\\n}\\n\\n.success {\\n  border-color: green;\\n}\\n\\n.error {\\n  border-color: red;\\n}\\n\\n.warning {\\n  border-color: yellow;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sassOptions option > should ignore the \"data\" option ('dart-sass', 'modern-compiler' API, 'sass' syntax) 2`] = `
+[]
+`;
+
+exports[`sassOptions option > should ignore the \"data\" option ('dart-sass', 'modern-compiler' API, 'sass' syntax) 3`] = `
+[]
+`;
+
+exports[`sassOptions option > should ignore the \"data\" option ('dart-sass', 'modern-compiler' API, 'scss' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sassOptions option > should ignore the \"data\" option ('dart-sass', 'modern-compiler' API, 'scss' syntax) 2`] = `
+[]
+`;
+
+exports[`sassOptions option > should ignore the \"data\" option ('dart-sass', 'modern-compiler' API, 'scss' syntax) 3`] = `
+[]
+`;
+
+exports[`sassOptions option > should ignore the \"data\" option ('sass-embedded', 'modern' API, 'sass' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.message, .warning, .error, .success {\\n  border: 1px solid #ccc;\\n  padding: 10px;\\n  color: #333;\\n}\\n\\n.success {\\n  border-color: green;\\n}\\n\\n.error {\\n  border-color: red;\\n}\\n\\n.warning {\\n  border-color: yellow;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sassOptions option > should ignore the \"data\" option ('sass-embedded', 'modern' API, 'sass' syntax) 2`] = `
+[]
+`;
+
+exports[`sassOptions option > should ignore the \"data\" option ('sass-embedded', 'modern' API, 'sass' syntax) 3`] = `
+[]
+`;
+
+exports[`sassOptions option > should ignore the \"data\" option ('sass-embedded', 'modern' API, 'scss' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sassOptions option > should ignore the \"data\" option ('sass-embedded', 'modern' API, 'scss' syntax) 2`] = `
+[]
+`;
+
+exports[`sassOptions option > should ignore the \"data\" option ('sass-embedded', 'modern' API, 'scss' syntax) 3`] = `
+[]
+`;
+
+exports[`sassOptions option > should ignore the \"data\" option ('sass-embedded', 'modern-compiler' API, 'sass' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.message, .warning, .error, .success {\\n  border: 1px solid #ccc;\\n  padding: 10px;\\n  color: #333;\\n}\\n\\n.success {\\n  border-color: green;\\n}\\n\\n.error {\\n  border-color: red;\\n}\\n\\n.warning {\\n  border-color: yellow;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sassOptions option > should ignore the \"data\" option ('sass-embedded', 'modern-compiler' API, 'sass' syntax) 2`] = `
+[]
+`;
+
+exports[`sassOptions option > should ignore the \"data\" option ('sass-embedded', 'modern-compiler' API, 'sass' syntax) 3`] = `
+[]
+`;
+
+exports[`sassOptions option > should ignore the \"data\" option ('sass-embedded', 'modern-compiler' API, 'scss' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sassOptions option > should ignore the \"data\" option ('sass-embedded', 'modern-compiler' API, 'scss' syntax) 2`] = `
+[]
+`;
+
+exports[`sassOptions option > should ignore the \"data\" option ('sass-embedded', 'modern-compiler' API, 'scss' syntax) 3`] = `
+[]
+`;
+
+exports[`sassOptions option > should ignore the \"url\" option ('dart-sass', 'modern' API, 'sass' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.message, .warning, .error, .success {\\n  border: 1px solid #ccc;\\n  padding: 10px;\\n  color: #333;\\n}\\n\\n.success {\\n  border-color: green;\\n}\\n\\n.error {\\n  border-color: red;\\n}\\n\\n.warning {\\n  border-color: yellow;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sassOptions option > should ignore the \"url\" option ('dart-sass', 'modern' API, 'sass' syntax) 2`] = `
+[]
+`;
+
+exports[`sassOptions option > should ignore the \"url\" option ('dart-sass', 'modern' API, 'sass' syntax) 3`] = `
+[]
+`;
+
+exports[`sassOptions option > should ignore the \"url\" option ('dart-sass', 'modern' API, 'scss' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sassOptions option > should ignore the \"url\" option ('dart-sass', 'modern' API, 'scss' syntax) 2`] = `
+[]
+`;
+
+exports[`sassOptions option > should ignore the \"url\" option ('dart-sass', 'modern' API, 'scss' syntax) 3`] = `
+[]
+`;
+
+exports[`sassOptions option > should ignore the \"url\" option ('dart-sass', 'modern-compiler' API, 'sass' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.message, .warning, .error, .success {\\n  border: 1px solid #ccc;\\n  padding: 10px;\\n  color: #333;\\n}\\n\\n.success {\\n  border-color: green;\\n}\\n\\n.error {\\n  border-color: red;\\n}\\n\\n.warning {\\n  border-color: yellow;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sassOptions option > should ignore the \"url\" option ('dart-sass', 'modern-compiler' API, 'sass' syntax) 2`] = `
+[]
+`;
+
+exports[`sassOptions option > should ignore the \"url\" option ('dart-sass', 'modern-compiler' API, 'sass' syntax) 3`] = `
+[]
+`;
+
+exports[`sassOptions option > should ignore the \"url\" option ('dart-sass', 'modern-compiler' API, 'scss' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sassOptions option > should ignore the \"url\" option ('dart-sass', 'modern-compiler' API, 'scss' syntax) 2`] = `
+[]
+`;
+
+exports[`sassOptions option > should ignore the \"url\" option ('dart-sass', 'modern-compiler' API, 'scss' syntax) 3`] = `
+[]
+`;
+
+exports[`sassOptions option > should ignore the \"url\" option ('sass-embedded', 'modern' API, 'sass' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.message, .warning, .error, .success {\\n  border: 1px solid #ccc;\\n  padding: 10px;\\n  color: #333;\\n}\\n\\n.success {\\n  border-color: green;\\n}\\n\\n.error {\\n  border-color: red;\\n}\\n\\n.warning {\\n  border-color: yellow;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sassOptions option > should ignore the \"url\" option ('sass-embedded', 'modern' API, 'sass' syntax) 2`] = `
+[]
+`;
+
+exports[`sassOptions option > should ignore the \"url\" option ('sass-embedded', 'modern' API, 'sass' syntax) 3`] = `
+[]
+`;
+
+exports[`sassOptions option > should ignore the \"url\" option ('sass-embedded', 'modern' API, 'scss' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sassOptions option > should ignore the \"url\" option ('sass-embedded', 'modern' API, 'scss' syntax) 2`] = `
+[]
+`;
+
+exports[`sassOptions option > should ignore the \"url\" option ('sass-embedded', 'modern' API, 'scss' syntax) 3`] = `
+[]
+`;
+
+exports[`sassOptions option > should ignore the \"url\" option ('sass-embedded', 'modern-compiler' API, 'sass' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.message, .warning, .error, .success {\\n  border: 1px solid #ccc;\\n  padding: 10px;\\n  color: #333;\\n}\\n\\n.success {\\n  border-color: green;\\n}\\n\\n.error {\\n  border-color: red;\\n}\\n\\n.warning {\\n  border-color: yellow;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sassOptions option > should ignore the \"url\" option ('sass-embedded', 'modern-compiler' API, 'sass' syntax) 2`] = `
+[]
+`;
+
+exports[`sassOptions option > should ignore the \"url\" option ('sass-embedded', 'modern-compiler' API, 'sass' syntax) 3`] = `
+[]
+`;
+
+exports[`sassOptions option > should ignore the \"url\" option ('sass-embedded', 'modern-compiler' API, 'scss' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sassOptions option > should ignore the \"url\" option ('sass-embedded', 'modern-compiler' API, 'scss' syntax) 2`] = `
+[]
+`;
+
+exports[`sassOptions option > should ignore the \"url\" option ('sass-embedded', 'modern-compiler' API, 'scss' syntax) 3`] = `
+[]
+`;
+
+exports[`sassOptions option > should respect the \"style\" option ('dart-sass', 'modern' API, 'sass' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.message, .warning, .error, .success {\\n  border: 1px solid #ccc;\\n  padding: 10px;\\n  color: #333;\\n}\\n\\n.success {\\n  border-color: green;\\n}\\n\\n.error {\\n  border-color: red;\\n}\\n\\n.warning {\\n  border-color: yellow;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sassOptions option > should respect the \"style\" option ('dart-sass', 'modern' API, 'sass' syntax) 2`] = `
+[]
+`;
+
+exports[`sassOptions option > should respect the \"style\" option ('dart-sass', 'modern' API, 'sass' syntax) 3`] = `
+[]
+`;
+
+exports[`sassOptions option > should respect the \"style\" option ('dart-sass', 'modern' API, 'scss' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sassOptions option > should respect the \"style\" option ('dart-sass', 'modern' API, 'scss' syntax) 2`] = `
+[]
+`;
+
+exports[`sassOptions option > should respect the \"style\" option ('dart-sass', 'modern' API, 'scss' syntax) 3`] = `
+[]
+`;
+
+exports[`sassOptions option > should respect the \"style\" option ('dart-sass', 'modern-compiler' API, 'sass' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.message, .warning, .error, .success {\\n  border: 1px solid #ccc;\\n  padding: 10px;\\n  color: #333;\\n}\\n\\n.success {\\n  border-color: green;\\n}\\n\\n.error {\\n  border-color: red;\\n}\\n\\n.warning {\\n  border-color: yellow;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sassOptions option > should respect the \"style\" option ('dart-sass', 'modern-compiler' API, 'sass' syntax) 2`] = `
+[]
+`;
+
+exports[`sassOptions option > should respect the \"style\" option ('dart-sass', 'modern-compiler' API, 'sass' syntax) 3`] = `
+[]
+`;
+
+exports[`sassOptions option > should respect the \"style\" option ('dart-sass', 'modern-compiler' API, 'scss' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sassOptions option > should respect the \"style\" option ('dart-sass', 'modern-compiler' API, 'scss' syntax) 2`] = `
+[]
+`;
+
+exports[`sassOptions option > should respect the \"style\" option ('dart-sass', 'modern-compiler' API, 'scss' syntax) 3`] = `
+[]
+`;
+
+exports[`sassOptions option > should respect the \"style\" option ('sass-embedded', 'modern' API, 'sass' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.message, .warning, .error, .success {\\n  border: 1px solid #ccc;\\n  padding: 10px;\\n  color: #333;\\n}\\n\\n.success {\\n  border-color: green;\\n}\\n\\n.error {\\n  border-color: red;\\n}\\n\\n.warning {\\n  border-color: yellow;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sassOptions option > should respect the \"style\" option ('sass-embedded', 'modern' API, 'sass' syntax) 2`] = `
+[]
+`;
+
+exports[`sassOptions option > should respect the \"style\" option ('sass-embedded', 'modern' API, 'sass' syntax) 3`] = `
+[]
+`;
+
+exports[`sassOptions option > should respect the \"style\" option ('sass-embedded', 'modern' API, 'scss' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sassOptions option > should respect the \"style\" option ('sass-embedded', 'modern' API, 'scss' syntax) 2`] = `
+[]
+`;
+
+exports[`sassOptions option > should respect the \"style\" option ('sass-embedded', 'modern' API, 'scss' syntax) 3`] = `
+[]
+`;
+
+exports[`sassOptions option > should respect the \"style\" option ('sass-embedded', 'modern-compiler' API, 'sass' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.message, .warning, .error, .success {\\n  border: 1px solid #ccc;\\n  padding: 10px;\\n  color: #333;\\n}\\n\\n.success {\\n  border-color: green;\\n}\\n\\n.error {\\n  border-color: red;\\n}\\n\\n.warning {\\n  border-color: yellow;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sassOptions option > should respect the \"style\" option ('sass-embedded', 'modern-compiler' API, 'sass' syntax) 2`] = `
+[]
+`;
+
+exports[`sassOptions option > should respect the \"style\" option ('sass-embedded', 'modern-compiler' API, 'sass' syntax) 3`] = `
+[]
+`;
+
+exports[`sassOptions option > should respect the \"style\" option ('sass-embedded', 'modern-compiler' API, 'scss' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sassOptions option > should respect the \"style\" option ('sass-embedded', 'modern-compiler' API, 'scss' syntax) 2`] = `
+[]
+`;
+
+exports[`sassOptions option > should respect the \"style\" option ('sass-embedded', 'modern-compiler' API, 'scss' syntax) 3`] = `
+[]
+`;
+
+exports[`sassOptions option > should use \"compressed\" output style in the \"production\" mode ('dart-sass', 'modern' API, 'sass' syntax) 1`] = `
+"﻿@import\\"./file.css\\";body{font:100% Helvetica,sans-serif;color:#333}nav ul{margin:0;padding:0;list-style:none}nav li{display:inline-block}nav a{display:block;padding:6px 12px;text-decoration:none}.box{-webkit-border-radius:10px;-moz-border-radius:10px;-ms-border-radius:10px;border-radius:10px}.message,.warning,.error,.success{border:1px solid #ccc;padding:10px;color:#333}.success{border-color:green}.error{border-color:red}.warning{border-color:#ff0}.foo:before{content:\\"\\"}.bar:before{content:\\"∑\\"}"
+`;
+
+exports[`sassOptions option > should use \"compressed\" output style in the \"production\" mode ('dart-sass', 'modern' API, 'sass' syntax) 2`] = `
+[]
+`;
+
+exports[`sassOptions option > should use \"compressed\" output style in the \"production\" mode ('dart-sass', 'modern' API, 'sass' syntax) 3`] = `
+[]
+`;
+
+exports[`sassOptions option > should use \"compressed\" output style in the \"production\" mode ('dart-sass', 'modern' API, 'scss' syntax) 1`] = `
+"﻿@import\\"./file.css\\";body{font:100% Helvetica,sans-serif;color:#333}nav ul{margin:0;padding:0;list-style:none}nav li{display:inline-block}nav a{display:block;padding:6px 12px;text-decoration:none}.box{-webkit-border-radius:10px;-moz-border-radius:10px;-ms-border-radius:10px;border-radius:10px}.foo:before{content:\\"\\"}.bar:before{content:\\"∑\\"}"
+`;
+
+exports[`sassOptions option > should use \"compressed\" output style in the \"production\" mode ('dart-sass', 'modern' API, 'scss' syntax) 2`] = `
+[]
+`;
+
+exports[`sassOptions option > should use \"compressed\" output style in the \"production\" mode ('dart-sass', 'modern' API, 'scss' syntax) 3`] = `
+[]
+`;
+
+exports[`sassOptions option > should use \"compressed\" output style in the \"production\" mode ('dart-sass', 'modern-compiler' API, 'sass' syntax) 1`] = `
+"﻿@import\\"./file.css\\";body{font:100% Helvetica,sans-serif;color:#333}nav ul{margin:0;padding:0;list-style:none}nav li{display:inline-block}nav a{display:block;padding:6px 12px;text-decoration:none}.box{-webkit-border-radius:10px;-moz-border-radius:10px;-ms-border-radius:10px;border-radius:10px}.message,.warning,.error,.success{border:1px solid #ccc;padding:10px;color:#333}.success{border-color:green}.error{border-color:red}.warning{border-color:#ff0}.foo:before{content:\\"\\"}.bar:before{content:\\"∑\\"}"
+`;
+
+exports[`sassOptions option > should use \"compressed\" output style in the \"production\" mode ('dart-sass', 'modern-compiler' API, 'sass' syntax) 2`] = `
+[]
+`;
+
+exports[`sassOptions option > should use \"compressed\" output style in the \"production\" mode ('dart-sass', 'modern-compiler' API, 'sass' syntax) 3`] = `
+[]
+`;
+
+exports[`sassOptions option > should use \"compressed\" output style in the \"production\" mode ('dart-sass', 'modern-compiler' API, 'scss' syntax) 1`] = `
+"﻿@import\\"./file.css\\";body{font:100% Helvetica,sans-serif;color:#333}nav ul{margin:0;padding:0;list-style:none}nav li{display:inline-block}nav a{display:block;padding:6px 12px;text-decoration:none}.box{-webkit-border-radius:10px;-moz-border-radius:10px;-ms-border-radius:10px;border-radius:10px}.foo:before{content:\\"\\"}.bar:before{content:\\"∑\\"}"
+`;
+
+exports[`sassOptions option > should use \"compressed\" output style in the \"production\" mode ('dart-sass', 'modern-compiler' API, 'scss' syntax) 2`] = `
+[]
+`;
+
+exports[`sassOptions option > should use \"compressed\" output style in the \"production\" mode ('dart-sass', 'modern-compiler' API, 'scss' syntax) 3`] = `
+[]
+`;
+
+exports[`sassOptions option > should use \"compressed\" output style in the \"production\" mode ('sass-embedded', 'modern' API, 'sass' syntax) 1`] = `
+"@import\\"./file.css\\";body{font:100% Helvetica,sans-serif;color:#333}nav ul{margin:0;padding:0;list-style:none}nav li{display:inline-block}nav a{display:block;padding:6px 12px;text-decoration:none}.box{-webkit-border-radius:10px;-moz-border-radius:10px;-ms-border-radius:10px;border-radius:10px}.message,.warning,.error,.success{border:1px solid #ccc;padding:10px;color:#333}.success{border-color:green}.error{border-color:red}.warning{border-color:#ff0}.foo:before{content:\\"\\"}.bar:before{content:\\"∑\\"}"
+`;
+
+exports[`sassOptions option > should use \"compressed\" output style in the \"production\" mode ('sass-embedded', 'modern' API, 'sass' syntax) 2`] = `
+[]
+`;
+
+exports[`sassOptions option > should use \"compressed\" output style in the \"production\" mode ('sass-embedded', 'modern' API, 'sass' syntax) 3`] = `
+[]
+`;
+
+exports[`sassOptions option > should use \"compressed\" output style in the \"production\" mode ('sass-embedded', 'modern' API, 'scss' syntax) 1`] = `
+"@import\\"./file.css\\";body{font:100% Helvetica,sans-serif;color:#333}nav ul{margin:0;padding:0;list-style:none}nav li{display:inline-block}nav a{display:block;padding:6px 12px;text-decoration:none}.box{-webkit-border-radius:10px;-moz-border-radius:10px;-ms-border-radius:10px;border-radius:10px}.foo:before{content:\\"\\"}.bar:before{content:\\"∑\\"}"
+`;
+
+exports[`sassOptions option > should use \"compressed\" output style in the \"production\" mode ('sass-embedded', 'modern' API, 'scss' syntax) 2`] = `
+[]
+`;
+
+exports[`sassOptions option > should use \"compressed\" output style in the \"production\" mode ('sass-embedded', 'modern' API, 'scss' syntax) 3`] = `
+[]
+`;
+
+exports[`sassOptions option > should use \"compressed\" output style in the \"production\" mode ('sass-embedded', 'modern-compiler' API, 'sass' syntax) 1`] = `
+"@import\\"./file.css\\";body{font:100% Helvetica,sans-serif;color:#333}nav ul{margin:0;padding:0;list-style:none}nav li{display:inline-block}nav a{display:block;padding:6px 12px;text-decoration:none}.box{-webkit-border-radius:10px;-moz-border-radius:10px;-ms-border-radius:10px;border-radius:10px}.message,.warning,.error,.success{border:1px solid #ccc;padding:10px;color:#333}.success{border-color:green}.error{border-color:red}.warning{border-color:#ff0}.foo:before{content:\\"\\"}.bar:before{content:\\"∑\\"}"
+`;
+
+exports[`sassOptions option > should use \"compressed\" output style in the \"production\" mode ('sass-embedded', 'modern-compiler' API, 'sass' syntax) 2`] = `
+[]
+`;
+
+exports[`sassOptions option > should use \"compressed\" output style in the \"production\" mode ('sass-embedded', 'modern-compiler' API, 'sass' syntax) 3`] = `
+[]
+`;
+
+exports[`sassOptions option > should use \"compressed\" output style in the \"production\" mode ('sass-embedded', 'modern-compiler' API, 'scss' syntax) 1`] = `
+"@import\\"./file.css\\";body{font:100% Helvetica,sans-serif;color:#333}nav ul{margin:0;padding:0;list-style:none}nav li{display:inline-block}nav a{display:block;padding:6px 12px;text-decoration:none}.box{-webkit-border-radius:10px;-moz-border-radius:10px;-ms-border-radius:10px;border-radius:10px}.foo:before{content:\\"\\"}.bar:before{content:\\"∑\\"}"
+`;
+
+exports[`sassOptions option > should use \"compressed\" output style in the \"production\" mode ('sass-embedded', 'modern-compiler' API, 'scss' syntax) 2`] = `
+[]
+`;
+
+exports[`sassOptions option > should use \"compressed\" output style in the \"production\" mode ('sass-embedded', 'modern-compiler' API, 'scss' syntax) 3`] = `
+[]
+`;
+
+exports[`sassOptions option > should work when the option is empty \"Object\" ('dart-sass', 'modern' API, 'sass' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.message, .warning, .error, .success {\\n  border: 1px solid #ccc;\\n  padding: 10px;\\n  color: #333;\\n}\\n\\n.success {\\n  border-color: green;\\n}\\n\\n.error {\\n  border-color: red;\\n}\\n\\n.warning {\\n  border-color: yellow;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sassOptions option > should work when the option is empty \"Object\" ('dart-sass', 'modern' API, 'sass' syntax) 2`] = `
+[]
+`;
+
+exports[`sassOptions option > should work when the option is empty \"Object\" ('dart-sass', 'modern' API, 'sass' syntax) 3`] = `
+[]
+`;
+
+exports[`sassOptions option > should work when the option is empty \"Object\" ('dart-sass', 'modern' API, 'scss' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sassOptions option > should work when the option is empty \"Object\" ('dart-sass', 'modern' API, 'scss' syntax) 2`] = `
+[]
+`;
+
+exports[`sassOptions option > should work when the option is empty \"Object\" ('dart-sass', 'modern' API, 'scss' syntax) 3`] = `
+[]
+`;
+
+exports[`sassOptions option > should work when the option is empty \"Object\" ('dart-sass', 'modern-compiler' API, 'sass' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.message, .warning, .error, .success {\\n  border: 1px solid #ccc;\\n  padding: 10px;\\n  color: #333;\\n}\\n\\n.success {\\n  border-color: green;\\n}\\n\\n.error {\\n  border-color: red;\\n}\\n\\n.warning {\\n  border-color: yellow;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sassOptions option > should work when the option is empty \"Object\" ('dart-sass', 'modern-compiler' API, 'sass' syntax) 2`] = `
+[]
+`;
+
+exports[`sassOptions option > should work when the option is empty \"Object\" ('dart-sass', 'modern-compiler' API, 'sass' syntax) 3`] = `
+[]
+`;
+
+exports[`sassOptions option > should work when the option is empty \"Object\" ('dart-sass', 'modern-compiler' API, 'scss' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sassOptions option > should work when the option is empty \"Object\" ('dart-sass', 'modern-compiler' API, 'scss' syntax) 2`] = `
+[]
+`;
+
+exports[`sassOptions option > should work when the option is empty \"Object\" ('dart-sass', 'modern-compiler' API, 'scss' syntax) 3`] = `
+[]
+`;
+
+exports[`sassOptions option > should work when the option is empty \"Object\" ('sass-embedded', 'modern' API, 'sass' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.message, .warning, .error, .success {\\n  border: 1px solid #ccc;\\n  padding: 10px;\\n  color: #333;\\n}\\n\\n.success {\\n  border-color: green;\\n}\\n\\n.error {\\n  border-color: red;\\n}\\n\\n.warning {\\n  border-color: yellow;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sassOptions option > should work when the option is empty \"Object\" ('sass-embedded', 'modern' API, 'sass' syntax) 2`] = `
+[]
+`;
+
+exports[`sassOptions option > should work when the option is empty \"Object\" ('sass-embedded', 'modern' API, 'sass' syntax) 3`] = `
+[]
+`;
+
+exports[`sassOptions option > should work when the option is empty \"Object\" ('sass-embedded', 'modern' API, 'scss' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sassOptions option > should work when the option is empty \"Object\" ('sass-embedded', 'modern' API, 'scss' syntax) 2`] = `
+[]
+`;
+
+exports[`sassOptions option > should work when the option is empty \"Object\" ('sass-embedded', 'modern' API, 'scss' syntax) 3`] = `
+[]
+`;
+
+exports[`sassOptions option > should work when the option is empty \"Object\" ('sass-embedded', 'modern-compiler' API, 'sass' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.message, .warning, .error, .success {\\n  border: 1px solid #ccc;\\n  padding: 10px;\\n  color: #333;\\n}\\n\\n.success {\\n  border-color: green;\\n}\\n\\n.error {\\n  border-color: red;\\n}\\n\\n.warning {\\n  border-color: yellow;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sassOptions option > should work when the option is empty \"Object\" ('sass-embedded', 'modern-compiler' API, 'sass' syntax) 2`] = `
+[]
+`;
+
+exports[`sassOptions option > should work when the option is empty \"Object\" ('sass-embedded', 'modern-compiler' API, 'sass' syntax) 3`] = `
+[]
+`;
+
+exports[`sassOptions option > should work when the option is empty \"Object\" ('sass-embedded', 'modern-compiler' API, 'scss' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sassOptions option > should work when the option is empty \"Object\" ('sass-embedded', 'modern-compiler' API, 'scss' syntax) 2`] = `
+[]
+`;
+
+exports[`sassOptions option > should work when the option is empty \"Object\" ('sass-embedded', 'modern-compiler' API, 'scss' syntax) 3`] = `
+[]
+`;
+
+exports[`sassOptions option > should work when the option like \"Function\" ('dart-sass', 'modern' API, 'sass' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.message, .warning, .error, .success {\\n  border: 1px solid #ccc;\\n  padding: 10px;\\n  color: #333;\\n}\\n\\n.success {\\n  border-color: green;\\n}\\n\\n.error {\\n  border-color: red;\\n}\\n\\n.warning {\\n  border-color: yellow;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sassOptions option > should work when the option like \"Function\" ('dart-sass', 'modern' API, 'sass' syntax) 2`] = `
+[]
+`;
+
+exports[`sassOptions option > should work when the option like \"Function\" ('dart-sass', 'modern' API, 'sass' syntax) 3`] = `
+[]
+`;
+
+exports[`sassOptions option > should work when the option like \"Function\" ('dart-sass', 'modern' API, 'scss' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sassOptions option > should work when the option like \"Function\" ('dart-sass', 'modern' API, 'scss' syntax) 2`] = `
+[]
+`;
+
+exports[`sassOptions option > should work when the option like \"Function\" ('dart-sass', 'modern' API, 'scss' syntax) 3`] = `
+[]
+`;
+
+exports[`sassOptions option > should work when the option like \"Function\" ('dart-sass', 'modern-compiler' API, 'sass' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.message, .warning, .error, .success {\\n  border: 1px solid #ccc;\\n  padding: 10px;\\n  color: #333;\\n}\\n\\n.success {\\n  border-color: green;\\n}\\n\\n.error {\\n  border-color: red;\\n}\\n\\n.warning {\\n  border-color: yellow;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sassOptions option > should work when the option like \"Function\" ('dart-sass', 'modern-compiler' API, 'sass' syntax) 2`] = `
+[]
+`;
+
+exports[`sassOptions option > should work when the option like \"Function\" ('dart-sass', 'modern-compiler' API, 'sass' syntax) 3`] = `
+[]
+`;
+
+exports[`sassOptions option > should work when the option like \"Function\" ('dart-sass', 'modern-compiler' API, 'scss' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sassOptions option > should work when the option like \"Function\" ('dart-sass', 'modern-compiler' API, 'scss' syntax) 2`] = `
+[]
+`;
+
+exports[`sassOptions option > should work when the option like \"Function\" ('dart-sass', 'modern-compiler' API, 'scss' syntax) 3`] = `
+[]
+`;
+
+exports[`sassOptions option > should work when the option like \"Function\" ('sass-embedded', 'modern' API, 'sass' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.message, .warning, .error, .success {\\n  border: 1px solid #ccc;\\n  padding: 10px;\\n  color: #333;\\n}\\n\\n.success {\\n  border-color: green;\\n}\\n\\n.error {\\n  border-color: red;\\n}\\n\\n.warning {\\n  border-color: yellow;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sassOptions option > should work when the option like \"Function\" ('sass-embedded', 'modern' API, 'sass' syntax) 2`] = `
+[]
+`;
+
+exports[`sassOptions option > should work when the option like \"Function\" ('sass-embedded', 'modern' API, 'sass' syntax) 3`] = `
+[]
+`;
+
+exports[`sassOptions option > should work when the option like \"Function\" ('sass-embedded', 'modern' API, 'scss' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sassOptions option > should work when the option like \"Function\" ('sass-embedded', 'modern' API, 'scss' syntax) 2`] = `
+[]
+`;
+
+exports[`sassOptions option > should work when the option like \"Function\" ('sass-embedded', 'modern' API, 'scss' syntax) 3`] = `
+[]
+`;
+
+exports[`sassOptions option > should work when the option like \"Function\" ('sass-embedded', 'modern-compiler' API, 'sass' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.message, .warning, .error, .success {\\n  border: 1px solid #ccc;\\n  padding: 10px;\\n  color: #333;\\n}\\n\\n.success {\\n  border-color: green;\\n}\\n\\n.error {\\n  border-color: red;\\n}\\n\\n.warning {\\n  border-color: yellow;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sassOptions option > should work when the option like \"Function\" ('sass-embedded', 'modern-compiler' API, 'sass' syntax) 2`] = `
+[]
+`;
+
+exports[`sassOptions option > should work when the option like \"Function\" ('sass-embedded', 'modern-compiler' API, 'sass' syntax) 3`] = `
+[]
+`;
+
+exports[`sassOptions option > should work when the option like \"Function\" ('sass-embedded', 'modern-compiler' API, 'scss' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sassOptions option > should work when the option like \"Function\" ('sass-embedded', 'modern-compiler' API, 'scss' syntax) 2`] = `
+[]
+`;
+
+exports[`sassOptions option > should work when the option like \"Function\" ('sass-embedded', 'modern-compiler' API, 'scss' syntax) 3`] = `
+[]
+`;
+
+exports[`sassOptions option > should work when the option like \"Function\" and never return ('dart-sass', 'modern' API, 'sass' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.message, .warning, .error, .success {\\n  border: 1px solid #ccc;\\n  padding: 10px;\\n  color: #333;\\n}\\n\\n.success {\\n  border-color: green;\\n}\\n\\n.error {\\n  border-color: red;\\n}\\n\\n.warning {\\n  border-color: yellow;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sassOptions option > should work when the option like \"Function\" and never return ('dart-sass', 'modern' API, 'sass' syntax) 2`] = `
+[]
+`;
+
+exports[`sassOptions option > should work when the option like \"Function\" and never return ('dart-sass', 'modern' API, 'sass' syntax) 3`] = `
+[]
+`;
+
+exports[`sassOptions option > should work when the option like \"Function\" and never return ('dart-sass', 'modern' API, 'scss' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sassOptions option > should work when the option like \"Function\" and never return ('dart-sass', 'modern' API, 'scss' syntax) 2`] = `
+[]
+`;
+
+exports[`sassOptions option > should work when the option like \"Function\" and never return ('dart-sass', 'modern' API, 'scss' syntax) 3`] = `
+[]
+`;
+
+exports[`sassOptions option > should work when the option like \"Function\" and never return ('dart-sass', 'modern-compiler' API, 'sass' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.message, .warning, .error, .success {\\n  border: 1px solid #ccc;\\n  padding: 10px;\\n  color: #333;\\n}\\n\\n.success {\\n  border-color: green;\\n}\\n\\n.error {\\n  border-color: red;\\n}\\n\\n.warning {\\n  border-color: yellow;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sassOptions option > should work when the option like \"Function\" and never return ('dart-sass', 'modern-compiler' API, 'sass' syntax) 2`] = `
+[]
+`;
+
+exports[`sassOptions option > should work when the option like \"Function\" and never return ('dart-sass', 'modern-compiler' API, 'sass' syntax) 3`] = `
+[]
+`;
+
+exports[`sassOptions option > should work when the option like \"Function\" and never return ('dart-sass', 'modern-compiler' API, 'scss' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sassOptions option > should work when the option like \"Function\" and never return ('dart-sass', 'modern-compiler' API, 'scss' syntax) 2`] = `
+[]
+`;
+
+exports[`sassOptions option > should work when the option like \"Function\" and never return ('dart-sass', 'modern-compiler' API, 'scss' syntax) 3`] = `
+[]
+`;
+
+exports[`sassOptions option > should work when the option like \"Function\" and never return ('sass-embedded', 'modern' API, 'sass' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.message, .warning, .error, .success {\\n  border: 1px solid #ccc;\\n  padding: 10px;\\n  color: #333;\\n}\\n\\n.success {\\n  border-color: green;\\n}\\n\\n.error {\\n  border-color: red;\\n}\\n\\n.warning {\\n  border-color: yellow;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sassOptions option > should work when the option like \"Function\" and never return ('sass-embedded', 'modern' API, 'sass' syntax) 2`] = `
+[]
+`;
+
+exports[`sassOptions option > should work when the option like \"Function\" and never return ('sass-embedded', 'modern' API, 'sass' syntax) 3`] = `
+[]
+`;
+
+exports[`sassOptions option > should work when the option like \"Function\" and never return ('sass-embedded', 'modern' API, 'scss' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sassOptions option > should work when the option like \"Function\" and never return ('sass-embedded', 'modern' API, 'scss' syntax) 2`] = `
+[]
+`;
+
+exports[`sassOptions option > should work when the option like \"Function\" and never return ('sass-embedded', 'modern' API, 'scss' syntax) 3`] = `
+[]
+`;
+
+exports[`sassOptions option > should work when the option like \"Function\" and never return ('sass-embedded', 'modern-compiler' API, 'sass' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.message, .warning, .error, .success {\\n  border: 1px solid #ccc;\\n  padding: 10px;\\n  color: #333;\\n}\\n\\n.success {\\n  border-color: green;\\n}\\n\\n.error {\\n  border-color: red;\\n}\\n\\n.warning {\\n  border-color: yellow;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sassOptions option > should work when the option like \"Function\" and never return ('sass-embedded', 'modern-compiler' API, 'sass' syntax) 2`] = `
+[]
+`;
+
+exports[`sassOptions option > should work when the option like \"Function\" and never return ('sass-embedded', 'modern-compiler' API, 'sass' syntax) 3`] = `
+[]
+`;
+
+exports[`sassOptions option > should work when the option like \"Function\" and never return ('sass-embedded', 'modern-compiler' API, 'scss' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sassOptions option > should work when the option like \"Function\" and never return ('sass-embedded', 'modern-compiler' API, 'scss' syntax) 2`] = `
+[]
+`;
+
+exports[`sassOptions option > should work when the option like \"Function\" and never return ('sass-embedded', 'modern-compiler' API, 'scss' syntax) 3`] = `
+[]
+`;
+
+exports[`sassOptions option > should work when the option like \"Object\" ('dart-sass', 'modern' API, 'sass' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.message, .warning, .error, .success {\\n  border: 1px solid #ccc;\\n  padding: 10px;\\n  color: #333;\\n}\\n\\n.success {\\n  border-color: green;\\n}\\n\\n.error {\\n  border-color: red;\\n}\\n\\n.warning {\\n  border-color: yellow;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sassOptions option > should work when the option like \"Object\" ('dart-sass', 'modern' API, 'sass' syntax) 2`] = `
+[]
+`;
+
+exports[`sassOptions option > should work when the option like \"Object\" ('dart-sass', 'modern' API, 'sass' syntax) 3`] = `
+[]
+`;
+
+exports[`sassOptions option > should work when the option like \"Object\" ('dart-sass', 'modern' API, 'scss' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sassOptions option > should work when the option like \"Object\" ('dart-sass', 'modern' API, 'scss' syntax) 2`] = `
+[]
+`;
+
+exports[`sassOptions option > should work when the option like \"Object\" ('dart-sass', 'modern' API, 'scss' syntax) 3`] = `
+[]
+`;
+
+exports[`sassOptions option > should work when the option like \"Object\" ('dart-sass', 'modern-compiler' API, 'sass' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.message, .warning, .error, .success {\\n  border: 1px solid #ccc;\\n  padding: 10px;\\n  color: #333;\\n}\\n\\n.success {\\n  border-color: green;\\n}\\n\\n.error {\\n  border-color: red;\\n}\\n\\n.warning {\\n  border-color: yellow;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sassOptions option > should work when the option like \"Object\" ('dart-sass', 'modern-compiler' API, 'sass' syntax) 2`] = `
+[]
+`;
+
+exports[`sassOptions option > should work when the option like \"Object\" ('dart-sass', 'modern-compiler' API, 'sass' syntax) 3`] = `
+[]
+`;
+
+exports[`sassOptions option > should work when the option like \"Object\" ('dart-sass', 'modern-compiler' API, 'scss' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sassOptions option > should work when the option like \"Object\" ('dart-sass', 'modern-compiler' API, 'scss' syntax) 2`] = `
+[]
+`;
+
+exports[`sassOptions option > should work when the option like \"Object\" ('dart-sass', 'modern-compiler' API, 'scss' syntax) 3`] = `
+[]
+`;
+
+exports[`sassOptions option > should work when the option like \"Object\" ('sass-embedded', 'modern' API, 'sass' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.message, .warning, .error, .success {\\n  border: 1px solid #ccc;\\n  padding: 10px;\\n  color: #333;\\n}\\n\\n.success {\\n  border-color: green;\\n}\\n\\n.error {\\n  border-color: red;\\n}\\n\\n.warning {\\n  border-color: yellow;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sassOptions option > should work when the option like \"Object\" ('sass-embedded', 'modern' API, 'sass' syntax) 2`] = `
+[]
+`;
+
+exports[`sassOptions option > should work when the option like \"Object\" ('sass-embedded', 'modern' API, 'sass' syntax) 3`] = `
+[]
+`;
+
+exports[`sassOptions option > should work when the option like \"Object\" ('sass-embedded', 'modern' API, 'scss' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sassOptions option > should work when the option like \"Object\" ('sass-embedded', 'modern' API, 'scss' syntax) 2`] = `
+[]
+`;
+
+exports[`sassOptions option > should work when the option like \"Object\" ('sass-embedded', 'modern' API, 'scss' syntax) 3`] = `
+[]
+`;
+
+exports[`sassOptions option > should work when the option like \"Object\" ('sass-embedded', 'modern-compiler' API, 'sass' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.message, .warning, .error, .success {\\n  border: 1px solid #ccc;\\n  padding: 10px;\\n  color: #333;\\n}\\n\\n.success {\\n  border-color: green;\\n}\\n\\n.error {\\n  border-color: red;\\n}\\n\\n.warning {\\n  border-color: yellow;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sassOptions option > should work when the option like \"Object\" ('sass-embedded', 'modern-compiler' API, 'sass' syntax) 2`] = `
+[]
+`;
+
+exports[`sassOptions option > should work when the option like \"Object\" ('sass-embedded', 'modern-compiler' API, 'sass' syntax) 3`] = `
+[]
+`;
+
+exports[`sassOptions option > should work when the option like \"Object\" ('sass-embedded', 'modern-compiler' API, 'scss' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sassOptions option > should work when the option like \"Object\" ('sass-embedded', 'modern-compiler' API, 'scss' syntax) 2`] = `
+[]
+`;
+
+exports[`sassOptions option > should work when the option like \"Object\" ('sass-embedded', 'modern-compiler' API, 'scss' syntax) 3`] = `
+[]
+`;
+
+exports[`sassOptions option > should work with custom scheme import ('dart-sass', 'modern' API, 'sass' syntax) 1`] = `
+[]
+`;
+
+exports[`sassOptions option > should work with custom scheme import ('dart-sass', 'modern' API, 'sass' syntax) 2`] = `
+[]
+`;
+
+exports[`sassOptions option > should work with custom scheme import ('dart-sass', 'modern' API, 'scss' syntax) 1`] = `
+[]
+`;
+
+exports[`sassOptions option > should work with custom scheme import ('dart-sass', 'modern' API, 'scss' syntax) 2`] = `
+[]
+`;
+
+exports[`sassOptions option > should work with custom scheme import ('dart-sass', 'modern-compiler' API, 'sass' syntax) 1`] = `
+[]
+`;
+
+exports[`sassOptions option > should work with custom scheme import ('dart-sass', 'modern-compiler' API, 'sass' syntax) 2`] = `
+[]
+`;
+
+exports[`sassOptions option > should work with custom scheme import ('dart-sass', 'modern-compiler' API, 'scss' syntax) 1`] = `
+[]
+`;
+
+exports[`sassOptions option > should work with custom scheme import ('dart-sass', 'modern-compiler' API, 'scss' syntax) 2`] = `
+[]
+`;
+
+exports[`sassOptions option > should work with custom scheme import ('sass-embedded', 'modern' API, 'sass' syntax) 1`] = `
+[]
+`;
+
+exports[`sassOptions option > should work with custom scheme import ('sass-embedded', 'modern' API, 'sass' syntax) 2`] = `
+[]
+`;
+
+exports[`sassOptions option > should work with custom scheme import ('sass-embedded', 'modern' API, 'scss' syntax) 1`] = `
+[]
+`;
+
+exports[`sassOptions option > should work with custom scheme import ('sass-embedded', 'modern' API, 'scss' syntax) 2`] = `
+[]
+`;
+
+exports[`sassOptions option > should work with custom scheme import ('sass-embedded', 'modern-compiler' API, 'sass' syntax) 1`] = `
+[]
+`;
+
+exports[`sassOptions option > should work with custom scheme import ('sass-embedded', 'modern-compiler' API, 'sass' syntax) 2`] = `
+[]
+`;
+
+exports[`sassOptions option > should work with custom scheme import ('sass-embedded', 'modern-compiler' API, 'scss' syntax) 1`] = `
+[]
+`;
+
+exports[`sassOptions option > should work with custom scheme import ('sass-embedded', 'modern-compiler' API, 'scss' syntax) 2`] = `
+[]
+`;
+
+exports[`sassOptions option > should work with the \"fatalDeprecations\" option ('dart-sass', 'modern' API, 'sass' syntax) 1`] = `
+[]
+`;
+
+exports[`sassOptions option > should work with the \"fatalDeprecations\" option ('dart-sass', 'modern' API, 'sass' syntax) 2`] = `
+[
+  "ModuleBuildError: Module build failed (from ../src/cjs.js):\\nUsing / for division outside of calc() is deprecated and will be removed in Dart Sass 2.0.0."
+]
+`;
+
+exports[`sassOptions option > should work with the \"fatalDeprecations\" option ('dart-sass', 'modern' API, 'scss' syntax) 1`] = `
+[]
+`;
+
+exports[`sassOptions option > should work with the \"fatalDeprecations\" option ('dart-sass', 'modern' API, 'scss' syntax) 2`] = `
+[
+  "ModuleBuildError: Module build failed (from ../src/cjs.js):\\nUsing / for division outside of calc() is deprecated and will be removed in Dart Sass 2.0.0."
+]
+`;
+
+exports[`sassOptions option > should work with the \"fatalDeprecations\" option ('dart-sass', 'modern-compiler' API, 'sass' syntax) 1`] = `
+[]
+`;
+
+exports[`sassOptions option > should work with the \"fatalDeprecations\" option ('dart-sass', 'modern-compiler' API, 'sass' syntax) 2`] = `
+[
+  "ModuleBuildError: Module build failed (from ../src/cjs.js):\\nUsing / for division outside of calc() is deprecated and will be removed in Dart Sass 2.0.0."
+]
+`;
+
+exports[`sassOptions option > should work with the \"fatalDeprecations\" option ('dart-sass', 'modern-compiler' API, 'scss' syntax) 1`] = `
+[]
+`;
+
+exports[`sassOptions option > should work with the \"fatalDeprecations\" option ('dart-sass', 'modern-compiler' API, 'scss' syntax) 2`] = `
+[
+  "ModuleBuildError: Module build failed (from ../src/cjs.js):\\nUsing / for division outside of calc() is deprecated and will be removed in Dart Sass 2.0.0."
+]
+`;
+
+exports[`sassOptions option > should work with the \"fatalDeprecations\" option ('sass-embedded', 'modern' API, 'sass' syntax) 1`] = `
+[]
+`;
+
+exports[`sassOptions option > should work with the \"fatalDeprecations\" option ('sass-embedded', 'modern' API, 'sass' syntax) 2`] = `
+[
+  "ModuleBuildError: Module build failed (from ../src/cjs.js):\\nUsing / for division outside of calc() is deprecated and will be removed in Dart Sass 2.0.0."
+]
+`;
+
+exports[`sassOptions option > should work with the \"fatalDeprecations\" option ('sass-embedded', 'modern' API, 'scss' syntax) 1`] = `
+[]
+`;
+
+exports[`sassOptions option > should work with the \"fatalDeprecations\" option ('sass-embedded', 'modern' API, 'scss' syntax) 2`] = `
+[
+  "ModuleBuildError: Module build failed (from ../src/cjs.js):\\nUsing / for division outside of calc() is deprecated and will be removed in Dart Sass 2.0.0."
+]
+`;
+
+exports[`sassOptions option > should work with the \"fatalDeprecations\" option ('sass-embedded', 'modern-compiler' API, 'sass' syntax) 1`] = `
+[]
+`;
+
+exports[`sassOptions option > should work with the \"fatalDeprecations\" option ('sass-embedded', 'modern-compiler' API, 'sass' syntax) 2`] = `
+[
+  "ModuleBuildError: Module build failed (from ../src/cjs.js):\\nUsing / for division outside of calc() is deprecated and will be removed in Dart Sass 2.0.0."
+]
+`;
+
+exports[`sassOptions option > should work with the \"fatalDeprecations\" option ('sass-embedded', 'modern-compiler' API, 'scss' syntax) 1`] = `
+[]
+`;
+
+exports[`sassOptions option > should work with the \"fatalDeprecations\" option ('sass-embedded', 'modern-compiler' API, 'scss' syntax) 2`] = `
+[
+  "ModuleBuildError: Module build failed (from ../src/cjs.js):\\nUsing / for division outside of calc() is deprecated and will be removed in Dart Sass 2.0.0."
+]
+`;
+
+exports[`sassOptions option > should work with the \"functions\" option ('dart-sass', 'modern' API, 'sass' syntax) 1`] = `
+"h1 {\\n  font-size: 32px;\\n}"
+`;
+
+exports[`sassOptions option > should work with the \"functions\" option ('dart-sass', 'modern' API, 'sass' syntax) 2`] = `
+[]
+`;
+
+exports[`sassOptions option > should work with the \"functions\" option ('dart-sass', 'modern' API, 'sass' syntax) 3`] = `
+[]
+`;
+
+exports[`sassOptions option > should work with the \"functions\" option ('dart-sass', 'modern' API, 'scss' syntax) 1`] = `
+"h1 {\\n  font-size: 32px;\\n}"
+`;
+
+exports[`sassOptions option > should work with the \"functions\" option ('dart-sass', 'modern' API, 'scss' syntax) 2`] = `
+[]
+`;
+
+exports[`sassOptions option > should work with the \"functions\" option ('dart-sass', 'modern' API, 'scss' syntax) 3`] = `
+[]
+`;
+
+exports[`sassOptions option > should work with the \"functions\" option ('dart-sass', 'modern-compiler' API, 'sass' syntax) 1`] = `
+"h1 {\\n  font-size: 32px;\\n}"
+`;
+
+exports[`sassOptions option > should work with the \"functions\" option ('dart-sass', 'modern-compiler' API, 'sass' syntax) 2`] = `
+[]
+`;
+
+exports[`sassOptions option > should work with the \"functions\" option ('dart-sass', 'modern-compiler' API, 'sass' syntax) 3`] = `
+[]
+`;
+
+exports[`sassOptions option > should work with the \"functions\" option ('dart-sass', 'modern-compiler' API, 'scss' syntax) 1`] = `
+"h1 {\\n  font-size: 32px;\\n}"
+`;
+
+exports[`sassOptions option > should work with the \"functions\" option ('dart-sass', 'modern-compiler' API, 'scss' syntax) 2`] = `
+[]
+`;
+
+exports[`sassOptions option > should work with the \"functions\" option ('dart-sass', 'modern-compiler' API, 'scss' syntax) 3`] = `
+[]
+`;
+
+exports[`sassOptions option > should work with the \"functions\" option ('sass-embedded', 'modern' API, 'sass' syntax) 1`] = `
+"h1 {\\n  font-size: 32px;\\n}"
+`;
+
+exports[`sassOptions option > should work with the \"functions\" option ('sass-embedded', 'modern' API, 'sass' syntax) 2`] = `
+[]
+`;
+
+exports[`sassOptions option > should work with the \"functions\" option ('sass-embedded', 'modern' API, 'sass' syntax) 3`] = `
+[]
+`;
+
+exports[`sassOptions option > should work with the \"functions\" option ('sass-embedded', 'modern' API, 'scss' syntax) 1`] = `
+"h1 {\\n  font-size: 32px;\\n}"
+`;
+
+exports[`sassOptions option > should work with the \"functions\" option ('sass-embedded', 'modern' API, 'scss' syntax) 2`] = `
+[]
+`;
+
+exports[`sassOptions option > should work with the \"functions\" option ('sass-embedded', 'modern' API, 'scss' syntax) 3`] = `
+[]
+`;
+
+exports[`sassOptions option > should work with the \"functions\" option ('sass-embedded', 'modern-compiler' API, 'sass' syntax) 1`] = `
+"h1 {\\n  font-size: 32px;\\n}"
+`;
+
+exports[`sassOptions option > should work with the \"functions\" option ('sass-embedded', 'modern-compiler' API, 'sass' syntax) 2`] = `
+[]
+`;
+
+exports[`sassOptions option > should work with the \"functions\" option ('sass-embedded', 'modern-compiler' API, 'sass' syntax) 3`] = `
+[]
+`;
+
+exports[`sassOptions option > should work with the \"functions\" option ('sass-embedded', 'modern-compiler' API, 'scss' syntax) 1`] = `
+"h1 {\\n  font-size: 32px;\\n}"
+`;
+
+exports[`sassOptions option > should work with the \"functions\" option ('sass-embedded', 'modern-compiler' API, 'scss' syntax) 2`] = `
+[]
+`;
+
+exports[`sassOptions option > should work with the \"functions\" option ('sass-embedded', 'modern-compiler' API, 'scss' syntax) 3`] = `
+[]
+`;
+
+exports[`sassOptions option > should work with the \"indentWidth\" option ('dart-sass', 'modern' API, 'sass' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.message, .warning, .error, .success {\\n  border: 1px solid #ccc;\\n  padding: 10px;\\n  color: #333;\\n}\\n\\n.success {\\n  border-color: green;\\n}\\n\\n.error {\\n  border-color: red;\\n}\\n\\n.warning {\\n  border-color: yellow;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sassOptions option > should work with the \"indentWidth\" option ('dart-sass', 'modern' API, 'sass' syntax) 2`] = `
+[]
+`;
+
+exports[`sassOptions option > should work with the \"indentWidth\" option ('dart-sass', 'modern' API, 'sass' syntax) 3`] = `
+[]
+`;
+
+exports[`sassOptions option > should work with the \"indentWidth\" option ('dart-sass', 'modern' API, 'scss' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sassOptions option > should work with the \"indentWidth\" option ('dart-sass', 'modern' API, 'scss' syntax) 2`] = `
+[]
+`;
+
+exports[`sassOptions option > should work with the \"indentWidth\" option ('dart-sass', 'modern' API, 'scss' syntax) 3`] = `
+[]
+`;
+
+exports[`sassOptions option > should work with the \"indentWidth\" option ('dart-sass', 'modern-compiler' API, 'sass' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.message, .warning, .error, .success {\\n  border: 1px solid #ccc;\\n  padding: 10px;\\n  color: #333;\\n}\\n\\n.success {\\n  border-color: green;\\n}\\n\\n.error {\\n  border-color: red;\\n}\\n\\n.warning {\\n  border-color: yellow;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sassOptions option > should work with the \"indentWidth\" option ('dart-sass', 'modern-compiler' API, 'sass' syntax) 2`] = `
+[]
+`;
+
+exports[`sassOptions option > should work with the \"indentWidth\" option ('dart-sass', 'modern-compiler' API, 'sass' syntax) 3`] = `
+[]
+`;
+
+exports[`sassOptions option > should work with the \"indentWidth\" option ('dart-sass', 'modern-compiler' API, 'scss' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sassOptions option > should work with the \"indentWidth\" option ('dart-sass', 'modern-compiler' API, 'scss' syntax) 2`] = `
+[]
+`;
+
+exports[`sassOptions option > should work with the \"indentWidth\" option ('dart-sass', 'modern-compiler' API, 'scss' syntax) 3`] = `
+[]
+`;
+
+exports[`sassOptions option > should work with the \"indentWidth\" option ('sass-embedded', 'modern' API, 'sass' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.message, .warning, .error, .success {\\n  border: 1px solid #ccc;\\n  padding: 10px;\\n  color: #333;\\n}\\n\\n.success {\\n  border-color: green;\\n}\\n\\n.error {\\n  border-color: red;\\n}\\n\\n.warning {\\n  border-color: yellow;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sassOptions option > should work with the \"indentWidth\" option ('sass-embedded', 'modern' API, 'sass' syntax) 2`] = `
+[]
+`;
+
+exports[`sassOptions option > should work with the \"indentWidth\" option ('sass-embedded', 'modern' API, 'sass' syntax) 3`] = `
+[]
+`;
+
+exports[`sassOptions option > should work with the \"indentWidth\" option ('sass-embedded', 'modern' API, 'scss' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sassOptions option > should work with the \"indentWidth\" option ('sass-embedded', 'modern' API, 'scss' syntax) 2`] = `
+[]
+`;
+
+exports[`sassOptions option > should work with the \"indentWidth\" option ('sass-embedded', 'modern' API, 'scss' syntax) 3`] = `
+[]
+`;
+
+exports[`sassOptions option > should work with the \"indentWidth\" option ('sass-embedded', 'modern-compiler' API, 'sass' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.message, .warning, .error, .success {\\n  border: 1px solid #ccc;\\n  padding: 10px;\\n  color: #333;\\n}\\n\\n.success {\\n  border-color: green;\\n}\\n\\n.error {\\n  border-color: red;\\n}\\n\\n.warning {\\n  border-color: yellow;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sassOptions option > should work with the \"indentWidth\" option ('sass-embedded', 'modern-compiler' API, 'sass' syntax) 2`] = `
+[]
+`;
+
+exports[`sassOptions option > should work with the \"indentWidth\" option ('sass-embedded', 'modern-compiler' API, 'sass' syntax) 3`] = `
+[]
+`;
+
+exports[`sassOptions option > should work with the \"indentWidth\" option ('sass-embedded', 'modern-compiler' API, 'scss' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sassOptions option > should work with the \"indentWidth\" option ('sass-embedded', 'modern-compiler' API, 'scss' syntax) 2`] = `
+[]
+`;
+
+exports[`sassOptions option > should work with the \"indentWidth\" option ('sass-embedded', 'modern-compiler' API, 'scss' syntax) 3`] = `
+[]
+`;
+
+exports[`sassOptions option > should work with the \"linefeed\" option ('dart-sass', 'modern' API, 'sass' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.message, .warning, .error, .success {\\n  border: 1px solid #ccc;\\n  padding: 10px;\\n  color: #333;\\n}\\n\\n.success {\\n  border-color: green;\\n}\\n\\n.error {\\n  border-color: red;\\n}\\n\\n.warning {\\n  border-color: yellow;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sassOptions option > should work with the \"linefeed\" option ('dart-sass', 'modern' API, 'sass' syntax) 2`] = `
+[]
+`;
+
+exports[`sassOptions option > should work with the \"linefeed\" option ('dart-sass', 'modern' API, 'sass' syntax) 3`] = `
+[]
+`;
+
+exports[`sassOptions option > should work with the \"linefeed\" option ('dart-sass', 'modern' API, 'scss' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sassOptions option > should work with the \"linefeed\" option ('dart-sass', 'modern' API, 'scss' syntax) 2`] = `
+[]
+`;
+
+exports[`sassOptions option > should work with the \"linefeed\" option ('dart-sass', 'modern' API, 'scss' syntax) 3`] = `
+[]
+`;
+
+exports[`sassOptions option > should work with the \"linefeed\" option ('dart-sass', 'modern-compiler' API, 'sass' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.message, .warning, .error, .success {\\n  border: 1px solid #ccc;\\n  padding: 10px;\\n  color: #333;\\n}\\n\\n.success {\\n  border-color: green;\\n}\\n\\n.error {\\n  border-color: red;\\n}\\n\\n.warning {\\n  border-color: yellow;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sassOptions option > should work with the \"linefeed\" option ('dart-sass', 'modern-compiler' API, 'sass' syntax) 2`] = `
+[]
+`;
+
+exports[`sassOptions option > should work with the \"linefeed\" option ('dart-sass', 'modern-compiler' API, 'sass' syntax) 3`] = `
+[]
+`;
+
+exports[`sassOptions option > should work with the \"linefeed\" option ('dart-sass', 'modern-compiler' API, 'scss' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sassOptions option > should work with the \"linefeed\" option ('dart-sass', 'modern-compiler' API, 'scss' syntax) 2`] = `
+[]
+`;
+
+exports[`sassOptions option > should work with the \"linefeed\" option ('dart-sass', 'modern-compiler' API, 'scss' syntax) 3`] = `
+[]
+`;
+
+exports[`sassOptions option > should work with the \"linefeed\" option ('sass-embedded', 'modern' API, 'sass' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.message, .warning, .error, .success {\\n  border: 1px solid #ccc;\\n  padding: 10px;\\n  color: #333;\\n}\\n\\n.success {\\n  border-color: green;\\n}\\n\\n.error {\\n  border-color: red;\\n}\\n\\n.warning {\\n  border-color: yellow;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sassOptions option > should work with the \"linefeed\" option ('sass-embedded', 'modern' API, 'sass' syntax) 2`] = `
+[]
+`;
+
+exports[`sassOptions option > should work with the \"linefeed\" option ('sass-embedded', 'modern' API, 'sass' syntax) 3`] = `
+[]
+`;
+
+exports[`sassOptions option > should work with the \"linefeed\" option ('sass-embedded', 'modern' API, 'scss' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sassOptions option > should work with the \"linefeed\" option ('sass-embedded', 'modern' API, 'scss' syntax) 2`] = `
+[]
+`;
+
+exports[`sassOptions option > should work with the \"linefeed\" option ('sass-embedded', 'modern' API, 'scss' syntax) 3`] = `
+[]
+`;
+
+exports[`sassOptions option > should work with the \"linefeed\" option ('sass-embedded', 'modern-compiler' API, 'sass' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.message, .warning, .error, .success {\\n  border: 1px solid #ccc;\\n  padding: 10px;\\n  color: #333;\\n}\\n\\n.success {\\n  border-color: green;\\n}\\n\\n.error {\\n  border-color: red;\\n}\\n\\n.warning {\\n  border-color: yellow;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sassOptions option > should work with the \"linefeed\" option ('sass-embedded', 'modern-compiler' API, 'sass' syntax) 2`] = `
+[]
+`;
+
+exports[`sassOptions option > should work with the \"linefeed\" option ('sass-embedded', 'modern-compiler' API, 'sass' syntax) 3`] = `
+[]
+`;
+
+exports[`sassOptions option > should work with the \"linefeed\" option ('sass-embedded', 'modern-compiler' API, 'scss' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sassOptions option > should work with the \"linefeed\" option ('sass-embedded', 'modern-compiler' API, 'scss' syntax) 2`] = `
+[]
+`;
+
+exports[`sassOptions option > should work with the \"linefeed\" option ('sass-embedded', 'modern-compiler' API, 'scss' syntax) 3`] = `
+[]
+`;
+
+exports[`sassOptions option > should work with the \"loadPaths\" option ('dart-sass', 'modern' API, 'sass' syntax) 1`] = `
+".include-path-module {\\n  background: hotpink;\\n}\\n\\n._underscore-include-path-module {\\n  background: hotpink;\\n}"
+`;
+
+exports[`sassOptions option > should work with the \"loadPaths\" option ('dart-sass', 'modern' API, 'sass' syntax) 2`] = `
+[]
+`;
+
+exports[`sassOptions option > should work with the \"loadPaths\" option ('dart-sass', 'modern' API, 'sass' syntax) 3`] = `
+[]
+`;
+
+exports[`sassOptions option > should work with the \"loadPaths\" option ('dart-sass', 'modern' API, 'scss' syntax) 1`] = `
+".include-path-module {\\n  background: hotpink;\\n}\\n\\n._underscore-include-path-module {\\n  background: hotpink;\\n}"
+`;
+
+exports[`sassOptions option > should work with the \"loadPaths\" option ('dart-sass', 'modern' API, 'scss' syntax) 2`] = `
+[]
+`;
+
+exports[`sassOptions option > should work with the \"loadPaths\" option ('dart-sass', 'modern' API, 'scss' syntax) 3`] = `
+[]
+`;
+
+exports[`sassOptions option > should work with the \"loadPaths\" option ('dart-sass', 'modern-compiler' API, 'sass' syntax) 1`] = `
+".include-path-module {\\n  background: hotpink;\\n}\\n\\n._underscore-include-path-module {\\n  background: hotpink;\\n}"
+`;
+
+exports[`sassOptions option > should work with the \"loadPaths\" option ('dart-sass', 'modern-compiler' API, 'sass' syntax) 2`] = `
+[]
+`;
+
+exports[`sassOptions option > should work with the \"loadPaths\" option ('dart-sass', 'modern-compiler' API, 'sass' syntax) 3`] = `
+[]
+`;
+
+exports[`sassOptions option > should work with the \"loadPaths\" option ('dart-sass', 'modern-compiler' API, 'scss' syntax) 1`] = `
+".include-path-module {\\n  background: hotpink;\\n}\\n\\n._underscore-include-path-module {\\n  background: hotpink;\\n}"
+`;
+
+exports[`sassOptions option > should work with the \"loadPaths\" option ('dart-sass', 'modern-compiler' API, 'scss' syntax) 2`] = `
+[]
+`;
+
+exports[`sassOptions option > should work with the \"loadPaths\" option ('dart-sass', 'modern-compiler' API, 'scss' syntax) 3`] = `
+[]
+`;
+
+exports[`sassOptions option > should work with the \"loadPaths\" option ('sass-embedded', 'modern' API, 'sass' syntax) 1`] = `
+".include-path-module {\\n  background: hotpink;\\n}\\n\\n._underscore-include-path-module {\\n  background: hotpink;\\n}"
+`;
+
+exports[`sassOptions option > should work with the \"loadPaths\" option ('sass-embedded', 'modern' API, 'sass' syntax) 2`] = `
+[]
+`;
+
+exports[`sassOptions option > should work with the \"loadPaths\" option ('sass-embedded', 'modern' API, 'sass' syntax) 3`] = `
+[]
+`;
+
+exports[`sassOptions option > should work with the \"loadPaths\" option ('sass-embedded', 'modern' API, 'scss' syntax) 1`] = `
+".include-path-module {\\n  background: hotpink;\\n}\\n\\n._underscore-include-path-module {\\n  background: hotpink;\\n}"
+`;
+
+exports[`sassOptions option > should work with the \"loadPaths\" option ('sass-embedded', 'modern' API, 'scss' syntax) 2`] = `
+[]
+`;
+
+exports[`sassOptions option > should work with the \"loadPaths\" option ('sass-embedded', 'modern' API, 'scss' syntax) 3`] = `
+[]
+`;
+
+exports[`sassOptions option > should work with the \"loadPaths\" option ('sass-embedded', 'modern-compiler' API, 'sass' syntax) 1`] = `
+".include-path-module {\\n  background: hotpink;\\n}\\n\\n._underscore-include-path-module {\\n  background: hotpink;\\n}"
+`;
+
+exports[`sassOptions option > should work with the \"loadPaths\" option ('sass-embedded', 'modern-compiler' API, 'sass' syntax) 2`] = `
+[]
+`;
+
+exports[`sassOptions option > should work with the \"loadPaths\" option ('sass-embedded', 'modern-compiler' API, 'sass' syntax) 3`] = `
+[]
+`;
+
+exports[`sassOptions option > should work with the \"loadPaths\" option ('sass-embedded', 'modern-compiler' API, 'scss' syntax) 1`] = `
+".include-path-module {\\n  background: hotpink;\\n}\\n\\n._underscore-include-path-module {\\n  background: hotpink;\\n}"
+`;
+
+exports[`sassOptions option > should work with the \"loadPaths\" option ('sass-embedded', 'modern-compiler' API, 'scss' syntax) 2`] = `
+[]
+`;
+
+exports[`sassOptions option > should work with the \"loadPaths\" option ('sass-embedded', 'modern-compiler' API, 'scss' syntax) 3`] = `
+[]
+`;
+
+exports[`sassOptions option > should work with the \"syntax\" option ('dart-sass', 'modern' API, 'sass' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.message, .warning, .error, .success {\\n  border: 1px solid #ccc;\\n  padding: 10px;\\n  color: #333;\\n}\\n\\n.success {\\n  border-color: green;\\n}\\n\\n.error {\\n  border-color: red;\\n}\\n\\n.warning {\\n  border-color: yellow;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sassOptions option > should work with the \"syntax\" option ('dart-sass', 'modern' API, 'sass' syntax) 2`] = `
+[]
+`;
+
+exports[`sassOptions option > should work with the \"syntax\" option ('dart-sass', 'modern' API, 'sass' syntax) 3`] = `
+[]
+`;
+
+exports[`sassOptions option > should work with the \"syntax\" option ('dart-sass', 'modern' API, 'scss' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sassOptions option > should work with the \"syntax\" option ('dart-sass', 'modern' API, 'scss' syntax) 2`] = `
+[]
+`;
+
+exports[`sassOptions option > should work with the \"syntax\" option ('dart-sass', 'modern' API, 'scss' syntax) 3`] = `
+[]
+`;
+
+exports[`sassOptions option > should work with the \"syntax\" option ('dart-sass', 'modern-compiler' API, 'sass' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.message, .warning, .error, .success {\\n  border: 1px solid #ccc;\\n  padding: 10px;\\n  color: #333;\\n}\\n\\n.success {\\n  border-color: green;\\n}\\n\\n.error {\\n  border-color: red;\\n}\\n\\n.warning {\\n  border-color: yellow;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sassOptions option > should work with the \"syntax\" option ('dart-sass', 'modern-compiler' API, 'sass' syntax) 2`] = `
+[]
+`;
+
+exports[`sassOptions option > should work with the \"syntax\" option ('dart-sass', 'modern-compiler' API, 'sass' syntax) 3`] = `
+[]
+`;
+
+exports[`sassOptions option > should work with the \"syntax\" option ('dart-sass', 'modern-compiler' API, 'scss' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sassOptions option > should work with the \"syntax\" option ('dart-sass', 'modern-compiler' API, 'scss' syntax) 2`] = `
+[]
+`;
+
+exports[`sassOptions option > should work with the \"syntax\" option ('dart-sass', 'modern-compiler' API, 'scss' syntax) 3`] = `
+[]
+`;
+
+exports[`sassOptions option > should work with the \"syntax\" option ('sass-embedded', 'modern' API, 'sass' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.message, .warning, .error, .success {\\n  border: 1px solid #ccc;\\n  padding: 10px;\\n  color: #333;\\n}\\n\\n.success {\\n  border-color: green;\\n}\\n\\n.error {\\n  border-color: red;\\n}\\n\\n.warning {\\n  border-color: yellow;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sassOptions option > should work with the \"syntax\" option ('sass-embedded', 'modern' API, 'sass' syntax) 2`] = `
+[]
+`;
+
+exports[`sassOptions option > should work with the \"syntax\" option ('sass-embedded', 'modern' API, 'sass' syntax) 3`] = `
+[]
+`;
+
+exports[`sassOptions option > should work with the \"syntax\" option ('sass-embedded', 'modern' API, 'scss' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sassOptions option > should work with the \"syntax\" option ('sass-embedded', 'modern' API, 'scss' syntax) 2`] = `
+[]
+`;
+
+exports[`sassOptions option > should work with the \"syntax\" option ('sass-embedded', 'modern' API, 'scss' syntax) 3`] = `
+[]
+`;
+
+exports[`sassOptions option > should work with the \"syntax\" option ('sass-embedded', 'modern-compiler' API, 'sass' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.message, .warning, .error, .success {\\n  border: 1px solid #ccc;\\n  padding: 10px;\\n  color: #333;\\n}\\n\\n.success {\\n  border-color: green;\\n}\\n\\n.error {\\n  border-color: red;\\n}\\n\\n.warning {\\n  border-color: yellow;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sassOptions option > should work with the \"syntax\" option ('sass-embedded', 'modern-compiler' API, 'sass' syntax) 2`] = `
+[]
+`;
+
+exports[`sassOptions option > should work with the \"syntax\" option ('sass-embedded', 'modern-compiler' API, 'sass' syntax) 3`] = `
+[]
+`;
+
+exports[`sassOptions option > should work with the \"syntax\" option ('sass-embedded', 'modern-compiler' API, 'scss' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
+`;
+
+exports[`sassOptions option > should work with the \"syntax\" option ('sass-embedded', 'modern-compiler' API, 'scss' syntax) 2`] = `
+[]
+`;
+
+exports[`sassOptions option > should work with the \"syntax\" option ('sass-embedded', 'modern-compiler' API, 'scss' syntax) 3`] = `
+[]
+`;

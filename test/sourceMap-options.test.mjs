@@ -1,5 +1,7 @@
+import assert from "node:assert";
 import fs from "node:fs";
 import path from "node:path";
+import { describe, it } from "node:test";
 import url from "node:url";
 
 import {
@@ -11,7 +13,10 @@ import {
   getImplementationsAndAPI,
   getTestId,
   getWarnings,
-} from "./helpers";
+} from "./helpers/index.js";
+
+const __filename = url.fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const implementations = getImplementationsAndAPI();
 const syntaxStyles = ["scss", "sass"];
@@ -23,9 +28,7 @@ describe("sourceMap option", () => {
 
       const getSourceMap = (sourceMap) => sourceMap;
 
-      it(`should generate source maps when value is not specified and the "devtool" option has "source-map" value ('${implementationName}', '${api}' API, '${syntax}' syntax)`, async () => {
-        expect.assertions(10);
-
+      it(`should generate source maps when value is not specified and the "devtool" option has "source-map" value ('${implementationName}', '${api}' API, '${syntax}' syntax)`, async (t) => {
         const testId = getTestId("language", syntax);
         const options = { implementation, api };
         const compiler = getCompiler(testId, {
@@ -37,28 +40,27 @@ describe("sourceMap option", () => {
 
         sourceMap.sourceRoot = "";
         sourceMap.sources = sourceMap.sources.map((source) => {
-          expect(path.isAbsolute(source)).toBe(true);
-          expect(source).toBe(path.normalize(source));
-          expect(
+          assert.strictEqual(path.isAbsolute(source), true);
+          assert.strictEqual(source, path.normalize(source));
+          assert.strictEqual(
             fs.existsSync(path.resolve(sourceMap.sourceRoot, source)),
-          ).toBe(true);
+            true,
+          );
 
           return path
             .relative(path.resolve(__dirname, ".."), source)
             .replaceAll("\\", "/");
         });
 
-        expect(css).toMatchSnapshot("css");
-        expect(getSourceMap(sourceMap)).toMatchSnapshot("source map");
-        expect(getWarnings(stats)).toMatchSnapshot("warnings");
-        expect(getErrors(stats)).toMatchSnapshot("errors");
+        t.assert.snapshot(css);
+        t.assert.snapshot(getSourceMap(sourceMap));
+        t.assert.snapshot(getWarnings(stats));
+        t.assert.snapshot(getErrors(stats));
 
         await close(compiler);
       });
 
-      it(`should generate source maps when value has "true" value and the "devtool" option has "source-map" value ('${implementationName}', '${api}' API, '${syntax}' syntax)`, async () => {
-        expect.assertions(10);
-
+      it(`should generate source maps when value has "true" value and the "devtool" option has "source-map" value ('${implementationName}', '${api}' API, '${syntax}' syntax)`, async (t) => {
         const testId = getTestId("language", syntax);
         const options = { implementation, api, sourceMap: true };
         const compiler = getCompiler(testId, {
@@ -70,28 +72,27 @@ describe("sourceMap option", () => {
 
         sourceMap.sourceRoot = "";
         sourceMap.sources = sourceMap.sources.map((source) => {
-          expect(path.isAbsolute(source)).toBe(true);
-          expect(source).toBe(path.normalize(source));
-          expect(
+          assert.strictEqual(path.isAbsolute(source), true);
+          assert.strictEqual(source, path.normalize(source));
+          assert.strictEqual(
             fs.existsSync(path.resolve(sourceMap.sourceRoot, source)),
-          ).toBe(true);
+            true,
+          );
 
           return path
             .relative(path.resolve(__dirname, ".."), source)
             .replaceAll("\\", "/");
         });
 
-        expect(css).toMatchSnapshot("css");
-        expect(getSourceMap(sourceMap)).toMatchSnapshot("source map");
-        expect(getWarnings(stats)).toMatchSnapshot("warnings");
-        expect(getErrors(stats)).toMatchSnapshot("errors");
+        t.assert.snapshot(css);
+        t.assert.snapshot(getSourceMap(sourceMap));
+        t.assert.snapshot(getWarnings(stats));
+        t.assert.snapshot(getErrors(stats));
 
         await close(compiler);
       });
 
-      it(`should generate source maps when value has "true" value and the "devtool" option has "false" value ('${implementationName}', '${api}' API, '${syntax}' syntax)`, async () => {
-        expect.assertions(10);
-
+      it(`should generate source maps when value has "true" value and the "devtool" option has "false" value ('${implementationName}', '${api}' API, '${syntax}' syntax)`, async (t) => {
         const testId = getTestId("language", syntax);
         const options = { implementation, api, sourceMap: true };
         const compiler = getCompiler(testId, {
@@ -103,28 +104,27 @@ describe("sourceMap option", () => {
 
         sourceMap.sourceRoot = "";
         sourceMap.sources = sourceMap.sources.map((source) => {
-          expect(path.isAbsolute(source)).toBe(true);
-          expect(source).toBe(path.normalize(source));
-          expect(
+          assert.strictEqual(path.isAbsolute(source), true);
+          assert.strictEqual(source, path.normalize(source));
+          assert.strictEqual(
             fs.existsSync(path.resolve(sourceMap.sourceRoot, source)),
-          ).toBe(true);
+            true,
+          );
 
           return path
             .relative(path.resolve(__dirname, ".."), source)
             .replaceAll("\\", "/");
         });
 
-        expect(css).toMatchSnapshot("css");
-        expect(getSourceMap(sourceMap)).toMatchSnapshot("source map");
-        expect(getWarnings(stats)).toMatchSnapshot("warnings");
-        expect(getErrors(stats)).toMatchSnapshot("errors");
+        t.assert.snapshot(css);
+        t.assert.snapshot(getSourceMap(sourceMap));
+        t.assert.snapshot(getWarnings(stats));
+        t.assert.snapshot(getErrors(stats));
 
         await close(compiler);
       });
 
-      it(`should generate source maps when value has "false" value, but the "sassOptions.sourceMap" has the "true" value ('${implementationName}', '${api}' API, '${syntax}' syntax)`, async () => {
-        expect.assertions(10);
-
+      it(`should generate source maps when value has "false" value, but the "sassOptions.sourceMap" has the "true" value ('${implementationName}', '${api}' API, '${syntax}' syntax)`, async (t) => {
         const testId = getTestId("language", syntax);
         const options = {
           implementation,
@@ -145,29 +145,30 @@ describe("sourceMap option", () => {
         sourceMap.sources = sourceMap.sources.map((source) => {
           const normalizedSource = url.fileURLToPath(source);
 
-          expect(source).toMatch(/^file:/);
-          expect(path.isAbsolute(normalizedSource)).toBe(true);
+          assert.match(source, /^file:/);
+          assert.strictEqual(path.isAbsolute(normalizedSource), true);
 
-          expect(
+          assert.strictEqual(
             fs.existsSync(
               path.resolve(__dirname, path.normalize(normalizedSource)),
             ),
-          ).toBe(true);
+            true,
+          );
 
           return path
             .relative(path.resolve(__dirname, ".."), normalizedSource)
             .replaceAll("\\", "/");
         });
 
-        expect(css).toMatchSnapshot("css");
-        expect(getSourceMap(sourceMap)).toMatchSnapshot("source map");
-        expect(getWarnings(stats)).toMatchSnapshot("warnings");
-        expect(getErrors(stats)).toMatchSnapshot("errors");
+        t.assert.snapshot(css);
+        t.assert.snapshot(getSourceMap(sourceMap));
+        t.assert.snapshot(getWarnings(stats));
+        t.assert.snapshot(getErrors(stats));
 
         await close(compiler);
       });
 
-      it(`should not generate source maps when value is not specified and the "devtool" option has "false" value ('${implementationName}', '${api}' API, '${syntax}' syntax)`, async () => {
+      it(`should not generate source maps when value is not specified and the "devtool" option has "false" value ('${implementationName}', '${api}' API, '${syntax}' syntax)`, async (t) => {
         const testId = getTestId("language", syntax);
         const options = { implementation, api };
         const compiler = getCompiler(testId, {
@@ -177,15 +178,15 @@ describe("sourceMap option", () => {
         const stats = await compile(compiler);
         const { css, sourceMap } = getCodeFromBundle(stats, compiler);
 
-        expect(css).toMatchSnapshot("css");
-        expect(getSourceMap(sourceMap)).toMatchSnapshot("source map");
-        expect(getWarnings(stats)).toMatchSnapshot("warnings");
-        expect(getErrors(stats)).toMatchSnapshot("errors");
+        t.assert.snapshot(css);
+        t.assert.snapshot(getSourceMap(sourceMap));
+        t.assert.snapshot(getWarnings(stats));
+        t.assert.snapshot(getErrors(stats));
 
         await close(compiler);
       });
 
-      it(`should not generate source maps when value has "false" value and the "devtool" option has "source-map" value ('${implementationName}', '${api}' API, '${syntax}' syntax)`, async () => {
+      it(`should not generate source maps when value has "false" value and the "devtool" option has "source-map" value ('${implementationName}', '${api}' API, '${syntax}' syntax)`, async (t) => {
         const testId = getTestId("language", syntax);
         const options = { implementation, api, sourceMap: false };
         const compiler = getCompiler(testId, {
@@ -195,15 +196,15 @@ describe("sourceMap option", () => {
         const stats = await compile(compiler);
         const { css, sourceMap } = getCodeFromBundle(stats, compiler);
 
-        expect(css).toMatchSnapshot("css");
-        expect(getSourceMap(sourceMap)).toMatchSnapshot("source map");
-        expect(getWarnings(stats)).toMatchSnapshot("warnings");
-        expect(getErrors(stats)).toMatchSnapshot("errors");
+        t.assert.snapshot(css);
+        t.assert.snapshot(getSourceMap(sourceMap));
+        t.assert.snapshot(getWarnings(stats));
+        t.assert.snapshot(getErrors(stats));
 
         await close(compiler);
       });
 
-      it(`should not generate source maps when value has "false" value and the "devtool" option has "false" value ('${implementationName}', '${api}' API, '${syntax}' syntax)`, async () => {
+      it(`should not generate source maps when value has "false" value and the "devtool" option has "false" value ('${implementationName}', '${api}' API, '${syntax}' syntax)`, async (t) => {
         const testId = getTestId("language", syntax);
         const options = { implementation, api, sourceMap: false };
         const compiler = getCompiler(testId, {
@@ -213,15 +214,15 @@ describe("sourceMap option", () => {
         const stats = await compile(compiler);
         const { css, sourceMap } = getCodeFromBundle(stats, compiler);
 
-        expect(css).toMatchSnapshot("css");
-        expect(getSourceMap(sourceMap)).toMatchSnapshot("source map");
-        expect(getWarnings(stats)).toMatchSnapshot("warnings");
-        expect(getErrors(stats)).toMatchSnapshot("errors");
+        t.assert.snapshot(css);
+        t.assert.snapshot(getSourceMap(sourceMap));
+        t.assert.snapshot(getWarnings(stats));
+        t.assert.snapshot(getErrors(stats));
 
         await close(compiler);
       });
 
-      it(`should generate sourcemap with "asset/resource" ('${implementationName}', '${api}' API, '${syntax}' syntax)`, async () => {
+      it(`should generate sourcemap with "asset/resource" ('${implementationName}', '${api}' API, '${syntax}' syntax)`, async (t) => {
         const testId = getTestId("language", syntax);
         const compiler = getCompiler(testId, {
           devtool: "source-map",
@@ -260,17 +261,15 @@ describe("sourceMap option", () => {
           .readFileSync(path.join(outputPath, targetMapFile))
           .toString();
 
-        expect(css).toMatchSnapshot("css");
-        expect(getSourceMap(JSON.parse(sourceMap))).toMatchSnapshot(
-          "source map",
-        );
-        expect(getWarnings(stats)).toMatchSnapshot("warnings");
-        expect(getErrors(stats)).toMatchSnapshot("errors");
+        t.assert.snapshot(css);
+        t.assert.snapshot(getSourceMap(JSON.parse(sourceMap)));
+        t.assert.snapshot(getWarnings(stats));
+        t.assert.snapshot(getErrors(stats));
 
         await close(compiler);
       });
 
-      it(`should generate source maps with absolute URLs ('${implementationName}', '${api}' API, '${syntax}' syntax)`, async () => {
+      it(`should generate source maps with absolute URLs ('${implementationName}', '${api}' API, '${syntax}' syntax)`, async (t) => {
         const testId = getTestId("language-source-maps", syntax);
         const options = { implementation, api };
         const compiler = getCompiler(testId, {
@@ -282,21 +281,22 @@ describe("sourceMap option", () => {
 
         sourceMap.sourceRoot = "";
         sourceMap.sources = sourceMap.sources.map((source) => {
-          expect(path.isAbsolute(source)).toBe(true);
-          expect(source).toBe(path.normalize(source));
-          expect(
+          assert.strictEqual(path.isAbsolute(source), true);
+          assert.strictEqual(source, path.normalize(source));
+          assert.strictEqual(
             fs.existsSync(path.resolve(sourceMap.sourceRoot, source)),
-          ).toBe(true);
+            true,
+          );
 
           return path
             .relative(path.resolve(__dirname, ".."), source)
             .replaceAll("\\", "/");
         });
 
-        expect(css).toMatchSnapshot("css");
-        expect(getSourceMap(sourceMap)).toMatchSnapshot("source map");
-        expect(getWarnings(stats)).toMatchSnapshot("warnings");
-        expect(getErrors(stats)).toMatchSnapshot("errors");
+        t.assert.snapshot(css);
+        t.assert.snapshot(getSourceMap(sourceMap));
+        t.assert.snapshot(getWarnings(stats));
+        t.assert.snapshot(getErrors(stats));
 
         await close(compiler);
       });

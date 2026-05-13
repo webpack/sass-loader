@@ -1,3 +1,5 @@
+"use strict";
+
 /**
  * @param {string} content content
  * @param {RawSourceMap} sourceMap source map

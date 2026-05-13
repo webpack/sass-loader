@@ -1,9 +1,15 @@
+import assert from "node:assert";
+import { createRequire } from "node:module";
+import { describe, it } from "node:test";
+
 import {
   compile,
   getCompiler,
   getImplementationByName,
   getTestId,
-} from "./helpers/index";
+} from "./helpers/index.js";
+
+const require = createRequire(import.meta.url);
 
 describe("validate options", () => {
   const tests = {
@@ -60,7 +66,7 @@ describe("validate options", () => {
   async function createTestCase(key, value, type) {
     it(`should ${
       type === "success" ? "successfully validate" : "throw an error on"
-    } the "${key}" option with "${stringifyValue(value)}" value`, async () => {
+    } the "${key}" option with "${stringifyValue(value)}" value`, async (t) => {
       const testId = getTestId("language", "scss");
       const compiler = getCompiler(testId, {
         loader: {
@@ -76,16 +82,25 @@ describe("validate options", () => {
         stats = await compile(compiler);
       } finally {
         if (type === "success") {
-          expect(stats.hasErrors()).toBe(false);
+          assert.strictEqual(stats.hasErrors(), false);
         } else if (type === "failure") {
           const {
             compilation: { errors },
           } = stats;
 
-          expect(errors).toHaveLength(1);
-          expect(() => {
-            throw new Error(errors[0].error.message);
-          }).toThrowErrorMatchingSnapshot();
+          assert.strictEqual(errors.length, 1);
+          t.assert.snapshot(
+            ((fn) => {
+              try {
+                fn();
+                return null;
+              } catch (e) {
+                return e.message;
+              }
+            })(() => {
+              throw new Error(errors[0].error.message);
+            }),
+          );
         }
       }
     });

@@ -1,3 +1,6 @@
+import assert from "node:assert";
+import path from "node:path";
+import { describe, it } from "node:test";
 import url from "node:url";
 
 import {
@@ -10,9 +13,10 @@ import {
   getImplementationsAndAPI,
   getTestId,
   getWarnings,
-} from "./helpers";
+} from "./helpers/index.js";
 
-jest.setTimeout(60000);
+const __filename = url.fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const implementations = getImplementationsAndAPI();
 const syntaxStyles = ["scss", "sass"];
@@ -22,7 +26,7 @@ describe("loader", () => {
     const { name: implementationName, api, implementation } = item;
 
     for (const syntax of syntaxStyles) {
-      it(`should emit warning by default ('${implementationName}', '${api}' API, '${syntax}' syntax)`, async () => {
+      it(`should emit warning by default ('${implementationName}', '${api}' API, '${syntax}' syntax)`, async (t) => {
         const testId = getTestId("logging", syntax);
         const options = {
           implementation,
@@ -49,16 +53,16 @@ describe("loader", () => {
           }
         }
 
-        expect(codeFromBundle.css).toBe(codeFromSass.css);
-        expect(codeFromBundle.css).toMatchSnapshot("css");
-        expect(getWarnings(stats)).toMatchSnapshot("warnings");
-        expect(getErrors(stats)).toMatchSnapshot("errors");
-        expect(logs).toMatchSnapshot("logs");
+        assert.strictEqual(codeFromBundle.css, codeFromSass.css);
+        t.assert.snapshot(codeFromBundle.css);
+        t.assert.snapshot(getWarnings(stats));
+        t.assert.snapshot(getErrors(stats));
+        t.assert.snapshot(logs);
 
         await close(compiler);
       });
 
-      it(`should not emit warning when 'false' used ('${implementationName}', '${api}' API, '${syntax}' syntax)`, async () => {
+      it(`should not emit warning when 'false' used ('${implementationName}', '${api}' API, '${syntax}' syntax)`, async (t) => {
         const testId = getTestId("logging", syntax);
         const options = {
           implementation,
@@ -86,16 +90,16 @@ describe("loader", () => {
           }
         }
 
-        expect(codeFromBundle.css).toBe(codeFromSass.css);
-        expect(codeFromBundle.css).toMatchSnapshot("css");
-        expect(getWarnings(stats)).toMatchSnapshot("warnings");
-        expect(getErrors(stats)).toMatchSnapshot("errors");
-        expect(logs).toMatchSnapshot("logs");
+        assert.strictEqual(codeFromBundle.css, codeFromSass.css);
+        t.assert.snapshot(codeFromBundle.css);
+        t.assert.snapshot(getWarnings(stats));
+        t.assert.snapshot(getErrors(stats));
+        t.assert.snapshot(logs);
 
         await close(compiler);
       });
 
-      it(`should emit warning when 'true' used ('${implementationName}', '${api}' API, '${syntax}' syntax)`, async () => {
+      it(`should emit warning when 'true' used ('${implementationName}', '${api}' API, '${syntax}' syntax)`, async (t) => {
         const testId = getTestId("logging", syntax);
         const options = {
           implementation,
@@ -123,17 +127,17 @@ describe("loader", () => {
           }
         }
 
-        expect(codeFromBundle.css).toBe(codeFromSass.css);
-        expect(codeFromBundle.css).toMatchSnapshot("css");
-        expect(getWarnings(stats)).toMatchSnapshot("warnings");
-        expect(getErrors(stats)).toMatchSnapshot("errors");
-        expect(logs).toMatchSnapshot("logs");
+        assert.strictEqual(codeFromBundle.css, codeFromSass.css);
+        t.assert.snapshot(codeFromBundle.css);
+        t.assert.snapshot(getWarnings(stats));
+        t.assert.snapshot(getErrors(stats));
+        t.assert.snapshot(logs);
 
         await close(compiler);
       });
 
       if (syntax === "sass") {
-        it(`should emit good formatted warning ('${implementationName}', '${api}' API, '${syntax}' syntax)`, async () => {
+        it(`should emit good formatted warning ('${implementationName}', '${api}' API, '${syntax}' syntax)`, async (t) => {
           const testId = getTestId("broken", syntax);
           const options = {
             implementation,
@@ -159,10 +163,10 @@ describe("loader", () => {
             }
           }
 
-          expect(codeFromBundle.css).toMatchSnapshot("css");
-          expect(getWarnings(stats, true)).toMatchSnapshot("warnings");
-          expect(getErrors(stats)).toMatchSnapshot("errors");
-          expect(logs).toMatchSnapshot("logs");
+          t.assert.snapshot(codeFromBundle.css);
+          t.assert.snapshot(getWarnings(stats, true));
+          t.assert.snapshot(getErrors(stats));
+          t.assert.snapshot(logs);
 
           await close(compiler);
         });

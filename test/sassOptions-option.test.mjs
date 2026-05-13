@@ -1,4 +1,7 @@
+import assert from "node:assert";
 import path from "node:path";
+import { describe, it } from "node:test";
+import { fileURLToPath } from "node:url";
 
 import {
   close,
@@ -11,9 +14,10 @@ import {
   getImplementationsAndAPI,
   getTestId,
   getWarnings,
-} from "./helpers";
+} from "./helpers/index.js";
 
-jest.setTimeout(30000);
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const implementations = getImplementationsAndAPI();
 const syntaxStyles = ["scss", "sass"];
@@ -23,7 +27,7 @@ describe("sassOptions option", () => {
     const { name: implementationName, api, implementation } = item;
 
     for (const syntax of syntaxStyles) {
-      it(`should work when the option like "Object" ('${implementationName}', '${api}' API, '${syntax}' syntax)`, async () => {
+      it(`should work when the option like "Object" ('${implementationName}', '${api}' API, '${syntax}' syntax)`, async (t) => {
         const testId = getTestId("language", syntax);
         const options = {
           implementation,
@@ -37,15 +41,15 @@ describe("sassOptions option", () => {
         const codeFromBundle = getCodeFromBundle(stats, compiler);
         const codeFromSass = await getCodeFromSass(testId, options);
 
-        expect(codeFromBundle.css).toBe(codeFromSass.css);
-        expect(codeFromBundle.css).toMatchSnapshot("css");
-        expect(getWarnings(stats)).toMatchSnapshot("warnings");
-        expect(getErrors(stats)).toMatchSnapshot("errors");
+        assert.strictEqual(codeFromBundle.css, codeFromSass.css);
+        t.assert.snapshot(codeFromBundle.css);
+        t.assert.snapshot(getWarnings(stats));
+        t.assert.snapshot(getErrors(stats));
 
         await close(compiler);
       });
 
-      it(`should work when the option is empty "Object" ('${implementationName}', '${api}' API, '${syntax}' syntax)`, async () => {
+      it(`should work when the option is empty "Object" ('${implementationName}', '${api}' API, '${syntax}' syntax)`, async (t) => {
         const testId = getTestId("language", syntax);
         const options = {
           implementation,
@@ -57,23 +61,21 @@ describe("sassOptions option", () => {
         const codeFromBundle = getCodeFromBundle(stats, compiler);
         const codeFromSass = await getCodeFromSass(testId, options);
 
-        expect(codeFromBundle.css).toBe(codeFromSass.css);
-        expect(codeFromBundle.css).toMatchSnapshot("css");
-        expect(getWarnings(stats)).toMatchSnapshot("warnings");
-        expect(getErrors(stats)).toMatchSnapshot("errors");
+        assert.strictEqual(codeFromBundle.css, codeFromSass.css);
+        t.assert.snapshot(codeFromBundle.css);
+        t.assert.snapshot(getWarnings(stats));
+        t.assert.snapshot(getErrors(stats));
 
         await close(compiler);
       });
 
-      it(`should work when the option like "Function" ('${implementationName}', '${api}' API, '${syntax}' syntax)`, async () => {
-        expect.assertions(6);
-
+      it(`should work when the option like "Function" ('${implementationName}', '${api}' API, '${syntax}' syntax)`, async (t) => {
         const testId = getTestId("language", syntax);
         const options = {
           implementation,
           api,
           sassOptions: (loaderContext) => {
-            expect(loaderContext).toBeDefined();
+            assert.notStrictEqual(loaderContext, undefined);
 
             return {};
           },
@@ -83,23 +85,21 @@ describe("sassOptions option", () => {
         const codeFromBundle = getCodeFromBundle(stats, compiler);
         const codeFromSass = await getCodeFromSass(testId, options);
 
-        expect(codeFromBundle.css).toBe(codeFromSass.css);
-        expect(codeFromBundle.css).toMatchSnapshot("css");
-        expect(getWarnings(stats)).toMatchSnapshot("warnings");
-        expect(getErrors(stats)).toMatchSnapshot("errors");
+        assert.strictEqual(codeFromBundle.css, codeFromSass.css);
+        t.assert.snapshot(codeFromBundle.css);
+        t.assert.snapshot(getWarnings(stats));
+        t.assert.snapshot(getErrors(stats));
 
         await close(compiler);
       });
 
-      it(`should work when the option like "Function" and never return ('${implementationName}', '${api}' API, '${syntax}' syntax)`, async () => {
-        expect.assertions(6);
-
+      it(`should work when the option like "Function" and never return ('${implementationName}', '${api}' API, '${syntax}' syntax)`, async (t) => {
         const testId = getTestId("language", syntax);
         const options = {
           implementation,
           api,
           sassOptions: (loaderContext) => {
-            expect(loaderContext).toBeDefined();
+            assert.notStrictEqual(loaderContext, undefined);
           },
         };
         const compiler = getCompiler(testId, { loader: { options } });
@@ -107,15 +107,15 @@ describe("sassOptions option", () => {
         const codeFromBundle = getCodeFromBundle(stats, compiler);
         const codeFromSass = await getCodeFromSass(testId, options);
 
-        expect(codeFromBundle.css).toBe(codeFromSass.css);
-        expect(codeFromBundle.css).toMatchSnapshot("css");
-        expect(getWarnings(stats)).toMatchSnapshot("warnings");
-        expect(getErrors(stats)).toMatchSnapshot("errors");
+        assert.strictEqual(codeFromBundle.css, codeFromSass.css);
+        t.assert.snapshot(codeFromBundle.css);
+        t.assert.snapshot(getWarnings(stats));
+        t.assert.snapshot(getErrors(stats));
 
         await close(compiler);
       });
 
-      it(`should ignore the "url" option ('${implementationName}', '${api}' API, '${syntax}' syntax)`, async () => {
+      it(`should ignore the "url" option ('${implementationName}', '${api}' API, '${syntax}' syntax)`, async (t) => {
         const testId = getTestId("language", syntax);
         const options = {
           implementation,
@@ -127,15 +127,15 @@ describe("sassOptions option", () => {
         const codeFromBundle = getCodeFromBundle(stats, compiler);
         const codeFromSass = await getCodeFromSass(testId, options);
 
-        expect(codeFromBundle.css).toBe(codeFromSass.css);
-        expect(codeFromBundle.css).toMatchSnapshot("css");
-        expect(getWarnings(stats)).toMatchSnapshot("warnings");
-        expect(getErrors(stats)).toMatchSnapshot("errors");
+        assert.strictEqual(codeFromBundle.css, codeFromSass.css);
+        t.assert.snapshot(codeFromBundle.css);
+        t.assert.snapshot(getWarnings(stats));
+        t.assert.snapshot(getErrors(stats));
 
         await close(compiler);
       });
 
-      it(`should work with custom scheme import ('${implementationName}', '${api}' API, '${syntax}' syntax)`, async () => {
+      it(`should work with custom scheme import ('${implementationName}', '${api}' API, '${syntax}' syntax)`, async (t) => {
         const testId = getTestId("modern", syntax);
         const options = {
           implementation,
@@ -164,13 +164,13 @@ describe("sassOptions option", () => {
         const compiler = getCompiler(testId, { loader: { options } });
         const stats = await compile(compiler);
 
-        expect(getWarnings(stats)).toMatchSnapshot("warnings");
-        expect(getErrors(stats)).toMatchSnapshot("errors");
+        t.assert.snapshot(getWarnings(stats));
+        t.assert.snapshot(getErrors(stats));
 
         await close(compiler);
       });
 
-      it(`should ignore the "data" option ('${implementationName}', '${api}' API, '${syntax}' syntax)`, async () => {
+      it(`should ignore the "data" option ('${implementationName}', '${api}' API, '${syntax}' syntax)`, async (t) => {
         const testId = getTestId("language", syntax);
         const options = {
           implementation,
@@ -184,15 +184,15 @@ describe("sassOptions option", () => {
         const codeFromBundle = getCodeFromBundle(stats, compiler);
         const codeFromSass = await getCodeFromSass(testId, options);
 
-        expect(codeFromBundle.css).toBe(codeFromSass.css);
-        expect(codeFromBundle.css).toMatchSnapshot("css");
-        expect(getWarnings(stats)).toMatchSnapshot("warnings");
-        expect(getErrors(stats)).toMatchSnapshot("errors");
+        assert.strictEqual(codeFromBundle.css, codeFromSass.css);
+        t.assert.snapshot(codeFromBundle.css);
+        t.assert.snapshot(getWarnings(stats));
+        t.assert.snapshot(getErrors(stats));
 
         await close(compiler);
       });
 
-      it(`should work with the "functions" option ('${implementationName}', '${api}' API, '${syntax}' syntax)`, async () => {
+      it(`should work with the "functions" option ('${implementationName}', '${api}' API, '${syntax}' syntax)`, async (t) => {
         const testId = getTestId("custom-functions-modern", syntax);
         const options = {
           implementation,
@@ -206,15 +206,15 @@ describe("sassOptions option", () => {
         const codeFromBundle = getCodeFromBundle(stats, compiler);
         const codeFromSass = await getCodeFromSass(testId, options);
 
-        expect(codeFromBundle.css).toBe(codeFromSass.css);
-        expect(codeFromBundle.css).toMatchSnapshot("css");
-        expect(getWarnings(stats)).toMatchSnapshot("warnings");
-        expect(getErrors(stats)).toMatchSnapshot("errors");
+        assert.strictEqual(codeFromBundle.css, codeFromSass.css);
+        t.assert.snapshot(codeFromBundle.css);
+        t.assert.snapshot(getWarnings(stats));
+        t.assert.snapshot(getErrors(stats));
 
         await close(compiler);
       });
 
-      it(`should work with the "loadPaths" option ('${implementationName}', '${api}' API, '${syntax}' syntax)`, async () => {
+      it(`should work with the "loadPaths" option ('${implementationName}', '${api}' API, '${syntax}' syntax)`, async (t) => {
         const testId = getTestId("import-include-paths", syntax);
         const options = {
           implementation,
@@ -228,15 +228,15 @@ describe("sassOptions option", () => {
         const codeFromBundle = getCodeFromBundle(stats, compiler);
         const codeFromSass = await getCodeFromSass(testId, options);
 
-        expect(codeFromBundle.css).toBe(codeFromSass.css);
-        expect(codeFromBundle.css).toMatchSnapshot("css");
-        expect(getWarnings(stats)).toMatchSnapshot("warnings");
-        expect(getErrors(stats)).toMatchSnapshot("errors");
+        assert.strictEqual(codeFromBundle.css, codeFromSass.css);
+        t.assert.snapshot(codeFromBundle.css);
+        t.assert.snapshot(getWarnings(stats));
+        t.assert.snapshot(getErrors(stats));
 
         await close(compiler);
       });
 
-      it(`should work with the "indentWidth" option ('${implementationName}', '${api}' API, '${syntax}' syntax)`, async () => {
+      it(`should work with the "indentWidth" option ('${implementationName}', '${api}' API, '${syntax}' syntax)`, async (t) => {
         const testId = getTestId("language", syntax);
         const options = {
           implementation,
@@ -249,15 +249,15 @@ describe("sassOptions option", () => {
         const codeFromBundle = getCodeFromBundle(stats, compiler);
         const codeFromSass = await getCodeFromSass(testId, options);
 
-        expect(codeFromBundle.css).toBe(codeFromSass.css);
-        expect(codeFromBundle.css).toMatchSnapshot("css");
-        expect(getWarnings(stats)).toMatchSnapshot("warnings");
-        expect(getErrors(stats)).toMatchSnapshot("errors");
+        assert.strictEqual(codeFromBundle.css, codeFromSass.css);
+        t.assert.snapshot(codeFromBundle.css);
+        t.assert.snapshot(getWarnings(stats));
+        t.assert.snapshot(getErrors(stats));
 
         await close(compiler);
       });
 
-      it(`should work with the "syntax" option ('${implementationName}', '${api}' API, '${syntax}' syntax)`, async () => {
+      it(`should work with the "syntax" option ('${implementationName}', '${api}' API, '${syntax}' syntax)`, async (t) => {
         const testId = getTestId("language", syntax);
         const options = {
           implementation,
@@ -271,15 +271,15 @@ describe("sassOptions option", () => {
         const codeFromBundle = getCodeFromBundle(stats, compiler);
         const codeFromSass = await getCodeFromSass(testId, options);
 
-        expect(codeFromBundle.css).toBe(codeFromSass.css);
-        expect(codeFromBundle.css).toMatchSnapshot("css");
-        expect(getWarnings(stats)).toMatchSnapshot("warnings");
-        expect(getErrors(stats)).toMatchSnapshot("errors");
+        assert.strictEqual(codeFromBundle.css, codeFromSass.css);
+        t.assert.snapshot(codeFromBundle.css);
+        t.assert.snapshot(getWarnings(stats));
+        t.assert.snapshot(getErrors(stats));
 
         await close(compiler);
       });
 
-      it(`should work with the "linefeed" option ('${implementationName}', '${api}' API, '${syntax}' syntax)`, async () => {
+      it(`should work with the "linefeed" option ('${implementationName}', '${api}' API, '${syntax}' syntax)`, async (t) => {
         const testId = getTestId("language", syntax);
         const options = {
           implementation,
@@ -292,15 +292,15 @@ describe("sassOptions option", () => {
         const codeFromBundle = getCodeFromBundle(stats, compiler);
         const codeFromSass = await getCodeFromSass(testId, options);
 
-        expect(codeFromBundle.css).toBe(codeFromSass.css);
-        expect(codeFromBundle.css).toMatchSnapshot("css");
-        expect(getWarnings(stats)).toMatchSnapshot("warnings");
-        expect(getErrors(stats)).toMatchSnapshot("errors");
+        assert.strictEqual(codeFromBundle.css, codeFromSass.css);
+        t.assert.snapshot(codeFromBundle.css);
+        t.assert.snapshot(getWarnings(stats));
+        t.assert.snapshot(getErrors(stats));
 
         await close(compiler);
       });
 
-      it(`should respect the "style" option ('${implementationName}', '${api}' API, '${syntax}' syntax)`, async () => {
+      it(`should respect the "style" option ('${implementationName}', '${api}' API, '${syntax}' syntax)`, async (t) => {
         const testId = getTestId("language", syntax);
         const options = {
           implementation,
@@ -315,15 +315,15 @@ describe("sassOptions option", () => {
         const codeFromBundle = getCodeFromBundle(stats, compiler);
         const codeFromSass = await getCodeFromSass(testId, options);
 
-        expect(codeFromBundle.css).toBe(codeFromSass.css);
-        expect(codeFromBundle.css).toMatchSnapshot("css");
-        expect(getWarnings(stats)).toMatchSnapshot("warnings");
-        expect(getErrors(stats)).toMatchSnapshot("errors");
+        assert.strictEqual(codeFromBundle.css, codeFromSass.css);
+        t.assert.snapshot(codeFromBundle.css);
+        t.assert.snapshot(getWarnings(stats));
+        t.assert.snapshot(getErrors(stats));
 
         await close(compiler);
       });
 
-      it(`should use "compressed" output style in the "production" mode ('${implementationName}', '${api}' API, '${syntax}' syntax)`, async () => {
+      it(`should use "compressed" output style in the "production" mode ('${implementationName}', '${api}' API, '${syntax}' syntax)`, async (t) => {
         const testId = getTestId("language", syntax);
         const options = { implementation, api };
         const compiler = getCompiler(testId, {
@@ -337,15 +337,15 @@ describe("sassOptions option", () => {
           sassOptions: { style: "compressed" },
         });
 
-        expect(codeFromBundle.css).toBe(codeFromSass.css);
-        expect(codeFromBundle.css).toMatchSnapshot("css");
-        expect(getWarnings(stats)).toMatchSnapshot("warnings");
-        expect(getErrors(stats)).toMatchSnapshot("errors");
+        assert.strictEqual(codeFromBundle.css, codeFromSass.css);
+        t.assert.snapshot(codeFromBundle.css);
+        t.assert.snapshot(getWarnings(stats));
+        t.assert.snapshot(getErrors(stats));
 
         await close(compiler);
       });
 
-      it(`should work with the "fatalDeprecations" option ('${implementationName}', '${api}' API, '${syntax}' syntax)`, async () => {
+      it(`should work with the "fatalDeprecations" option ('${implementationName}', '${api}' API, '${syntax}' syntax)`, async (t) => {
         const testId = getTestId("slash-div", syntax);
         const options = {
           implementation,
@@ -357,8 +357,8 @@ describe("sassOptions option", () => {
         const compiler = getCompiler(testId, { loader: { options } });
         const stats = await compile(compiler);
 
-        expect(getWarnings(stats)).toMatchSnapshot("warnings");
-        expect(getErrors(stats)).toMatchSnapshot("errors");
+        t.assert.snapshot(getWarnings(stats));
+        t.assert.snapshot(getErrors(stats));
 
         await close(compiler);
       });

@@ -1,8 +1,11 @@
 import path from "node:path";
+import { fileURLToPath } from "node:url";
 
 import del from "del";
 import { Volume, createFsFromVolume } from "memfs";
 import webpack from "webpack";
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 /**
  * @param {Configuration} config config
@@ -15,7 +18,7 @@ const module = (config) => ({
       resolve: config.loader.resolve,
       use: [
         {
-          loader: require.resolve("./testLoader"),
+          loader: path.join(__dirname, "./testLoader.cjs"),
         },
         {
           loader: path.join(__dirname, "../../src/cjs.js"),

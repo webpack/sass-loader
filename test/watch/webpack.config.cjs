@@ -1,6 +1,8 @@
+"use strict";
+
 const path = require("node:path");
 
-const sassLoader = require.resolve("../../src/cjs");
+const sassLoader = require.resolve("../../src/cjs.js");
 
 module.exports = {
   entry: [
