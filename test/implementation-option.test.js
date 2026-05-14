@@ -55,6 +55,11 @@ const implementations = [
     implementation: await getImplementationByName("sass_string"),
     api: "modern",
   },
+  {
+    name: "sass_file_url",
+    implementation: await getImplementationByName("sass_file_url"),
+    api: "modern",
+  },
 ];
 
 /**

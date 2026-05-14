@@ -12,11 +12,32 @@ import url from "node:url";
 /** @typedef {Record<string, EXPECTED_ANY>} LoaderOptions */
 
 /**
+ * Convert a string `implementation` option into something the ECMAScript
+ * `import()` expression actually accepts. Bare package specifiers and
+ * `file:` URLs are passed through unchanged; absolute filesystem paths
+ * (including Windows paths like `C:\\...`) are converted to `file:` URLs
+ * — dynamic `import()` rejects those otherwise.
+ * @param {string} specifier import specifier
+ * @returns {string} a valid dynamic import specifier
+ */
+function normalizeImportSpecifier(specifier) {
+  if (specifier.startsWith("file:")) {
+    return specifier;
+  }
+
+  if (path.isAbsolute(specifier)) {
+    return url.pathToFileURL(specifier).href;
+  }
+
+  return specifier;
+}
+
+/**
  * @param {string} specifier import specifier
  * @returns {Promise<Sass | SassEmbedded>} resolved module
  */
 async function dynamicImport(specifier) {
-  const mod = await import(specifier);
+  const mod = await import(normalizeImportSpecifier(specifier));
 
   // ESM imports of CJS files surface the module via `.default`; real
   // ESM modules either set `.default` to the same shape (sass) or

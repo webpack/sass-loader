@@ -141,3 +141,11 @@ exports[`implementation option > should throw error when unresolved package 2`] 
   "ModuleBuildError: Module build failed (from ../src/index.js):\\nError [ERR_MODULE_NOT_FOUND]: Cannot find package 'unresolved' imported from /src/utils.js"
 ]
 `;
+exports[`implementation option > 'sass_file_url', 'modern' API 1`] = `
+[]
+`;
+
+exports[`implementation option > 'sass_file_url', 'modern' API 2`] = `
+[]
+`;
+
