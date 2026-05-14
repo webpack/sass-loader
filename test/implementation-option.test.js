@@ -1,6 +1,9 @@
 import assert from "node:assert";
-import { createRequire } from "node:module";
+import { readFileSync } from "node:fs";
+import { createRequire, findPackageJSON } from "node:module";
+import path from "node:path";
 import { describe, it, mock } from "node:test";
+import { pathToFileURL } from "node:url";
 
 import {
   close,
@@ -23,6 +26,55 @@ const dartSass = require("sass");
 // ESM builds in the `exports` field are loaded as separate instances by
 // Node, so a `require()`-based reference would mock a different copy.
 const sassEmbedded = (await import("sass-embedded")).default;
+
+/**
+ * Resolve the absolute `file:` URL that `await import(specifier)` from inside
+ * `src/` would land on. Walks the package's `exports` field preferring the
+ * `node` / `import` / `default` conditions, falling back to `module` / `main`.
+ * Used to key `mock.module` so the loader's dynamic `import("sass-embedded")`
+ * / `import("sass")` get intercepted even though they are issued from outside
+ * the `test/` directory (and so are not affected by the `test/node_modules/sass`
+ * fixture that blocks bare-specifier resolution from inside `test/`).
+ * @param {string} specifier package name to resolve
+ * @returns {string} `file:` URL of the package's ESM entry
+ */
+function resolveEsmEntry(specifier) {
+  const pkgPath = findPackageJSON(
+    specifier,
+    new URL("../src/utils.js", import.meta.url),
+  );
+  const pkg = JSON.parse(readFileSync(pkgPath, "utf8"));
+
+  const walk = (node) => {
+    if (typeof node === "string") return node;
+    if (Array.isArray(node)) {
+      for (const item of node) {
+        const r = walk(item);
+        if (r) return r;
+      }
+    }
+    if (node && typeof node === "object") {
+      for (const key of ["node", "import", "default"]) {
+        if (key in node) {
+          const r = walk(node[key]);
+          if (r) return r;
+        }
+      }
+    }
+    return null;
+  };
+
+  const entry =
+    (pkg.exports && walk(pkg.exports["."] ?? pkg.exports)) ??
+    pkg.module ??
+    pkg.main ??
+    "index.js";
+
+  return pathToFileURL(path.join(path.dirname(pkgPath), entry)).href;
+}
+
+const sassEsmURL = resolveEsmEntry("sass");
+const sassEmbeddedEsmURL = resolveEsmEntry("sass-embedded");
 
 /**
  * `node:test` `mock.method` cannot replace getter-style properties. Convert
@@ -468,28 +520,81 @@ describe("implementation option", () => {
     secondDisposeSpy.mock.restore();
   });
 
-  // The two tests below relied on `jest.doMock` to make `require("sass")` /
-  // `require("sass-embedded")` throw. `node:test`'s `mock.module` API uses ESM
-  // resolution, which trips on the existing `test/node_modules/sass` fixture
-  // directory (same package name, no entry point), so they're skipped until a
-  // resolution-free mock is available.
-  it(
-    "should try to load using valid order",
-    {
-      skip: "blocked by test/node_modules/sass fixture (mock.module needs ESM resolution)",
-    },
-    async () => {
-      // intentionally empty
-    },
-  );
+  // The two tests below originally relied on `jest.doMock` to make
+  // `require("sass")` / `require("sass-embedded")` throw. `node:test`'s
+  // `mock.module` resolves bare specifiers from the caller's location, which
+  // would trip on the `test/node_modules/sass` fixture (a deliberately-invalid
+  // package). To dodge that, we resolve each package's ESM entry from the
+  // loader's directory (`src/`) and key `mock.module` on the resulting
+  // `file:` URL. The loader's dynamic `await import("sass-embedded")` /
+  // `await import("sass")` end up on the same URL, so the mock fires.
+  it("should try to load using valid order", async () => {
+    // `mock.module` returns a `MockModuleContext` whose `.restore()` undoes
+    // the override. Stash both so the assertion-failure path still restores.
+    const sassEmbeddedMock = mock.module(sassEmbeddedEsmURL, {
+      defaultExport: {
+        info: "sass-embedded\t99.0.0\t(Sass Compiler)\t[Mocked]",
+        __marker: "sass-embedded-mock",
+      },
+    });
+    const sassMock = mock.module(sassEsmURL, {
+      defaultExport: {
+        info: "dart-sass\t99.0.0\t(Sass Compiler)\t[Mocked]",
+        __marker: "sass-mock",
+      },
+    });
 
-  it(
-    "should not swallow an error when trying to load a sass implementation",
-    {
-      skip: "blocked by test/node_modules/sass fixture (mock.module needs ESM resolution)",
-    },
-    async () => {
-      // intentionally empty
-    },
-  );
+    try {
+      // Import fresh so the loader's `await import(...)` sees the mocked
+      // module cache rather than the version `getImplementationsAndAPI`
+      // loaded at suite setup.
+      const { getSassImplementation } = await import(
+        `../src/utils.js?valid-order=${Date.now()}`
+      );
+      const impl = await getSassImplementation({}, undefined);
+
+      // sass-embedded is preferred when both load successfully.
+      assert.strictEqual(impl.__marker, "sass-embedded-mock");
+      assert.match(impl.info, /^sass-embedded\t/);
+    } finally {
+      sassEmbeddedMock.restore();
+      sassMock.restore();
+    }
+  });
+
+  it("should not swallow an error when trying to load a sass implementation", async () => {
+    // Replace sass-embedded's default export with a Proxy that throws on
+    // any property access. `await import(...)` succeeds (the namespace is
+    // real), but the moment the loader looks at `.info` / `.compileStringAsync`
+    // on the implementation, the proxy throws — and the error must surface
+    // instead of being silently swallowed by a fallback to `sass`.
+    /** Placeholder target for the proxy below; never actually invoked. */
+    function throwingTarget() {}
+
+    const throwingDefault = new Proxy(throwingTarget, {
+      get(_, prop) {
+        // Let the Promise machinery and Symbol-based protocols probe without
+        // triggering the failure; throw on any "real" property read.
+        if (prop === "then" || typeof prop === "symbol") return undefined;
+        throw new Error("Some error sass-embedded");
+      },
+    });
+
+    const sassEmbeddedMock = mock.module(sassEmbeddedEsmURL, {
+      defaultExport: throwingDefault,
+    });
+
+    try {
+      const { getSassImplementation } = await import(
+        `../src/utils.js?no-swallow=${Date.now()}`
+      );
+
+      await assert.rejects(
+        getSassImplementation({}, undefined),
+        /Some error sass-embedded/,
+      );
+    } finally {
+      sassEmbeddedMock.restore();
+    }
+  });
 });
