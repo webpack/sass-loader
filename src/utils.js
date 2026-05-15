@@ -43,16 +43,34 @@ async function getSassImplementation(loaderContext, implementation) {
 
   if (!resolvedImplementation) {
     try {
-      resolvedImplementation = await import("sass-embedded");
-    } catch {
-      resolvedImplementation = await import("sass");
+      const mod = await import("sass-embedded");
+
+      resolvedImplementation = mod.default ?? mod;
+    } catch (err) {
+      // Only fall back to `sass` when `sass-embedded` is not installed.
+      // Any other failure (e.g. broken install, a thrown side effect at
+      // module-load time) should surface so the user can diagnose it
+      // instead of being silently masked by the `sass` fallback.
+      if (
+        err?.code !== "ERR_MODULE_NOT_FOUND" &&
+        err?.code !== "MODULE_NOT_FOUND"
+      ) {
+        throw err;
+      }
+
+      const mod = await import("sass");
+
+      resolvedImplementation = mod.default ?? mod;
     }
   }
 
   if (typeof resolvedImplementation === "string") {
-    resolvedImplementation = await import(
-      normalizeImportSpecifier(resolvedImplementation)
-    );
+    const mod = await import(normalizeImportSpecifier(resolvedImplementation));
+
+    // ESM imports of CJS files surface the module via `.default`; real
+    // ESM namespaces (sass / sass-embedded) expose their members at the
+    // top level. Falling back to the namespace handles both shapes.
+    resolvedImplementation = mod.default ?? mod;
   }
 
   const { info } = resolvedImplementation;

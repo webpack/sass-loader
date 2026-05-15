@@ -6,9 +6,7 @@ import path from "node:path";
 import { describe, it, mock } from "node:test";
 import { pathToFileURL } from "node:url";
 
-import * as sass from "sass";
-import * as sassEmbedded from "sass-embedded";
-
+import { sass, sassEmbedded } from "./helpers/getImplementationsAndAPI.js";
 import {
   close,
   compile,
@@ -70,29 +68,25 @@ function resolveEsmEntry(specifier) {
 const sassEsmURL = resolveEsmEntry("sass");
 const sassEmbeddedEsmURL = resolveEsmEntry("sass-embedded");
 
-/**
- * `node:test` `mock.method` cannot replace getter-style properties. Convert
- * them to plain data properties first so they can be mocked in place.
- * @param {EXPECTED_ANY} obj target object
- * @param {string} name property name
- * @typedef {import("../src/index.js").EXPECTED_ANY} EXPECTED_ANY
- */
-function ensureDataProperty(obj, name) {
-  const desc = Object.getOwnPropertyDescriptor(obj, name);
-  if (desc && desc.get && !("value" in desc)) {
-    Object.defineProperty(obj, name, {
-      value: obj[name],
-      writable: true,
-      configurable: true,
-      enumerable: desc.enumerable,
-    });
-  }
-}
+// Make the loader's `await import("sass")` / `await import("sass-embedded")`
+// resolve to the same plain-object wrappers the test mutates via
+// `mock.method`. The loader unwraps `mod.default ?? mod`, so we pass the
+// wrapper as both `defaultExport` (a live object reference the loader
+// receives directly) and `namedExports` (so the synthesized namespace
+// still exposes `info`, `compileStringAsync`, etc. for callers that read
+// off the namespace). The `namedExports` reference is the exact object
+// the test mutates — `mock.module` reads its keys live, so test
+// mutations propagate.
+mock.module(sassEsmURL, {
+  namedExports: sass,
+  defaultExport: sass,
+});
+mock.module(sassEmbeddedEsmURL, {
+  namedExports: sassEmbedded,
+  defaultExport: sassEmbedded,
+});
 
-ensureDataProperty(sass, "compileStringAsync");
-ensureDataProperty(sass, "initAsyncCompiler");
-ensureDataProperty(sassEmbedded, "compileStringAsync");
-ensureDataProperty(sassEmbedded, "initAsyncCompiler");
+/** @typedef {import("../src/index.js").EXPECTED_ANY} EXPECTED_ANY */
 
 const implementations = [
   ...getImplementationsAndAPI(),
@@ -516,66 +510,57 @@ describe("implementation option", () => {
 
   // The two tests below originally relied on `jest.doMock` to make
   // `require("sass")` / `require("sass-embedded")` throw. `node:test`'s
-  // `mock.module` resolves bare specifiers from the caller's location, which
-  // would trip on the `test/node_modules/sass` fixture (a deliberately-invalid
-  // package). To dodge that, we resolve each package's ESM entry from the
-  // loader's directory (`src/`) and key `mock.module` on the resulting
-  // `file:` URL. The loader's dynamic `await import("sass-embedded")` /
-  // `await import("sass")` end up on the same URL, so the mock fires.
+  // `mock.module` resolves bare specifiers from the caller's location,
+  // which used to trip on the `test/node_modules/sass` fixture (a
+  // deliberately-invalid package). The fixture has since been renamed to
+  // `test/node_modules/sass-test`, so the bare-specifier resolution
+  // problem is gone — but `mock.module` for these URLs is *already* held
+  // at the suite level (to give the loader and the spies the same
+  // implementation object). Re-mocking would throw "module is already
+  // mocked", so instead these tests temporarily mutate the very objects
+  // the suite-level `mock.module` uses as `namedExports`. The loader's
+  // `await import(...)` reads through to the live values, restored in
+  // `finally`.
   it("should try to load using valid order", async () => {
-    // `mock.module` returns a `MockModuleContext` whose `.restore()` undoes
-    // the override. Stash both so the assertion-failure path still restores.
-    const sassEmbeddedMock = mock.module(sassEmbeddedEsmURL, {
-      defaultExport: {
-        info: "sass-embedded\t99.0.0\t(Sass Compiler)\t[Mocked]",
-        __marker: "sass-embedded-mock",
-      },
-    });
-    const sassMock = mock.module(sassEsmURL, {
-      defaultExport: {
-        info: "dart-sass\t99.0.0\t(Sass Compiler)\t[Mocked]",
-        __marker: "sass-mock",
-      },
-    });
+    // `mock.module`'s synthesized exports list is locked at the time of
+    // synthesis, so adding new keys to `sass` / `sassEmbedded` here
+    // wouldn't reach the loader. Encode the marker into the existing
+    // `info` export instead, which is what `getSassImplementation`
+    // already reads to identify the implementation.
+    const savedSassInfo = sass.info;
+    const savedSassEmbeddedInfo = sassEmbedded.info;
+
+    sass.info = "dart-sass\t99.0.0\t(Sass Compiler)\t[sass-mock]";
+    sassEmbedded.info =
+      "sass-embedded\t99.0.0\t(Sass Compiler)\t[sass-embedded-mock]";
 
     try {
-      // Import fresh so the loader's `await import(...)` sees the mocked
-      // module cache rather than the version `getImplementationsAndAPI`
-      // loaded at suite setup.
       const { getSassImplementation } = await import(
         `../src/utils.js?valid-order=${Date.now()}`
       );
       const impl = await getSassImplementation({}, undefined);
 
       // sass-embedded is preferred when both load successfully.
-      assert.strictEqual(impl.__marker, "sass-embedded-mock");
-      assert.match(impl.info, /^sass-embedded\t/);
+      assert.match(impl.info, /^sass-embedded\t.*\[sass-embedded-mock\]/);
     } finally {
-      sassEmbeddedMock.restore();
-      sassMock.restore();
+      sass.info = savedSassInfo;
+      sassEmbedded.info = savedSassEmbeddedInfo;
     }
   });
 
   it("should not swallow an error when trying to load a sass implementation", async () => {
-    // Replace sass-embedded's default export with a Proxy that throws on
-    // any property access. `await import(...)` succeeds (the namespace is
-    // real), but the moment the loader looks at `.info` / `.compileStringAsync`
-    // on the implementation, the proxy throws — and the error must surface
-    // instead of being silently swallowed by a fallback to `sass`.
-    /** Placeholder target for the proxy below; never actually invoked. */
-    function throwingTarget() {}
+    // Make sass-embedded.info a getter that throws — `await import(...)`
+    // succeeds (the mocked module is real), but the moment the loader
+    // looks at `.info`, the throw surfaces instead of being silently
+    // swallowed by a fallback to `sass`.
+    const savedDesc = Object.getOwnPropertyDescriptor(sassEmbedded, "info");
 
-    const throwingDefault = new Proxy(throwingTarget, {
-      get(_, prop) {
-        // Let the Promise machinery and Symbol-based protocols probe without
-        // triggering the failure; throw on any "real" property read.
-        if (prop === "then" || typeof prop === "symbol") return undefined;
+    Object.defineProperty(sassEmbedded, "info", {
+      configurable: true,
+      enumerable: true,
+      get() {
         throw new Error("Some error sass-embedded");
       },
-    });
-
-    const sassEmbeddedMock = mock.module(sassEmbeddedEsmURL, {
-      defaultExport: throwingDefault,
     });
 
     try {
@@ -588,7 +573,7 @@ describe("implementation option", () => {
         /Some error sass-embedded/,
       );
     } finally {
-      sassEmbeddedMock.restore();
+      Object.defineProperty(sassEmbedded, "info", savedDesc);
     }
   });
 });
