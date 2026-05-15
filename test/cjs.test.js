@@ -22,32 +22,31 @@ const require = createRequire(import.meta.url);
 const srcDir = fileURLToPath(new URL("../src", import.meta.url));
 
 /**
- * Transpile every `.js` file under `src/` to CommonJS in `outDir`, copy
- * non-JS assets, then drop the `dist/cjs/package.json` type marker and
- * the same `module.exports = exports.default` post-build append the
- * `build:cjs` npm script writes. The test then `require()`s the result.
+ * Transpile every `.js` file under `src/` to CommonJS in `outDir`, writing
+ * the result with a `.cjs` extension, and copy non-JS assets verbatim.
+ * Then append the `module.exports = exports.default;` lines the
+ * `build:cjs` npm script writes after Babel.
+ *
+ * The result mirrors what `npm run build:cjs` ships into `dist/`: no
+ * per-directory `package.json` marker is needed because `.cjs` is itself
+ * an unambiguous CommonJS extension.
  * @param {string} outDir target directory
  */
 async function buildCjsBundle(outDir) {
   for (const entry of readdirSync(srcDir, { withFileTypes: true })) {
     const source = path.join(srcDir, entry.name);
-    const target = path.join(outDir, entry.name);
 
     if (entry.name.endsWith(".js")) {
       const result = await transformFileAsync(source, { envName: "cjs" });
+      const target = path.join(outDir, `${entry.name.slice(0, -3)}.cjs`);
 
       writeFileSync(target, result.code);
     } else {
-      copyFileSync(source, target);
+      copyFileSync(source, path.join(outDir, entry.name));
     }
   }
 
-  writeFileSync(
-    path.join(outDir, "package.json"),
-    `${JSON.stringify({ type: "commonjs" })}\n`,
-  );
-
-  const indexPath = path.join(outDir, "index.js");
+  const indexPath = path.join(outDir, "index.cjs");
 
   writeFileSync(
     indexPath,
@@ -59,7 +58,6 @@ describe("cjs", () => {
   let cjsDir;
   let cjsIndexPath;
   let cjsIndexSource;
-  let cjsPackage;
   let cjsLoader;
 
   before(async () => {
@@ -67,11 +65,8 @@ describe("cjs", () => {
 
     await buildCjsBundle(cjsDir);
 
-    cjsIndexPath = path.join(cjsDir, "index.js");
+    cjsIndexPath = path.join(cjsDir, "index.cjs");
     cjsIndexSource = readFileSync(cjsIndexPath, "utf8");
-    cjsPackage = JSON.parse(
-      readFileSync(path.join(cjsDir, "package.json"), "utf8"),
-    );
     cjsLoader = require(cjsIndexPath);
   });
 
@@ -85,15 +80,15 @@ describe("cjs", () => {
 
   // Run Babel against `src/` directly (no dependency on the published
   // `dist/`) and assert the resulting CommonJS bundle has the shape the
-  // `build:cjs` pipeline promises: it's marked CommonJS, opens with
-  // Babel's strict-mode prologue and `exports.default = loader`, and ends
-  // with the `module.exports = exports.default;` unwrap so `require()`
-  // returns the loader function directly.
+  // `build:cjs` pipeline promises: emitted with a `.cjs` extension, opens
+  // with Babel's strict-mode prologue and `exports.default = loader`,
+  // rewrites internal `import "./utils.js"` to `require("./utils.cjs")`,
+  // and ends with the `module.exports = exports.default;` unwrap so
+  // `require()` returns the loader function directly.
   it("should produce a require()-able CommonJS bundle via @babel/core", () => {
-    assert.strictEqual(cjsPackage.type, "commonjs");
-
     assert.match(cjsIndexSource, /^"use strict";/);
     assert.match(cjsIndexSource, /exports\.default = loader/);
+    assert.match(cjsIndexSource, /require\("\.\/utils\.cjs"\)/);
     assert.match(cjsIndexSource, /module\.exports = exports\.default;/);
 
     assert.strictEqual(typeof cjsLoader, "function");

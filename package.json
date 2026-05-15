@@ -20,23 +20,23 @@
   "type": "module",
   "exports": {
     ".": {
-      "import": "./dist/esm/index.js",
-      "require": "./dist/cjs/index.js",
-      "default": "./dist/esm/index.js"
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs",
+      "default": "./dist/index.js"
     },
     "./package.json": "./package.json"
   },
-  "main": "./dist/cjs/index.js",
-  "module": "./dist/esm/index.js",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
   "files": [
     "dist"
   ],
   "scripts": {
     "clean": "del-cli dist",
     "prebuild": "npm run clean",
-    "build:esm": "babel src -d dist/esm --env-name esm --copy-files --no-copy-ignored",
-    "build:cjs": "babel src -d dist/cjs --env-name cjs --copy-files --no-copy-ignored && node -e \"const fs=require('fs');fs.writeFileSync('dist/cjs/package.json','{\\\"type\\\":\\\"commonjs\\\"}\\n');fs.appendFileSync('dist/cjs/index.js','module.exports = exports.default;\\nmodule.exports.default = exports.default;\\n')\"",
-    "build": "npm-run-all -p \"build:*\"",
+    "build:esm": "babel src -d dist --env-name esm --copy-files --no-copy-ignored",
+    "build:cjs": "babel src -d dist --env-name cjs --out-file-extension .cjs && node -e \"require('fs').appendFileSync('dist/index.cjs','module.exports = exports.default;\\nmodule.exports.default = exports.default;\\n')\"",
+    "build": "npm-run-all -s build:esm build:cjs",
     "security": "npm audit --production",
     "lint": "npm-run-all -l -p \"lint:**\" && npm run fmt:check",
     "lint:code": "eslint --cache .",
