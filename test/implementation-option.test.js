@@ -70,21 +70,48 @@ const sassEmbeddedEsmURL = resolveEsmEntry("sass-embedded");
 
 // Make the loader's `await import("sass")` / `await import("sass-embedded")`
 // resolve to the same plain-object wrappers the test mutates via
-// `mock.method`. The loader unwraps `mod.default ?? mod`, so we pass the
-// wrapper as both `defaultExport` (a live object reference the loader
-// receives directly) and `namedExports` (so the synthesized namespace
-// still exposes `info`, `compileStringAsync`, etc. for callers that read
-// off the namespace). The `namedExports` reference is the exact object
-// the test mutates — `mock.module` reads its keys live, so test
-// mutations propagate.
-mock.module(sassEsmURL, {
-  namedExports: sass,
-  defaultExport: sass,
-});
-mock.module(sassEmbeddedEsmURL, {
-  namedExports: sassEmbedded,
-  defaultExport: sassEmbedded,
-});
+// `mock.method`. Later spy installs and property mutations on `sass` /
+// `sassEmbedded` must propagate to the loader's view, which means
+// `mock.module`'s exports have to read from the wrapper *live*.
+//
+// On Node 22 / 24, `mock.module({ namedExports, defaultExport })` is
+// already live — internally those keys are accessed each time the
+// mocked module is loaded. On Node 26, the deprecated keys are gone
+// and the new unified `exports` option snapshots values at synthesis
+// time, so we have to thread reads through getters that delegate to
+// the wrapper.
+const NODE_MAJOR = Number.parseInt(process.versions.node.split(".")[0], 10);
+
+/**
+ * Build a `mock.module` options bag whose exports read live from the
+ * given wrapper object.
+ * @param {Record<string, unknown>} target wrapped namespace
+ * @returns {Record<string, unknown>} options accepted by the running Node's `mock.module`
+ */
+function mockModuleOptions(target) {
+  if (NODE_MAJOR < 26) {
+    return { namedExports: target, defaultExport: target };
+  }
+
+  const liveExports = {};
+
+  for (const key of Object.keys(target)) {
+    Object.defineProperty(liveExports, key, {
+      enumerable: true,
+      get: () => target[key],
+    });
+  }
+
+  Object.defineProperty(liveExports, "default", {
+    enumerable: true,
+    get: () => target,
+  });
+
+  return { exports: liveExports };
+}
+
+mock.module(sassEsmURL, mockModuleOptions(sass));
+mock.module(sassEmbeddedEsmURL, mockModuleOptions(sassEmbedded));
 
 /** @typedef {import("../src/index.js").EXPECTED_ANY} EXPECTED_ANY */
 
