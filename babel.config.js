@@ -3,10 +3,7 @@ const MIN_BABEL_VERSION = 7;
 export default (api) => {
   api.assertVersion(MIN_BABEL_VERSION);
 
-  // `api.env()` caches the config by the active env name (set via
-  // `--env-name <name>` or `BABEL_ENV` / `NODE_ENV`).
   const env = api.env();
-  const isEsm = env === "esm";
   const isCjs = env === "cjs";
 
   return {
@@ -15,10 +12,19 @@ export default (api) => {
         "@babel/preset-env",
         {
           targets: { node: "22.11.0" },
-          // ESM build: keep ESM syntax. CJS build: convert to CJS.
-          modules: isEsm ? false : isCjs ? "commonjs" : "auto",
+          modules: false,
         },
       ],
     ],
+    plugins: isCjs
+      ? [
+          [
+            "@babel/plugin-transform-modules-commonjs",
+            {
+              ignoreDynamicImport: true,
+            },
+          ],
+        ]
+      : [],
   };
 };

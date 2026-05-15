@@ -9,12 +9,12 @@ const require = createRequire(import.meta.url);
  */
 async function getImplementationByName(implementationName) {
   if (implementationName === "dart-sass") {
-    return require("sass");
+    return import("sass");
   } else if (implementationName === "sass-embedded") {
     // Match the loader's `await import("sass-embedded")` so tests and loader
     // hold the same module instance (CJS and ESM builds are cached
     // separately).
-    return (await import("sass-embedded")).default;
+    return import("sass-embedded");
   } else if (implementationName === "sass_string") {
     // Absolute filesystem path; on Windows this is a backslash-separated
     // path like `C:\\...` which dynamic `import()` does not accept until

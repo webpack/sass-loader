@@ -5,12 +5,12 @@
 @use "another/underscore" as underscore
 /* @use another/_underscore */
 @use "another/_underscore" as underscore2
-/* @use ~sass/underscore */
-@use "~sass/underscore" as underscore3
+/* @use ~sass-test/underscore */
+@use "~sass-test/underscore" as underscore3
 // Import a module with a dot in its name
 // @see https://github.com/webpack/sass-loader/issues/167
-/* @use ~sass/some.module */
-@use "~sass/some.module"
+/* @use ~sass-test/some.module */
+@use "~sass-test/some.module"
 // The local util file should take precedence over Node's util module
 // See https://github.com/webpack/sass-loader/issues/556
 /* @use util */

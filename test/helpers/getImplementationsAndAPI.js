@@ -1,12 +1,5 @@
-import { createRequire } from "node:module";
-
-const require = createRequire(import.meta.url);
-
-const dartSass = require("sass");
-
-// Match the loader's `await import("sass-embedded")` so tests and loader
-// hold the same module instance (CJS and ESM builds are cached separately).
-const SassEmbedded = (await import("sass-embedded")).default;
+import * as sass from "sass";
+import * as sassEmbedded from "sass-embedded";
 
 /** @typedef {import("../../src/index.js").EXPECTED_ANY} EXPECTED_ANY */
 
@@ -16,23 +9,23 @@ const SassEmbedded = (await import("sass-embedded")).default;
 export default function getImplementationsAndAPI() {
   return [
     {
-      name: dartSass.info.split("\t")[0],
-      implementation: dartSass,
+      name: sass.info.split("\t")[0],
+      implementation: sass,
       api: "modern",
     },
     {
-      name: dartSass.info.split("\t")[0],
-      implementation: dartSass,
+      name: sass.info.split("\t")[0],
+      implementation: sass,
       api: "modern-compiler",
     },
     {
-      name: SassEmbedded.info.split("\t")[0],
-      implementation: SassEmbedded,
+      name: sassEmbedded.info.split("\t")[0],
+      implementation: sassEmbedded,
       api: "modern",
     },
     {
-      name: SassEmbedded.info.split("\t")[0],
-      implementation: SassEmbedded,
+      name: sassEmbedded.info.split("\t")[0],
+      implementation: sassEmbedded,
       api: "modern-compiler",
     },
   ];

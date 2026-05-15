@@ -33,32 +33,6 @@ function normalizeImportSpecifier(specifier) {
 }
 
 /**
- * @param {string} specifier import specifier
- * @returns {Promise<Sass | SassEmbedded>} resolved module
- */
-async function dynamicImport(specifier) {
-  const mod = await import(normalizeImportSpecifier(specifier));
-
-  // ESM imports of CJS files surface the module via `.default`; real
-  // ESM modules either set `.default` to the same shape (sass) or
-  // expose their members directly (sass-embedded sets __esModule on
-  // its CJS exports, so Node passes it through unwrapped). Falling
-  // back to the namespace handles both.
-  return mod.default ?? mod;
-}
-
-/**
- * @returns {Promise<Sass | SassEmbedded>} sass implementation
- */
-async function getDefaultSassImplementation() {
-  try {
-    return await dynamicImport("sass-embedded");
-  } catch {
-    return await dynamicImport("sass");
-  }
-}
-
-/**
  * This function is not Webpack-specific and can be used by tools wishing to mimic `sass-loader`'s behaviour, so its signature should not be changed.
  * @param {LoaderContext} loaderContext loader context
  * @param {SassImplementation | string} implementation sass implementation
@@ -68,11 +42,17 @@ async function getSassImplementation(loaderContext, implementation) {
   let resolvedImplementation = implementation;
 
   if (!resolvedImplementation) {
-    resolvedImplementation = await getDefaultSassImplementation();
+    try {
+      resolvedImplementation = await import("sass-embedded");
+    } catch {
+      resolvedImplementation = await import("sass");
+    }
   }
 
   if (typeof resolvedImplementation === "string") {
-    resolvedImplementation = await dynamicImport(resolvedImplementation);
+    resolvedImplementation = await import(
+      normalizeImportSpecifier(resolvedImplementation)
+    );
   }
 
   const { info } = resolvedImplementation;

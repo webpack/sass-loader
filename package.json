@@ -69,7 +69,7 @@
     "del-cli": "^5.1.0",
     "enhanced-resolve": "^5.21.1",
     "eslint": "^9.38.0",
-    "eslint-config-webpack": "^4.9.5",
+    "eslint-config-webpack": "^4.9.6",
     "file-loader": "^6.2.0",
     "foundation-sites": "^6.7.5",
     "husky": "^9.1.3",

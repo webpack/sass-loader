@@ -1,5 +1,6 @@
 import assert from "node:assert";
 import { readFileSync } from "node:fs";
+// eslint-disable-next-line n/no-unsupported-features/node-builtins
 import { createRequire, findPackageJSON } from "node:module";
 import path from "node:path";
 import { describe, it, mock } from "node:test";
