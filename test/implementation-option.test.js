@@ -74,12 +74,11 @@ const sassEmbeddedEsmURL = resolveEsmEntry("sass-embedded");
 // `sassEmbedded` must propagate to the loader's view, which means
 // `mock.module`'s exports have to read from the wrapper *live*.
 //
-// On Node 22 / 24, `mock.module({ namedExports, defaultExport })` is
-// already live — internally those keys are accessed each time the
-// mocked module is loaded. On Node 26, the deprecated keys are gone
-// and the new unified `exports` option snapshots values at synthesis
-// time, so we have to thread reads through getters that delegate to
-// the wrapper.
+// On Node 22, `mock.module({ namedExports, defaultExport })` is live by
+// itself. Starting with Node 24 those options are deprecated and the
+// new unified `exports` option snapshots values at synthesis time —
+// so on Node 24+ we have to thread reads through getters that delegate
+// to the wrapper.
 const NODE_MAJOR = Number.parseInt(process.versions.node.split(".")[0], 10);
 
 /**
@@ -89,7 +88,7 @@ const NODE_MAJOR = Number.parseInt(process.versions.node.split(".")[0], 10);
  * @returns {Record<string, unknown>} options accepted by the running Node's `mock.module`
  */
 function mockModuleOptions(target) {
-  if (NODE_MAJOR < 26) {
+  if (NODE_MAJOR < 24) {
     return { namedExports: target, defaultExport: target };
   }
 
