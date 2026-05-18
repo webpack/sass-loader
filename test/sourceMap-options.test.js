@@ -236,7 +236,7 @@ describe("sourceMap option", () => {
               },
               use: [
                 {
-                  loader: path.join(__dirname, "../src/cjs.js"),
+                  loader: path.join(__dirname, "../src/index.js"),
                   options: {
                     implementation,
                     api,

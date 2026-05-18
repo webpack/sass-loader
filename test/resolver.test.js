@@ -1,16 +1,13 @@
 import assert from "node:assert";
-import { createRequire } from "node:module";
 import path from "node:path";
 import { describe, it } from "node:test";
 import { fileURLToPath } from "node:url";
 
 import enhanced from "enhanced-resolve";
 
+import * as sass from "sass";
+
 import { getWebpackResolver } from "../src/utils.js";
-
-const require = createRequire(import.meta.url);
-
-const sass = require("sass");
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);

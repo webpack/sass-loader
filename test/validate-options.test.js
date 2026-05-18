@@ -2,6 +2,8 @@ import assert from "node:assert";
 import { createRequire } from "node:module";
 import { describe, it } from "node:test";
 
+import * as sass from "sass";
+
 import {
   compile,
   getCompiler,
@@ -15,6 +17,8 @@ describe("validate options", () => {
   const tests = {
     implementation: {
       success: [
+        // We can't JSON.stringify it
+        { ...sass },
         require("sass-embedded"),
         require("sass"),
         "sass-embedded",
@@ -81,7 +85,7 @@ describe("validate options", () => {
       const compiler = getCompiler(testId, {
         loader: {
           options: {
-            implementation: getImplementationByName("dart-sass"),
+            implementation: await getImplementationByName("dart-sass"),
             [key]: value,
           },
         },

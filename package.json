@@ -17,14 +17,26 @@
   },
   "license": "MIT",
   "author": "J. Tangelder",
-  "main": "dist/cjs.js",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js",
+      "default": "./dist/esm/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
   "files": [
     "dist"
   ],
   "scripts": {
     "clean": "del-cli dist",
     "prebuild": "npm run clean",
-    "build": "node -e \"require('node:fs').cpSync('src', 'dist', { recursive: true })\"",
+    "build:esm": "babel src -d dist/esm --env-name esm --copy-files --no-copy-ignored",
+    "build:cjs": "babel src -d dist/cjs --env-name cjs --copy-files --no-copy-ignored && node -e \"const fs=require('fs');fs.writeFileSync('dist/cjs/package.json','{\\\"type\\\":\\\"commonjs\\\"}\\n');fs.appendFileSync('dist/cjs/index.js','module.exports = exports.default;\\nmodule.exports.default = exports.default;\\n')\"",
+    "build": "npm-run-all -p \"build:*\"",
     "security": "npm audit --production",
     "lint": "npm-run-all -l -p \"lint:**\" && npm run fmt:check",
     "lint:code": "eslint --cache .",
@@ -35,7 +47,7 @@
     "fix:code": "npm run lint:code -- --fix",
     "pretest": "npm run lint",
     "test": "npm run test:base",
-    "test:base": "node --import ./test/setup-snapshots.mjs --test --test-force-exit --test-reporter=dot --test-reporter-destination=stdout --experimental-test-module-mocks",
+    "test:base": "node --import ./test/setup-snapshots.js --test --test-force-exit --test-reporter=dot --test-reporter-destination=stdout --experimental-test-module-mocks",
     "test:coverage": "npm run test:base -- --experimental-test-coverage --test-reporter=lcov --test-reporter-destination=coverage.lcov --test-coverage-include=\"src/**/*.js\"",
     "prepare": "husky && npm run build",
     "version": "changeset version",
@@ -43,6 +55,9 @@
   },
   "dependencies": {},
   "devDependencies": {
+    "@babel/cli": "^7.28.6",
+    "@babel/core": "^7.28.6",
+    "@babel/preset-env": "^7.28.6",
     "@changesets/cli": "^2.30.0",
     "@changesets/get-github-info": "^0.8.0",
     "bootstrap-sass": "^3.4.1",
@@ -54,7 +69,7 @@
     "del-cli": "^5.1.0",
     "enhanced-resolve": "^5.21.1",
     "eslint": "^9.38.0",
-    "eslint-config-webpack": "^4.9.5",
+    "eslint-config-webpack": "^4.9.6",
     "file-loader": "^6.2.0",
     "foundation-sites": "^6.7.5",
     "husky": "^9.1.3",

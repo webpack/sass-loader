@@ -1,9 +1,36 @@
-import { createRequire } from "node:module";
+import * as sassNs from "sass";
+import * as sassEmbeddedNs from "sass-embedded";
 
-const require = createRequire(import.meta.url);
+/**
+ * Copy every export from a module namespace except `default` into a plain,
+ * mutable object. ESM namespace properties are non-configurable, so
+ * `node:test`'s `mock.method` cannot replace them in place. The wrapper is
+ * also handed straight to `mock.module`'s `namedExports` in
+ * `implementation-option.test.js`, so any later `mock.method(wrapper, ...)`
+ * mutates the exact object the mock module reads from — keeping the test
+ * spies and the loader's `await import(...)` in lockstep.
+ *
+ * `default` is excluded because `mock.module` synthesizes ESM source text
+ * from `namedExports`, and a `default` key would produce
+ * `export const default = ...` (a syntax error). The default export is
+ * fed in separately via `mock.module`'s `defaultExport` option.
+ * @param {Record<string, unknown>} ns module namespace
+ * @returns {Record<string, unknown>} mutable copy without the `default` key
+ */
+function namedExportsOnly(ns) {
+  const copy = {};
 
-const dartSass = require("sass");
-const SassEmbedded = require("sass-embedded");
+  for (const key of Object.keys(ns)) {
+    if (key !== "default") {
+      copy[key] = ns[key];
+    }
+  }
+
+  return copy;
+}
+
+const sass = namedExportsOnly(sassNs);
+const sassEmbedded = namedExportsOnly(sassEmbeddedNs);
 
 /** @typedef {import("../../src/index.js").EXPECTED_ANY} EXPECTED_ANY */
 
@@ -13,24 +40,26 @@ const SassEmbedded = require("sass-embedded");
 export default function getImplementationsAndAPI() {
   return [
     {
-      name: dartSass.info.split("\t")[0],
-      implementation: dartSass,
+      name: sass.info.split("\t")[0],
+      implementation: sass,
       api: "modern",
     },
     {
-      name: dartSass.info.split("\t")[0],
-      implementation: dartSass,
+      name: sass.info.split("\t")[0],
+      implementation: sass,
       api: "modern-compiler",
     },
     {
-      name: SassEmbedded.info.split("\t")[0],
-      implementation: SassEmbedded,
+      name: sassEmbedded.info.split("\t")[0],
+      implementation: sassEmbedded,
       api: "modern",
     },
     {
-      name: SassEmbedded.info.split("\t")[0],
-      implementation: SassEmbedded,
+      name: sassEmbedded.info.split("\t")[0],
+      implementation: sassEmbedded,
       api: "modern-compiler",
     },
   ];
 }
+
+export { sass, sassEmbedded };

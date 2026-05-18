@@ -1,7 +1,5 @@
-"use strict";
-
-const path = require("node:path");
-const url = require("node:url");
+import path from "node:path";
+import url from "node:url";
 
 /** @typedef {import("sass")} Sass */
 /** @typedef {import("sass").StringOptionsWithImporter} SassSassOptions */
@@ -14,36 +12,58 @@ const url = require("node:url");
 /** @typedef {Record<string, EXPECTED_ANY>} LoaderOptions */
 
 /**
- * @returns {Sass | SassEmbedded} sass implementation
+ * Convert a string `implementation` option into something the ECMAScript
+ * `import()` expression actually accepts. Bare package specifiers and
+ * `file:` URLs are passed through unchanged; absolute filesystem paths
+ * (including Windows paths like `C:\\...`) are converted to `file:` URLs
+ * — dynamic `import()` rejects those otherwise.
+ * @param {string} specifier import specifier
+ * @returns {string} a valid dynamic import specifier
  */
-function getDefaultSassImplementation() {
-  let sassImplPkg = "sass";
-
-  try {
-    require.resolve("sass-embedded");
-    sassImplPkg = "sass-embedded";
-  } catch {
-    sassImplPkg = "sass";
+function normalizeImportSpecifier(specifier) {
+  if (specifier.startsWith("file:")) {
+    return specifier;
   }
 
-  return require(sassImplPkg);
+  if (path.isAbsolute(specifier)) {
+    return url.pathToFileURL(specifier).href;
+  }
+
+  return specifier;
 }
 
 /**
  * This function is not Webpack-specific and can be used by tools wishing to mimic `sass-loader`'s behaviour, so its signature should not be changed.
  * @param {LoaderContext} loaderContext loader context
- * @param {SassImplementation} implementation sass implementation
- * @returns {SassImplementation} resolved sass implementation
+ * @param {SassImplementation | string} implementation sass implementation
+ * @returns {Promise<SassImplementation>} resolved sass implementation
  */
-function getSassImplementation(loaderContext, implementation) {
+async function getSassImplementation(loaderContext, implementation) {
   let resolvedImplementation = implementation;
 
   if (!resolvedImplementation) {
-    resolvedImplementation = getDefaultSassImplementation();
+    try {
+      resolvedImplementation = await import("sass-embedded");
+    } catch (err) {
+      // Only fall back to `sass` when `sass-embedded` is not installed.
+      // Any other failure (e.g. a broken install or a side-effect throw at
+      // module-load time) should surface so the user can diagnose it
+      // instead of being silently masked by the `sass` fallback.
+      if (
+        err?.code !== "ERR_MODULE_NOT_FOUND" &&
+        err?.code !== "MODULE_NOT_FOUND"
+      ) {
+        throw err;
+      }
+
+      resolvedImplementation = await import("sass");
+    }
   }
 
   if (typeof resolvedImplementation === "string") {
-    resolvedImplementation = require(resolvedImplementation);
+    resolvedImplementation = await import(
+      normalizeImportSpecifier(resolvedImplementation)
+    );
   }
 
   const { info } = resolvedImplementation;
@@ -712,7 +732,7 @@ function errorFactory(error) {
   return obj;
 }
 
-module.exports = {
+export {
   errorFactory,
   getCompileFn,
   getModernWebpackImporter,
