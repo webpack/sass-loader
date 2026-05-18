@@ -14,13 +14,20 @@ import {
 // eslint-disable-next-line jsdoc/reject-any-type
 /** @typedef {any} EXPECTED_ANY */
 
+/** @typedef {import("./utils.js").LoaderOptions} LoaderOptions */
+/** @typedef {import("webpack").LoaderContext<LoaderOptions>} LoaderContext */
+/** @typedef {import("./utils.js").SassError} SassError */
+/** @typedef {import("./utils.js").ModernImporter} ModernImporter */
+/** @typedef {import("schema-utils/declarations/validate").Schema} Schema */
+
 /**
  * The sass-loader makes dart-sass and sass-embedded available to webpack modules.
- * @this {LoaderContext<{ string: EXPECTED_ANY }>}
+ * @this {LoaderContext}
  * @param {string} content content
+ * @returns {Promise<void>} loader result
  */
 async function loader(content) {
-  const options = this.getOptions(schema);
+  const options = this.getOptions(/** @type {Schema} */ (schema));
   const callback = this.async();
 
   let implementation;
@@ -28,13 +35,15 @@ async function loader(content) {
   try {
     implementation = await getSassImplementation(this, options.implementation);
   } catch (error) {
-    callback(error);
+    callback(/** @type {Error} */ (error));
 
     return;
   }
 
   const useSourceMap =
-    typeof options.sourceMap === "boolean" ? options.sourceMap : this.sourceMap;
+    typeof options.sourceMap === "boolean"
+      ? options.sourceMap
+      : this.sourceMap === true;
   const sassOptions = await getSassOptions(
     this,
     options,
@@ -49,7 +58,7 @@ async function loader(content) {
       : true;
 
   if (shouldUseWebpackImporter) {
-    sassOptions.importers.push(
+    /** @type {ModernImporter[]} */ (sassOptions.importers).push(
       // No need to pass `loadPaths`, because modern API handle them itself
       getModernWebpackImporter(this, implementation, []),
     );
@@ -60,7 +69,7 @@ async function loader(content) {
   try {
     compile = getCompileFn(this, implementation, options.api);
   } catch (error) {
-    callback(error);
+    callback(/** @type {Error} */ (error));
     return;
   }
 
@@ -69,12 +78,14 @@ async function loader(content) {
   try {
     result = await compile(sassOptions);
   } catch (error) {
+    const sassError = /** @type {SassError} */ (error);
+
     // There are situations when the `span.url` property does not exist
-    if (error.span && typeof error.span.url !== "undefined") {
-      this.addDependency(url.fileURLToPath(error.span.url));
+    if (sassError.span && typeof sassError.span.url !== "undefined") {
+      this.addDependency(url.fileURLToPath(sassError.span.url));
     }
 
-    callback(errorFactory(error));
+    callback(errorFactory(sassError));
 
     return;
   }
@@ -99,7 +110,11 @@ async function loader(content) {
     }
   }
 
-  callback(null, result.css.toString(), map);
+  callback(
+    null,
+    result.css.toString(),
+    /** @type {Parameters<typeof callback>[2]} */ (map || undefined),
+  );
 }
 
 export default loader;

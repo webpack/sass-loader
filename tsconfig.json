@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "moduleResolution": "bundler",
+
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "allowImportingTsExtensions": false,
+
+    "types": ["node"],
+
+    "rootDir": "./src",
+    "outDir": "./types",
+
+    "allowJs": true,
+    "checkJs": true,
+    "strict": true,
+
+    "declaration": true,
+    "emitDeclarationOnly": true
+  },
+  "include": ["./src/**/*"]
+}
