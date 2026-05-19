@@ -564,7 +564,7 @@ describe("implementation option", () => {
       const { getSassImplementation } = await import(
         `../src/utils.js?valid-order=${Date.now()}`
       );
-      const impl = await getSassImplementation({}, undefined);
+      const impl = await getSassImplementation(undefined);
 
       // sass-embedded is preferred when both load successfully.
       assert.match(impl.info, /^sass-embedded\t.*\[sass-embedded-mock\]/);
@@ -595,7 +595,7 @@ describe("implementation option", () => {
       );
 
       await assert.rejects(
-        getSassImplementation({}, undefined),
+        getSassImplementation(undefined),
         /Some error sass-embedded/,
       );
     } finally {

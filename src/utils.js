@@ -1,15 +1,89 @@
 import path from "node:path";
 import url from "node:url";
 
-/** @typedef {import("sass")} Sass */
-/** @typedef {import("sass").StringOptionsWithImporter} SassSassOptions */
-/** @typedef {import("sass-embedded")} SassEmbedded */
-/** @typedef {import("sass-embedded").StringOptionsWithImporter} SassEmbeddedOptions */
+// eslint-disable-next-line jsdoc/reject-any-type
+/** @typedef {any} EXPECTED_ANY */
 
-/** @typedef {import("./index.js").EXPECTED_ANY} EXPECTED_ANY */
-/** @typedef {Sass | SassEmbedded} SassImplementation */
-/** @typedef {SassSassOptions | SassEmbeddedOptions} SassOptions */
-/** @typedef {Record<string, EXPECTED_ANY>} LoaderOptions */
+/**
+ * @typedef {object} SourceLocation
+ * @property {number} line line number
+ * @property {number} column column number
+ * @property {number} offset character offset
+ */
+
+/**
+ * @typedef {object} SourceSpan
+ * @property {SourceLocation} start start location
+ * @property {SourceLocation} end end location
+ * @property {URL=} url canonical URL of the file
+ * @property {string} text covered text
+ * @property {string=} context surrounding context
+ */
+
+/** @typedef {{ deprecation?: boolean, span?: SourceSpan, stack?: string }} LoggerWarnOptions */
+
+/**
+ * @typedef {object} Logger
+ * @property {((message: string, options: LoggerWarnOptions) => void)=} warn warn handler
+ * @property {((message: string, options: { span: SourceSpan }) => void)=} debug debug handler
+ */
+
+/**
+ * @typedef {object} CompileResult
+ * @property {Buffer | string} css css output
+ * @property {RawSourceMap=} sourceMap source map
+ * @property {URL[]} loadedUrls loaded URLs
+ */
+
+/**
+ * @typedef {object} Importer
+ * @property {(originalUrl: string, context: { containingUrl: URL | null, fromImport: boolean }) => Promise<URL | null>} canonicalize canonicalize
+ * @property {(canonicalUrl: URL) => Promise<{ contents: string, syntax: "scss" | "indented" | "css", sourceMapUrl?: URL } | null>} load load
+ */
+
+/** @typedef {"expanded" | "compressed"} OutputStyle */
+
+/**
+ * @typedef {object} KnownSassOptions
+ * @property {"scss" | "indented" | "css"=} syntax syntax
+ * @property {URL=} url url
+ * @property {"expanded" | "compressed"=} style style
+ * @property {string[]=} loadPaths load paths
+ * @property {boolean=} sourceMap source map
+ * @property {boolean=} sourceMapIncludeSources source map include sources
+ * @property {Importer[]=} importers importers
+ * @property {Logger=} logger logger
+ */
+
+/** @typedef {KnownSassOptions & Record<string, EXPECTED_ANY>} SassOptions */
+
+/**
+ * @typedef {object} AsyncCompiler
+ * @property {(source: string, options?: SassOptions) => Promise<CompileResult>} compileStringAsync compile a string
+ * @property {() => Promise<void>} dispose dispose the compiler
+ */
+
+/** @typedef {{ info: string; compileStringAsync(source: string, options?: SassOptions): Promise<CompileResult>; initAsyncCompiler?(): Promise<AsyncCompiler> }} SassImplementation */
+
+/** @typedef {"auto" | "modern" | "modern-compiler"} ApiType */
+
+/** @typedef {import("webpack").LoaderContext<LoaderOptions>} LoaderContext */
+
+/**
+ * @typedef {object} LoaderOptions
+ * @property {SassImplementation=} implementation SaSS implementation
+ * @property {SassOptions | ((loaderContext: LoaderContext) => SassOptions)=} sassOptions SaSS options
+ * @property {boolean=} sourceMap true if source map is enabled, otherwise false
+ * @property {string | ((content: string, loaderContext: LoaderContext) => string)=} additionalData prepends Sass/SCSS code before the actual entry file
+ * @property {boolean=} webpackImporter true if webpack importer is enabled, otherwise false
+ * @property {ApiType=} api API type
+ * @property {boolean=} warnRuleAsWarning true if treats the `@warn` rule as a webpack warning, otherwise false
+ */
+
+/** @typedef {(context: string, request: string, fromImport?: boolean) => Promise<string>} Resolver */
+/** @typedef {{ resolve: (context: string, request: string) => Promise<string>, context: string, possibleRequests: string[] }[]} ResolutionMap */
+/** @typedef {{ version: number, sources: string[], names: string[], sourceRoot?: string, sourcesContent?: string[], mappings: string, file: string, debugId?: string, ignoreList?: number[] }} RawSourceMap */
+/** @typedef {Error & { formatted?: string, span?: { url?: URL, start: { line: number, column: number }, context?: string } }} SassError */
 
 /**
  * Convert a string `implementation` option into something the ECMAScript
@@ -34,36 +108,38 @@ function normalizeImportSpecifier(specifier) {
 
 /**
  * This function is not Webpack-specific and can be used by tools wishing to mimic `sass-loader`'s behaviour, so its signature should not be changed.
- * @param {LoaderContext} loaderContext loader context
- * @param {SassImplementation | string} implementation sass implementation
+ * @param {SassImplementation | string | undefined} implementation sass implementation
  * @returns {Promise<SassImplementation>} resolved sass implementation
  */
-async function getSassImplementation(loaderContext, implementation) {
-  let resolvedImplementation = implementation;
+async function getSassImplementation(implementation) {
+  /** @type {SassImplementation} */
+  let resolvedImplementation;
 
-  if (!resolvedImplementation) {
+  if (!implementation) {
     try {
-      resolvedImplementation = await import("sass-embedded");
+      resolvedImplementation = /** @type {SassImplementation} */ (
+        await import("sass-embedded")
+      );
     } catch (err) {
       // Only fall back to `sass` when `sass-embedded` is not installed.
       // Any other failure (e.g. a broken install or a side-effect throw at
       // module-load time) should surface so the user can diagnose it
       // instead of being silently masked by the `sass` fallback.
-      if (
-        err?.code !== "ERR_MODULE_NOT_FOUND" &&
-        err?.code !== "MODULE_NOT_FOUND"
-      ) {
+      const { code } = /** @type {NodeJS.ErrnoException} */ (err);
+      if (code !== "ERR_MODULE_NOT_FOUND" && code !== "MODULE_NOT_FOUND") {
         throw err;
       }
 
-      resolvedImplementation = await import("sass");
+      resolvedImplementation = /** @type {SassImplementation} */ (
+        await import("sass")
+      );
     }
-  }
-
-  if (typeof resolvedImplementation === "string") {
-    resolvedImplementation = await import(
-      normalizeImportSpecifier(resolvedImplementation)
+  } else if (typeof implementation === "string") {
+    resolvedImplementation = /** @type {SassImplementation} */ (
+      await import(normalizeImportSpecifier(implementation))
     );
+  } else {
+    resolvedImplementation = implementation;
   }
 
   const { info } = resolvedImplementation;
@@ -102,22 +178,22 @@ function isProductionLikeMode(loaderContext) {
  * @param {LoaderContext} loaderContext loader context
  * @param {LoaderOptions} loaderOptions loader options
  * @param {string} content content
- * @param {SassImplementation} implementation sass implementation
  * @param {boolean} useSourceMap true when need to generate source maps, otherwise false
- * @returns {SassOptions} sass options
+ * @returns {Promise<Required<KnownSassOptions> & { data: string }>} sass options
  */
 async function getSassOptions(
   loaderContext,
   loaderOptions,
   content,
-  implementation,
   useSourceMap,
 ) {
+  /** @type {SassOptions} */
   const options = loaderOptions.sassOptions
     ? typeof loaderOptions.sassOptions === "function"
       ? loaderOptions.sassOptions(loaderContext) || {}
       : loaderOptions.sassOptions
     : {};
+  /** @type {KnownSassOptions & { data: string }} */
   const sassOptions = {
     ...options,
     data: loaderOptions.additionalData
@@ -130,14 +206,27 @@ async function getSassOptions(
   if (!sassOptions.logger) {
     const needEmitWarning = loaderOptions.warnRuleAsWarning !== false;
     const logger = loaderContext.getLogger("sass-loader");
+    /**
+     * @param {SourceSpan} span span
+     * @returns {string} formatted span
+     */
     const formatSpan = (span) =>
       `Warning on line ${span.start.line}, column ${span.start.column} of ${
         span.url || "-"
       }:${span.start.line}:${span.start.column}:\n`;
+    /**
+     * @param {SourceSpan} span span
+     * @returns {string} formatted debug span
+     */
     const formatDebugSpan = (span) =>
       `[debug:${span.start.line}:${span.start.column}] `;
 
     sassOptions.logger = {
+      /**
+       * @param {string} message message
+       * @param {{ span: SourceSpan }} loggerOptions logger options
+       * @returns {void}
+       */
       debug(message, loggerOptions) {
         let builtMessage = "";
 
@@ -149,6 +238,11 @@ async function getSassOptions(
 
         logger.debug(builtMessage);
       },
+      /**
+       * @param {string} message message
+       * @param {LoggerWarnOptions} loggerOptions logger options
+       * @returns {void}
+       */
       warn(message, loggerOptions) {
         let builtMessage = "";
 
@@ -174,7 +268,7 @@ async function getSassOptions(
           const warning = new Error(builtMessage);
 
           warning.name = "SassWarning";
-          warning.stack = null;
+          warning.stack = undefined;
 
           loaderContext.emitWarning(warning);
         } else {
@@ -230,7 +324,9 @@ async function getSassOptions(
       : [sassOptions.importers]
     : [];
 
-  return sassOptions;
+  return /** @type {Required<KnownSassOptions> & { data: string }} */ (
+    sassOptions
+  );
 }
 
 const MODULE_REQUEST_REGEX = /^[^?]*~/;
@@ -375,7 +471,6 @@ async function startResolving(resolutionMap) {
   }
 }
 
-const IS_SPECIAL_MODULE_IMPORT = /^~[^/]+$/;
 // `[drive_letter]:\` + `\\[server]\[sharename]\`
 const IS_NATIVE_WIN32_PATH = /^[a-z]:[/\\]|^\\\\/i;
 
@@ -385,16 +480,10 @@ const IS_NATIVE_WIN32_PATH = /^[a-z]:[/\\]|^\\\\/i;
  * in a Jest transform. Such usages will want to wrap `resolve.create` from
  * [`enhanced-resolve`]{@link https://github.com/webpack/enhanced-resolve} to
  * pass as the `resolverFactory` argument.
- * @param {ResolveFactory} resolverFactory a factory function for creating a Webpack resolver.
- * @param {Sass} implementation the imported Sass implementation (`sass` or `sass-embedded`).
- * @param {string[]=} includePaths the list of include paths passed to Sass.
+ * @param {LoaderContext["getResolve"]} resolverFactory a factory function for creating a Webpack resolver.
  * @returns {Resolver} webpack resolver
  */
-function getWebpackResolver(
-  resolverFactory,
-  implementation,
-  includePaths = [],
-) {
+function getWebpackResolver(resolverFactory) {
   // We only have one difference with the built-in sass resolution logic and out resolution logic:
   // First, we look at the files starting with `_`, then without `_` (i.e. `_name.sass`, `_name.scss`, `_name.css`, `name.sass`, `name.scss`, `name.css`),
   // although `sass` look together by extensions (i.e. `_name.sass`/`name.sass`/`_name.scss`/`name.scss`/`_name.css`/`name.css`).
@@ -403,36 +492,6 @@ function getWebpackResolver(
   // - on having `_name.sass` and `_name.scss` in the same directory
   //
   // Also `sass` prefer `sass`/`scss` over `css`.
-  const sassModuleResolve = promiseResolve(
-    resolverFactory({
-      alias: [],
-      aliasFields: [],
-      conditionNames: [],
-      descriptionFiles: [],
-      extensions: [".sass", ".scss", ".css"],
-      exportsFields: [],
-      mainFields: [],
-      mainFiles: ["_index", "index"],
-      modules: [],
-      restrictions: [/\.((sa|sc|c)ss)$/i],
-      preferRelative: true,
-    }),
-  );
-  const sassImportResolve = promiseResolve(
-    resolverFactory({
-      alias: [],
-      aliasFields: [],
-      conditionNames: [],
-      descriptionFiles: [],
-      extensions: [".sass", ".scss", ".css"],
-      exportsFields: [],
-      mainFields: [],
-      mainFiles: ["_index.import", "_index", "index.import", "index"],
-      modules: [],
-      restrictions: [/\.((sa|sc|c)ss)$/i],
-      preferRelative: true,
-    }),
-  );
   const webpackModuleResolve = promiseResolve(
     resolverFactory({
       dependencyType: "sass",
@@ -468,46 +527,8 @@ function getWebpackResolver(
       }
     }
 
+    /** @type {ResolutionMap} */
     let resolutionMap = [];
-
-    const needEmulateSassResolver =
-      // `sass` doesn't support module import
-      !IS_SPECIAL_MODULE_IMPORT.test(request) &&
-      // don't handle `pkg:` scheme
-      !IS_PKG_SCHEME.test(request) &&
-      // We need improve absolute paths handling.
-      // Absolute paths should be resolved:
-      // - Server-relative URLs - `<context>/path/to/file.ext` (where `<context>` is root context)
-      // - Absolute path - `/full/path/to/file.ext` or `C:\\full\path\to\file.ext`
-      !isFileScheme &&
-      !originalRequest.startsWith("/") &&
-      !IS_NATIVE_WIN32_PATH.test(originalRequest);
-
-    if (includePaths.length > 0 && needEmulateSassResolver) {
-      // The order of import precedence is as follows:
-      //
-      // 1. Filesystem imports relative to the base file.
-      // 2. Custom importer imports.
-      // 3. Filesystem imports relative to the working directory.
-      // 4. Filesystem imports relative to an `includePaths` path.
-      // 5. Filesystem imports relative to a `SASS_PATH` path.
-      //
-      // `sass` run custom importers before `3`, `4` and `5` points, we need to emulate this behavior to avoid wrong resolution.
-      const sassPossibleRequests = getPossibleRequests(
-        request,
-        false,
-        fromImport,
-      );
-
-      resolutionMap = [
-        ...resolutionMap,
-        ...includePaths.map((context) => ({
-          resolve: fromImport ? sassImportResolve : sassModuleResolve,
-          context,
-          possibleRequests: sassPossibleRequests,
-        })),
-      ];
-    }
 
     const webpackPossibleRequests = getPossibleRequests(
       request,
@@ -530,18 +551,17 @@ function getWebpackResolver(
 
 /**
  * @param {LoaderContext} loaderContext loader context
- * @param {SassImplementation} implementation sass implementation
- * @param {string[]} loadPaths load paths
  * @returns {Importer} the modern webpack importer
  */
-function getModernWebpackImporter(loaderContext, implementation, loadPaths) {
-  const resolve = getWebpackResolver(
-    loaderContext.getResolve,
-    implementation,
-    loadPaths,
-  );
+function getModernWebpackImporter(loaderContext) {
+  const resolve = getWebpackResolver(loaderContext.getResolve);
 
   return {
+    /**
+     * @param {string} originalUrl original url
+     * @param {{ fromImport: boolean, containingUrl: URL | null }} context context
+     * @returns {Promise<URL | null>} canonicalized URL
+     */
     async canonicalize(originalUrl, context) {
       const { fromImport } = context;
       const prev = context.containingUrl
@@ -561,9 +581,14 @@ function getModernWebpackImporter(loaderContext, implementation, loadPaths) {
 
       return url.pathToFileURL(result);
     },
+    /**
+     * @param {URL} canonicalUrl canonical url
+     * @returns {Promise<{ contents: string, syntax: "scss" | "indented" | "css", sourceMapUrl: URL } | null>} load result
+     */
     async load(canonicalUrl) {
       const ext = path.extname(canonicalUrl.pathname);
 
+      /** @type {"scss" | "indented" | "css"} */
       let syntax;
 
       if (ext && ext.toLowerCase() === ".scss") {
@@ -578,20 +603,30 @@ function getModernWebpackImporter(loaderContext, implementation, loadPaths) {
       }
 
       try {
-        const contents = await new Promise((resolve, reject) => {
-          // Old version of `enhanced-resolve` supports only path as a string
-          // TODO simplify in the next major release and pass URL
-          const canonicalPath = url.fileURLToPath(canonicalUrl);
+        const contents = /** @type {string} */ (
+          await new Promise((resolve, reject) => {
+            // Old version of `enhanced-resolve` supports only path as a string
+            // TODO simplify in the next major release and pass URL
+            const canonicalPath = url.fileURLToPath(canonicalUrl);
 
-          loaderContext.fs.readFile(canonicalPath, (err, content) => {
-            if (err) {
-              reject(err);
-              return;
-            }
+            loaderContext.fs.readFile(
+              canonicalPath,
+              /**
+               * @param {NodeJS.ErrnoException | null} err error
+               * @param {Buffer | undefined} content content
+               * @returns {void}
+               */
+              (err, content) => {
+                if (err || !content) {
+                  reject(err);
+                  return;
+                }
 
-            resolve(content.toString("utf8"));
-          });
-        });
+                resolve(content.toString("utf8"));
+              },
+            );
+          })
+        );
 
         return { contents, syntax, sourceMapUrl: canonicalUrl };
       } catch {
@@ -601,32 +636,39 @@ function getModernWebpackImporter(loaderContext, implementation, loadPaths) {
   };
 }
 
+/** @type {WeakMap<import("webpack").Compiler, AsyncCompiler>} */
 const sassModernCompilers = new WeakMap();
 
 /**
  * Verifies that the implementation and version of Sass is supported by this loader.
+ * @template {SassImplementation} T
  * @param {LoaderContext} loaderContext loader context
- * @param {SassImplementation} implementation sass implementation
- * @param {"auto" | "modern" | "modern-compiler" | undefined} apiType api type
- * @returns {SassCompileFunction} compile function
+ * @param {T} implementation sass implementation
+ * @param {ApiType=} apiType api type
+ * @returns {(sassOptions: SassOptions & { data: string }) => Promise<CompileResult>} compile function
  */
 function getCompileFn(loaderContext, implementation, apiType = "auto") {
+  const { initAsyncCompiler } = implementation;
+
   if (
     apiType === "modern-compiler" ||
-    (apiType === "auto" &&
-      typeof implementation.initAsyncCompiler === "function")
+    (apiType === "auto" && typeof initAsyncCompiler === "function")
   ) {
-    return async (sassOptions) => {
-      const webpackCompiler = loaderContext._compiler;
+    return async (
+      /** @type {SassOptions & { data: string }} */ sassOptions,
+    ) => {
+      const webpackCompiler =
+        /** @type {LoaderContext & { _compiler?: import("webpack").Compiler }} */
+        (loaderContext)._compiler;
       const { data, ...rest } = sassOptions;
 
       // Some people can run the loader in a multi-threading way;
       // there is no webpack compiler object in such case.
-      if (webpackCompiler) {
+      if (webpackCompiler && initAsyncCompiler) {
         if (!sassModernCompilers.has(webpackCompiler)) {
           // Create a long-running compiler process that can be reused
           // for compiling individual files.
-          const compiler = await implementation.initAsyncCompiler();
+          const compiler = await initAsyncCompiler();
 
           // Check again because awaiting the initialization function
           // introduces a race condition.
@@ -640,19 +682,25 @@ function getCompileFn(loaderContext, implementation, apiType = "auto") {
           }
         }
 
-        return sassModernCompilers
-          .get(webpackCompiler)
-          .compileStringAsync(data, rest);
+        return /** @type {AsyncCompiler} */ (
+          sassModernCompilers.get(webpackCompiler)
+        ).compileStringAsync(/** @type {string} */ (data), rest);
       }
 
-      return implementation.compileStringAsync(data, rest);
+      return implementation.compileStringAsync(
+        /** @type {string} */ (data),
+        rest,
+      );
     };
   }
 
-  return (sassOptions) => {
+  return (/** @type {SassOptions & { data: string }} */ sassOptions) => {
     const { data, ...rest } = sassOptions;
 
-    return implementation.compileStringAsync(data, rest);
+    return implementation.compileStringAsync(
+      /** @type {string} */ (data),
+      rest,
+    );
   };
 }
 
@@ -660,7 +708,7 @@ const ABSOLUTE_SCHEME = /^[A-Za-z0-9+\-.]+:/;
 
 /**
  * @param {string} source source
- * @returns {"absolute" | "scheme-relative" | "path-absolute" | "path-absolute"} a type of URL
+ * @returns {"absolute" | "scheme-relative" | "path-absolute" | "path-relative"} a type of URL
  */
 function getURLType(source) {
   if (source[0] === "/") {
@@ -690,6 +738,7 @@ function normalizeSourceMap(map, rootContext) {
   // Since we don't know the final filename in the webpack build chain yet, it makes no sense to have it.
 
   if (typeof newMap.file !== "undefined") {
+    // @ts-expect-error need to fix on webpack side
     delete newMap.file;
   }
 
@@ -699,7 +748,7 @@ function normalizeSourceMap(map, rootContext) {
   // This fixes an error on windows where the source-map module cannot resolve the source maps.
   // @see https://github.com/webpack/sass-loader/issues/366#issuecomment-279460722
 
-  newMap.sources = newMap.sources.map((source) => {
+  newMap.sources = newMap.sources.map((/** @type {string} */ source) => {
     const sourceType = getURLType(source);
 
     // Do no touch `scheme-relative`, `path-absolute` and `absolute` types (except `file:`)
@@ -720,14 +769,15 @@ function normalizeSourceMap(map, rootContext) {
  * @returns {Error} a new error
  */
 function errorFactory(error) {
-  const message = error.formatted
-    ? error.formatted.replace(/^(.+)?Error: /, "")
+  const sassError = /** @type {SassError} */ (error);
+  const message = sassError.formatted
+    ? sassError.formatted.replace(/^(.+)?Error: /, "")
     : (error.message || error.toString()).replace(/^(.+)?Error: /, "");
 
   const obj = new Error(message, { cause: error });
 
   obj.name = error.name;
-  obj.stack = null;
+  obj.stack = undefined;
 
   return obj;
 }

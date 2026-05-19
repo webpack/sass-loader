@@ -5,8 +5,6 @@ import { fileURLToPath } from "node:url";
 
 import enhanced from "enhanced-resolve";
 
-import * as sass from "sass";
-
 import { getWebpackResolver } from "../src/utils.js";
 
 const __filename = fileURLToPath(import.meta.url);
@@ -19,17 +17,10 @@ const __dirname = path.dirname(__filename);
  */
 describe("getWebpackResolver", () => {
   const resolve = (request, ...options) =>
-    getWebpackResolver(enhanced.create, sass, ...options)(__filename, request);
+    getWebpackResolver(enhanced.create, ...options)(__filename, request);
 
   it("should resolve .scss from node_modules", async () => {
     assert.match(await resolve("scss/style"), /style\.scss$/);
-  });
-
-  it("should resolve from passed `includePaths`", async () => {
-    assert.match(
-      await resolve("empty", [path.resolve(__dirname, "./scss")]),
-      /empty\.scss$/,
-    );
   });
 
   it("should reject when file cannot be resolved", async () => {

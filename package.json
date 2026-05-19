@@ -20,6 +20,7 @@
   "type": "module",
   "exports": {
     ".": {
+      "types": "./types/index.d.ts",
       "import": "./dist/esm/index.js",
       "require": "./dist/cjs/index.js",
       "default": "./dist/esm/index.js"
@@ -28,19 +29,23 @@
   },
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
+  "types": "./types/index.d.ts",
   "files": [
-    "dist"
+    "dist",
+    "types"
   ],
   "scripts": {
-    "clean": "del-cli dist",
+    "clean": "del-cli dist types",
     "prebuild": "npm run clean",
     "build:esm": "babel src -d dist/esm --env-name esm --copy-files --no-copy-ignored",
     "build:cjs": "babel src -d dist/cjs --env-name cjs --copy-files --no-copy-ignored && node -e \"const fs=require('fs');fs.writeFileSync('dist/cjs/package.json','{\\\"type\\\":\\\"commonjs\\\"}\\n');fs.appendFileSync('dist/cjs/index.js','module.exports = exports.default;\\nmodule.exports.default = exports.default;\\n')\"",
+    "build:types": "tsc && prettier \"types/**/*.ts\" --write",
     "build": "npm-run-all -p \"build:*\"",
     "security": "npm audit --production",
     "lint": "npm-run-all -l -p \"lint:**\" && npm run fmt:check",
     "lint:code": "eslint --cache .",
     "lint:spelling": "cspell --cache --no-must-find-files --quiet \"**/*.*\"",
+    "lint:types": "tsc --pretty --noEmit",
     "fmt": "npm run fmt:check -- --write",
     "fmt:check": "prettier --list-different --cache --ignore-unknown .",
     "fix": "npm run fix:code && npm run fmt",
@@ -60,6 +65,7 @@
     "@babel/preset-env": "^7.28.6",
     "@changesets/cli": "^2.30.0",
     "@changesets/get-github-info": "^0.8.0",
+    "@types/node": "^22.3.0",
     "bootstrap-sass": "^3.4.1",
     "bootstrap-v4": "npm:bootstrap@^4.5.3",
     "bootstrap-v5": "npm:bootstrap@^5.3.7",
@@ -78,10 +84,10 @@
     "memfs": "^4.57.2",
     "npm-run-all": "^4.1.5",
     "prettier": "^3.8.3",
-    "sass": "^1.89.2",
-    "sass-embedded": "^1.89.2",
+    "sass": "^1.99.0",
+    "sass-embedded": "^1.99.0",
     "style-loader": "^3.3.4",
-    "typescript": "^5.9.2",
+    "typescript": "^6.0.3",
     "webpack": "^5.106.2"
   },
   "peerDependencies": {
