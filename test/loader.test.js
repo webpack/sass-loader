@@ -3,7 +3,7 @@ import path from "node:path";
 import { describe, it } from "node:test";
 import url from "node:url";
 
-import del from "del";
+import { deleteSync } from "del";
 
 import {
   close,
@@ -81,7 +81,7 @@ describe("loader", () => {
           `./outputs/.cache/sass-loader/${implementationName}/${syntax}`,
         );
 
-        await del(cache);
+        await deleteSync(cache);
 
         const testId = getTestId("language", syntax);
         const options = {
@@ -112,7 +112,7 @@ describe("loader", () => {
           `./outputs/.cache/sass-loader/${implementationName}/${syntax}`,
         );
 
-        await del(cache);
+        await deleteSync(cache);
 
         const testId = getTestId("language", syntax);
         const options = {
