@@ -11,14 +11,10 @@ import {
   normalizeSourceMap,
 } from "./utils.js";
 
-// eslint-disable-next-line jsdoc/reject-any-type
-/** @typedef {any} EXPECTED_ANY */
-
-/** @typedef {import("./utils.js").LoaderOptions} LoaderOptions */
 /** @typedef {import("webpack").LoaderContext<LoaderOptions>} LoaderContext */
-/** @typedef {import("./utils.js").SassError} SassError */
-/** @typedef {import("./utils.js").ModernImporter} ModernImporter */
 /** @typedef {import("schema-utils/declarations/validate").Schema} Schema */
+/** @typedef {import("./utils.js").LoaderOptions} LoaderOptions */
+/** @typedef {import("./utils.js").SassError} SassError */
 
 /**
  * The sass-loader makes dart-sass and sass-embedded available to webpack modules.
@@ -33,7 +29,7 @@ async function loader(content) {
   let implementation;
 
   try {
-    implementation = await getSassImplementation(this, options.implementation);
+    implementation = await getSassImplementation(options.implementation);
   } catch (error) {
     callback(/** @type {Error} */ (error));
 
@@ -48,7 +44,6 @@ async function loader(content) {
     this,
     options,
     content,
-    implementation,
     useSourceMap,
   );
 
@@ -58,10 +53,7 @@ async function loader(content) {
       : true;
 
   if (shouldUseWebpackImporter) {
-    /** @type {ModernImporter[]} */ (sassOptions.importers).push(
-      // No need to pass `loadPaths`, because modern API handle them itself
-      getModernWebpackImporter(this, implementation, []),
-    );
+    sassOptions.importers.push(getModernWebpackImporter(this));
   }
 
   let compile;
@@ -90,7 +82,7 @@ async function loader(content) {
     return;
   }
 
-  let map = result.sourceMap || null;
+  let map = result.sourceMap || undefined;
 
   // Modify source paths only for webpack, otherwise we do nothing
   if (map && useSourceMap) {
@@ -110,11 +102,7 @@ async function loader(content) {
     }
   }
 
-  callback(
-    null,
-    result.css.toString(),
-    /** @type {Parameters<typeof callback>[2]} */ (map || undefined),
-  );
+  callback(null, result.css.toString(), map || undefined);
 }
 
 export default loader;

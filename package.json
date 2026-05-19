@@ -84,10 +84,10 @@
     "memfs": "^4.57.2",
     "npm-run-all": "^4.1.5",
     "prettier": "^3.8.3",
-    "sass": "^1.89.2",
-    "sass-embedded": "^1.89.2",
+    "sass": "^1.99.0",
+    "sass-embedded": "^1.99.0",
     "style-loader": "^3.3.4",
-    "typescript": "^5.9.2",
+    "typescript": "^6.0.3",
     "webpack": "^5.106.2"
   },
   "peerDependencies": {
