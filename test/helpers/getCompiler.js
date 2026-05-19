@@ -1,7 +1,7 @@
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
-import del from "del";
+import { deleteSync } from "del";
 import { Volume, createFsFromVolume } from "memfs";
 import webpack from "webpack";
 
@@ -75,7 +75,7 @@ export default function getCompiler(fixture, config = {}, options = {}) {
   options = { output: false, ...options };
 
   if (options.output) {
-    del.sync(config.output.path);
+    deleteSync(config.output.path);
   }
 
   const compiler = webpack(config);
