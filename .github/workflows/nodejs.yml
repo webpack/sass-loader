@@ -52,6 +52,12 @@ jobs:
       - name: Security audit
         run: npm run security -- --only=prod
 
+      - name: Build types
+        run: npm run build:types
+
+      - name: Check types
+        run: if [ -n "$(git status types --porcelain)" ]; then echo "Missing types. Update types by running 'npm run build:types'"; exit 1; else echo "All types are valid"; fi
+
   test:
     name: Test - ${{ matrix.os }} - Node v${{ matrix.node-version }}, Webpack ${{ matrix.webpack-version }}
 
