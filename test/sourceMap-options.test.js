@@ -8,11 +8,13 @@ import {
   close,
   compile,
   getCodeFromBundle,
+  getCodeFromCssBundle,
   getCompiler,
   getErrors,
   getImplementationsAndAPI,
   getTestId,
   getWarnings,
+  readAsset,
 } from "./helpers/index.js";
 
 const __filename = url.fileURLToPath(import.meta.url);
@@ -263,6 +265,32 @@ describe("sourceMap option", () => {
 
         t.assert.snapshot(css);
         t.assert.snapshot(getSourceMap(JSON.parse(sourceMap)));
+        t.assert.snapshot(getWarnings(stats));
+        t.assert.snapshot(getErrors(stats));
+
+        await close(compiler);
+      });
+
+      it(`should generate source maps with the built-in CSS support of webpack ('${implementationName}', '${api}' API, '${syntax}' syntax)`, async (t) => {
+        const testId = getTestId("language", syntax);
+        const options = { implementation, api, sourceMap: true };
+        const compiler = getCompiler(testId, {
+          css: true,
+          devtool: "source-map",
+          loader: { options },
+        });
+        const stats = await compile(compiler);
+        const css = getCodeFromCssBundle(stats, compiler);
+        const sourceMap = JSON.parse(
+          readAsset("main.bundle.css.map", compiler, stats),
+        );
+
+        sourceMap.sources = sourceMap.sources.map((source) =>
+          source.replaceAll("\\", "/"),
+        );
+
+        t.assert.snapshot(css);
+        t.assert.snapshot(getSourceMap(sourceMap));
         t.assert.snapshot(getWarnings(stats));
         t.assert.snapshot(getErrors(stats));
 

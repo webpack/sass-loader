@@ -16,10 +16,18 @@ const module = (config) => ({
     {
       test: (config.loader && config.loader.test) || /\.s[ac]ss$/i,
       resolve: config.loader.resolve,
+      // Use the built-in CSS support of webpack instead of the test loader
+      ...(config.css ? { type: "css/auto" } : {}),
       use: [
-        {
-          loader: path.join(__dirname, "./testLoader.cjs"),
-        },
+        // The built-in CSS support of webpack handles the generated CSS itself,
+        // so the test loader is not needed in this case
+        ...(config.css
+          ? []
+          : [
+              {
+                loader: path.join(__dirname, "./testLoader.cjs"),
+              },
+            ]),
         {
           loader: path.join(__dirname, "../../src/index.js"),
           options: (config.loader && config.loader.options) || {},
@@ -42,7 +50,9 @@ const plugins = (config) => [config.plugins || []].flat();
 const output = (config) => ({
   path: path.resolve(__dirname, `../outputs/${config.output || ""}`),
   filename: "[name].bundle.js",
-  library: "sassLoaderExport",
+  ...(config.css
+    ? { cssFilename: "[name].bundle.css" }
+    : { library: "sassLoaderExport" }),
 });
 
 /**
@@ -69,6 +79,7 @@ export default function getCompiler(fixture, config = {}, options = {}) {
     },
 
     resolve: config.resolve || undefined,
+    experiments: config.experiments || (config.css ? { css: true } : undefined),
   };
 
   // Compiler Options

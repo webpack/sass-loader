@@ -3,6 +3,7 @@ export { default as customFunctions } from "./customFunctions.js";
 export { default as compile } from "./compiler.js";
 export { default as getCodeFromSass } from "./getCodeFromSass.js";
 export { default as getCodeFromBundle } from "./getCodeFromBundle.js";
+export { default as getCodeFromCssBundle } from "./getCodeFromCssBundle.js";
 export { default as getErrors } from "./getErrors.js";
 export { default as getCompiler } from "./getCompiler.js";
 export { default as getImplementationsAndAPI } from "./getImplementationsAndAPI.js";
