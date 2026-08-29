@@ -9,6 +9,7 @@ import {
   close,
   compile,
   getCodeFromBundle,
+  getCodeFromCssBundle,
   getCodeFromSass,
   getCompiler,
   getErrors,
@@ -42,6 +43,27 @@ describe("loader", () => {
 
         assert.strictEqual(codeFromBundle.css, codeFromSass.css);
         t.assert.snapshot(codeFromBundle.css);
+        t.assert.snapshot(getWarnings(stats));
+        t.assert.snapshot(getErrors(stats));
+
+        await close(compiler);
+      });
+
+      it(`should work with the built-in CSS support of webpack ('${implementationName}', '${api}' API, '${syntax}' syntax)`, async (t) => {
+        const testId = getTestId("language", syntax);
+        const options = {
+          implementation,
+          api,
+        };
+        const compiler = getCompiler(testId, {
+          css: true,
+          loader: { options },
+        });
+
+        const stats = await compile(compiler);
+        const codeFromCssBundle = getCodeFromCssBundle(stats, compiler);
+
+        t.assert.snapshot(codeFromCssBundle);
         t.assert.snapshot(getWarnings(stats));
         t.assert.snapshot(getErrors(stats));
 

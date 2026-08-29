@@ -1142,6 +1142,262 @@ exports[`sourceMap option > should generate source maps with absolute URLs ('sas
 []
 `;
 
+exports[`sourceMap option > should generate source maps with the built-in CSS support of webpack ('dart-sass', 'modern' API, 'sass' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n/*!***************************!*\\\\\\n  !*** css ./sass/file.css ***!\\n  \\\\***************************/\\n.color-red {\\n    color: red;\\n}\\n/*!********************************!*\\\\\\n  !*** css ./sass/language.sass ***!\\n  \\\\********************************/\\n\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.message, .warning, .error, .success {\\n  border: 1px solid #ccc;\\n  padding: 10px;\\n  color: #333;\\n}\\n\\n.success {\\n  border-color: green;\\n}\\n\\n.error {\\n  border-color: red;\\n}\\n\\n.warning {\\n  border-color: yellow;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}\\n\\n/*# sourceMappingURL=main.bundle.css.map*/"
+`;
+
+exports[`sourceMap option > should generate source maps with the built-in CSS support of webpack ('dart-sass', 'modern' API, 'sass' syntax) 2`] = `
+{
+  "version": 3,
+  "file": "main.bundle.css",
+  "mappings": ";;;;AAAA;AACA;AACA,C;;;;;ACKA;EACE;EACA,OALc;;;AAQd;EACE;EACA;EACA;;AAEF;EACE;;AAEF;EACE;EACA;EACA;;;AAQJ;EALE,uBAMe;EALf,oBAKe;EAJf,mBAIe;EAHf,eAGe;;;AAEjB;EACE;EACA;EACA;;;AAEF;EAEE;;;AAEF;EAEE;;;AAEF;EAEE;;;AAGA;EACE,SAhDY;;;AAmDd;EACE,SCzDc",
+  "sources": [
+    "webpack:///css ./sass/file.css",
+    "webpack:///./sass/language.sass",
+    "webpack:///./sass/another/variables.sass"
+  ],
+  "sourcesContent": [
+    ".color-red {\\n    color: red;\\n}",
+    "@import \\"another/variables\\"\\n@import \\"./file.css\\"\\n\\n$font-stack:    Helvetica, sans-serif\\n$primary-color: #333\\n$pi:            '\\\\e0C6'\\n\\nbody\\n  font: 100% $font-stack\\n  color: $primary-color\\n\\nnav\\n  ul\\n    margin: 0\\n    padding: 0\\n    list-style: none\\n\\n  li\\n    display: inline-block\\n\\n  a\\n    display: block\\n    padding: 6px 12px\\n    text-decoration: none\\n\\n=border-radius($radius)\\n  -webkit-border-radius: $radius\\n  -moz-border-radius:    $radius\\n  -ms-border-radius:     $radius\\n  border-radius:         $radius\\n\\n.box\\n  +border-radius(10px)\\n\\n.message\\n  border: 1px solid #ccc\\n  padding: 10px\\n  color: #333\\n\\n.success\\n  @extend .message\\n  border-color: green\\n\\n.error\\n  @extend .message\\n  border-color: red\\n\\n.warning\\n  @extend .message\\n  border-color: yellow\\n\\n.foo\\n  &:before\\n    content: $pi\\n\\n.bar\\n  &:before\\n    content: $n-ary-summation\\n\\n",
+    "$n-ary-summation: '\\\\2211'\\n"
+  ],
+  "names": [],
+  "sourceRoot": ""
+}
+`;
+
+exports[`sourceMap option > should generate source maps with the built-in CSS support of webpack ('dart-sass', 'modern' API, 'sass' syntax) 3`] = `
+[]
+`;
+
+exports[`sourceMap option > should generate source maps with the built-in CSS support of webpack ('dart-sass', 'modern' API, 'sass' syntax) 4`] = `
+[]
+`;
+
+exports[`sourceMap option > should generate source maps with the built-in CSS support of webpack ('dart-sass', 'modern' API, 'scss' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n/*!***************************!*\\\\\\n  !*** css ./scss/file.css ***!\\n  \\\\***************************/\\n.color-red {\\n    color: red;\\n}\\n/*!********************************!*\\\\\\n  !*** css ./scss/language.scss ***!\\n  \\\\********************************/\\n\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}\\n\\n/*# sourceMappingURL=main.bundle.css.map*/"
+`;
+
+exports[`sourceMap option > should generate source maps with the built-in CSS support of webpack ('dart-sass', 'modern' API, 'scss' syntax) 2`] = `
+{
+  "version": 3,
+  "file": "main.bundle.css",
+  "mappings": ";;;;AAAA;AACA;AACA,C;;;;;ACKA;EACE;EACA,OALc;;;AASd;EACE;EACA;EACA;;AAGF;EAAK;;AAEL;EACE;EACA;EACA;;;AAWJ;EANE,uBAM4B;EALzB,oBAKyB;EAJxB,mBAIwB;EAHpB,eAGoB;;;AAG5B;EACE,SAlCY;;;AAuCd;EACE,SC7Cc",
+  "sources": [
+    "webpack:///css ./scss/file.css",
+    "webpack:///./scss/language.scss",
+    "webpack:///./scss/another/_variables.scss"
+  ],
+  "sourcesContent": [
+    ".color-red {\\n    color: red;\\n}",
+    "@import \\"another/variables\\";\\n@import \\"./file.css\\";\\n\\n$font-stack:    Helvetica, sans-serif;\\n$primary-color: #333;\\n$pi:            '\\\\e0C6';\\n\\nbody {\\n  font: 100% $font-stack;\\n  color: $primary-color;\\n}\\n\\nnav {\\n  ul {\\n    margin: 0;\\n    padding: 0;\\n    list-style: none;\\n  }\\n\\n  li { display: inline-block; }\\n\\n  a {\\n    display: block;\\n    padding: 6px 12px;\\n    text-decoration: none;\\n  }\\n}\\n\\n@mixin border-radius($radius) {\\n  -webkit-border-radius: $radius;\\n     -moz-border-radius: $radius;\\n      -ms-border-radius: $radius;\\n          border-radius: $radius;\\n}\\n\\n.box { @include border-radius(10px); }\\n\\n.foo {\\n  &:before {\\n    content: $pi;\\n  }\\n}\\n\\n.bar {\\n  &:before {\\n    content: $n-ary-summation;\\n  }\\n}\\n",
+    "$n-ary-summation: '\\\\2211'\\n"
+  ],
+  "names": [],
+  "sourceRoot": ""
+}
+`;
+
+exports[`sourceMap option > should generate source maps with the built-in CSS support of webpack ('dart-sass', 'modern' API, 'scss' syntax) 3`] = `
+[]
+`;
+
+exports[`sourceMap option > should generate source maps with the built-in CSS support of webpack ('dart-sass', 'modern' API, 'scss' syntax) 4`] = `
+[]
+`;
+
+exports[`sourceMap option > should generate source maps with the built-in CSS support of webpack ('dart-sass', 'modern-compiler' API, 'sass' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n/*!***************************!*\\\\\\n  !*** css ./sass/file.css ***!\\n  \\\\***************************/\\n.color-red {\\n    color: red;\\n}\\n/*!********************************!*\\\\\\n  !*** css ./sass/language.sass ***!\\n  \\\\********************************/\\n\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.message, .warning, .error, .success {\\n  border: 1px solid #ccc;\\n  padding: 10px;\\n  color: #333;\\n}\\n\\n.success {\\n  border-color: green;\\n}\\n\\n.error {\\n  border-color: red;\\n}\\n\\n.warning {\\n  border-color: yellow;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}\\n\\n/*# sourceMappingURL=main.bundle.css.map*/"
+`;
+
+exports[`sourceMap option > should generate source maps with the built-in CSS support of webpack ('dart-sass', 'modern-compiler' API, 'sass' syntax) 2`] = `
+{
+  "version": 3,
+  "file": "main.bundle.css",
+  "mappings": ";;;;AAAA;AACA;AACA,C;;;;;ACKA;EACE;EACA,OALc;;;AAQd;EACE;EACA;EACA;;AAEF;EACE;;AAEF;EACE;EACA;EACA;;;AAQJ;EALE,uBAMe;EALf,oBAKe;EAJf,mBAIe;EAHf,eAGe;;;AAEjB;EACE;EACA;EACA;;;AAEF;EAEE;;;AAEF;EAEE;;;AAEF;EAEE;;;AAGA;EACE,SAhDY;;;AAmDd;EACE,SCzDc",
+  "sources": [
+    "webpack:///css ./sass/file.css",
+    "webpack:///./sass/language.sass",
+    "webpack:///./sass/another/variables.sass"
+  ],
+  "sourcesContent": [
+    ".color-red {\\n    color: red;\\n}",
+    "@import \\"another/variables\\"\\n@import \\"./file.css\\"\\n\\n$font-stack:    Helvetica, sans-serif\\n$primary-color: #333\\n$pi:            '\\\\e0C6'\\n\\nbody\\n  font: 100% $font-stack\\n  color: $primary-color\\n\\nnav\\n  ul\\n    margin: 0\\n    padding: 0\\n    list-style: none\\n\\n  li\\n    display: inline-block\\n\\n  a\\n    display: block\\n    padding: 6px 12px\\n    text-decoration: none\\n\\n=border-radius($radius)\\n  -webkit-border-radius: $radius\\n  -moz-border-radius:    $radius\\n  -ms-border-radius:     $radius\\n  border-radius:         $radius\\n\\n.box\\n  +border-radius(10px)\\n\\n.message\\n  border: 1px solid #ccc\\n  padding: 10px\\n  color: #333\\n\\n.success\\n  @extend .message\\n  border-color: green\\n\\n.error\\n  @extend .message\\n  border-color: red\\n\\n.warning\\n  @extend .message\\n  border-color: yellow\\n\\n.foo\\n  &:before\\n    content: $pi\\n\\n.bar\\n  &:before\\n    content: $n-ary-summation\\n\\n",
+    "$n-ary-summation: '\\\\2211'\\n"
+  ],
+  "names": [],
+  "sourceRoot": ""
+}
+`;
+
+exports[`sourceMap option > should generate source maps with the built-in CSS support of webpack ('dart-sass', 'modern-compiler' API, 'sass' syntax) 3`] = `
+[]
+`;
+
+exports[`sourceMap option > should generate source maps with the built-in CSS support of webpack ('dart-sass', 'modern-compiler' API, 'sass' syntax) 4`] = `
+[]
+`;
+
+exports[`sourceMap option > should generate source maps with the built-in CSS support of webpack ('dart-sass', 'modern-compiler' API, 'scss' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n/*!***************************!*\\\\\\n  !*** css ./scss/file.css ***!\\n  \\\\***************************/\\n.color-red {\\n    color: red;\\n}\\n/*!********************************!*\\\\\\n  !*** css ./scss/language.scss ***!\\n  \\\\********************************/\\n\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}\\n\\n/*# sourceMappingURL=main.bundle.css.map*/"
+`;
+
+exports[`sourceMap option > should generate source maps with the built-in CSS support of webpack ('dart-sass', 'modern-compiler' API, 'scss' syntax) 2`] = `
+{
+  "version": 3,
+  "file": "main.bundle.css",
+  "mappings": ";;;;AAAA;AACA;AACA,C;;;;;ACKA;EACE;EACA,OALc;;;AASd;EACE;EACA;EACA;;AAGF;EAAK;;AAEL;EACE;EACA;EACA;;;AAWJ;EANE,uBAM4B;EALzB,oBAKyB;EAJxB,mBAIwB;EAHpB,eAGoB;;;AAG5B;EACE,SAlCY;;;AAuCd;EACE,SC7Cc",
+  "sources": [
+    "webpack:///css ./scss/file.css",
+    "webpack:///./scss/language.scss",
+    "webpack:///./scss/another/_variables.scss"
+  ],
+  "sourcesContent": [
+    ".color-red {\\n    color: red;\\n}",
+    "@import \\"another/variables\\";\\n@import \\"./file.css\\";\\n\\n$font-stack:    Helvetica, sans-serif;\\n$primary-color: #333;\\n$pi:            '\\\\e0C6';\\n\\nbody {\\n  font: 100% $font-stack;\\n  color: $primary-color;\\n}\\n\\nnav {\\n  ul {\\n    margin: 0;\\n    padding: 0;\\n    list-style: none;\\n  }\\n\\n  li { display: inline-block; }\\n\\n  a {\\n    display: block;\\n    padding: 6px 12px;\\n    text-decoration: none;\\n  }\\n}\\n\\n@mixin border-radius($radius) {\\n  -webkit-border-radius: $radius;\\n     -moz-border-radius: $radius;\\n      -ms-border-radius: $radius;\\n          border-radius: $radius;\\n}\\n\\n.box { @include border-radius(10px); }\\n\\n.foo {\\n  &:before {\\n    content: $pi;\\n  }\\n}\\n\\n.bar {\\n  &:before {\\n    content: $n-ary-summation;\\n  }\\n}\\n",
+    "$n-ary-summation: '\\\\2211'\\n"
+  ],
+  "names": [],
+  "sourceRoot": ""
+}
+`;
+
+exports[`sourceMap option > should generate source maps with the built-in CSS support of webpack ('dart-sass', 'modern-compiler' API, 'scss' syntax) 3`] = `
+[]
+`;
+
+exports[`sourceMap option > should generate source maps with the built-in CSS support of webpack ('dart-sass', 'modern-compiler' API, 'scss' syntax) 4`] = `
+[]
+`;
+
+exports[`sourceMap option > should generate source maps with the built-in CSS support of webpack ('sass-embedded', 'modern' API, 'sass' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n/*!***************************!*\\\\\\n  !*** css ./sass/file.css ***!\\n  \\\\***************************/\\n.color-red {\\n    color: red;\\n}\\n/*!********************************!*\\\\\\n  !*** css ./sass/language.sass ***!\\n  \\\\********************************/\\n\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.message, .warning, .error, .success {\\n  border: 1px solid #ccc;\\n  padding: 10px;\\n  color: #333;\\n}\\n\\n.success {\\n  border-color: green;\\n}\\n\\n.error {\\n  border-color: red;\\n}\\n\\n.warning {\\n  border-color: yellow;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}\\n\\n/*# sourceMappingURL=main.bundle.css.map*/"
+`;
+
+exports[`sourceMap option > should generate source maps with the built-in CSS support of webpack ('sass-embedded', 'modern' API, 'sass' syntax) 2`] = `
+{
+  "version": 3,
+  "file": "main.bundle.css",
+  "mappings": ";;;;AAAA;AACA;AACA,C;;;;;ACKA;EACE;EACA,OALc;;;AAQd;EACE;EACA;EACA;;AAEF;EACE;;AAEF;EACE;EACA;EACA;;;AAQJ;EALE,uBAMe;EALf,oBAKe;EAJf,mBAIe;EAHf,eAGe;;;AAEjB;EACE;EACA;EACA;;;AAEF;EAEE;;;AAEF;EAEE;;;AAEF;EAEE;;;AAGA;EACE,SAhDY;;;AAmDd;EACE,SCzDc",
+  "sources": [
+    "webpack:///css ./sass/file.css",
+    "webpack:///./sass/language.sass",
+    "webpack:///./sass/another/variables.sass"
+  ],
+  "sourcesContent": [
+    ".color-red {\\n    color: red;\\n}",
+    "@import \\"another/variables\\"\\n@import \\"./file.css\\"\\n\\n$font-stack:    Helvetica, sans-serif\\n$primary-color: #333\\n$pi:            '\\\\e0C6'\\n\\nbody\\n  font: 100% $font-stack\\n  color: $primary-color\\n\\nnav\\n  ul\\n    margin: 0\\n    padding: 0\\n    list-style: none\\n\\n  li\\n    display: inline-block\\n\\n  a\\n    display: block\\n    padding: 6px 12px\\n    text-decoration: none\\n\\n=border-radius($radius)\\n  -webkit-border-radius: $radius\\n  -moz-border-radius:    $radius\\n  -ms-border-radius:     $radius\\n  border-radius:         $radius\\n\\n.box\\n  +border-radius(10px)\\n\\n.message\\n  border: 1px solid #ccc\\n  padding: 10px\\n  color: #333\\n\\n.success\\n  @extend .message\\n  border-color: green\\n\\n.error\\n  @extend .message\\n  border-color: red\\n\\n.warning\\n  @extend .message\\n  border-color: yellow\\n\\n.foo\\n  &:before\\n    content: $pi\\n\\n.bar\\n  &:before\\n    content: $n-ary-summation\\n\\n",
+    "$n-ary-summation: '\\\\2211'\\n"
+  ],
+  "names": [],
+  "sourceRoot": ""
+}
+`;
+
+exports[`sourceMap option > should generate source maps with the built-in CSS support of webpack ('sass-embedded', 'modern' API, 'sass' syntax) 3`] = `
+[]
+`;
+
+exports[`sourceMap option > should generate source maps with the built-in CSS support of webpack ('sass-embedded', 'modern' API, 'sass' syntax) 4`] = `
+[]
+`;
+
+exports[`sourceMap option > should generate source maps with the built-in CSS support of webpack ('sass-embedded', 'modern' API, 'scss' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n/*!***************************!*\\\\\\n  !*** css ./scss/file.css ***!\\n  \\\\***************************/\\n.color-red {\\n    color: red;\\n}\\n/*!********************************!*\\\\\\n  !*** css ./scss/language.scss ***!\\n  \\\\********************************/\\n\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}\\n\\n/*# sourceMappingURL=main.bundle.css.map*/"
+`;
+
+exports[`sourceMap option > should generate source maps with the built-in CSS support of webpack ('sass-embedded', 'modern' API, 'scss' syntax) 2`] = `
+{
+  "version": 3,
+  "file": "main.bundle.css",
+  "mappings": ";;;;AAAA;AACA;AACA,C;;;;;ACKA;EACE;EACA,OALc;;;AASd;EACE;EACA;EACA;;AAGF;EAAK;;AAEL;EACE;EACA;EACA;;;AAWJ;EANE,uBAM4B;EALzB,oBAKyB;EAJxB,mBAIwB;EAHpB,eAGoB;;;AAG5B;EACE,SAlCY;;;AAuCd;EACE,SC7Cc",
+  "sources": [
+    "webpack:///css ./scss/file.css",
+    "webpack:///./scss/language.scss",
+    "webpack:///./scss/another/_variables.scss"
+  ],
+  "sourcesContent": [
+    ".color-red {\\n    color: red;\\n}",
+    "@import \\"another/variables\\";\\n@import \\"./file.css\\";\\n\\n$font-stack:    Helvetica, sans-serif;\\n$primary-color: #333;\\n$pi:            '\\\\e0C6';\\n\\nbody {\\n  font: 100% $font-stack;\\n  color: $primary-color;\\n}\\n\\nnav {\\n  ul {\\n    margin: 0;\\n    padding: 0;\\n    list-style: none;\\n  }\\n\\n  li { display: inline-block; }\\n\\n  a {\\n    display: block;\\n    padding: 6px 12px;\\n    text-decoration: none;\\n  }\\n}\\n\\n@mixin border-radius($radius) {\\n  -webkit-border-radius: $radius;\\n     -moz-border-radius: $radius;\\n      -ms-border-radius: $radius;\\n          border-radius: $radius;\\n}\\n\\n.box { @include border-radius(10px); }\\n\\n.foo {\\n  &:before {\\n    content: $pi;\\n  }\\n}\\n\\n.bar {\\n  &:before {\\n    content: $n-ary-summation;\\n  }\\n}\\n",
+    "$n-ary-summation: '\\\\2211'\\n"
+  ],
+  "names": [],
+  "sourceRoot": ""
+}
+`;
+
+exports[`sourceMap option > should generate source maps with the built-in CSS support of webpack ('sass-embedded', 'modern' API, 'scss' syntax) 3`] = `
+[]
+`;
+
+exports[`sourceMap option > should generate source maps with the built-in CSS support of webpack ('sass-embedded', 'modern' API, 'scss' syntax) 4`] = `
+[]
+`;
+
+exports[`sourceMap option > should generate source maps with the built-in CSS support of webpack ('sass-embedded', 'modern-compiler' API, 'sass' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n/*!***************************!*\\\\\\n  !*** css ./sass/file.css ***!\\n  \\\\***************************/\\n.color-red {\\n    color: red;\\n}\\n/*!********************************!*\\\\\\n  !*** css ./sass/language.sass ***!\\n  \\\\********************************/\\n\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.message, .warning, .error, .success {\\n  border: 1px solid #ccc;\\n  padding: 10px;\\n  color: #333;\\n}\\n\\n.success {\\n  border-color: green;\\n}\\n\\n.error {\\n  border-color: red;\\n}\\n\\n.warning {\\n  border-color: yellow;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}\\n\\n/*# sourceMappingURL=main.bundle.css.map*/"
+`;
+
+exports[`sourceMap option > should generate source maps with the built-in CSS support of webpack ('sass-embedded', 'modern-compiler' API, 'sass' syntax) 2`] = `
+{
+  "version": 3,
+  "file": "main.bundle.css",
+  "mappings": ";;;;AAAA;AACA;AACA,C;;;;;ACKA;EACE;EACA,OALc;;;AAQd;EACE;EACA;EACA;;AAEF;EACE;;AAEF;EACE;EACA;EACA;;;AAQJ;EALE,uBAMe;EALf,oBAKe;EAJf,mBAIe;EAHf,eAGe;;;AAEjB;EACE;EACA;EACA;;;AAEF;EAEE;;;AAEF;EAEE;;;AAEF;EAEE;;;AAGA;EACE,SAhDY;;;AAmDd;EACE,SCzDc",
+  "sources": [
+    "webpack:///css ./sass/file.css",
+    "webpack:///./sass/language.sass",
+    "webpack:///./sass/another/variables.sass"
+  ],
+  "sourcesContent": [
+    ".color-red {\\n    color: red;\\n}",
+    "@import \\"another/variables\\"\\n@import \\"./file.css\\"\\n\\n$font-stack:    Helvetica, sans-serif\\n$primary-color: #333\\n$pi:            '\\\\e0C6'\\n\\nbody\\n  font: 100% $font-stack\\n  color: $primary-color\\n\\nnav\\n  ul\\n    margin: 0\\n    padding: 0\\n    list-style: none\\n\\n  li\\n    display: inline-block\\n\\n  a\\n    display: block\\n    padding: 6px 12px\\n    text-decoration: none\\n\\n=border-radius($radius)\\n  -webkit-border-radius: $radius\\n  -moz-border-radius:    $radius\\n  -ms-border-radius:     $radius\\n  border-radius:         $radius\\n\\n.box\\n  +border-radius(10px)\\n\\n.message\\n  border: 1px solid #ccc\\n  padding: 10px\\n  color: #333\\n\\n.success\\n  @extend .message\\n  border-color: green\\n\\n.error\\n  @extend .message\\n  border-color: red\\n\\n.warning\\n  @extend .message\\n  border-color: yellow\\n\\n.foo\\n  &:before\\n    content: $pi\\n\\n.bar\\n  &:before\\n    content: $n-ary-summation\\n\\n",
+    "$n-ary-summation: '\\\\2211'\\n"
+  ],
+  "names": [],
+  "sourceRoot": ""
+}
+`;
+
+exports[`sourceMap option > should generate source maps with the built-in CSS support of webpack ('sass-embedded', 'modern-compiler' API, 'sass' syntax) 3`] = `
+[]
+`;
+
+exports[`sourceMap option > should generate source maps with the built-in CSS support of webpack ('sass-embedded', 'modern-compiler' API, 'sass' syntax) 4`] = `
+[]
+`;
+
+exports[`sourceMap option > should generate source maps with the built-in CSS support of webpack ('sass-embedded', 'modern-compiler' API, 'scss' syntax) 1`] = `
+"@charset \\"UTF-8\\";\\n/*!***************************!*\\\\\\n  !*** css ./scss/file.css ***!\\n  \\\\***************************/\\n.color-red {\\n    color: red;\\n}\\n/*!********************************!*\\\\\\n  !*** css ./scss/language.scss ***!\\n  \\\\********************************/\\n\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}\\n\\n/*# sourceMappingURL=main.bundle.css.map*/"
+`;
+
+exports[`sourceMap option > should generate source maps with the built-in CSS support of webpack ('sass-embedded', 'modern-compiler' API, 'scss' syntax) 2`] = `
+{
+  "version": 3,
+  "file": "main.bundle.css",
+  "mappings": ";;;;AAAA;AACA;AACA,C;;;;;ACKA;EACE;EACA,OALc;;;AASd;EACE;EACA;EACA;;AAGF;EAAK;;AAEL;EACE;EACA;EACA;;;AAWJ;EANE,uBAM4B;EALzB,oBAKyB;EAJxB,mBAIwB;EAHpB,eAGoB;;;AAG5B;EACE,SAlCY;;;AAuCd;EACE,SC7Cc",
+  "sources": [
+    "webpack:///css ./scss/file.css",
+    "webpack:///./scss/language.scss",
+    "webpack:///./scss/another/_variables.scss"
+  ],
+  "sourcesContent": [
+    ".color-red {\\n    color: red;\\n}",
+    "@import \\"another/variables\\";\\n@import \\"./file.css\\";\\n\\n$font-stack:    Helvetica, sans-serif;\\n$primary-color: #333;\\n$pi:            '\\\\e0C6';\\n\\nbody {\\n  font: 100% $font-stack;\\n  color: $primary-color;\\n}\\n\\nnav {\\n  ul {\\n    margin: 0;\\n    padding: 0;\\n    list-style: none;\\n  }\\n\\n  li { display: inline-block; }\\n\\n  a {\\n    display: block;\\n    padding: 6px 12px;\\n    text-decoration: none;\\n  }\\n}\\n\\n@mixin border-radius($radius) {\\n  -webkit-border-radius: $radius;\\n     -moz-border-radius: $radius;\\n      -ms-border-radius: $radius;\\n          border-radius: $radius;\\n}\\n\\n.box { @include border-radius(10px); }\\n\\n.foo {\\n  &:before {\\n    content: $pi;\\n  }\\n}\\n\\n.bar {\\n  &:before {\\n    content: $n-ary-summation;\\n  }\\n}\\n",
+    "$n-ary-summation: '\\\\2211'\\n"
+  ],
+  "names": [],
+  "sourceRoot": ""
+}
+`;
+
+exports[`sourceMap option > should generate source maps with the built-in CSS support of webpack ('sass-embedded', 'modern-compiler' API, 'scss' syntax) 3`] = `
+[]
+`;
+
+exports[`sourceMap option > should generate source maps with the built-in CSS support of webpack ('sass-embedded', 'modern-compiler' API, 'scss' syntax) 4`] = `
+[]
+`;
+
 exports[`sourceMap option > should generate sourcemap with \"asset/resource\" ('dart-sass', 'modern' API, 'sass' syntax) 1`] = `
 "@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.message, .warning, .error, .success {\\n  border: 1px solid #ccc;\\n  padding: 10px;\\n  color: #333;\\n}\\n\\n.success {\\n  border-color: green;\\n}\\n\\n.error {\\n  border-color: red;\\n}\\n\\n.warning {\\n  border-color: yellow;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}\\n/*# sourceMappingURL=language.css.map*/"
 `;
