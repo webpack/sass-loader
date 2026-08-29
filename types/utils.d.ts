@@ -292,3 +292,25 @@ export function normalizeSourceMap(
   map: RawSourceMap,
   rootContext: string,
 ): RawSourceMap;
+/**
+ * Removes the byte order mark (BOM) from the compiled CSS.
+ *
+ * `dart-sass` prepends a BOM when the `charset` option is enabled (by default),
+ * the `style` option is `compressed` (the default for the `production` mode) and
+ * the compiled CSS contains non ASCII characters.
+ * A BOM is only meaningful at the very beginning of a file, but the loader result
+ * is just a string for webpack, and tools like `css-loader` move `@import` at-rules
+ * above it, so the BOM ends up in the middle of the generated CSS and breaks the
+ * first rule after it.
+ * @see https://github.com/webpack/sass-loader/issues/1335
+ * @param {string} css compiled CSS
+ * @param {RawSourceMap=} map source map
+ * @returns {{ css: string, map: RawSourceMap | undefined }} the CSS without the BOM and the source map adjusted to it
+ */
+export function removeBOM(
+  css: string,
+  map?: RawSourceMap | undefined,
+): {
+  css: string;
+  map: RawSourceMap | undefined;
+};

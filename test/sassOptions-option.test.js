@@ -337,7 +337,12 @@ describe("sassOptions option", () => {
           sassOptions: { style: "compressed" },
         });
 
-        assert.strictEqual(codeFromBundle.css, codeFromSass.css);
+        // `dart-sass` prepends a BOM to the `compressed` output when it contains
+        // non ASCII characters, the loader removes it
+        assert.strictEqual(
+          codeFromBundle.css,
+          codeFromSass.css.replace(/^\uFEFF/, ""),
+        );
         t.assert.snapshot(codeFromBundle.css);
         t.assert.snapshot(getWarnings(stats));
         t.assert.snapshot(getErrors(stats));

@@ -938,7 +938,12 @@ describe("loader", () => {
           sassOptions: { style: "compressed" },
         });
 
-        assert.strictEqual(codeFromBundle.css, codeFromSass.css);
+        // `dart-sass` prepends a BOM to the `compressed` output when it contains
+        // non ASCII characters, the loader removes it
+        assert.strictEqual(
+          codeFromBundle.css,
+          codeFromSass.css.replace(/^\uFEFF/, ""),
+        );
         t.assert.snapshot(codeFromBundle.css);
         t.assert.snapshot(getWarnings(stats));
         t.assert.snapshot(getErrors(stats));
@@ -1325,6 +1330,27 @@ describe("loader", () => {
           const codeFromSass = await getCodeFromSass(testId, options);
 
           assert.strictEqual(codeFromBundle.css, codeFromSass.css);
+          t.assert.snapshot(codeFromBundle.css);
+          t.assert.snapshot(getWarnings(stats));
+          t.assert.snapshot(getErrors(stats));
+
+          await close(compiler);
+        });
+
+        it(`should remove the BOM from the compiled CSS ('${implementationName}', '${api}' API, '${syntax}' syntax)`, async (t) => {
+          const testId = getTestId("charset-utf-8", syntax);
+          const options = {
+            implementation,
+            api,
+            // `dart-sass` prepends a BOM to the `compressed` output when it
+            // contains non ASCII characters
+            sassOptions: { style: "compressed" },
+          };
+          const compiler = getCompiler(testId, { loader: { options } });
+          const stats = await compile(compiler);
+          const codeFromBundle = getCodeFromBundle(stats, compiler);
+
+          assert.notStrictEqual(codeFromBundle.css.charCodeAt(0), 0xfe_ff);
           t.assert.snapshot(codeFromBundle.css);
           t.assert.snapshot(getWarnings(stats));
           t.assert.snapshot(getErrors(stats));

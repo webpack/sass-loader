@@ -9,6 +9,7 @@ import {
   getSassImplementation,
   getSassOptions,
   normalizeSourceMap,
+  removeBOM,
 } from "./utils.js";
 
 /** @typedef {import("webpack").LoaderContext<LoaderOptions>} LoaderContext */
@@ -89,6 +90,8 @@ async function loader(content) {
     map = normalizeSourceMap(map, this.rootContext);
   }
 
+  const { css, map: cssMap } = removeBOM(result.css.toString(), map);
+
   if (typeof result.loadedUrls !== "undefined") {
     for (const includedFile of result.loadedUrls.filter(
       (loadedUrl) => loadedUrl.protocol === "file:",
@@ -102,7 +105,7 @@ async function loader(content) {
     }
   }
 
-  callback(null, result.css.toString(), map || undefined);
+  callback(null, css, cssMap || undefined);
 }
 
 export default loader;

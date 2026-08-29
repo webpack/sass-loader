@@ -1446,6 +1446,102 @@ exports[`loader > should prefer relative import ('sass-embedded', 'modern-compil
 []
 `;
 
+exports[`loader > should remove the BOM from the compiled CSS ('dart-sass', 'modern' API, 'sass' syntax) 1`] = `
+"p{content:\\"é\\"}"
+`;
+
+exports[`loader > should remove the BOM from the compiled CSS ('dart-sass', 'modern' API, 'sass' syntax) 2`] = `
+[]
+`;
+
+exports[`loader > should remove the BOM from the compiled CSS ('dart-sass', 'modern' API, 'sass' syntax) 3`] = `
+[]
+`;
+
+exports[`loader > should remove the BOM from the compiled CSS ('dart-sass', 'modern' API, 'scss' syntax) 1`] = `
+"p{content:\\"é\\"}"
+`;
+
+exports[`loader > should remove the BOM from the compiled CSS ('dart-sass', 'modern' API, 'scss' syntax) 2`] = `
+[]
+`;
+
+exports[`loader > should remove the BOM from the compiled CSS ('dart-sass', 'modern' API, 'scss' syntax) 3`] = `
+[]
+`;
+
+exports[`loader > should remove the BOM from the compiled CSS ('dart-sass', 'modern-compiler' API, 'sass' syntax) 1`] = `
+"p{content:\\"é\\"}"
+`;
+
+exports[`loader > should remove the BOM from the compiled CSS ('dart-sass', 'modern-compiler' API, 'sass' syntax) 2`] = `
+[]
+`;
+
+exports[`loader > should remove the BOM from the compiled CSS ('dart-sass', 'modern-compiler' API, 'sass' syntax) 3`] = `
+[]
+`;
+
+exports[`loader > should remove the BOM from the compiled CSS ('dart-sass', 'modern-compiler' API, 'scss' syntax) 1`] = `
+"p{content:\\"é\\"}"
+`;
+
+exports[`loader > should remove the BOM from the compiled CSS ('dart-sass', 'modern-compiler' API, 'scss' syntax) 2`] = `
+[]
+`;
+
+exports[`loader > should remove the BOM from the compiled CSS ('dart-sass', 'modern-compiler' API, 'scss' syntax) 3`] = `
+[]
+`;
+
+exports[`loader > should remove the BOM from the compiled CSS ('sass-embedded', 'modern' API, 'sass' syntax) 1`] = `
+"p{content:\\"é\\"}"
+`;
+
+exports[`loader > should remove the BOM from the compiled CSS ('sass-embedded', 'modern' API, 'sass' syntax) 2`] = `
+[]
+`;
+
+exports[`loader > should remove the BOM from the compiled CSS ('sass-embedded', 'modern' API, 'sass' syntax) 3`] = `
+[]
+`;
+
+exports[`loader > should remove the BOM from the compiled CSS ('sass-embedded', 'modern' API, 'scss' syntax) 1`] = `
+"p{content:\\"é\\"}"
+`;
+
+exports[`loader > should remove the BOM from the compiled CSS ('sass-embedded', 'modern' API, 'scss' syntax) 2`] = `
+[]
+`;
+
+exports[`loader > should remove the BOM from the compiled CSS ('sass-embedded', 'modern' API, 'scss' syntax) 3`] = `
+[]
+`;
+
+exports[`loader > should remove the BOM from the compiled CSS ('sass-embedded', 'modern-compiler' API, 'sass' syntax) 1`] = `
+"p{content:\\"é\\"}"
+`;
+
+exports[`loader > should remove the BOM from the compiled CSS ('sass-embedded', 'modern-compiler' API, 'sass' syntax) 2`] = `
+[]
+`;
+
+exports[`loader > should remove the BOM from the compiled CSS ('sass-embedded', 'modern-compiler' API, 'sass' syntax) 3`] = `
+[]
+`;
+
+exports[`loader > should remove the BOM from the compiled CSS ('sass-embedded', 'modern-compiler' API, 'scss' syntax) 1`] = `
+"p{content:\\"é\\"}"
+`;
+
+exports[`loader > should remove the BOM from the compiled CSS ('sass-embedded', 'modern-compiler' API, 'scss' syntax) 2`] = `
+[]
+`;
+
+exports[`loader > should remove the BOM from the compiled CSS ('sass-embedded', 'modern-compiler' API, 'scss' syntax) 3`] = `
+[]
+`;
+
 exports[`loader > should resolve absolute paths ('dart-sass', 'modern' API, 'sass' syntax) 1`] = `
 "@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.message, .warning, .error, .success {\\n  border: 1px solid #ccc;\\n  padding: 10px;\\n  color: #333;\\n}\\n\\n.success {\\n  border-color: green;\\n}\\n\\n.error {\\n  border-color: red;\\n}\\n\\n.warning {\\n  border-color: yellow;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
 `;
@@ -3327,7 +3423,7 @@ exports[`loader > should work and output deprecation message (sass-embedded) 9`]
 `;
 
 exports[`loader > should work and output the \"compressed\" outputStyle when \"mode\" is production ('dart-sass', 'modern' API, 'sass' syntax) 1`] = `
-"﻿@import\\"./file.css\\";body{font:100% Helvetica,sans-serif;color:#333}nav ul{margin:0;padding:0;list-style:none}nav li{display:inline-block}nav a{display:block;padding:6px 12px;text-decoration:none}.box{-webkit-border-radius:10px;-moz-border-radius:10px;-ms-border-radius:10px;border-radius:10px}.message,.warning,.error,.success{border:1px solid #ccc;padding:10px;color:#333}.success{border-color:green}.error{border-color:red}.warning{border-color:#ff0}.foo:before{content:\\"\\"}.bar:before{content:\\"∑\\"}"
+"@import\\"./file.css\\";body{font:100% Helvetica,sans-serif;color:#333}nav ul{margin:0;padding:0;list-style:none}nav li{display:inline-block}nav a{display:block;padding:6px 12px;text-decoration:none}.box{-webkit-border-radius:10px;-moz-border-radius:10px;-ms-border-radius:10px;border-radius:10px}.message,.warning,.error,.success{border:1px solid #ccc;padding:10px;color:#333}.success{border-color:green}.error{border-color:red}.warning{border-color:#ff0}.foo:before{content:\\"\\"}.bar:before{content:\\"∑\\"}"
 `;
 
 exports[`loader > should work and output the \"compressed\" outputStyle when \"mode\" is production ('dart-sass', 'modern' API, 'sass' syntax) 2`] = `
@@ -3339,7 +3435,7 @@ exports[`loader > should work and output the \"compressed\" outputStyle when \"m
 `;
 
 exports[`loader > should work and output the \"compressed\" outputStyle when \"mode\" is production ('dart-sass', 'modern' API, 'scss' syntax) 1`] = `
-"﻿@import\\"./file.css\\";body{font:100% Helvetica,sans-serif;color:#333}nav ul{margin:0;padding:0;list-style:none}nav li{display:inline-block}nav a{display:block;padding:6px 12px;text-decoration:none}.box{-webkit-border-radius:10px;-moz-border-radius:10px;-ms-border-radius:10px;border-radius:10px}.foo:before{content:\\"\\"}.bar:before{content:\\"∑\\"}"
+"@import\\"./file.css\\";body{font:100% Helvetica,sans-serif;color:#333}nav ul{margin:0;padding:0;list-style:none}nav li{display:inline-block}nav a{display:block;padding:6px 12px;text-decoration:none}.box{-webkit-border-radius:10px;-moz-border-radius:10px;-ms-border-radius:10px;border-radius:10px}.foo:before{content:\\"\\"}.bar:before{content:\\"∑\\"}"
 `;
 
 exports[`loader > should work and output the \"compressed\" outputStyle when \"mode\" is production ('dart-sass', 'modern' API, 'scss' syntax) 2`] = `
@@ -3351,7 +3447,7 @@ exports[`loader > should work and output the \"compressed\" outputStyle when \"m
 `;
 
 exports[`loader > should work and output the \"compressed\" outputStyle when \"mode\" is production ('dart-sass', 'modern-compiler' API, 'sass' syntax) 1`] = `
-"﻿@import\\"./file.css\\";body{font:100% Helvetica,sans-serif;color:#333}nav ul{margin:0;padding:0;list-style:none}nav li{display:inline-block}nav a{display:block;padding:6px 12px;text-decoration:none}.box{-webkit-border-radius:10px;-moz-border-radius:10px;-ms-border-radius:10px;border-radius:10px}.message,.warning,.error,.success{border:1px solid #ccc;padding:10px;color:#333}.success{border-color:green}.error{border-color:red}.warning{border-color:#ff0}.foo:before{content:\\"\\"}.bar:before{content:\\"∑\\"}"
+"@import\\"./file.css\\";body{font:100% Helvetica,sans-serif;color:#333}nav ul{margin:0;padding:0;list-style:none}nav li{display:inline-block}nav a{display:block;padding:6px 12px;text-decoration:none}.box{-webkit-border-radius:10px;-moz-border-radius:10px;-ms-border-radius:10px;border-radius:10px}.message,.warning,.error,.success{border:1px solid #ccc;padding:10px;color:#333}.success{border-color:green}.error{border-color:red}.warning{border-color:#ff0}.foo:before{content:\\"\\"}.bar:before{content:\\"∑\\"}"
 `;
 
 exports[`loader > should work and output the \"compressed\" outputStyle when \"mode\" is production ('dart-sass', 'modern-compiler' API, 'sass' syntax) 2`] = `
@@ -3363,7 +3459,7 @@ exports[`loader > should work and output the \"compressed\" outputStyle when \"m
 `;
 
 exports[`loader > should work and output the \"compressed\" outputStyle when \"mode\" is production ('dart-sass', 'modern-compiler' API, 'scss' syntax) 1`] = `
-"﻿@import\\"./file.css\\";body{font:100% Helvetica,sans-serif;color:#333}nav ul{margin:0;padding:0;list-style:none}nav li{display:inline-block}nav a{display:block;padding:6px 12px;text-decoration:none}.box{-webkit-border-radius:10px;-moz-border-radius:10px;-ms-border-radius:10px;border-radius:10px}.foo:before{content:\\"\\"}.bar:before{content:\\"∑\\"}"
+"@import\\"./file.css\\";body{font:100% Helvetica,sans-serif;color:#333}nav ul{margin:0;padding:0;list-style:none}nav li{display:inline-block}nav a{display:block;padding:6px 12px;text-decoration:none}.box{-webkit-border-radius:10px;-moz-border-radius:10px;-ms-border-radius:10px;border-radius:10px}.foo:before{content:\\"\\"}.bar:before{content:\\"∑\\"}"
 `;
 
 exports[`loader > should work and output the \"compressed\" outputStyle when \"mode\" is production ('dart-sass', 'modern-compiler' API, 'scss' syntax) 2`] = `

@@ -764,6 +764,101 @@ function normalizeSourceMap(map, rootContext) {
   return newMap;
 }
 
+const BASE64_CHARACTERS =
+  "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
+const VLQ_BASE_SHIFT = 5;
+const VLQ_BASE = 1 << VLQ_BASE_SHIFT;
+const VLQ_BASE_MASK = VLQ_BASE - 1;
+const VLQ_CONTINUATION_BIT = VLQ_BASE;
+
+/**
+ * Decodes the first Base64 VLQ value of the given `mappings`.
+ * @param {string} mappings mappings of a source map
+ * @returns {{ value: number, length: number } | null} the decoded value and how many characters it takes, `null` when `mappings` doesn't start with a value
+ */
+function decodeVLQ(mappings) {
+  let value = 0;
+  let shift = 0;
+  let length = 0;
+  let digit;
+
+  do {
+    digit = BASE64_CHARACTERS.indexOf(mappings[length]);
+
+    if (digit === -1) {
+      return null;
+    }
+
+    value += (digit & VLQ_BASE_MASK) << shift;
+    shift += VLQ_BASE_SHIFT;
+    length += 1;
+  } while ((digit & VLQ_CONTINUATION_BIT) !== 0);
+
+  const isNegative = (value & 1) === 1;
+
+  value >>= 1;
+
+  return { value: isNegative ? -value : value, length };
+}
+
+/**
+ * @param {number} value value
+ * @returns {string} the Base64 VLQ encoded value
+ */
+function encodeVLQ(value) {
+  let encoded = "";
+  let vlq = value < 0 ? (-value << 1) | 1 : value << 1;
+
+  do {
+    let digit = vlq & VLQ_BASE_MASK;
+
+    vlq >>>= VLQ_BASE_SHIFT;
+
+    if (vlq > 0) {
+      digit |= VLQ_CONTINUATION_BIT;
+    }
+
+    encoded += BASE64_CHARACTERS[digit];
+  } while (vlq > 0);
+
+  return encoded;
+}
+
+/**
+ * Removes the byte order mark (BOM) from the compiled CSS.
+ *
+ * `dart-sass` prepends a BOM when the `charset` option is enabled (by default),
+ * the `style` option is `compressed` (the default for the `production` mode) and
+ * the compiled CSS contains non ASCII characters.
+ * A BOM is only meaningful at the very beginning of a file, but the loader result
+ * is just a string for webpack, and tools like `css-loader` move `@import` at-rules
+ * above it, so the BOM ends up in the middle of the generated CSS and breaks the
+ * first rule after it.
+ * @see https://github.com/webpack/sass-loader/issues/1335
+ * @param {string} css compiled CSS
+ * @param {RawSourceMap=} map source map
+ * @returns {{ css: string, map: RawSourceMap | undefined }} the CSS without the BOM and the source map adjusted to it
+ */
+function removeBOM(css, map) {
+  if (css.charCodeAt(0) !== 0xfe_ff) {
+    return { css, map };
+  }
+
+  // Sass counts the BOM as the first column of the first line, so all mappings
+  // of this line need to be shifted by one column.
+  // Only the first segment has to be updated - the generated column of the
+  // segments after it is relative to the previous one.
+  if (map && typeof map.mappings === "string") {
+    const decoded = decodeVLQ(map.mappings);
+
+    if (decoded && decoded.value > 0) {
+      map.mappings = `${encodeVLQ(decoded.value - 1)}${map.mappings.slice(decoded.length)}`;
+    }
+  }
+
+  return { css: css.slice(1), map };
+}
+
 /**
  * @param {Error | SassError} error the original sass error
  * @returns {Error} a new error
@@ -790,4 +885,5 @@ export {
   getSassOptions,
   getWebpackResolver,
   normalizeSourceMap,
+  removeBOM,
 };

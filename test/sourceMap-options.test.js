@@ -94,6 +94,41 @@ describe("sourceMap option", () => {
         await close(compiler);
       });
 
+      it(`should generate source maps for the "compressed" style without the removed BOM ('${implementationName}', '${api}' API, '${syntax}' syntax)`, async (t) => {
+        const testId = getTestId("charset-utf-8", syntax);
+        const options = {
+          implementation,
+          api,
+          sourceMap: true,
+          // `dart-sass` prepends a BOM to the `compressed` output when it
+          // contains non ASCII characters and counts it as the first column of
+          // the first line, so mappings have to be shifted when it is removed
+          sassOptions: { style: "compressed" },
+        };
+        const compiler = getCompiler(testId, {
+          devtool: "source-map",
+          loader: { options },
+        });
+        const stats = await compile(compiler);
+        const { css, sourceMap } = getCodeFromBundle(stats, compiler);
+
+        assert.notStrictEqual(css.charCodeAt(0), 0xfe_ff);
+
+        sourceMap.sourceRoot = "";
+        sourceMap.sources = sourceMap.sources.map((source) =>
+          path
+            .relative(path.resolve(__dirname, ".."), source)
+            .replaceAll("\\", "/"),
+        );
+
+        t.assert.snapshot(css);
+        t.assert.snapshot(getSourceMap(sourceMap));
+        t.assert.snapshot(getWarnings(stats));
+        t.assert.snapshot(getErrors(stats));
+
+        await close(compiler);
+      });
+
       it(`should generate source maps when value has "true" value and the "devtool" option has "false" value ('${implementationName}', '${api}' API, '${syntax}' syntax)`, async (t) => {
         const testId = getTestId("language", syntax);
         const options = { implementation, api, sourceMap: true };
