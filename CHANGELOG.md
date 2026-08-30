@@ -1,5 +1,11 @@
 # Changelog
 
+## 17.0.1
+
+### Patch Changes
+
+- Remove the byte order mark (BOM) from the compiled CSS. `dart-sass` prepends it when the compiled CSS contains non ASCII characters and the `style` option is `compressed` (the default for the `production` mode), but a BOM is only valid at the very beginning of a file - tools like `css-loader` move `@import` at-rules above it, so it ended up in the middle of the generated CSS and broke the rule after it. Source maps are shifted accordingly. (by [@alexander-akait](https://github.com/alexander-akait) in [#1337](https://github.com/webpack/sass-loader/pull/1337))
+
 ## 17.0.0
 
 ### Major Changes
