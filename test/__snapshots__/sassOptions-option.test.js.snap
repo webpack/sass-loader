@@ -287,7 +287,7 @@ exports[`sassOptions option > should respect the \"style\" option ('sass-embedde
 `;
 
 exports[`sassOptions option > should use \"compressed\" output style in the \"production\" mode ('dart-sass', 'modern' API, 'sass' syntax) 1`] = `
-"﻿@import\\"./file.css\\";body{font:100% Helvetica,sans-serif;color:#333}nav ul{margin:0;padding:0;list-style:none}nav li{display:inline-block}nav a{display:block;padding:6px 12px;text-decoration:none}.box{-webkit-border-radius:10px;-moz-border-radius:10px;-ms-border-radius:10px;border-radius:10px}.message,.warning,.error,.success{border:1px solid #ccc;padding:10px;color:#333}.success{border-color:green}.error{border-color:red}.warning{border-color:#ff0}.foo:before{content:\\"\\"}.bar:before{content:\\"∑\\"}"
+"@import\\"./file.css\\";body{font:100% Helvetica,sans-serif;color:#333}nav ul{margin:0;padding:0;list-style:none}nav li{display:inline-block}nav a{display:block;padding:6px 12px;text-decoration:none}.box{-webkit-border-radius:10px;-moz-border-radius:10px;-ms-border-radius:10px;border-radius:10px}.message,.warning,.error,.success{border:1px solid #ccc;padding:10px;color:#333}.success{border-color:green}.error{border-color:red}.warning{border-color:#ff0}.foo:before{content:\\"\\"}.bar:before{content:\\"∑\\"}"
 `;
 
 exports[`sassOptions option > should use \"compressed\" output style in the \"production\" mode ('dart-sass', 'modern' API, 'sass' syntax) 2`] = `
@@ -299,7 +299,7 @@ exports[`sassOptions option > should use \"compressed\" output style in the \"pr
 `;
 
 exports[`sassOptions option > should use \"compressed\" output style in the \"production\" mode ('dart-sass', 'modern' API, 'scss' syntax) 1`] = `
-"﻿@import\\"./file.css\\";body{font:100% Helvetica,sans-serif;color:#333}nav ul{margin:0;padding:0;list-style:none}nav li{display:inline-block}nav a{display:block;padding:6px 12px;text-decoration:none}.box{-webkit-border-radius:10px;-moz-border-radius:10px;-ms-border-radius:10px;border-radius:10px}.foo:before{content:\\"\\"}.bar:before{content:\\"∑\\"}"
+"@import\\"./file.css\\";body{font:100% Helvetica,sans-serif;color:#333}nav ul{margin:0;padding:0;list-style:none}nav li{display:inline-block}nav a{display:block;padding:6px 12px;text-decoration:none}.box{-webkit-border-radius:10px;-moz-border-radius:10px;-ms-border-radius:10px;border-radius:10px}.foo:before{content:\\"\\"}.bar:before{content:\\"∑\\"}"
 `;
 
 exports[`sassOptions option > should use \"compressed\" output style in the \"production\" mode ('dart-sass', 'modern' API, 'scss' syntax) 2`] = `
@@ -311,7 +311,7 @@ exports[`sassOptions option > should use \"compressed\" output style in the \"pr
 `;
 
 exports[`sassOptions option > should use \"compressed\" output style in the \"production\" mode ('dart-sass', 'modern-compiler' API, 'sass' syntax) 1`] = `
-"﻿@import\\"./file.css\\";body{font:100% Helvetica,sans-serif;color:#333}nav ul{margin:0;padding:0;list-style:none}nav li{display:inline-block}nav a{display:block;padding:6px 12px;text-decoration:none}.box{-webkit-border-radius:10px;-moz-border-radius:10px;-ms-border-radius:10px;border-radius:10px}.message,.warning,.error,.success{border:1px solid #ccc;padding:10px;color:#333}.success{border-color:green}.error{border-color:red}.warning{border-color:#ff0}.foo:before{content:\\"\\"}.bar:before{content:\\"∑\\"}"
+"@import\\"./file.css\\";body{font:100% Helvetica,sans-serif;color:#333}nav ul{margin:0;padding:0;list-style:none}nav li{display:inline-block}nav a{display:block;padding:6px 12px;text-decoration:none}.box{-webkit-border-radius:10px;-moz-border-radius:10px;-ms-border-radius:10px;border-radius:10px}.message,.warning,.error,.success{border:1px solid #ccc;padding:10px;color:#333}.success{border-color:green}.error{border-color:red}.warning{border-color:#ff0}.foo:before{content:\\"\\"}.bar:before{content:\\"∑\\"}"
 `;
 
 exports[`sassOptions option > should use \"compressed\" output style in the \"production\" mode ('dart-sass', 'modern-compiler' API, 'sass' syntax) 2`] = `
@@ -323,7 +323,7 @@ exports[`sassOptions option > should use \"compressed\" output style in the \"pr
 `;
 
 exports[`sassOptions option > should use \"compressed\" output style in the \"production\" mode ('dart-sass', 'modern-compiler' API, 'scss' syntax) 1`] = `
-"﻿@import\\"./file.css\\";body{font:100% Helvetica,sans-serif;color:#333}nav ul{margin:0;padding:0;list-style:none}nav li{display:inline-block}nav a{display:block;padding:6px 12px;text-decoration:none}.box{-webkit-border-radius:10px;-moz-border-radius:10px;-ms-border-radius:10px;border-radius:10px}.foo:before{content:\\"\\"}.bar:before{content:\\"∑\\"}"
+"@import\\"./file.css\\";body{font:100% Helvetica,sans-serif;color:#333}nav ul{margin:0;padding:0;list-style:none}nav li{display:inline-block}nav a{display:block;padding:6px 12px;text-decoration:none}.box{-webkit-border-radius:10px;-moz-border-radius:10px;-ms-border-radius:10px;border-radius:10px}.foo:before{content:\\"\\"}.bar:before{content:\\"∑\\"}"
 `;
 
 exports[`sassOptions option > should use \"compressed\" output style in the \"production\" mode ('dart-sass', 'modern-compiler' API, 'scss' syntax) 2`] = `

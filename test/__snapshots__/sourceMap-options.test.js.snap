@@ -1,3 +1,219 @@
+exports[`sourceMap option > should generate source maps for the \"compressed\" style without the removed BOM ('dart-sass', 'modern' API, 'sass' syntax) 1`] = `
+"p{content:\\"é\\"}"
+`;
+
+exports[`sourceMap option > should generate source maps for the \"compressed\" style without the removed BOM ('dart-sass', 'modern' API, 'sass' syntax) 2`] = `
+{
+  "version": 3,
+  "sourceRoot": "",
+  "sources": [
+    "test/sass/charset-utf-8.sass"
+  ],
+  "names": [],
+  "mappings": "AAEA,EACE",
+  "sourcesContent": [
+    "@charset \\"UTF-8\\"\\n\\np\\n  content: \\"é\\"\\n"
+  ]
+}
+`;
+
+exports[`sourceMap option > should generate source maps for the \"compressed\" style without the removed BOM ('dart-sass', 'modern' API, 'sass' syntax) 3`] = `
+[]
+`;
+
+exports[`sourceMap option > should generate source maps for the \"compressed\" style without the removed BOM ('dart-sass', 'modern' API, 'sass' syntax) 4`] = `
+[]
+`;
+
+exports[`sourceMap option > should generate source maps for the \"compressed\" style without the removed BOM ('dart-sass', 'modern' API, 'scss' syntax) 1`] = `
+"p{content:\\"é\\"}"
+`;
+
+exports[`sourceMap option > should generate source maps for the \"compressed\" style without the removed BOM ('dart-sass', 'modern' API, 'scss' syntax) 2`] = `
+{
+  "version": 3,
+  "sourceRoot": "",
+  "sources": [
+    "test/scss/charset-utf-8.scss"
+  ],
+  "names": [],
+  "mappings": "AAEA,EACE",
+  "sourcesContent": [
+    "@charset \\"UTF-8\\";\\n\\np { \\n  content: \\"é\\"; \\n}\\n"
+  ]
+}
+`;
+
+exports[`sourceMap option > should generate source maps for the \"compressed\" style without the removed BOM ('dart-sass', 'modern' API, 'scss' syntax) 3`] = `
+[]
+`;
+
+exports[`sourceMap option > should generate source maps for the \"compressed\" style without the removed BOM ('dart-sass', 'modern' API, 'scss' syntax) 4`] = `
+[]
+`;
+
+exports[`sourceMap option > should generate source maps for the \"compressed\" style without the removed BOM ('dart-sass', 'modern-compiler' API, 'sass' syntax) 1`] = `
+"p{content:\\"é\\"}"
+`;
+
+exports[`sourceMap option > should generate source maps for the \"compressed\" style without the removed BOM ('dart-sass', 'modern-compiler' API, 'sass' syntax) 2`] = `
+{
+  "version": 3,
+  "sourceRoot": "",
+  "sources": [
+    "test/sass/charset-utf-8.sass"
+  ],
+  "names": [],
+  "mappings": "AAEA,EACE",
+  "sourcesContent": [
+    "@charset \\"UTF-8\\"\\n\\np\\n  content: \\"é\\"\\n"
+  ]
+}
+`;
+
+exports[`sourceMap option > should generate source maps for the \"compressed\" style without the removed BOM ('dart-sass', 'modern-compiler' API, 'sass' syntax) 3`] = `
+[]
+`;
+
+exports[`sourceMap option > should generate source maps for the \"compressed\" style without the removed BOM ('dart-sass', 'modern-compiler' API, 'sass' syntax) 4`] = `
+[]
+`;
+
+exports[`sourceMap option > should generate source maps for the \"compressed\" style without the removed BOM ('dart-sass', 'modern-compiler' API, 'scss' syntax) 1`] = `
+"p{content:\\"é\\"}"
+`;
+
+exports[`sourceMap option > should generate source maps for the \"compressed\" style without the removed BOM ('dart-sass', 'modern-compiler' API, 'scss' syntax) 2`] = `
+{
+  "version": 3,
+  "sourceRoot": "",
+  "sources": [
+    "test/scss/charset-utf-8.scss"
+  ],
+  "names": [],
+  "mappings": "AAEA,EACE",
+  "sourcesContent": [
+    "@charset \\"UTF-8\\";\\n\\np { \\n  content: \\"é\\"; \\n}\\n"
+  ]
+}
+`;
+
+exports[`sourceMap option > should generate source maps for the \"compressed\" style without the removed BOM ('dart-sass', 'modern-compiler' API, 'scss' syntax) 3`] = `
+[]
+`;
+
+exports[`sourceMap option > should generate source maps for the \"compressed\" style without the removed BOM ('dart-sass', 'modern-compiler' API, 'scss' syntax) 4`] = `
+[]
+`;
+
+exports[`sourceMap option > should generate source maps for the \"compressed\" style without the removed BOM ('sass-embedded', 'modern' API, 'sass' syntax) 1`] = `
+"p{content:\\"é\\"}"
+`;
+
+exports[`sourceMap option > should generate source maps for the \"compressed\" style without the removed BOM ('sass-embedded', 'modern' API, 'sass' syntax) 2`] = `
+{
+  "version": 3,
+  "sourceRoot": "",
+  "sources": [
+    "test/sass/charset-utf-8.sass"
+  ],
+  "names": [],
+  "mappings": "CAEA,EACE",
+  "sourcesContent": [
+    "@charset \\"UTF-8\\"\\n\\np\\n  content: \\"é\\"\\n"
+  ]
+}
+`;
+
+exports[`sourceMap option > should generate source maps for the \"compressed\" style without the removed BOM ('sass-embedded', 'modern' API, 'sass' syntax) 3`] = `
+[]
+`;
+
+exports[`sourceMap option > should generate source maps for the \"compressed\" style without the removed BOM ('sass-embedded', 'modern' API, 'sass' syntax) 4`] = `
+[]
+`;
+
+exports[`sourceMap option > should generate source maps for the \"compressed\" style without the removed BOM ('sass-embedded', 'modern' API, 'scss' syntax) 1`] = `
+"p{content:\\"é\\"}"
+`;
+
+exports[`sourceMap option > should generate source maps for the \"compressed\" style without the removed BOM ('sass-embedded', 'modern' API, 'scss' syntax) 2`] = `
+{
+  "version": 3,
+  "sourceRoot": "",
+  "sources": [
+    "test/scss/charset-utf-8.scss"
+  ],
+  "names": [],
+  "mappings": "CAEA,EACE",
+  "sourcesContent": [
+    "@charset \\"UTF-8\\";\\n\\np { \\n  content: \\"é\\"; \\n}\\n"
+  ]
+}
+`;
+
+exports[`sourceMap option > should generate source maps for the \"compressed\" style without the removed BOM ('sass-embedded', 'modern' API, 'scss' syntax) 3`] = `
+[]
+`;
+
+exports[`sourceMap option > should generate source maps for the \"compressed\" style without the removed BOM ('sass-embedded', 'modern' API, 'scss' syntax) 4`] = `
+[]
+`;
+
+exports[`sourceMap option > should generate source maps for the \"compressed\" style without the removed BOM ('sass-embedded', 'modern-compiler' API, 'sass' syntax) 1`] = `
+"p{content:\\"é\\"}"
+`;
+
+exports[`sourceMap option > should generate source maps for the \"compressed\" style without the removed BOM ('sass-embedded', 'modern-compiler' API, 'sass' syntax) 2`] = `
+{
+  "version": 3,
+  "sourceRoot": "",
+  "sources": [
+    "test/sass/charset-utf-8.sass"
+  ],
+  "names": [],
+  "mappings": "CAEA,EACE",
+  "sourcesContent": [
+    "@charset \\"UTF-8\\"\\n\\np\\n  content: \\"é\\"\\n"
+  ]
+}
+`;
+
+exports[`sourceMap option > should generate source maps for the \"compressed\" style without the removed BOM ('sass-embedded', 'modern-compiler' API, 'sass' syntax) 3`] = `
+[]
+`;
+
+exports[`sourceMap option > should generate source maps for the \"compressed\" style without the removed BOM ('sass-embedded', 'modern-compiler' API, 'sass' syntax) 4`] = `
+[]
+`;
+
+exports[`sourceMap option > should generate source maps for the \"compressed\" style without the removed BOM ('sass-embedded', 'modern-compiler' API, 'scss' syntax) 1`] = `
+"p{content:\\"é\\"}"
+`;
+
+exports[`sourceMap option > should generate source maps for the \"compressed\" style without the removed BOM ('sass-embedded', 'modern-compiler' API, 'scss' syntax) 2`] = `
+{
+  "version": 3,
+  "sourceRoot": "",
+  "sources": [
+    "test/scss/charset-utf-8.scss"
+  ],
+  "names": [],
+  "mappings": "CAEA,EACE",
+  "sourcesContent": [
+    "@charset \\"UTF-8\\";\\n\\np { \\n  content: \\"é\\"; \\n}\\n"
+  ]
+}
+`;
+
+exports[`sourceMap option > should generate source maps for the \"compressed\" style without the removed BOM ('sass-embedded', 'modern-compiler' API, 'scss' syntax) 3`] = `
+[]
+`;
+
+exports[`sourceMap option > should generate source maps for the \"compressed\" style without the removed BOM ('sass-embedded', 'modern-compiler' API, 'scss' syntax) 4`] = `
+[]
+`;
+
 exports[`sourceMap option > should generate source maps when value has \"false\" value, but the \"sassOptions.sourceMap\" has the \"true\" value ('dart-sass', 'modern' API, 'sass' syntax) 1`] = `
 "@charset \\"UTF-8\\";\\n@import \\"./file.css\\";\\nbody {\\n  font: 100% Helvetica, sans-serif;\\n  color: #333;\\n}\\n\\nnav ul {\\n  margin: 0;\\n  padding: 0;\\n  list-style: none;\\n}\\nnav li {\\n  display: inline-block;\\n}\\nnav a {\\n  display: block;\\n  padding: 6px 12px;\\n  text-decoration: none;\\n}\\n\\n.box {\\n  -webkit-border-radius: 10px;\\n  -moz-border-radius: 10px;\\n  -ms-border-radius: 10px;\\n  border-radius: 10px;\\n}\\n\\n.message, .warning, .error, .success {\\n  border: 1px solid #ccc;\\n  padding: 10px;\\n  color: #333;\\n}\\n\\n.success {\\n  border-color: green;\\n}\\n\\n.error {\\n  border-color: red;\\n}\\n\\n.warning {\\n  border-color: yellow;\\n}\\n\\n.foo:before {\\n  content: \\"\\\\e0c6\\";\\n}\\n\\n.bar:before {\\n  content: \\"∑\\";\\n}"
 `;
