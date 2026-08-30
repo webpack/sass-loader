@@ -124,31 +124,93 @@ Finally run `webpack` via your preferred method (e.g., via CLI or an npm script)
 
 For `production` mode, the `style` option defaults to `compressed` unless otherwise specified in `sassOptions`.
 
-### Resolving `import` and `use` at-rules
+### Resolving `import`, `use` and `forward` at-rules
 
 Webpack provides an [advanced mechanism to resolve files](https://webpack.js.org/concepts/module-resolution/).
 
-The `sass-loader` uses Sass's custom importer feature to pass all queries to the webpack resolving engine, enabling you to import your Sass modules from `node_modules`.
+The `sass-loader` uses Sass's custom importer feature to pass every `@use`, `@import` and `@forward` request to the webpack resolving engine, so your webpack [`resolve`](https://webpack.js.org/configuration/resolve/) configuration applies to stylesheets, and you can load Sass modules from `node_modules`:
 
 ```scss
-@import "bootstrap";
+@use "bootstrap";
 ```
+
+#### How a request is resolved
+
+For `@use "theme"` inside `src/app.scss`, the loader asks webpack for the following and takes the first hit:
+
+1. the partial `src/_theme.sass`, `src/_theme.scss`, `src/_theme.css`
+2. `src/theme.sass`, `src/theme.scss`, `src/theme.css`
+3. `theme` as written, so aliases and package requests resolve
+
+Directories resolve through their `_index`/`index` file. For `@import` only, the import-only files `_theme.import.scss` and `theme.import.scss` are tried before everything else.
+
+Relative requests win over module ones, so `@use "theme"` behaves like `@use "./theme"` when both could match. Keeping both `_theme.scss` and `theme.scss` in one directory is ambiguous and Sass reports an error for it, so the order within a directory rarely matters.
+
+#### What your `resolve` configuration controls
+
+- [`alias`](https://webpack.js.org/configuration/resolve/#resolvealias) - applied to every request, and tried before `node_modules`
+- [`modules`](https://webpack.js.org/configuration/resolve/#resolvemodules) - extra directories to look in, e.g. `src`
+- [`byDependency.sass`](https://webpack.js.org/configuration/resolve/#resolvebydependency) - requests are resolved with `dependencyType: "sass"`, so this targets stylesheets only
+- [`plugins`](https://webpack.js.org/configuration/resolve/#resolveplugins), [`symlinks`](https://webpack.js.org/configuration/resolve/#resolvesymlinks), [`roots`](https://webpack.js.org/configuration/resolve/#resolveroots) and the rest of the resolver options
+
+**webpack.config.js**
+
+```js
+module.exports = {
+  resolve: {
+    alias: { "@styles": path.resolve(__dirname, "src/styles") },
+    modules: [path.resolve(__dirname, "src"), "node_modules"],
+  },
+};
+```
+
+**style.scss**
+
+```scss
+@use "@styles/theme" as *; // resolved by `resolve.alias`
+@use "abstracts" as *; // resolved by `resolve.modules` to `src/abstracts/_index.scss`
+```
+
+Some options are fixed to match Sass's own algorithm and can't be changed through `resolve`: the extensions are `.sass`, `.scss` and `.css` (so [`resolve.extensions`](https://webpack.js.org/configuration/resolve/#resolveextensions) doesn't apply here), `mainFiles` prefer `_index`/`index`, `mainFields` prefer `sass` and `style` over `main`, and `conditionNames` prefer the `sass` and `style` [export conditions](https://webpack.js.org/guides/package-exports/). Your own `mainFields` and `conditionNames` are kept after those.
+
+#### Packages
+
+A package request resolves through the `sass` and `style` conditions of its `exports` field, falling back to the `sass`, `style` and `main` fields. The [`pkg:` URL scheme](https://sass-lang.com/documentation/at-rules/use/#pkg) is supported as well:
+
+```scss
+@use "pkg:bootstrap";
+```
+
+#### When webpack can't resolve a request
+
+The importer hands the request back to Sass, which then applies its own resolution - [`sassOptions.loadPaths`](#sassoptions), the `SASS_PATH` environment variable and any custom importer you configured.
+
+#### Plain CSS files
+
+Sass compiles `@import "theme.css"` to a plain CSS `@import`, so the loader leaves it in the output untouched - whatever handles the CSS afterwards (the built-in CSS support of webpack, `css-loader`, or the browser) decides what happens with it. `@use "theme.css"` includes the file's content instead, and is resolved like any other request:
+
+```scss
+@import "theme.css"; // stays `@import "theme.css";` in the output
+@use "theme.css"; // inlines the content of the file
+```
+
+#### The `~` prefix
 
 Using `~` is deprecated and should be removed from your code, but we still support it for historical reasons.
 
-Why can you remove it? The loader will first try to resolve `@import` as a relative path. If it cannot be resolved, then the loader will try to resolve `@import` inside [`node_modules`](https://webpack.js.org/configuration/resolve/#resolvemodules).
+Why can you remove it? The loader will first try to resolve `@use` as a relative path. If it cannot be resolved, then the loader will try to resolve it inside [`node_modules`](https://webpack.js.org/configuration/resolve/#resolvemodules).
 
 Prepending module paths with a `~` tells webpack to search through [`node_modules`](https://webpack.js.org/configuration/resolve/#resolvemodules).
 
 ```scss
-@import "~bootstrap";
+@use "~bootstrap";
 ```
 
 It's important to prepend the path with only `~`, because `~/` resolves to the home directory.
 
 Webpack needs to distinguish between `bootstrap` and `~bootstrap` because CSS and Sass files have no special syntax for importing relative files.
 
-Writing `@import "style.scss"` is the same as `@import "./style.scss";`
+Writing `@use "style.scss"` is the same as `@use "./style.scss";`
 
 ### Problems with `url(...)`
 
