@@ -834,6 +834,13 @@ function encodeVLQ(value) {
  * is just a string for webpack, and tools like `css-loader` move `@import` at-rules
  * above it, so the BOM ends up in the middle of the generated CSS and breaks the
  * first rule after it.
+ *
+ * Webpack removes a BOM a loader produced itself since
+ * https://github.com/webpack/webpack/pull/21857 and keeps the source map in sync
+ * with it since https://github.com/webpack/webpack/pull/21861, which makes this a
+ * no-op there. It is still needed for the webpack versions the `peerDependencies`
+ * range allows and for `rspack`, which passes a string result through untouched.
+ * Remove it once both handle this in the minimum version we support.
  * @see https://github.com/webpack/sass-loader/issues/1335
  * @param {string} css compiled CSS
  * @param {RawSourceMap=} map source map

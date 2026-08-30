@@ -18,7 +18,8 @@
     "commitlint",
     "bgcolor",
     "autocrlf",
-    "eslintcache"
+    "eslintcache",
+    "rspack"
   ],
   "ignorePaths": [
     "CHANGELOG.md",
