@@ -1,5 +1,11 @@
 # Changelog
 
+## 17.1.0
+
+### Minor Changes
+
+- Resolve a `data:` resource from the loader's context, reading `text/x-sass` as the indented syntax. (by [@alexander-akait](https://github.com/alexander-akait) in [#1352](https://github.com/webpack/sass-loader/pull/1352))
+
 ## 17.0.1
 
 ### Patch Changes
