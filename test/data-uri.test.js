@@ -30,6 +30,13 @@ describe("data: URI resource", () => {
             type: "css/auto",
             use: [
               {
+                loader: path.join(
+                  __dirname,
+                  "./helpers/dataUriContextLoader.cjs",
+                ),
+                options: { context: __dirname },
+              },
+              {
                 loader: path.join(__dirname, "../src/index.js"),
                 options: { implementation, api },
               },
