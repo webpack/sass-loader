@@ -246,6 +246,13 @@ export function getModernWebpackImporter(
   loaderContext: LoaderContext,
 ): Importer;
 /**
+ * The path a resource's contents resolve from. A `data:` URI has none of its own,
+ * so it reads as a file in the loader's context, with the syntax its media type names.
+ * @param {LoaderContext} loaderContext loader context
+ * @returns {string} the resource's path, or a file in its context for a `data:` URI
+ */
+export function getResourcePath(loaderContext: LoaderContext): string;
+/**
  * This function is not Webpack-specific and can be used by tools wishing to mimic `sass-loader`'s behaviour, so its signature should not be changed.
  * @param {SassImplementation | string | undefined} implementation sass implementation
  * @returns {Promise<SassImplementation>} resolved sass implementation

@@ -6,6 +6,7 @@ import {
   errorFactory,
   getCompileFn,
   getModernWebpackImporter,
+  getResourcePath,
   getSassImplementation,
   getSassOptions,
   normalizeSourceMap,
@@ -98,8 +99,15 @@ async function loader(content) {
     )) {
       const normalizedIncludedFile = url.fileURLToPath(includedFile);
 
-      // Custom `importer` can return only `contents` so includedFile will be relative
-      if (path.isAbsolute(normalizedIncludedFile)) {
+      // Custom `importer` can return only `contents` so includedFile will be relative;
+      // a `data:` resource's own file exists nowhere.
+      if (
+        path.isAbsolute(normalizedIncludedFile) &&
+        !(
+          this.resourcePath.startsWith("data:") &&
+          normalizedIncludedFile === getResourcePath(this)
+        )
+      ) {
         this.addDependency(normalizedIncludedFile);
       }
     }

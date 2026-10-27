@@ -174,6 +174,27 @@ function isProductionLikeMode(loaderContext) {
 }
 
 /**
+ * The path a resource's contents resolve from. A `data:` URI has none of its own,
+ * so it reads as a file in the loader's context, with the syntax its media type names.
+ * @param {LoaderContext} loaderContext loader context
+ * @returns {string} the resource's path, or a file in its context for a `data:` URI
+ */
+function getResourcePath(loaderContext) {
+  const { resourcePath } = loaderContext;
+
+  if (!resourcePath.startsWith("data:")) {
+    return resourcePath;
+  }
+
+  const indented = /^data:text\/x-sass[;,]/i.test(resourcePath);
+
+  return path.join(
+    loaderContext.context,
+    indented ? "stdin.sass" : "stdin.scss",
+  );
+}
+
+/**
  * Derives the sass options from the loader context and normalizes its values with sane defaults.
  * @param {LoaderContext} loaderContext loader context
  * @param {LoaderOptions} loaderOptions loader options
@@ -278,7 +299,7 @@ async function getSassOptions(
     };
   }
 
-  const { resourcePath } = loaderContext;
+  const resourcePath = getResourcePath(loaderContext);
 
   sassOptions.url = url.pathToFileURL(resourcePath);
 
@@ -566,7 +587,7 @@ function getModernWebpackImporter(loaderContext) {
       const { fromImport } = context;
       const prev = context.containingUrl
         ? url.fileURLToPath(context.containingUrl.toString())
-        : loaderContext.resourcePath;
+        : getResourcePath(loaderContext);
 
       let result;
 
@@ -888,6 +909,7 @@ export {
   errorFactory,
   getCompileFn,
   getModernWebpackImporter,
+  getResourcePath,
   getSassImplementation,
   getSassOptions,
   getWebpackResolver,
