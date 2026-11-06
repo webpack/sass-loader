@@ -55,7 +55,7 @@ This allows you to control the versions of all your dependencies and to choose w
 >
 > We highly recommend using [Sass Embedded](https://github.com/sass/embedded-host-node) or [Dart Sass](https://github.com/sass/dart-sass).
 
-Use the `sass-loader` with the built-in CSS support of webpack (the `css/auto` module type) to let webpack handle the generated CSS - it extracts styles into a separate file. Its output is a `.css` file the page has to link: let webpack build the page — an [HTML entry or `output.html: true`](https://webpack.js.org/guides/native-html/) adds the `<link>` for you — or set [`exportType: "style"`](https://webpack.js.org/guides/native-css/#output-modes-exporttype) to inject the styles from JavaScript instead.
+Use the `sass-loader` with the built-in CSS support of webpack (the `css/auto` module type) to let webpack handle the generated CSS - it extracts styles into a separate file. Its output is a `.css` file the page has to link: let webpack build the page — an [HTML entry or `output.html: true`](https://webpack.js.org/guides/native-html/) (webpack 5.108.0 or later; before 5.109.0 also set `experiments.html: true`) adds the `<link>` for you — set [`exportType: "style"`](https://webpack.js.org/guides/native-css/#output-modes-exporttype) (webpack 5.106.0 or later) to inject the styles from JavaScript instead, or link the emitted file yourself.
 
 Alternatively, you can chain the `sass-loader` with the deprecated [css-loader](https://github.com/webpack/css-loader) and the [style-loader](https://github.com/webpack/style-loader) to immediately apply all styles to the DOM, or with the deprecated [mini-css-extract-plugin](https://github.com/webpack/mini-css-extract-plugin) to extract it into a separate file.
 
