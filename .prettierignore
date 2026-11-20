@@ -6,3 +6,4 @@ CHANGELOG.md
 /test/sass
 /test/scss
 **/__snapshots__
+/src/options.check.js

@@ -3,6 +3,10 @@ import { createRequire } from "node:module";
 import { describe, it } from "node:test";
 
 import * as sass from "sass";
+import { validate } from "schema-utils";
+
+import check from "../src/options.check.js";
+import schema from "../src/options.json" with { type: "json" };
 
 import {
   compile,
@@ -13,7 +17,30 @@ import {
 
 const require = createRequire(import.meta.url);
 
+/**
+ * @param {EXPECTED_ANY} options loader options
+ * @returns {boolean} whether the schema accepts them
+ */
+function isValid(options) {
+  try {
+    validate(/** @type {EXPECTED_ANY} */ (schema), options);
+
+    return true;
+  } catch {
+    return false;
+  }
+}
+
 describe("validate options", () => {
+  // Options that are not an object never pass the check. `validate` takes an
+  // array as a list of options objects, so it accepts `[]`; the check failing
+  // there only means webpack falls back to the full validation.
+  for (const value of [[], "invalid", 42, null]) {
+    it(`should not pass the check with ${JSON.stringify(value)}`, () => {
+      assert.strictEqual(check(value), false);
+    });
+  }
+
   const tests = {
     implementation: {
       success: [
@@ -81,6 +108,11 @@ describe("validate options", () => {
     it(`should ${
       type === "success" ? "successfully validate" : "throw an error on"
     } the "${key}" option with "${stringifyValue(value)}" value`, async (t) => {
+      // webpack trusts a check that passes and skips the schema, so the two
+      // must agree on every value
+      assert.strictEqual(check({ [key]: value }), isValid({ [key]: value }));
+      assert.strictEqual(check({ [key]: value }), type === "success");
+
       const testId = getTestId("language", "scss");
       const compiler = getCompiler(testId, {
         loader: {

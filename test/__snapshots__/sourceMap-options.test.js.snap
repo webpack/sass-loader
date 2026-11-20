@@ -1368,7 +1368,7 @@ exports[`sourceMap option > should generate source maps with the built-in CSS su
   "file": "main.bundle.css",
   "mappings": ";;;;AAAA;AACA;AACA,C;;;;;ACKA;EACE;EACA,OALc;;;AAQd;EACE;EACA;EACA;;AAEF;EACE;;AAEF;EACE;EACA;EACA;;;AAQJ;EALE,uBAMe;EALf,oBAKe;EAJf,mBAIe;EAHf,eAGe;;;AAEjB;EACE;EACA;EACA;;;AAEF;EAEE;;;AAEF;EAEE;;;AAEF;EAEE;;;AAGA;EACE,SAhDY;;;AAmDd;EACE,SCzDc",
   "sources": [
-    "webpack:///css ./sass/file.css",
+    "webpack:///./sass/file.css",
     "webpack:///./sass/language.sass",
     "webpack:///./sass/another/variables.sass"
   ],
@@ -1400,7 +1400,7 @@ exports[`sourceMap option > should generate source maps with the built-in CSS su
   "file": "main.bundle.css",
   "mappings": ";;;;AAAA;AACA;AACA,C;;;;;ACKA;EACE;EACA,OALc;;;AASd;EACE;EACA;EACA;;AAGF;EAAK;;AAEL;EACE;EACA;EACA;;;AAWJ;EANE,uBAM4B;EALzB,oBAKyB;EAJxB,mBAIwB;EAHpB,eAGoB;;;AAG5B;EACE,SAlCY;;;AAuCd;EACE,SC7Cc",
   "sources": [
-    "webpack:///css ./scss/file.css",
+    "webpack:///./scss/file.css",
     "webpack:///./scss/language.scss",
     "webpack:///./scss/another/_variables.scss"
   ],
@@ -1432,7 +1432,7 @@ exports[`sourceMap option > should generate source maps with the built-in CSS su
   "file": "main.bundle.css",
   "mappings": ";;;;AAAA;AACA;AACA,C;;;;;ACKA;EACE;EACA,OALc;;;AAQd;EACE;EACA;EACA;;AAEF;EACE;;AAEF;EACE;EACA;EACA;;;AAQJ;EALE,uBAMe;EALf,oBAKe;EAJf,mBAIe;EAHf,eAGe;;;AAEjB;EACE;EACA;EACA;;;AAEF;EAEE;;;AAEF;EAEE;;;AAEF;EAEE;;;AAGA;EACE,SAhDY;;;AAmDd;EACE,SCzDc",
   "sources": [
-    "webpack:///css ./sass/file.css",
+    "webpack:///./sass/file.css",
     "webpack:///./sass/language.sass",
     "webpack:///./sass/another/variables.sass"
   ],
@@ -1464,7 +1464,7 @@ exports[`sourceMap option > should generate source maps with the built-in CSS su
   "file": "main.bundle.css",
   "mappings": ";;;;AAAA;AACA;AACA,C;;;;;ACKA;EACE;EACA,OALc;;;AASd;EACE;EACA;EACA;;AAGF;EAAK;;AAEL;EACE;EACA;EACA;;;AAWJ;EANE,uBAM4B;EALzB,oBAKyB;EAJxB,mBAIwB;EAHpB,eAGoB;;;AAG5B;EACE,SAlCY;;;AAuCd;EACE,SC7Cc",
   "sources": [
-    "webpack:///css ./scss/file.css",
+    "webpack:///./scss/file.css",
     "webpack:///./scss/language.scss",
     "webpack:///./scss/another/_variables.scss"
   ],
@@ -1496,7 +1496,7 @@ exports[`sourceMap option > should generate source maps with the built-in CSS su
   "file": "main.bundle.css",
   "mappings": ";;;;AAAA;AACA;AACA,C;;;;;ACKA;EACE;EACA,OALc;;;AAQd;EACE;EACA;EACA;;AAEF;EACE;;AAEF;EACE;EACA;EACA;;;AAQJ;EALE,uBAMe;EALf,oBAKe;EAJf,mBAIe;EAHf,eAGe;;;AAEjB;EACE;EACA;EACA;;;AAEF;EAEE;;;AAEF;EAEE;;;AAEF;EAEE;;;AAGA;EACE,SAhDY;;;AAmDd;EACE,SCzDc",
   "sources": [
-    "webpack:///css ./sass/file.css",
+    "webpack:///./sass/file.css",
     "webpack:///./sass/language.sass",
     "webpack:///./sass/another/variables.sass"
   ],
@@ -1528,7 +1528,7 @@ exports[`sourceMap option > should generate source maps with the built-in CSS su
   "file": "main.bundle.css",
   "mappings": ";;;;AAAA;AACA;AACA,C;;;;;ACKA;EACE;EACA,OALc;;;AASd;EACE;EACA;EACA;;AAGF;EAAK;;AAEL;EACE;EACA;EACA;;;AAWJ;EANE,uBAM4B;EALzB,oBAKyB;EAJxB,mBAIwB;EAHpB,eAGoB;;;AAG5B;EACE,SAlCY;;;AAuCd;EACE,SC7Cc",
   "sources": [
-    "webpack:///css ./scss/file.css",
+    "webpack:///./scss/file.css",
     "webpack:///./scss/language.scss",
     "webpack:///./scss/another/_variables.scss"
   ],
@@ -1560,7 +1560,7 @@ exports[`sourceMap option > should generate source maps with the built-in CSS su
   "file": "main.bundle.css",
   "mappings": ";;;;AAAA;AACA;AACA,C;;;;;ACKA;EACE;EACA,OALc;;;AAQd;EACE;EACA;EACA;;AAEF;EACE;;AAEF;EACE;EACA;EACA;;;AAQJ;EALE,uBAMe;EALf,oBAKe;EAJf,mBAIe;EAHf,eAGe;;;AAEjB;EACE;EACA;EACA;;;AAEF;EAEE;;;AAEF;EAEE;;;AAEF;EAEE;;;AAGA;EACE,SAhDY;;;AAmDd;EACE,SCzDc",
   "sources": [
-    "webpack:///css ./sass/file.css",
+    "webpack:///./sass/file.css",
     "webpack:///./sass/language.sass",
     "webpack:///./sass/another/variables.sass"
   ],
@@ -1592,7 +1592,7 @@ exports[`sourceMap option > should generate source maps with the built-in CSS su
   "file": "main.bundle.css",
   "mappings": ";;;;AAAA;AACA;AACA,C;;;;;ACKA;EACE;EACA,OALc;;;AASd;EACE;EACA;EACA;;AAGF;EAAK;;AAEL;EACE;EACA;EACA;;;AAWJ;EANE,uBAM4B;EALzB,oBAKyB;EAJxB,mBAIwB;EAHpB,eAGoB;;;AAG5B;EACE,SAlCY;;;AAuCd;EACE,SC7Cc",
   "sources": [
-    "webpack:///css ./scss/file.css",
+    "webpack:///./scss/file.css",
     "webpack:///./scss/language.scss",
     "webpack:///./scss/another/_variables.scss"
   ],

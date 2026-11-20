@@ -46,14 +46,16 @@
     "lint:code": "eslint --cache .",
     "lint:spelling": "cspell --cache --no-must-find-files --quiet \"**/*.*\"",
     "lint:types": "tsc --pretty --noEmit",
+    "lint:schema": "schema-utils precompile --check --minify src/options.json",
     "fmt": "npm run fmt:check -- --write",
     "fmt:check": "prettier --list-different --cache --ignore-unknown .",
-    "fix": "npm run fix:code && npm run fmt",
+    "fix": "npm run fix:schema && npm run fix:code && npm run fmt",
     "fix:code": "npm run lint:code -- --fix",
+    "fix:schema": "schema-utils precompile --minify src/options.json",
     "pretest": "npm run lint",
     "test": "npm run test:base",
     "test:base": "node --import ./test/setup-snapshots.js --test --test-force-exit --test-reporter=dot --test-reporter-destination=stdout --experimental-test-module-mocks",
-    "test:coverage": "npm run test:base -- --experimental-test-coverage --test-reporter=lcov --test-reporter-destination=coverage.lcov --test-coverage-include=\"src/**/*.js\"",
+    "test:coverage": "npm run test:base -- --experimental-test-coverage --test-reporter=lcov --test-reporter-destination=coverage.lcov --test-coverage-include=\"src/**/*.js\" --test-coverage-exclude=\"src/options.check.js\"",
     "prepare": "husky && npm run build",
     "version": "changeset version",
     "release": "npm run build && changeset publish"
@@ -86,9 +88,10 @@
     "prettier": "^3.8.3",
     "sass": "^1.99.0",
     "sass-embedded": "^1.99.0",
+    "schema-utils": "^4.8.5",
     "style-loader": "^4.0.0",
     "typescript": "^6.0.3",
-    "webpack": "^5.106.2"
+    "webpack": "^5.113.0"
   },
   "peerDependencies": {
     "@rspack/core": "0.x || ^1.0.0 || ^2.0.0-0",
