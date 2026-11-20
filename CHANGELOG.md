@@ -1,5 +1,11 @@
 # Changelog
 
+## 17.1.1
+
+### Patch Changes
+
+- Pass a precompiled options check to `this.getOptions`, so webpack versions that accept it skip compiling the options schema. (by [@alexander-akait](https://github.com/alexander-akait) in [#1357](https://github.com/webpack/sass-loader/pull/1357))
+
 ## 17.1.0
 
 ### Minor Changes
